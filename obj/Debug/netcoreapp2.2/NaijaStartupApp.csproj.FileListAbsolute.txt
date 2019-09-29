@@ -1,11 +1,8 @@
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.dll
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.Views.dll
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.deps.json
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.runtimeconfig.json
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.runtimeconfig.dev.json
-C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.dll
-C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.pdb
-C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.Views.dll
-C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.Views.pdb
-C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.csprojAssemblyReference.cache
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.csproj.CoreCompileInputs.cache
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.RazorAssemblyInfo.cache
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.RazorAssemblyInfo.cs
@@ -29,4 +26,9 @@ C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaSta
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.Views.pdb
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.dll
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.pdb
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.pdb
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\bin\Debug\netcoreapp2.2\NaijaStartupApp.Views.pdb
 C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.csproj.CopyComplete
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DbLayout.g.cshtml.cs
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\Razor\Views\Dashboard\Index.g.cshtml.cs
+C:\Users\Ademolanj\source\repos\NaijaStartupApp\obj\Debug\netcoreapp2.2\NaijaStartupApp.csprojAssemblyReference.cache

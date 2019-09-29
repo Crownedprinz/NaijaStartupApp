@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "add_member";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Hospital</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Staff</a></li>
+                            <li class="breadcrumb-item active">Add Member</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Add Member</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <form method="post" class="card-box">
+                            <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="../assets/images/users/patient-pro.png">
+                        </form>
+                        <div class="">
+                            <form class="form-horizontal form-material mb-0">
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="First Name" class="form-control" name="First_Name" id="First_Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Last Name" class="form-control" name="Last_Name" id="Last_Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3">
+                                        <input type="text" placeholder="Join Date" class="form-control" name="Join_Date" id="Join_Date">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" placeholder="Post" class="form-control" name="Post" id="Post">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" placeholder="Age" class="form-control" name="Age" id="Age">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <input type="email" placeholder="Email" class="form-control" name="Email" id="Email">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" placeholder="Phone No" class="form-control" name="Phone_No" id="Phone_No">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" placeholder="ID0000" class="form-control" name="ID" id="ID">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" placeholder="Salary" class="form-control" name="Salary" id="Salary">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="5" placeholder="Address..." class="form-control"></textarea>
+                                    <button class="btn btn-danger btn-sm text-light px-4 mt-3 float-right mb-0 ml-2">Cancel</button>
+                                    <button class="btn btn-primary btn-sm text-light px-4 mt-3 float-right mb-0">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

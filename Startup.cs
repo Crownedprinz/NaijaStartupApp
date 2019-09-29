@@ -61,6 +61,7 @@ namespace NaijaStartupApp
             }
 
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
@@ -71,6 +72,7 @@ namespace NaijaStartupApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
             });
         }
     }

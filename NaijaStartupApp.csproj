@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -6,10 +6,83 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Dashboard\add_doctor.cshtml" />
+    <Content Remove="Views\Dashboard\add_member.cshtml" />
+    <Content Remove="Views\Dashboard\add_patient.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Dashboard\add_doctor.cshtml" />
+    <None Include="Views\Dashboard\add_member.cshtml" />
+    <None Include="Views\Dashboard\add_patient.cshtml" />
+    <None Include="wwwroot\blog-post.html" />
+    <None Include="wwwroot\blog.html" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\flexslider.css" />
+    <None Include="wwwroot\css\font-awesome.css" />
+    <None Include="wwwroot\css\hosting.css" />
+    <None Include="wwwroot\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfonte0a5.woff2" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regulard41d.eot" />
+    <None Include="wwwroot\images\backup_icon.png" />
+    <None Include="wwwroot\images\bg_direction_nav.png" />
+    <None Include="wwwroot\images\blog-img1.png" />
+    <None Include="wwwroot\images\blog-img2.png" />
+    <None Include="wwwroot\images\client1.jpg" />
+    <None Include="wwwroot\images\client2.jpg" />
+    <None Include="wwwroot\images\client3.jpg" />
+    <None Include="wwwroot\images\cpanel_icon.png" />
+    <None Include="wwwroot\images\cross.png" />
+    <None Include="wwwroot\images\fast_img.png" />
+    <None Include="wwwroot\images\features_img.png" />
+    <None Include="wwwroot\images\flathost-logo.png" />
+    <None Include="wwwroot\images\git_icon.png" />
+    <None Include="wwwroot\images\header-bg.jpg" />
+    <None Include="wwwroot\images\icon_top.png" />
+    <None Include="wwwroot\images\logo-footer.png" />
+    <None Include="wwwroot\images\logo1.jpg" />
+    <None Include="wwwroot\images\logo2.jpg" />
+    <None Include="wwwroot\images\logo3.jpg" />
+    <None Include="wwwroot\images\logo4.jpg" />
+    <None Include="wwwroot\images\logo5.jpg" />
+    <None Include="wwwroot\images\php_icon.png" />
+    <None Include="wwwroot\images\script_icon.png" />
+    <None Include="wwwroot\images\secure_img.png" />
+    <None Include="wwwroot\images\server1.png" />
+    <None Include="wwwroot\images\server2.png" />
+    <None Include="wwwroot\images\setup_icon.png" />
+    <None Include="wwwroot\images\support_img.png" />
+    <None Include="wwwroot\images\tick.png" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\contact_form.js" />
+    <None Include="wwwroot\js\jquery.easing.1.2.js" />
+    <None Include="wwwroot\js\jquery.flexslider.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\modernizr.js" />
+    <None Include="wwwroot\whmcs\register.html" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Html\" />
   </ItemGroup>
 
 </Project>

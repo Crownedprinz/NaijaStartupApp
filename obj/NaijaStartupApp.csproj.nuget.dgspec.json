@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj": {}
+    "C:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj": {
+    "C:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj",
+        "projectUniqueName": "C:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj",
         "projectName": "NaijaStartupApp",
-        "projectPath": "c:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj",
+        "projectPath": "C:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\NaijaStartupApp.csproj",
         "packagesPath": "C:\\Users\\Ademolanj\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\obj\\",
+        "outputPath": "C:\\Users\\Ademolanj\\source\\repos\\NaijaStartupApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
             }
           },
           "imports": [
