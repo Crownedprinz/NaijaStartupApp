@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "pages_treeview";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Metrica</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
+                            <li class="breadcrumb-item active">Treeview</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Treeview</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">Default Tree</h4>
+                        <div id="jstree">
+                            <!-- in this example the tree is populated from inline HTML -->
+                            <ul>
+                                <li class="jstree-open" data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>
+                                    Root node 1
+                                    <ul>
+                                        <li data-jstree='{"icon":"fa fa-folder text-primary font-18"}'>Child node 1</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 2</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 3</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}' class="jstree-open">
+                                            Child node 3
+                                            <ul>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 1</li>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>
+                                                    Child node 2
+                                                    <ul>
+                                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 1</li>
+                                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 2</li>
+                                                    </ul>
+                                                </li>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 3</li>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 4</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>
+                                    Root node 2
+                                    <ul>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18", "disabled":true}'>Child</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">Checkable Tree</h4>
+                        <div id="jstree-checkbox">
+                            <!-- in this example the tree is populated from inline HTML -->
+                            <ul>
+                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}' class="jstree-open">
+                                    Root node 1
+                                    <ul>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 1</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 2</li>
+                                        <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}' class="jstree-open">
+                                            Child node 3
+                                            <ul>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 1</li>
+                                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Child node 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li data-jstree='{"icon":"fa fa-folder text-warning font-18"}'>Root node 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

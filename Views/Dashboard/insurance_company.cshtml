@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewData["Title"] = "insurance_company";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Hospital</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Hospital</a></li>
+                            <li class="breadcrumb-item active">Insurance Co.</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Insurance Co.</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card profile-card">
+                    <div class="card-body p-0">
+                        <div class="media p-3 align-items-center">
+                            <img src="../assets/images/widgets/comp1.png" alt="user" class="rounded-circle thumb-xl">
+                            <div class="media-body ml-3 align-self-center">
+                                <h5 class="pro-title">Meri Gold Insurance</h5>
+                                <p class="mb-2 text-muted">MeriGoldInsurance@example.com</p>
+                                <button type="button" class="btn btn-xs btn-primary">Message</button>
+                            </div>
+                            <div class="action-btn">
+                                <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
+                                <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-lg-4">
+                <div class="card profile-card">
+                    <div class="card-body p-0">
+                        <div class="media p-3 align-items-center">
+                            <img src="../assets/images/widgets/comp2.png" alt="user" class="rounded-circle thumb-xl">
+                            <div class="media-body ml-3 align-self-center">
+                                <h5 class="pro-title">National Insurance</h5>
+                                <p class="mb-2 text-muted">NationalInsurance@example.com</p>
+                                <button type="button" class="btn btn-xs btn-primary">Message</button>
+                            </div>
+                            <div class="action-btn">
+                                <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
+                                <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-lg-4">
+                <div class="card profile-card">
+                    <div class="card-body p-0">
+                        <div class="media p-3 align-items-center">
+                            <img src="../assets/images/widgets/comp3.png" alt="user" class="rounded-circle thumb-xl">
+                            <div class="media-body ml-3 align-self-center">
+                                <h5 class="pro-title">7Star Insurance</h5>
+                                <p class="mb-2 text-muted">7StarInsurance@example.com</p>
+                                <button type="button" class="btn btn-xs btn-primary">Message</button>
+                            </div>
+                            <div class="action-btn">
+                                <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
+                                <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary px-4 mt-0 mb-3" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Company</button>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Insurance Company</th>
+                                        <th>Contact No</th>
+                                        <th>Total Payments</th>
+                                        <th>Total Amounts</th>
+                                        <th>Status</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                    <!--end tr-->
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Meri Gold Insurance</td>
+                                        <td>+1 223 344 556</td>
+                                        <td>1320</td>
+                                        <td>$1,25,590</td>
+                                        <td><span class="badge badge-soft-success">Approved</span></td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>National Insurance</td>
+                                        <td>+1 778 899 001</td>
+                                        <td>1008</td>
+                                        <td>$1,12,330</td>
+                                        <td><span class="badge badge-soft-success">Approved</span></td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>7Star Insurance</td>
+                                        <td>+1 234 567 890</td>
+                                        <td>982</td>
+                                        <td>$95,780</td>
+                                        <td><span class="badge badge-soft-success">Approved</span></td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>Lightway Insurance</td>
+                                        <td>+1 098 76 5432</td>
+                                        <td>482</td>
+                                        <td>$65,780</td>
+                                        <td><span class="badge badge-soft-success">Approved</span></td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

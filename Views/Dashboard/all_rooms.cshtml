@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewData["Title"] = "all_rooms";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Hospital</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Allotment</a></li>
+                            <li class="breadcrumb-item active">Rooms</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Allotments List</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card report-card">
+                    <div class="card-body">
+                        <div class="float-right"><i class="fas fa-bed text-danger report-main-icon"></i></div>
+                        <h4 class="title-text mt-0">General Ward</h4>
+                        <h3 class="my-3">122/150 <small>Total Beds</small></h3>
+                        <p class="mb-0 text-muted text-truncate"><i class="mdi mdi-wallet font-15"></i> Room Charge 24 hours / <span class="text-success">$80</span></p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-md-3">
+                <div class="card report-card">
+                    <div class="card-body">
+                        <div class="float-right"><i class="fas fa-radiation text-primary report-main-icon"></i></div>
+                        <h4 class="title-text mt-0">Semi-Special Rooms</h4>
+                        <h3 class="my-3">12/20 <small>Total</small></h3>
+                        <p class="mb-0 text-muted text-truncate"><i class="mdi mdi-wallet font-15"></i> Room Charge 24 hours / <span class="text-success">$300</span></p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-md-3">
+                <div class="card report-card">
+                    <div class="card-body">
+                        <div class="float-right"><i class="fas fa-apple-alt text-warning report-main-icon"></i></div>
+                        <h4 class="title-text mt-0">Special Rooms</h4>
+                        <h3 class="my-3">8/15 <small>Total</small></h3>
+                        <p class="mb-0 text-muted text-truncate"><i class="mdi mdi-wallet font-15"></i> Room Charge 24 hours / <span class="text-success">$400</span></p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+            <div class="col-md-3">
+                <div class="card report-card">
+                    <div class="card-body">
+                        <div class="float-right"><i class="fas fa-bullseye text-success report-main-icon"></i></div>
+                        <h4 class="title-text mt-0">ICU Rooms</h4>
+                        <h3 class="my-3">9/12 <small>Total</small></h3>
+                        <p class="mb-0 text-muted text-truncate"><i class="mdi mdi-wallet font-15"></i> Room Charge 24 hours / <span class="text-success">$500</span></p>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary px-4 mt-0 mb-3" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg2"><i class="mdi mdi-plus-circle-outline mr-2"></i>New Room Allotment</button>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Room No</th>
+                                        <th>Room Type</th>
+                                        <th>ID</th>
+                                        <th>Patiant Name</th>
+                                        <th>Allotment Date</th>
+                                        <th>Discharge date</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                    <!--end tr-->
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Special</td>
+                                        <td>#3251</td>
+                                        <td>Donald Gardner</td>
+                                        <td>18/07/2019</td>
+                                        <td>24/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Semi-Special</td>
+                                        <td>#6632</td>
+                                        <td>Keith Jacobson</td>
+                                        <td>17/07/2019</td>
+                                        <td>29/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>08</td>
+                                        <td>General</td>
+                                        <td>#3214</td>
+                                        <td>Peggy Doe</td>
+                                        <td>01/07/2019</td>
+                                        <td>08/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>13</td>
+                                        <td>General</td>
+                                        <td>#1021</td>
+                                        <td>Jennifer Doss</td>
+                                        <td>11/07/2019</td>
+                                        <td>14/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>09</td>
+                                        <td>ICU</td>
+                                        <td>#3254</td>
+                                        <td>Greg Crosby</td>
+                                        <td>04/07/2019</td>
+                                        <td>08/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Special</td>
+                                        <td>#2213</td>
+                                        <td>Fred Godina</td>
+                                        <td>18/07/2019</td>
+                                        <td>24/07/2019</td>
+                                        <td class="text-right"><a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
