@@ -1,0 +1,52 @@
+
+body {
+    background: url(../images/lagos1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
+}
+
+.lgPage {
+    width: 360px;
+    padding: 5% 0 2% 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: rgb(182, 166, 166);
+    max-width: 360px;
+    margin: auto;
+    padding: 45px;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0.9;
+    margin-top:auto;    
+}
+
+.form input {
+    width: 100%;
+    border: 0;
+    margin: auto 0 10px -10px;
+    padding: 15px;
+    box-sizing: border box;
+    border-radius: 10px;
+
+}
+
+.form .login-form {
+    display: none;
+}
+
+.secure{
+    font-size: 20px;
+    font-weight: 700;
+   }
+
+   .panel-heading {
+    opacity: 0.9;
+    margin-bottom:15px;
+    }

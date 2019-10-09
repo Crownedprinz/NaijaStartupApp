@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animated Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="lgPage">
+        <div class="form">
+                
+                 
+                <form class="register-form">
+                        <div class="panel-heading">
+                                <b class="secure"> <a>Amazing App</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span> 
+                        </div>
+                    <input type="text" placeholder="Full name" value="" autocomplete="off">
+                    <input type="text" placeholder="Email" value="" autocomplete="off">
+                    <input type="text" placeholder="Confirm Email" value="" autocomplete="off">
+                    <input type="text" placeholder="User name" value="" autocomplete="off">
+                    <input type="password" placeholder="Password" value="" autocomplete="off">
+                    <input type="password" placeholder="Confirm Password" value="" autocomplete="off">
+                    <button type="submit" class="btn btn-danger btn-lg">Sign Up</button>
+                    <p class="message">Already Registered?  <a href="#">Login</a></p>
+                </form>
+                <form class="login-form">
+                        <div class="panel-heading">
+                                <b class="secure"> <a>Amazing App</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span> 
+                        </div>
+                        <input type="text" name="user" value="" autocomplete="off" placeholder="User name" required>
+                        <input type="password" name="pass" value="" autocomplete="off" placeholder="Password" required>
+                        <button type="submit" class="btn btn-success btn-lg">Login</button>
+                        <div>
+                                <div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"  name="remember"  /> Remember me  </label>
+                                    </div>
+                                </div>
+                            </div>
+                        <p class="message">Not Registered?  <a href="#">Register here</a></p>
+                    </form>
+            </div>
+        </div>
+
+            <script src="js/jquery.min.js"></script>
+            <script>
+                    $('.message a').click(()=>
+                     $('form').animate({height: "toggle", opacity: "toggle"}, "fast")
+                 )
+             </script>
+                 
+</body>
+</html>
