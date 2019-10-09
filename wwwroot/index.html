@@ -606,13 +606,21 @@
                 <div class="modal-body">
                     <form method="post" action="https://www.yourwebsite.com/client/dologin.php">
                         <div class="form-group">
-                            <input class="form-control input-lg" type="text" name="username" size="50" placeholder="Email ID" />
+                            <input class="form-control input-lg" type="text" name="username" size="50" placeholder="Email ID or Username" />
                         </div>
                         <div class="form-group">
                             <input class="form-control input-lg" type="password" name="password" size="20" placeholder="Password" />
                         </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="remember"> Remember me
+                            </label>
+                        </div>
                         <div class="form-group">
                             <input type="submit" value="Login to my Account" class="btn btn-success btn-lg" />
+                        </div>
+                        <div class="panel-footer">
+                            Not Registered? <a href="signup">Register here</a>
                         </div>
                     </form>
                 </div>
@@ -667,4 +675,4 @@
     </script>
 
 </body>
-</html> 
+</html>

@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Hospital</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Doctors</a></li>
+                            <li class="breadcrumb-item active">Edit Doctor</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Edit Doctor</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <form method="post" class="card-box">
+                            <div class="form-group row">
+                                <span>Profile Picture</span>
+                                <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="../assets/images/users/user-4.jpg">
+                            </div>
+                        </form>
+                        <div class="">
+                            <form class="form-horizontal form-material mb-0">
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="First Name" class="form-control" value="Rosa" name="First_Name" id="First_Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Last Name" class="form-control" value="Dodson" name="Last_Name" id="Last_Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <input type="email" placeholder="Email" value="dr.example@example.com" class="form-control" name="Email" id="Email">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="State" value="Lagos" class="form-control" name="State" id="State">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Phone No" value="+1 234 567 890" class="form-control" name="Phone_No" id="Phone_No">
+                                    </div>
+                                </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <select class="form-control">
+                                                <option>Nigeria</option>
+                                                <option>Ghana</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="Current Password" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="New Password" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea rows="5" placeholder="Address" class="form-control">There are many variations of passages of Lorem Ipsum available,but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look.
+
+                                            </textarea>
+                                        <button class="btn btn-danger btn-sm text-light px-4 mt-3 float-right mb-0 ml-2">Cancel</button>
+                                        <button class="btn btn-primary btn-sm text-light px-4 mt-3 float-right mb-0">Save Change</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
