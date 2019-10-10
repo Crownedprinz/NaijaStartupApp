@@ -59,6 +59,10 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
+        public ActionResult new_company()
+        {
+            return View();
+        }
         public ActionResult attendance()
         {
             return View();

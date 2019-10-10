@@ -33,6 +33,7 @@
     <Content Remove="Views\Dashboard\leaves.cshtml" />
     <Content Remove="Views\Dashboard\member_profile.cshtml" />
     <Content Remove="Views\Dashboard\my_orders.cshtml" />
+    <Content Remove="Views\Dashboard\new_company.cshtml" />
     <Content Remove="Views\Dashboard\patient_edit.cshtml" />
     <Content Remove="Views\Dashboard\patient_profile.cshtml" />
     <Content Remove="Views\Dashboard\payment_invoice.cshtml" />
@@ -59,6 +60,7 @@
     <None Include="Views\Dashboard\add_doctor.cshtml" />
     <None Include="Views\Dashboard\add_member.cshtml" />
     <None Include="Views\Dashboard\add_patient.cshtml" />
+    <None Include="Views\Dashboard\new_company.cshtml" />
     <None Include="Views\Dashboard\all_companies.cshtml" />
     <None Include="Views\Dashboard\all_doctors.cshtml" />
     <None Include="Views\Dashboard\all_patients.cshtml" />
