@@ -110,7 +110,7 @@
         <div class="left-sidenav">
             <div class="main-icon-menu">
                 <nav class="nav">
-                    <a href="#MetricaHospital" class="nav-link" data-toggle="tooltip-custom" data-placement="top" title="" data-original-title="Hospital">
+                    <a href="#MetricaHospital" class="nav-link" data-toggle="tooltip-custom" data-placement="top" title="" data-original-title="Company">
                         <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                         <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
                             <path class="svg-primary" id="XMLID_1197_" d="M90.8,22.9C90.1,22.2,89.1,22,88,22H67V10c0-2.2-2-4-4.2-4H29.2C27,6,25,7.8,25,10v12H4
@@ -174,42 +174,15 @@
                 <div class="menu-body slimscroll">
                     <div id="MetricaHospital" class="main-icon-menu-pane">
                         <div class="title-box">
-                            <h6 class="menu-title">Hospital</h6>
+                            <h6 class="menu-title">Company</h6>
                         </div>
                         <ul class="nav metismenu">
-                            <li class="nav-item"><a class="nav-link" asp-action="hospital_index" asp-controller="Dashboard"><i class="dripicons-meter"></i>Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Dashboard"><i class="dripicons-meter"></i>Dashboard</a></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Appointments</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="doctor_shedule" asp-controller="Dashboard" >Doctor Shedule</a></li>
-                                    <li><a asp-action="all_appointments" asp-controller="Dashboard">All Appointments</a></li>
-                                </ul>
-                            </li>
-                            <!--end nav-item-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-user-group"></i><span class="w-100">Doctors</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="all_doctors" asp-controller="Dashboard">All Doctors</a></li>
-                                    <li><a asp-action="add_doctor" asp-controller="Dashboard">Add Doctor</a></li>
-                                    <li><a asp-action="doctor_edit" asp-controller="Dashboard">Doctor Edit</a></li>
-                                    <li><a asp-action="doctor_profile" asp-controller="Dashboard">Doctor Profile</a></li>
-                                </ul>
-                            </li>
-                            <!--end nav-item-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-vibrate"></i><span class="w-100">Patients</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="all_patients" asp-controller="Dashboard">All Patients</a></li>
-                                    <li><a asp-action="add_patient" asp-controller="Dashboard">Add Patient</a></li>
-                                    <li><a asp-action="patient_edit" asp-controller="Dashboard">Patient Edit</a></li>
-                                    <li><a asp-action="patient_profile" asp-controller="Dashboard">Patient Profile</a></li>
-                                </ul>
-                            </li>
-                            <!--end nav-item-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-document"></i><span class="w-100">Room Allotments</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="all_rooms" asp-controller="Dashboard">All Rooms</a></li>
+                                    <li><a asp-action="my_orders" asp-controller="Dashboard" >My Orders</a></li>
+                                    <li><a asp-action="all_companies" asp-controller="Dashboard">Companies</a></li>
                                 </ul>
                             </li>
                             <!--end nav-item-->
@@ -221,17 +194,6 @@
                                     <li><a  asp-action="cashless_payments" asp-controller="Dashboard">Cashless Payments</a></li>
                                 </ul>
                             </li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="expenses" asp-controller="Dashboard"><i class="dripicons-document"></i>Expenses Report</a></li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="departments" asp-controller="Dashboard"><i class="dripicons-view-thumb"></i>Departments</a></li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="insurance_company" asp-controller="Dashboard"><i class="dripicons-rocket"></i>Insurance Company</a></li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="events" asp-controller="Dashboard"><i class="dripicons-calendar"></i>Events</a></li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Chat</a></li>
-                            <!--end nav-item-->
                         </ul>
                         <!--end nav-->
                     </div>

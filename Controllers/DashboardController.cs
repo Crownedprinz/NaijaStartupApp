@@ -31,7 +31,7 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
-        public ActionResult all_appointments()
+        public ActionResult all_companies()
         {
             return View();
         }
@@ -44,6 +44,10 @@ namespace NaijaStartupApp.Controllers
             return View();
         }
         public ActionResult all_payments()
+        {
+            return View();
+        }
+        public ActionResult my_orders()
         {
             return View();
         }
