@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "all_appointments";
+﻿
+@{
+    ViewData["Title"] = "all_copmanies";
     Layout = "~/Views/Shared/_DbLayout.cshtml";
 }
+
 <!-- Page Content-->
 <div class="page-content">
     <div class="container-fluid">
@@ -20,7 +22,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a  class="btn btn-primary px-4 mt-0 mb-3"  asp-area="" asp-controller="Dashboard" asp-action="new_company" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg"><i class="mdi mdi-plus-circle-outline mr-2"></i>Incorporate New company</a>
+                        <a  class="btn btn-primary px-4 mt-0 mb-3"  asp-area="" asp-controller="Dashboard" asp-action="new_company" ><i class="mdi mdi-plus-circle-outline mr-2"></i>Incorporate New company</a>
                         <div class="table-responsive">
                             <table id="datatable" class="table">
                                 <thead class="thead-light">

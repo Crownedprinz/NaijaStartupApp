@@ -22,6 +22,7 @@
     <Content Remove="Views\Dashboard\attendance.cshtml" />
     <Content Remove="Views\Dashboard\cashless_payments.cshtml" />
     <Content Remove="Views\Dashboard\chat.cshtml" />
+    <Content Remove="Views\Dashboard\company_share.cshtml" />
     <Content Remove="Views\Dashboard\departments.cshtml" />
     <Content Remove="Views\Dashboard\doctor_edit.cshtml" />
     <Content Remove="Views\Dashboard\doctor_profile.cshtml" />
@@ -34,6 +35,11 @@
     <Content Remove="Views\Dashboard\member_profile.cshtml" />
     <Content Remove="Views\Dashboard\my_orders.cshtml" />
     <Content Remove="Views\Dashboard\new_company.cshtml" />
+    <Content Remove="Views\Dashboard\order_details.cshtml" />
+    <Content Remove="Views\Dashboard\order_review.cshtml" />
+    <Content Remove="Views\Dashboard\order_summary.cshtml" />
+    <Content Remove="Views\Dashboard\owner_details.cshtml" />
+    <Content Remove="Views\Dashboard\packages.cshtml" />
     <Content Remove="Views\Dashboard\patient_edit.cshtml" />
     <Content Remove="Views\Dashboard\patient_profile.cshtml" />
     <Content Remove="Views\Dashboard\payment_invoice.cshtml" />
@@ -61,6 +67,12 @@
     <None Include="Views\Dashboard\add_member.cshtml" />
     <None Include="Views\Dashboard\add_patient.cshtml" />
     <None Include="Views\Dashboard\new_company.cshtml" />
+    <None Include="Views\Dashboard\order_review.cshtml" />
+    <None Include="Views\Dashboard\company_share.cshtml" />
+    <None Include="Views\Dashboard\order_details.cshtml" />
+    <None Include="Views\Dashboard\order_summary.cshtml" />
+    <None Include="Views\Dashboard\packages.cshtml" />
+    <None Include="Views\Dashboard\owner_details.cshtml" />
     <None Include="Views\Dashboard\all_companies.cshtml" />
     <None Include="Views\Dashboard\all_doctors.cshtml" />
     <None Include="Views\Dashboard\all_patients.cshtml" />

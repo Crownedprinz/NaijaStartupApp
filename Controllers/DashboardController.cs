@@ -63,6 +63,30 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
+        public ActionResult packages()
+        {
+            return View();
+        }
+        public ActionResult order_summary()
+        {
+            return View();
+        }
+        public ActionResult order_details()
+        {
+            return View();
+        }
+        public ActionResult owner_details()
+        {
+            return View();
+        }
+        public ActionResult company_share()
+        {
+            return View();
+        }
+        public ActionResult order_review()
+        {
+            return View();
+        }
         public ActionResult attendance()
         {
             return View();
