@@ -48,11 +48,11 @@
                                                 </div>
 
                                             </div><div class="large-3 cell position-relative">
-                                                <div class="invisible">checkname button</div><input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Check Name">
+                                                <div class="invisible">checkname button</div><input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" onclick="showDiv()"  name="op" value="Check Name">
                                             </div><input class="sgf-incorporate-company-next hide button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-next" type="submit" id="edit-next" name="op" value="Next">
 
 
-                                            <div style="display:none;"id="devel-node-access-node-content-div">
+                                            <div style="display:none;" id="devel-node-access-node-content-div">
                                                 <div id="checkNameIn" class="text-center  margin-top-1">
                                                     <i class="fas fa-check result-icon-success"></i>
                                                     <h1 class="">DANGOTE PTE. LTD.</h1>
@@ -112,3 +112,9 @@
     <!--end footer-->
 </div>
 <!-- end page content -->
+
+<script>
+    function showDiv() {
+   document.getElementById('devel-node-access-node-content-div').style.display = "block";
+}
+</script>
