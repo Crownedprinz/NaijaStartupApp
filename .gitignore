@@ -340,7 +340,9 @@ ASALocalRun/
 healthchecksdb
 
 
-
-/bin/
-/obj/
-/.vs/
+/NaijaStartupApp/bin/
+/NaijaStartupApp/obj/
+/NaijaStartupApp/.vs/
+bin/
+obj/
+.vs/

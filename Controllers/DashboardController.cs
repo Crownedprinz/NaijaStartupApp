@@ -31,7 +31,7 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
-        public ActionResult all_appointments()
+        public ActionResult all_companies()
         {
             return View();
         }
@@ -47,11 +47,43 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
+        public ActionResult my_orders()
+        {
+            return View();
+        }
         public ActionResult all_rooms()
         {
             return View();
         }
         public ActionResult all_staff()
+        {
+            return View();
+        }
+        public ActionResult new_company()
+        {
+            return View();
+        }
+        public ActionResult packages()
+        {
+            return View();
+        }
+        public ActionResult order_summary()
+        {
+            return View();
+        }
+        public ActionResult order_details()
+        {
+            return View();
+        }
+        public ActionResult owner_details()
+        {
+            return View();
+        }
+        public ActionResult company_share()
+        {
+            return View();
+        }
+        public ActionResult order_review()
         {
             return View();
         }
