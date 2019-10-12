@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - NaijaStartupApp</title>
     <meta content="Mannatthemes" name="author">
 
-    <environment include="Development">
+    <environment include="Development,Staging,Production">
         <!-- App favicon -->
         <link rel="shortcut icon" href="~/assets/images/favicon.ico">
         <link href="~/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" type="text/css">
@@ -21,7 +21,8 @@
         <link href="~/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
         <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
     </environment>
-    <environment exclude="Development">
+
+    <environment exclude="Development,Staging,Production">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               asp-fallback-href="~/assets/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
@@ -176,7 +177,7 @@
         @RenderBody()
     </div>
 
-        <environment include="Development">
+        <environment include="Development,Staging,Production">
             <!-- jQuery  -->
             <script src="~/assets/js/jquery.min.js"></script>
             <script src="~/assets/js/bootstrap.bundle.min.js"></script>
@@ -191,7 +192,7 @@
             <!-- App js -->
             <script src="~/assets/js/app.js"></script>
         </environment>
-        <environment exclude="Development">
+        <environment exclude="Development,Staging,Production">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
                     asp-fallback-src="~/assets/js/jquery.min.js"
                     asp-fallback-test="window.jQuery"

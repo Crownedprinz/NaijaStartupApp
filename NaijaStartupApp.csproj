@@ -60,6 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="NaijaStartupApp.sln" />
     <None Include="Views\Authentication\auth_login.cshtml" />
     <None Include="Views\Authentication\auth_recover_pw.cshtml" />
     <None Include="Views\Authentication\auth_register.cshtml" />
