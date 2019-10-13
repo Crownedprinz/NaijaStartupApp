@@ -471,10 +471,10 @@ Nigeria<br>
 <div class="modal-body">
     <form method="post" action="#">
         <div class="form-group">
-            <input class="form-control input-lg" type="text" name="username" size="50" placeholder="Email ID" />
+            <input class="form-control input-lg" id="id_username" type="text" name="username" size="50" placeholder="Email ID" />
         </div>
         <div class="form-group">
-            <input class="form-control input-lg" type="password" name="password" size="20" placeholder="Password" />
+            <input class="form-control input-lg" id="id_password" type="password" name="password" size="20" placeholder="Password" />
         </div>
         <div class="checkbox">
             <label>
@@ -482,8 +482,8 @@ Nigeria<br>
             </label>
         </div>
         <div class="form-group">
-            <!--<input type="submit" value="Login to my Account" class="btn btn-success btn-lg" />-->
-            <a class="btn btn-success btn-lg" href="../Dashboard/new_company">Login to my Account</a>
+            <input type="button" onclick="loginPost()"  value="Login to my Account" class="btn btn-success btn-lg" />
+            <!--<a class="btn btn-success btn-lg" href="../Dashboard/new_company">Login to my Account</a>-->
         </div>
     </form>
 </div>
@@ -534,6 +534,33 @@ Nigeria<br>
         });
 
     });
+
+    function loginPost() {
+        var val1 = $('#id_username').val();
+        var val2 = $('#id_password').val();
+        if (val1 === null || val1 === "")
+            return alert("Please Input your username or email");
+
+          if (val2 === null || val2 === "")
+            return alert("Please Input your password");
+
+        $.ajax({
+            type: "post",
+            url: "/Account/Index",
+            data:{ "username": val1, "password": val2 },
+            success: function (data) {
+                if (data)
+                    window.location.href = "/Dashboard/Index";
+                else {
+                    alert("Invalid username or password")
+                    document.location.reload();
+
+                }
+
+
+            }
+        })
+    }
 </script>
 
 </body>

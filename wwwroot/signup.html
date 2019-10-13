@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,47 +12,131 @@
 <body>
     <div class="lgPage">
         <div class="form">
-                
-                 
-                <form class="register-form">
-                        <div class="panel-heading">
-                                <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span> 
+            <form class="register-form">
+                <div class="panel-heading">
+                    <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
+                </div>
+                <input type="text" placeholder="First Name" id="id_firstName" value="" autocomplete="off">
+                <input type="text" placeholder="Last Name" id="id_lastName" value="" autocomplete="off">
+                <input type="text" placeholder="Email" value="" id="id_Email" autocomplete="off">
+                <input type="text" placeholder="Confirm Email" id="id_confirm_email" value="" autocomplete="off">
+                <input type="text" placeholder="User name" value="" id="id_userName" autocomplete="off">
+                <input type="password" placeholder="Password" id="id_password" value="" autocomplete="off">
+                <div>
+                    <span id='message'></span>
+                    <input type="password" placeholder="Confirm Password" id="id_confirm_password" value="" autocomplete="off">
+                </div>
+                <button type="submit" id="id_signup" onclick="signUpPost()" class="btn btn-danger btn-lg">Sign Up</button>
+                <p class="message">Already Registered?  <a href="#">Login</a></p>
+            </form>
+            <form class="login-form">
+                <div class="panel-heading">
+                    <b class="secure"> <a>Naija-Startup</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
+                </div>
+                <input type="text" name="user" value="" autocomplete="off" placeholder="User name" required>
+                <input type="password" name="pass" value="" autocomplete="off" placeholder="Password" required>
+                <button type="submit" class="btn btn-success btn-lg" onclick="loginPost()">Login</button>
+                <div>
+                    <div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="remember" /> Remember me
+                            </label>
                         </div>
-                    <input type="text" placeholder="Full name" value="" autocomplete="off">
-                    <input type="text" placeholder="Email" value="" autocomplete="off">
-                    <input type="text" placeholder="Confirm Email" value="" autocomplete="off">
-                    <input type="text" placeholder="User name" value="" autocomplete="off">
-                    <input type="password" placeholder="Password" value="" autocomplete="off">
-                    <input type="password" placeholder="Confirm Password" value="" autocomplete="off">
-                    <button type="submit" class="btn btn-danger btn-lg">Sign Up</button>
-                    <p class="message">Already Registered?  <a href="#">Login</a></p>
-                </form>
-                <form class="login-form">
-                        <div class="panel-heading">
-                                <b class="secure"> <a>Naija-Startup</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span> 
-                        </div>
-                        <input type="text" name="user" value="" autocomplete="off" placeholder="User name" required>
-                        <input type="password" name="pass" value="" autocomplete="off" placeholder="Password" required>
-                        <button type="submit" class="btn btn-success btn-lg">Login</button>
-                        <div>
-                                <div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"  name="remember"  /> Remember me  </label>
-                                    </div>
-                                </div>
-                            </div>
-                        <p class="message">Not Registered?  <a href="#">Register here</a></p>
-                    </form>
-            </div>
+                    </div>
+                </div>
+                <p class="message">Not Registered?  <a href="#">Register here</a></p>
+            </form>
         </div>
+    </div>
 
-            <script src="js/jquery.min.js"></script>
-            <script>
-                    $('.message a').click(()=>
-                     $('form').animate({height: "toggle", opacity: "toggle"}, "fast")
-                 )
-             </script>
-                 
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $('.message a').click(() =>
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "fast")
+        )
+
+
+
+    function loginPost() {
+        var val1 = $('#id_userName').val();
+        var val2 = $('#id_password').val();
+        if (val1 === null || val1 === "")
+            return alert("Please Input your username or email");
+
+          if (val2 === null || val2 === "")
+            return alert("Please Input your password");
+
+        $.ajax({
+            type: "post",
+            url: "/Account/Index",
+            data:{ "username": val1, "password": val2 },
+            success: function (data) {
+                if (data)
+                    window.location.href = "/Dashboard/Index";
+                else {
+                    alert("Invalid username or password")
+                    document.location.reload();
+
+                }
+
+
+            }
+        })
+    }
+    </script>
+
+    <script>
+        $('#id_password, #id_confirm_password').on('keyup', function () {
+            if ($('#id_password').val() == $('#id_confirm_password').val()) {
+                $('#message').html('Matching').css('color', 'green');
+            } else
+                $('#message').html('Not Matching').css('color', 'red');
+        });
+        function signUpPost() {
+            var firstName = $('#id_firstName').val();
+            var lastName = $('#id_lastName').val();
+            var Email = $('#id_Email').val();
+            var userName = $('#id_userName').val();
+            var password = $('#id_password').val();
+            var confirmpassword = $('#id_confirm_password').val();
+            var confirmEmail = $('#id_confirm_email').val();
+            if (firstName === null || firstName === "")
+                return alert("Please Input your First Name");
+            if (lastName === null || lastName === "")
+                return alert("Please Input your Last Name");
+            if (Email === null || Email === "")
+                return alert("Please Input your Email");
+            if (userName === null || userName === "")
+                return alert("Please Input your userName");
+            if (password === null || password === "")
+                return alert("Please Input your password");
+            if (confirmpassword === null || confirmpassword === "")
+                return alert("Please Confrim your password");
+            if (confirmEmail === null || confirmEmail === "")
+                return alert("Please Confrim your Email");
+
+
+            alert("me");
+            $.ajax({
+                type: "post",
+                url: "/Account/SignUp",
+                data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
+                success: function (data) {
+                    if (data)
+                        window.location.href = "/Dashboard/Index";
+                    else {
+                        alert("There seems to be an issue while registering your profile, try again");
+                        document.location.reload();
+
+                    }
+                },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+            })
+        }
+    </script>
 </body>
 </html>
