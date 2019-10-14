@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "all_copmanies";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                   <h4 class="page-title">All Companies</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <a  class="btn btn-primary px-4 mt-0 mb-3"  asp-area="" asp-controller="Dashboard" asp-action="new_company" ><i class="mdi mdi-plus-circle-outline mr-2"></i>Incorporate New company</a>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Company Name</th>
+                                        <th>Date of Appication</th>
+                                        <th>Financial Year End</th>
+                                        <th>Address</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                    <!--end tr-->
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>Bloyd Intelligi</td>
+                                        <td>12 Sep 2029</td>
+                                        <td>12 Sep 2029</td>
+                                        <td>Lagos</td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                    </tr>
+                                    <!--end tr-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using static NaijaStartupApp.Models.NsuDtos;
 
 namespace NaijaStartupApp.Data
 {
@@ -12,5 +13,7 @@ namespace NaijaStartupApp.Data
             : base(options)
         {
         }
+
+        public virtual DbSet<User> User { get; set; }
     }
 }

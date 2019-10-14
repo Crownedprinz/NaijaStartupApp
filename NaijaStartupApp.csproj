@@ -13,7 +13,7 @@
     <Content Remove="Views\Dashboard\add_doctor.cshtml" />
     <Content Remove="Views\Dashboard\add_member.cshtml" />
     <Content Remove="Views\Dashboard\add_patient.cshtml" />
-    <Content Remove="Views\Dashboard\all_appointments.cshtml" />
+    <Content Remove="Views\Dashboard\all_companies.cshtml" />
     <Content Remove="Views\Dashboard\all_doctors.cshtml" />
     <Content Remove="Views\Dashboard\all_patients.cshtml" />
     <Content Remove="Views\Dashboard\all_payments.cshtml" />
@@ -22,10 +22,10 @@
     <Content Remove="Views\Dashboard\attendance.cshtml" />
     <Content Remove="Views\Dashboard\cashless_payments.cshtml" />
     <Content Remove="Views\Dashboard\chat.cshtml" />
+    <Content Remove="Views\Dashboard\company_share.cshtml" />
     <Content Remove="Views\Dashboard\departments.cshtml" />
     <Content Remove="Views\Dashboard\doctor_edit.cshtml" />
     <Content Remove="Views\Dashboard\doctor_profile.cshtml" />
-    <Content Remove="Views\Dashboard\doctor_shedule.cshtml" />
     <Content Remove="Views\Dashboard\edit_member.cshtml" />
     <Content Remove="Views\Dashboard\events.cshtml" />
     <Content Remove="Views\Dashboard\expenses.cshtml" />
@@ -33,6 +33,13 @@
     <Content Remove="Views\Dashboard\insurance_company.cshtml" />
     <Content Remove="Views\Dashboard\leaves.cshtml" />
     <Content Remove="Views\Dashboard\member_profile.cshtml" />
+    <Content Remove="Views\Dashboard\my_orders.cshtml" />
+    <Content Remove="Views\Dashboard\new_company.cshtml" />
+    <Content Remove="Views\Dashboard\order_details.cshtml" />
+    <Content Remove="Views\Dashboard\order_review.cshtml" />
+    <Content Remove="Views\Dashboard\order_summary.cshtml" />
+    <Content Remove="Views\Dashboard\owner_details.cshtml" />
+    <Content Remove="Views\Dashboard\packages.cshtml" />
     <Content Remove="Views\Dashboard\patient_edit.cshtml" />
     <Content Remove="Views\Dashboard\patient_profile.cshtml" />
     <Content Remove="Views\Dashboard\payment_invoice.cshtml" />
@@ -53,13 +60,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="NaijaStartupApp.sln" />
     <None Include="Views\Authentication\auth_login.cshtml" />
     <None Include="Views\Authentication\auth_recover_pw.cshtml" />
     <None Include="Views\Authentication\auth_register.cshtml" />
     <None Include="Views\Dashboard\add_doctor.cshtml" />
     <None Include="Views\Dashboard\add_member.cshtml" />
     <None Include="Views\Dashboard\add_patient.cshtml" />
-    <None Include="Views\Dashboard\all_appointments.cshtml" />
+    <None Include="Views\Dashboard\new_company.cshtml" />
+    <None Include="Views\Dashboard\order_review.cshtml" />
+    <None Include="Views\Dashboard\company_share.cshtml" />
+    <None Include="Views\Dashboard\order_details.cshtml" />
+    <None Include="Views\Dashboard\order_summary.cshtml" />
+    <None Include="Views\Dashboard\packages.cshtml" />
+    <None Include="Views\Dashboard\owner_details.cshtml" />
+    <None Include="Views\Dashboard\all_companies.cshtml" />
     <None Include="Views\Dashboard\all_doctors.cshtml" />
     <None Include="Views\Dashboard\all_patients.cshtml" />
     <None Include="Views\Dashboard\all_payments.cshtml" />
@@ -71,7 +86,7 @@
     <None Include="Views\Dashboard\departments.cshtml" />
     <None Include="Views\Dashboard\doctor_edit.cshtml" />
     <None Include="Views\Dashboard\doctor_profile.cshtml" />
-    <None Include="Views\Dashboard\doctor_shedule.cshtml" />
+    <None Include="Views\Dashboard\my_orders.cshtml" />
     <None Include="Views\Dashboard\edit_member.cshtml" />
     <None Include="Views\Dashboard\events.cshtml" />
     <None Include="Views\Dashboard\expenses.cshtml" />
