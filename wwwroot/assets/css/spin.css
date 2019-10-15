@@ -1,0 +1,34 @@
+﻿
+/*spin css*/
+
+#spinner {
+    display: none;
+    margin: 0;
+    position: fixed;
+    vertical-align: middle;
+    background: rgba(0,0,0,0.9);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+/*spin js*/
+#loadingcontent {
+    display: table;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#loadingspinner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    padding-top: 80px;
+    color: rgba(255,255,255,0.8);
+}

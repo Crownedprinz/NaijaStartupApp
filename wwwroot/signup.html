@@ -16,15 +16,15 @@
                 <div class="panel-heading">
                     <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
-                <input type="text" placeholder="First Name" id="id_firstName" value="" autocomplete="off">
-                <input type="text" placeholder="Last Name" id="id_lastName" value="" autocomplete="off">
-                <input type="text" placeholder="Email" value="" id="id_Email" autocomplete="off">
-                <input type="text" placeholder="Confirm Email" id="id_confirm_email" value="" autocomplete="off">
-                <input type="text" placeholder="User name" value="" id="id_userName" autocomplete="off">
-                <input type="password" placeholder="Password" id="id_password" value="" autocomplete="off">
+                <input type="text" placeholder="First Name" id="id_firstName" value="" autocomplete="off" required>
+                <input type="text" placeholder="Last Name" id="id_lastName" value="" autocomplete="off" required>
+                <input type="text" placeholder="Email" value="" id="id_Email" autocomplete="off" required>
+                <input type="text" placeholder="Confirm Email" id="id_confirm_email" value="" autocomplete="off" required>
+                <input type="text" placeholder="Username" value="" id="id_userName" autocomplete="off" required>
+                <input type="password" placeholder="Password" id="id_password" value="" autocomplete="off" required>
                 <div>
                     <span id='message'></span>
-                    <input type="password" placeholder="Confirm Password" id="id_confirm_password" value="" autocomplete="off">
+                    <input type="password" placeholder="Confirm Password" id="id_confirm_password" value="" autocomplete="off" required>
                 </div>
                 <button type="submit" id="id_signup" onclick="signUpPost()" class="btn btn-danger btn-lg">Sign Up</button>
                 <p class="message">Already Registered?  <a href="#">Login</a></p>
@@ -93,7 +93,7 @@
             } else
                 $('#message').html('Not Matching').css('color', 'red');
         });
-        function signUpPost() {
+        function signUpPost(e) {
             var firstName = $('#id_firstName').val();
             var lastName = $('#id_lastName').val();
             var Email = $('#id_Email').val();
@@ -102,22 +102,19 @@
             var confirmpassword = $('#id_confirm_password').val();
             var confirmEmail = $('#id_confirm_email').val();
             if (firstName === null || firstName === "")
-                return alert("Please Input your First Name");
+                 return alert("Please Input your First Name");
             if (lastName === null || lastName === "")
                 return alert("Please Input your Last Name");
             if (Email === null || Email === "")
-                return alert("Please Input your Email");
+               return  alert("Please Input your Email");
             if (userName === null || userName === "")
-                return alert("Please Input your userName");
+               return  alert("Please Input your userName");
             if (password === null || password === "")
                 return alert("Please Input your password");
             if (confirmpassword === null || confirmpassword === "")
-                return alert("Please Confrim your password");
+               return  alert("Please Confrim your password");
             if (confirmEmail === null || confirmEmail === "")
-                return alert("Please Confrim your Email");
-
-
-            alert("me");
+              return alert("Please Confrim your Email");
             $.ajax({
                 type: "post",
                 url: "/Account/SignUp",
@@ -136,6 +133,7 @@
                         alert(thrownError);
                     }
             })
+            e.preventDefault();
         }
     </script>
 </body>
