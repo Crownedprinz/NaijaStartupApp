@@ -177,6 +177,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Data\Migrations\" />
     <Folder Include="Html\" />
   </ItemGroup>
 

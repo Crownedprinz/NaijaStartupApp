@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NaijaStartupApp.Data;
 
-namespace NaijaStartupApp.Data.Migrations
+namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191015092920_add packages table")]
+    partial class addpackagestable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,6 +189,59 @@ namespace NaijaStartupApp.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Package", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("CreatorUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<DateTime>("DeletionTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(20)
+                        .IsUnicode(false);
+
+                    b.Property<string>("DeletionUserId");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<DateTime>("ModificationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("ModificationUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("PackageName");
+
+                    b.Property<decimal>("Price");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Package");
                 });
 
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+User", b =>

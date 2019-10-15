@@ -102,23 +102,19 @@
             var confirmpassword = $('#id_confirm_password').val();
             var confirmEmail = $('#id_confirm_email').val();
             if (firstName === null || firstName === "")
-                 alert("Please Input your First Name");
+                 return alert("Please Input your First Name");
             if (lastName === null || lastName === "")
-                 alert("Please Input your Last Name");
+                return alert("Please Input your Last Name");
             if (Email === null || Email === "")
-                 alert("Please Input your Email");
+               return  alert("Please Input your Email");
             if (userName === null || userName === "")
-                 alert("Please Input your userName");
+               return  alert("Please Input your userName");
             if (password === null || password === "")
-                 alert("Please Input your password");
+                return alert("Please Input your password");
             if (confirmpassword === null || confirmpassword === "")
-                 alert("Please Confrim your password");
+               return  alert("Please Confrim your password");
             if (confirmEmail === null || confirmEmail === "")
-                 alert("Please Confrim your Email");
-                
-
-
-            alert("me");
+              return alert("Please Confrim your Email");
             $.ajax({
                 type: "post",
                 url: "/Account/SignUp",

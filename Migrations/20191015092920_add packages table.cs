@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace NaijaStartupApp.Data.Migrations
+namespace NaijaStartupApp.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class addpackagestable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,11 +40,33 @@ namespace NaijaStartupApp.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Package",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    PackageName = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getutcdate())"),
+                    CreatorUserId = table.Column<string>(unicode: false, maxLength: 50, nullable: false, defaultValueSql: "('')"),
+                    ModificationTime = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getutcdate())"),
+                    ModificationUserId = table.Column<string>(unicode: false, maxLength: 50, nullable: false, defaultValueSql: "('')"),
+                    DeletionTime = table.Column<DateTime>(unicode: false, maxLength: 20, nullable: false, defaultValueSql: "('')"),
+                    DeletionUserId = table.Column<string>(nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", unicode: false, maxLength: 50, nullable: false, defaultValueSql: "('')")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Package", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -209,6 +231,9 @@ namespace NaijaStartupApp.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Package");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
