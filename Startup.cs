@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DangoteCustomerPortal.Services;
 using static NaijaStartupApp.Models.NsuDtos;
+using NaijaStartupApp.Helpers;
 
 namespace NaijaStartupApp
 {
@@ -76,6 +77,9 @@ namespace NaijaStartupApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<IUserService, UserService>();
+            // Add our Config object so it can be injected
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

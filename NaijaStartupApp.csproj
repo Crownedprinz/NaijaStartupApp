@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.cs" />
+    <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Authentication\auth_login.cshtml" />
     <Content Remove="Views\Authentication\auth_recover_pw.cshtml" />
     <Content Remove="Views\Authentication\auth_register.cshtml" />
@@ -173,6 +178,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="PayStack.Net" Version="0.7.7" />
   </ItemGroup>
 
 

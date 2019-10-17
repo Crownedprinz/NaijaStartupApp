@@ -22,7 +22,6 @@
                     <div class="grid-container full white-bg block-content-p">
                         <div class="grid-container">
                             <section id="block-zurblk-content" class="block-zurblk-content block block-system block-system-main-block">
-                                <form class="sgf-incorporate-form" data-drupal-selector="sgf-incorporate-form" enctype="multipart/form-data" action="/incorporate" method="post" id="sgf-incorporate-form" accept-charset="UTF-8" novalidate="novalidate">
                                     <input autocomplete="off" data-drupal-selector="form-endohvkei8uvnrpcurqt6mjlpdylsmrdnu6ui55lgze" type="hidden" name="form_build_id" value="form-eNdOhVkEi8uvnRPCUrqt6MjlPdYlsmrDNu6UI55LGZE" class="form-endohvkei8uvnrpcurqt6mjlpdylsmrdnu6ui55lgze">
 
                                     <input data-drupal-selector="edit-sgf-incorporate-form-form-token" type="hidden" name="form_token" value="_Z2TdPJeR6m3AYkf8BUm6mhVATM8kueysyQxYbZPg0Q" class="edit-sgf-incorporate-form-form-token">
@@ -33,7 +32,24 @@
                                             <div class="grid-container full white-bg margin-bottom-3">
                                                 <div class="grid-container">
                                                     <div class="grid-x text-center incorporate-process">
-                                                        <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="step-active">3. Additional</p></div><div class="medium-1 cell"><p class="step-active">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">5. Officers</p></div><div class="medium-1 cell "><p class="step-active">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="step-active">7. Review / Payment</p></div>
+                                                        <div class="medium-2 cell">
+                                                            <p class="step-active">1. Company Name</p>
+                                                        </div>
+                                                        <div class="medium-2 cell padding-horizontal-1">
+                                                            <p class="step-active">2. Packages</p>
+                                                        </div>
+                                                        <div class="medium-3 cell padding-right-1">
+                                                            <p class="step-active">3. Details</p>
+                                                        </div>
+                                                        <div class="medium-2 cell padding-horizontal-1">
+                                                            <p class="step-active">4. Officers</p>
+                                                        </div>
+                                                        <div class="medium-1 cell ">
+                                                            <p class="step-active">5. Capital</p>
+                                                        </div>
+                                                        <div class="medium-2 cell padding-left-1">
+                                                            <p class="step-active">6. Review / Payment</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,13 +292,13 @@
                                                     <div class="cell text-center margin-vertical-2">
                                                         <input class="secondary button js-form-submit form-submit edit-back" data-drupal-selector="edit-back" type="submit" id="edit-back" name="op" value="Back">
                                                         <input class="warning button js-form-submit form-submit edit-save-draft" data-drupal-selector="edit-save-draft" type="submit" id="edit-save-draft" name="op" value="SAVE AS DRAFT">
-                                                        <input class="button button--primary js-form-submit form-submit edit-pay" data-drupal-selector="edit-pay" type="submit" id="edit-pay" name="op" value="DONE AND PAY">
+                                                        <input class="button button--primary js-form-submit form-submit edit-pay" onclick="payWithPaystack()" type="submit" id="edit-pay" name="op" value="DONE AND PAY">
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
 
 
 
@@ -303,3 +319,9 @@
     <!--end footer-->
 </div>
 <!-- end page content -->
+
+@section  Scripts{
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="~/assets/js/payStack.js"></script>">
+
+}

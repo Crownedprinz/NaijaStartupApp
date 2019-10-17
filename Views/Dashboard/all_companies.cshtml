@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<NaijaStartupApp.Models.NsuVariables.TemporaryVariables>
 @{
     ViewData["Title"] = "all_copmanies";
     Layout = "~/Views/Shared/_DbLayout.cshtml";
@@ -38,12 +38,15 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>001</td>
-                                        <td>Bloyd Intelligi</td>
-                                        <td>12 Sep 2029</td>
-                                        <td>12 Sep 2029</td>
-                                        <td>Lagos</td>
-                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                        @foreach (var item in Model)
+                                        {
+                                        <td>@item.int_var0</td>
+                                        <td>@item.string_var0</td>
+                                        <td>@item.date_var0.ToString("dd MMM yyyy")</td>
+                                        <td>@item.string_var1</td>
+                                        <td>@item.string_var2</td>
+                                            <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a> <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a></td>
+                                        }
                                     </tr>
                                     <!--end tr-->
                                 </tbody>

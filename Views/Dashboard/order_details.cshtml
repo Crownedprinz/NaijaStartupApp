@@ -1,230 +1,226 @@
-﻿@{
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
     ViewData["Title"] = "order_summary";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
-<!-- Page Content-->
-<div class="page-content">
-    <div class="container-fluid">
-        <!-- Page-Title -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="page-title-box">
-                    <h4 class="page-title">Packages</h4>
+    <form role="form" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <!-- Page Content-->
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Packages</h4>
+                        </div>
+                        <!--end page-title-box-->
+                    </div>
+                    <!--end col-->
                 </div>
-                <!--end page-title-box-->
-            </div>
-            <!--end col-->
-        </div>
-        <!-- end page title end breadcrumb -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row sgf-incorporate-page-step-4">
-                            <div class="align-center" id="incorporateContent">
-                                <div class="grid-container full white-bg margin-bottom-3">
-                                    <div class="grid-container">
-                                        <div class="grid-x text-center incorporate-process">
-                                            <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="step-active">3. Additional</p></div><div class="medium-1 cell"><p class="step-active">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row sgf-incorporate-page-step-4">
+                                    <div class="align-center" id="incorporateContent">
+                                        <div class="grid-container full white-bg margin-bottom-3">
+                                            <div class="grid-container">
+                                                <div class="grid-x text-center incorporate-process">
+                                                    <div class="medium-2 cell">
+                                                        <p class="step-active">1. Company Name</p>
+                                                    </div>
+                                                    <div class="medium-2 cell padding-horizontal-1">
+                                                        <p class="step-active">2. Packages</p>
+                                                    </div>
+                                                    <div class="medium-3 cell padding-right-1">
+                                                        <p class="step-active">3. Details</p>
+                                                    </div>
+                                                    <div class="medium-2 cell padding-horizontal-1">
+                                                        <p class="">4. Officers</p>
+                                                    </div>
+                                                    <div class="medium-1 cell ">
+                                                        <p class="">5. Capital</p>
+                                                    </div>
+                                                    <div class="medium-2 cell padding-left-1">
+                                                        <p class="">6. Review / Payment</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="tabs-panel is-active" id="details-tab">
-                                    <div class="grid-x grid-padding-x">
-                                        <div id="detailsForm" class="large-8 medium-12 cell light-bg padding-top-1">
-                                            <h3 class="thin-text text-center">
-                                                <span class="incorporate-company-name">DANGOTE</span>
-                                                <span class="company-type-tail"> PTE. LTD.</span>
-                                                <a href="#" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-change-company-name-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
-                                            </h3>
+                                        <div class="tabs-panel is-active" id="details-tab">
                                             <div class="grid-x grid-padding-x">
+                                                <div id="detailsForm" class="large-8 medium-12 cell light-bg padding-top-1">
+                                                    <h3 class="thin-text text-center">
+                                                        <span class="incorporate-company-name">DANGOTE</span>
+                                                        <span class="company-type-tail"> PTE. LTD.</span>
+                                                        <a href="#" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-change-company-name-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
+                                                    </h3>
+                                                    <div class="grid-x grid-padding-x">
 
-                                                <div class="hide">
+                                                        <div class="hide">
 
-                                                    <div class="js-form-item form-item js-form-type-textfield form-item-company-alternative-name js-form-item-company-alternative-name">
-                                                        <label for="edit-company-alternative-name">Alternative Company Name</label>
-                                                        <input data-drupal-selector="edit-company-alternative-name" type="text" id="edit-company-alternative-name" name="company[alternative_name]" value="" size="60" maxlength="128" class="form-text edit-company-alternative-name">
+                                                            <div class="js-form-item form-item js-form-type-textfield form-item-company-alternative-name js-form-item-company-alternative-name">
+                                                                <label for="edit-company-alternative-name">Alternative Company Name</label>
+                                                                @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text edit-company-alternative-name", maxlength = 128, id = "edit-company-alternative-name", name = "company[alternative_name]", size = "60" })
 
-                                                    </div>
+                                                            </div>
 
-                                                </div>
-                                                <div class="large-8 medium-8 cell position-relative custom-alternative-company-name">
+                                                        </div>
+                                                        <div class="large-8 medium-8 cell position-relative custom-alternative-company-name">
 
-                                                    <div class="js-form-item form-item js-form-type-textfield form-item-company-title js-form-item-company-title">
-                                                        <label for="edit-company-title">Alternative Company Name <i class="fas fa-info-circle position-relative"><span class="my-tip">Please enter alternative company names in these field if you have further suggestion.</span></i></label>
-                                                        <input data-drupal-selector="edit-company-title" type="text" id="edit-company-title" name="company[title]" value="" size="60" maxlength="255" placeholder="E.G ABCXYZ HOLDING" class="form-text edit-company-title">
+                                                            <div class="js-form-item form-item js-form-type-textfield form-item-company-title js-form-item-company-title">
+                                                                <label for="edit-company-title">Alternative Company Name <i class="fas fa-info-circle position-relative"><span class="my-tip">Please enter alternative company names in these field if you have further suggestion.</span></i></label>
+                                                                @Html.TextBoxFor(m => m.string_var1, new { @class = "form-text edit-company-title", maxlength = 255, id = "edit-company-alternative-name", @placeholder="E.G ABCXYZ HOLDING", name = "company[title]", size = "60" })
 
-                                                    </div>
+                                                            </div>
 
-                                                </div>
-                                                <div class="large-4 medium-4 cell">
+                                                        </div>
+                                                        <div class="large-4 medium-4 cell">
 
-                                                    <div class="js-form-item form-item js-form-type-select form-item-company-field-company-type js-form-item-company-field-company-type form-disabled">
-                                                        <label for="edit-company-field-company-type">Alternative Company Type</label>
-                                                        <select disabled="disabled" data-drupal-selector="edit-company-field-company-type" id="edit-company-field-company-type" name="company[field_company_type]" class="form-select"><option value="6" selected="selected" data-label="PTE. LTD.">PTE. LTD.</option><option value="2519" data-label="LTD.">LTD.</option></select>
-                                                    </div>
+                                                            <div class="js-form-item form-item js-form-type-select form-item-company-field-company-type js-form-item-company-field-company-type form-disabled">
+                                                                <label for="edit-company-field-company-type">Alternative Company Type</label>
+                                                             @Html.TextBoxFor(m => m.string_var2, new { @class = "form-text edit-company-title", maxlength = 255, id = "edit-company-field-company-type", @placeholder="E.G ABCXYZ HOLDING", name = "company[title]", size = "60" })
 
-                                                </div>
-                                                <div class="large-8 medium-8 cell">
+                                                            </div>
 
-                                                    <div class="js-form-item form-item js-form-type-select form-item-financial-year-end js-form-item-financial-year-end">
-                                                        <label for="edit-financial-year-end">Financial Year End * <i class="fas fa-info-circle position-relative"><span class="my-tip">Accounting period that can start on any day of a calendar year but has twelve consecutive months (52 consecutive weeks) at the end of which account books are closed, profit or loss is computed, and financial reports are prepared for filing.</span></i></label>
-                                                        <select data-drupal-selector="edit-financial-year-end" id="edit-financial-year-end" name="financial_year_end" class="form-select"><option value="1571068800" data-label="October-2019">October-2019</option><option value="1573747200" data-label="November-2019">November-2019</option><option value="1576339200" data-label="December-2019">December-2019</option><option value="1579017600" data-label="January-2020">January-2020</option><option value="1581696000" data-label="February-2020">February-2020</option><option value="1584201600" data-label="March-2020">March-2020</option><option value="1586880000" data-label="April-2020">April-2020</option><option value="1589472000" data-label="May-2020">May-2020</option><option value="1592150400" data-label="June-2020">June-2020</option><option value="1594742400" data-label="July-2020">July-2020</option><option value="1597420800" data-label="August-2020">August-2020</option><option value="1600099200" selected="selected" data-label="September-2020">September-2020</option></select>
-                                                    </div>
+                                                        </div>
+                                                        <div class="large-8 medium-8 cell">
 
-                                                </div>
-                                                <div class="large-4 medium-4 cell">
-                                                    <div class="invisible">checkname button</div><input class="check-name-btn expanded button js-form-submit form-submit edit-company-button-alternative" data-drupal-selector="edit-company-button-alternative" type="submit" id="edit-company-button-alternative" name="op" value="CHECK ALTERNATIVE NAME">
-                                                </div>
-                                                <div class="cell">
-                                                    <label>
-                                                        Business Activity<i class="fas fa-info-circle position-relative">
-                                                            <span class="my-tip">The Singapore Standard Industrial Classification (SSIC)</span>
-                                                        </i>
-                                                    </label>
+                                                            <div class="js-form-item form-item js-form-type-select form-item-financial-year-end js-form-item-financial-year-end">
+                                                                <label for="edit-financial-year-end">Financial Year End * <i class="fas fa-info-circle position-relative"><span class="my-tip">Accounting period that can start on any day of a calendar year but has twelve consecutive months (52 consecutive weeks) at the end of which account books are closed, profit or loss is computed, and financial reports are prepared for filing.</span></i></label>
+                                                                @Html.DropDownListFor(m => m.string_var3,
+                                                                              new List<SelectListItem>
+                                                                               {
+                                                                                   new SelectListItem {Text = "October-2019", Value = "1571068800"},
+                                                                                   new SelectListItem {Text = "November-2019", Value = "1573747200"},
+                                                                                   new SelectListItem {Text = "December-2019", Value = "1576339200"},
+                                                                                   new SelectListItem {Text = "January-2020", Value = "1579017600"},
+                                                                                   new SelectListItem {Text = "February-2020", Value = "1581696000"},
+                                                                                   new SelectListItem {Text = "March-2020", Value = "1584201600"},
+                                                                                   new SelectListItem {Text = "April-2020", Value = "1586880000"},
+                                                                                   new SelectListItem {Text = "May-2020", Value = "1589472000"},
+                                                                                   new SelectListItem {Text = "June-2020", Value = "1592150400"},
 
+                                                                                   new SelectListItem {Text = "July-2020", Value = "1594742400"},
+                                                                                   new SelectListItem {Text = "August-202", Value = "1597420800"},
+                                                                                   new SelectListItem {Text = "September-2020", Value = "1600099200"},
+                                                                               }, new { @class = "form-select", @id = "edit-financial-year-end" })
+                                                            </div>
 
-                                                    <div class="js-form-item form-item js-form-type-entity-autocomplete form-item-activities-ssic-1 js-form-item-activities-ssic-1">
-                                                        <label for="edit-activities-ssic-1">First Business activity *<span class="small-text"> Please start typing to get the list of matching activities </span></label>
-                                                        <input data-drupal-selector="edit-activities-ssic-1" class="form-autocomplete form-text edit-activities-ssic-1 ui-autocomplete-input" data-autocomplete-path="/entity_reference_autocomplete/taxonomy_term/default/REZa6WHEopVZ-N4d5qMlJXAUO51Tf-DJRiSYJYrAr0A" type="text" id="edit-activities-ssic-1" name="activities[ssic_1]" value="" size="60" maxlength="255" placeholder="E.G. GENERAL WHOLESALE TRADE" autocomplete="off">
-
-                                                    </div>
-
-
-
-                                                    <div class="js-form-item form-item js-form-type-entity-autocomplete form-item-activities-ssic-2 js-form-item-activities-ssic-2">
-                                                        <label for="edit-activities-ssic-2">Second Business activity (optional)<span class="small-text"> Please start typing to get the list of matching activities </span></label>
-                                                        <input data-drupal-selector="edit-activities-ssic-2" class="form-autocomplete form-text edit-activities-ssic-2 ui-autocomplete-input" data-autocomplete-path="/entity_reference_autocomplete/taxonomy_term/default/REZa6WHEopVZ-N4d5qMlJXAUO51Tf-DJRiSYJYrAr0A" type="text" id="edit-activities-ssic-2" name="activities[ssic_2]" value="" size="60" maxlength="255" placeholder="E.G. Business Consulting" autocomplete="off">
-
-                                                    </div>
-
-
-
-                                                    <fieldset class="cell">
-                                                        <div class="fieldset">
-                                                            <legend class="text-bold">Address</legend>
-                                                            <p class="small-text margin-bottom-1">
-                                                                All Singapore companies must have a Singapore registered address. If do not
-                                                                have pls check.
-                                                            </p>
-
-                                                            <fieldset data-drupal-selector="edit-field-default-address" aria-describedby="edit-field-default-address--wrapper--description" id="edit-field-default-address--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
-                                                                <label for="">Registered Address Service</label>
-                                                                <div class="fieldset-wrapper ">
-                                                                    <div id="edit-field-default-address" class="form-checkboxes">
+                                                        </div>
+                                                        <div class="large-4 medium-4 cell">
+                                                            <div class="invisible">checkname button</div><input class="check-name-btn expanded button js-form-submit form-submit edit-company-button-alternative" data-drupal-selector="edit-company-button-alternative" type="submit" id="edit-company-button-alternative" name="op" value="CHECK ALTERNATIVE NAME">
+                                                        </div>
+                                                        <div class="cell">
+                                                            <label>
+                                                                Business Activity<i class="fas fa-info-circle position-relative">
+                                                                    <span class="my-tip">The Nigerian Standard Industrial Classification (SSIC)</span>
+                                                                </i>
+                                                            </label>
 
 
-                                                                        <div class="js-form-item form-item js-form-type-checkbox form-item-address-register-address-service js-form-item-address-register-address-service">
-                                                                            <input ="" ="" price="600" data-drupal-selector="edit-address-register-address-service" type="checkbox" id="edit-address-register-address-service" name="address[register_address_service]" value="1" class="form-checkbox edit-address-register-address-service">
+                                                            <div class="js-form-item form-item js-form-type-entity-autocomplete form-item-activities-ssic-1 js-form-item-activities-ssic-1">
+                                                                <label for="edit-activities-ssic-1">First Business activity *<span class="small-text"> Please start typing to get the list of matching activities </span></label>
+                                                                @Html.TextBoxFor(m => m.string_var4, new { @class = "form-autocomplete form-text edit-activities-ssic-1 ui-autocomplete-input", maxlength = 255, id = "edit-activities-ssic-1", @placeholder = "E.G. GENERAL WHOLESALE TRADE", name = "activities[ssic_1]", size = "60" })
+                                                            </div>
 
-                                                                            <label for="edit-address-register-address-service" class="option">Registered Address (1yr) <i class="fas fa-info-circle position-relative"><span class="my-tip">All Singapore companies must have a Singapore registered address.</span></i></label>
+
+
+                                                            <div class="js-form-item form-item js-form-type-entity-autocomplete form-item-activities-ssic-2 js-form-item-activities-ssic-2">
+                                                                <label for="edit-activities-ssic-2">Second Business activity (optional)<span class="small-text"> Please start typing to get the list of matching activities </span></label>
+                                                                @Html.TextBoxFor(m => m.string_var4, new { @class = "form-autocomplete form-text edit-activities-ssic-2 ui-autocomplete-input", maxlength = 255, id = "edit-activities-ssic-1", @placeholder = "E.G. Business Consulting", name = "activities[ssic_2]", size = "60" })
+                                                            </div>
+
+
+
+                                                            <fieldset class="cell">
+                                                                <div class="fieldset">
+                                                                    <legend class="text-bold">Address</legend>
+                                                                    <p class="small-text margin-bottom-1">
+                                                                        All Nigerian companies must have a Nigerian registered address. If do not
+                                                                        have pls check.
+                                                                    </p>
+
+                                                                    <fieldset data-drupal-selector="edit-field-default-address" aria-describedby="edit-field-default-address--wrapper--description" id="edit-field-default-address--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+                                                                        <label for="">Registered Address Service</label>
+                                                                        <div class="fieldset-wrapper ">
+                                                                            <div id="edit-field-default-address" class="form-checkboxes">
+
+
+                                                                                <div class="js-form-item form-item js-form-type-checkbox form-item-address-register-address-service js-form-item-address-register-address-service">
+                                                                                    <input price="600" data-drupal-selector="edit-address-register-address-service" type="checkbox" id="edit-address-register-address-service" name="address[register_address_service]" value="1" class="form-checkbox edit-address-register-address-service">
+
+                                                                                    <label for="edit-address-register-address-service" class="option">Registered Address (1yr) <i class="fas fa-info-circle position-relative"><span class="my-tip">All Nigerian companies must have a Nigerian registered address.</span></i></label>
+                                                                                </div>
+
+
+                                                                                <table class="hide">
+                                                                                    <tbody>
+                                                                                        <tr class="service-name p-s-item service-register_address" style="">
+                                                                                            <td width="300" class=" title ">• Registered Address (1yr)</td>
+                                                                                            <td width="80" class="text-right value " data-price="600">#600.00</td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div id="edit-field-default-address--wrapper--description" class="description">
+                                                                                All Nigerian companies must have a Nigerian
+                                                                                registered address.
+                                                                            </div>
                                                                         </div>
+                                                                    </fieldset>
 
 
-                                                                        <table class="hide">
-                                                                            <tbody>
-                                                                                <tr class="service-name p-s-item service-register_address" style="">
-                                                                                    <td width="300" class=" title ">• Registered Address (1yr)</td>
-                                                                                    <td width="80" class="text-right value " data-price="600">#600.00</td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
+                                                                    <div class="js-form-item form-item js-form-type-textfield form-item-address-address-1 js-form-item-address-address-1">
+                                                                        <label for="edit-address-address-1">Address Line 1 *</label>
+                                                                        @Html.TextBoxFor(m => m.string_var5, new { @class = "form-text edit-address-address-1", maxlength = 128, id = "edit-address-address-1", @placeholder = "E.G. 6 EU TONG SEN ST #11-10F", name = "address[address_1]", size = "60" })
+
                                                                     </div>
-                                                                    <div id="edit-field-default-address--wrapper--description" class="description">
-                                                                        All Singapore companies must have a Singapore
-                                                                        registered address.
+
+
+
+
+                                                                    <div class="js-form-item form-item js-form-type-textfield form-item-address-address-2 js-form-item-address-address-2">
+                                                                        <label for="edit-address-address-2">Address Line 2</label>
+                                                                        @Html.TextBoxFor(m => m.string_var6, new { @class = "form-text edit-address-address-2", maxlength = 128, id = "edit-address-address-2", @placeholder = "E.G. SOHO1 CENTRAL Nigerian", name = "address[address_2]", size = "60" })
+
                                                                     </div>
+
+
+
+
+                                                                    <div class="js-form-item form-item js-form-type-textfield form-item-address-postcode js-form-item-address-postcode">
+                                                                        <label for="edit-address-postcode">Postcode</label>
+                                                                        @Html.TextBoxFor(m => m.string_var7, new { @class = "form-text edit-address-postcode", maxlength = 128, id = "edit-address-postcode", @placeholder = "059817", name = "address[postcode]", size = "60" })
+                                                                    </div>
+
+
                                                                 </div>
                                                             </fieldset>
-
-
-                                                            <div class="js-form-item form-item js-form-type-textfield form-item-address-address-1 js-form-item-address-address-1">
-                                                                <label for="edit-address-address-1">Address Line 1 *</label>
-                                                                <input ="" ="" data-drupal-selector="edit-address-address-1" type="text" id="edit-address-address-1" name="address[address_1]" value="" size="60" maxlength="128" placeholder="E.G. 6 EU TONG SEN ST #11-10F" class="form-text edit-address-address-1">
-
-                                                            </div>
-
-
-
-
-                                                            <div class="js-form-item form-item js-form-type-textfield form-item-address-address-2 js-form-item-address-address-2">
-                                                                <label for="edit-address-address-2">Address Line 2</label>
-                                                                <input ="" ="" data-drupal-selector="edit-address-address-2" type="text" id="edit-address-address-2" name="address[address_2]" value="" size="60" maxlength="128" placeholder="E.G. SOHO1 CENTRAL SINGAPORE" class="form-text edit-address-address-2">
-
-                                                            </div>
-
-
-
-
-                                                            <div class="js-form-item form-item js-form-type-textfield form-item-address-postcode js-form-item-address-postcode">
-                                                                <label for="edit-address-postcode">Postcode</label>
-                                                                <input ="" ="" data-drupal-selector="edit-address-postcode" type="text" id="edit-address-postcode" name="address[postcode]" value="" size="60" maxlength="128" placeholder="059817" class="form-text edit-address-postcode">
-
-                                                            </div>
-
-
                                                         </div>
-                                                    </fieldset>
+                                                    </div>
+                                                    <input class="secondary float-left margin-top-2 text-center margin-bottom-1 cancel button js-form-submit form-submit edit-details-actions-back" data-drupal-selector="edit-details-actions-back" type="submit" id="edit-details-actions-back" name="op" value="Back">
+                                                    <input class="secondary float-right margin-top-2 text-center margin-bottom-1 button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="NEXT">
                                                 </div>
-                                            </div>
-                                            <input class="secondary float-left margin-top-2 text-center margin-bottom-1 cancel button js-form-submit form-submit edit-details-actions-back" data-drupal-selector="edit-details-actions-back" type="submit" id="edit-details-actions-back" name="op" value="Back">
-                                            <a class="secondary float-right margin-top-2 text-center margin-bottom-1 button button--primary js-form-submit form-submit edit-next" id="edit-next" asp-area="" asp-controller="Dashboard" asp-action="owner_details">Next</a>
-
-
-
-                                        </div>
-                                        <div class="large-4 medium-12 cell billingTable">
-                                            <div class="billing-fix">
-                                                <h3 class="thin-text text-center">Order Details</h3>
-                                                <div class="table-wraped gray-bg width-100">
-                                                    <div class="hide">
-
-                                                        <div class="js-form-item form-item js-form-type-textfield form-item-total js-form-item-total">
-                                                            <label for="edit-total" class="form-required">Total</label>
-                                                            <input data-drupal-selector="edit-total" type="text" id="edit-total" name="total" value="388.00" size="60" maxlength="128" class="form-text required edit-total" required="required" aria-required="true">
-
-                                                        </div>
-
-                                                    </div><table class="gray-bg unstriped">
-                                                        <tbody>
-                                                            <tr class="package-name p-s-item package-232" data-package-id="232">
-                                                                <td width="300" class="semibold title ">
-                                                                    Essential Package
-                                                                    <a href="#" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-packages-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
-                                                                </td>
-                                                                <td width="90" class="text-right value">#388</td>
-                                                            </tr>
-                                                            <tr class="service-name">
-                                                                <td colspan="2" class="semibold">Add-on Services</td>
-                                                            </tr>
-
-
-
-                                                            <tr class="sgf-additional-total-row">
-                                                                <td class="semibold">Total Amount</td>
-                                                                <td class="semibold text-right total-price">#388.00</td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
                                                 </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
+                        <!--end card-->
                     </div>
-                    <!--end card-->
+                    <!--end col-->
                 </div>
-            <!--end col-->
+                <!--end row-->
+            </div>
+            <!-- container -->
+            <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+            <!--end footer-->
         </div>
-        <!--end row-->
-    </div>
-    <!-- container -->
-    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
-    <!--end footer-->
-</div>
-<!-- end page content -->
+        <!-- end page content -->
+        </form>

@@ -224,6 +224,10 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<string>("Designation");
 
+                    b.Property<string>("Dob");
+
+                    b.Property<string>("Email");
+
                     b.Property<string>("FullName");
 
                     b.Property<string>("Gender");
@@ -336,9 +340,11 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<int>("NoOfSharesIssue");
 
-                    b.Property<Guid?>("PackageId");
+                    b.Property<int?>("PackageId");
 
                     b.Property<string>("Postcode");
+
+                    b.Property<string>("ShareHolderName");
 
                     b.Property<decimal>("SharePrice");
 
@@ -359,8 +365,9 @@ namespace NaijaStartupApp.Migrations
 
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Package", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()

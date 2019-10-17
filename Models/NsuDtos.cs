@@ -23,8 +23,7 @@ namespace NaijaStartupApp.Models
 
         public class Package
         {
-            [Key]
-            public Guid Id { get; set; }
+            public int Id { get; set; }
             public string PackageName { get; set; }
             public Decimal Price { get; set; }
 
@@ -55,6 +54,7 @@ namespace NaijaStartupApp.Models
             public string Postcode { get; set; }
             public bool LocalDirector { get; set; }
             public string CompanyCapitalCurrency { get; set; }
+            public string ShareHolderName { get; set; }
             public int NoOfSharesIssue { get; set; }
             public Decimal SharePrice { get; set; }
             public Decimal SharesAllocated { get; set; }
@@ -80,6 +80,8 @@ namespace NaijaStartupApp.Models
             public string Nationality { get; set; }
             public string Birth_Country { get; set; }
             public string Phone_No { get; set; }
+            public string Dob { get; set; }
+            public string Email { get; set; }
             public string Address1 { get; set; }
             public string Address2 { get; set; }
             public string PostalCode { get; set; }
