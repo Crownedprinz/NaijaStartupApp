@@ -27,7 +27,9 @@
   $(window).load(function() {
      $('.flexslider').flexslider({
         animation: "slide",
-		useCSS: Modernizr.touch
+        slideshowSpeed: 3500,   //slides every 3.5 seconds
+        pauseOnHover: true,
+        useCSS: Modernizr.touch
       });
   });
 </script>
@@ -45,18 +47,18 @@
 
 <div class="collapse navbar-collapse navbar-ex1-collapse">
 <ul class="nav navbar-nav navbar-right">
-<li class="active"><a href="#home">HOME</a></li>
-<li class="hidden-sm"><a href="#features">ABOUT</a></li>
-<li><a href="#pricing">PRICING</a></li>
-<li class="hidden-sm"><a href="#testimonials">PARTNERS</a></li>
+<li class="active"><a data-toggle="collapse" data-target=".navbar-collapse" href="#home">HOME</a></li>
+<li class="hidden-sm"><a data-toggle="collapse" data-target=".navbar-collapse" href="#features">ABOUT</a></li>
+<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#pricing">PRICING</a></li>
+<li class="hidden-sm"><a data-toggle="collapse" data-target=".navbar-collapse" href="#testimonials">PARTNERS</a></li>
 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">BLOG <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li><a href="blog.html">Blog List</a></li>
 <li><a href="blog-post.html">Single Blog page</a></li>
 </ul>
 </li>
-<li><a href="#contact">CONTACT</a></li>
-<li><a href="#" role="button" data-toggle="modal" data-target="#Login">Login</a></li>
+<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#contact">CONTACT</a></li>
+<li data-toggle="collapse" data-target=".navbar-collapse" ><a href="#" role="button" data-toggle="modal" data-target="#Login">Login</a></li>
 <li><a href="signup.html" role="button" class="btn btn-success">Sign Up</a></li>
 </ul>
 </li>
@@ -90,7 +92,7 @@
         <div class="col-md-8 col-md-offset-2">
         <form action="#" method="post">
             <div style="display: flex">
-        <input class="form-control" type="text" name="company" size="100" maxlength="255" placeholder="Enter your company name" />
+        <input class="form-control" type="text" name="company" size="100" maxlength="255" placeholder="Enter your company name" style="height: 3.5em"/>
         <input type="submit" class="btn btn-success" value="Search" />
             </div>
         </form>
@@ -245,7 +247,7 @@
                             </div><!--//content-->
                         </div><!--//item-->
 
-                        <div class="item col-md-4 col-sm-4 col-xs-12">
+                        <div class="item col-md-4 col-sm-4 col-xs-12" id="p1">
                             <h3 class="heading">STANDARD <span class="label label-custom">Popular</span></h3>
                             <div class="content">
                                 <i>Suitable for growing and mid-size businesses </i>
@@ -263,8 +265,8 @@
                             <h3 class="heading">Premium</h3>
 
                             <div class="content">
-                                <p class="price-figure">
                                 <i>Suitable for foreign and large revenue businesses </i>
+                                <p class="price-figure">
                                 <span class="currency">&#8358;</span><span class="number">475,000</span></p>
                                 <ul class="list-unstyled feature-list">
                                     <li>10m Share Capital</li>
@@ -277,17 +279,18 @@
                         </div><!--//item-->
 
                     </div><!--//row-->
+                    <br>
                 <p> <h5> For Charity and PLC registration pricing<a href="#contact"> please contact us &raquo;</a>  </h5> </p>
                 </div><!--//container-->
             </div><!--//price-plan-->
 
-        <div class="row" style="margin-bottom: 5%"> <br> <br>
-        </div>
+        <!-- <div class="row" style="margin-bottom: 5%"> <br> <br>
+        </div> -->
 
     </div>
 </div>
 </div>
-<div class="container">
+<div class="container" style="margin-bottom: 10%">
 <div class="row PageHead" id="testimonials">
 <div class="col-md-12">
 <h1>Testimonials</h1>
@@ -436,7 +439,7 @@ Nigeria<br>
 <p>EMAIL US</p>
 <ul>
 <li><a href="#" target="_blank"><span class="__cf_email__" data-cfemail="e1929491918e9395a18c80888dcf828e8c">[email&#160;protected]</span></a></li>
-<li><a href="#"_blank"><span class="__cf_email__" data-cfemail="e89b89848d9ba885898184c68b8785">[email&#160;protected]</span></a></li>
+<li><a href="#" target="_blank"><span class="__cf_email__" data-cfemail="e89b89848d9ba885898184c68b8785">[email&#160;protected]</span></a></li>
 </ul>
 </div>
 <div class="col-xs-6 col-sm-4 col-md-2">
@@ -466,7 +469,7 @@ Nigeria<br>
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-<h3 class="modal-title">Login</h3>
+<h3 class="modal-title">Naija StartUp - Login</h3>
 </div>
 <div class="modal-body">
     <form method="post" action="#">
@@ -501,6 +504,13 @@ Nigeria<br>
 <script src="js/bootstrap.min.js"></script>
 
 <script>
+            //make nav bar collapse on click of body
+            $('body').click((e)=> {
+                if ($('.navbar-collapse').is(':visible') && $('.navbar-toggle').is(':visible')){
+                    $('.navbar-collapse').collapse('toggle');
+                }
+            })
+
             $(function() {
                 $('.nav li a').bind('click',function(event){
                     var $anchor2 = $(this).parent();
