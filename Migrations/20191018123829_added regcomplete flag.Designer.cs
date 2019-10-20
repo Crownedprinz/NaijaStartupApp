@@ -10,8 +10,8 @@ using NaijaStartupApp.Data;
 namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191015093930_add company_reg and officers table")]
-    partial class addcompany_regandofficerstable
+    [Migration("20191018123829_added regcomplete flag")]
+    partial class addedregcompleteflag
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -226,6 +226,10 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<string>("Designation");
 
+                    b.Property<string>("Dob");
+
+                    b.Property<string>("Email");
+
                     b.Property<string>("FullName");
 
                     b.Property<string>("Gender");
@@ -263,13 +267,11 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<string>("PostalCode");
 
-                    b.Property<string>("RegistrationId");
-
-                    b.Property<Guid?>("RegistrationId1");
+                    b.Property<Guid?>("RegistrationId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RegistrationId1");
+                    b.HasIndex("RegistrationId");
 
                     b.ToTable("Company_Officers");
                 });
@@ -340,11 +342,16 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<int>("NoOfSharesIssue");
 
-                    b.Property<string>("PackageId");
-
-                    b.Property<Guid?>("PackagesId");
+                    b.Property<int?>("PackageId");
 
                     b.Property<string>("Postcode");
+
+                    b.Property<bool>("RegCompleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("ShareHolderName");
 
                     b.Property<decimal>("SharePrice");
 
@@ -356,7 +363,7 @@ namespace NaijaStartupApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PackagesId");
+                    b.HasIndex("PackageId");
 
                     b.HasIndex("UserId");
 
@@ -365,8 +372,9 @@ namespace NaijaStartupApp.Migrations
 
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Package", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
@@ -474,14 +482,14 @@ namespace NaijaStartupApp.Migrations
                 {
                     b.HasOne("NaijaStartupApp.Models.NsuDtos+Company_Registration", "Registration")
                         .WithMany()
-                        .HasForeignKey("RegistrationId1");
+                        .HasForeignKey("RegistrationId");
                 });
 
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Company_Registration", b =>
                 {
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+Package", "Packages")
+                    b.HasOne("NaijaStartupApp.Models.NsuDtos+Package", "Package")
                         .WithMany()
-                        .HasForeignKey("PackagesId");
+                        .HasForeignKey("PackageId");
 
                     b.HasOne("NaijaStartupApp.Models.NsuDtos+User", "User")
                         .WithMany()

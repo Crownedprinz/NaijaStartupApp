@@ -10,8 +10,8 @@ using NaijaStartupApp.Data;
 namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191015094801_changed foreign keys")]
-    partial class changedforeignkeys
+    [Migration("20191019062300_added table payments model")]
+    partial class addedtablepaymentsmodel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -191,6 +191,68 @@ namespace NaijaStartupApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+AddOnService", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("CreatorUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<DateTime>("DeletionTime")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(20)
+                        .IsUnicode(false);
+
+                    b.Property<string>("DeletionUserId");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<DateTime>("ModificationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("ModificationUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<Guid?>("RegistrationId");
+
+                    b.Property<string>("ServiceName")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegistrationId");
+
+                    b.ToTable("AddOnService");
+                });
+
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Company_Officers", b =>
                 {
                     b.Property<Guid>("Id")
@@ -225,6 +287,10 @@ namespace NaijaStartupApp.Migrations
                     b.Property<string>("DeletionUserId");
 
                     b.Property<string>("Designation");
+
+                    b.Property<string>("Dob");
+
+                    b.Property<string>("Email");
 
                     b.Property<string>("FullName");
 
@@ -338,9 +404,16 @@ namespace NaijaStartupApp.Migrations
 
                     b.Property<int>("NoOfSharesIssue");
 
-                    b.Property<Guid?>("PackageId");
+                    b.Property<int?>("PackageId");
 
                     b.Property<string>("Postcode");
+
+                    b.Property<bool>("RegCompleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("ShareHolderName");
 
                     b.Property<decimal>("SharePrice");
 
@@ -361,8 +434,9 @@ namespace NaijaStartupApp.Migrations
 
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Package", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreationTime")
                         .ValueGeneratedOnAdd()
@@ -466,10 +540,17 @@ namespace NaijaStartupApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+AddOnService", b =>
+                {
+                    b.HasOne("NaijaStartupApp.Models.NsuDtos+Company_Registration", "Registration")
+                        .WithMany("addOnServices")
+                        .HasForeignKey("RegistrationId");
+                });
+
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Company_Officers", b =>
                 {
                     b.HasOne("NaijaStartupApp.Models.NsuDtos+Company_Registration", "Registration")
-                        .WithMany()
+                        .WithMany("company_Officers")
                         .HasForeignKey("RegistrationId");
                 });
 
