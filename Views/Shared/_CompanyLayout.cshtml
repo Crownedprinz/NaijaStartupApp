@@ -25,6 +25,7 @@
         <link href="~/css/custom/foundation-6-5-1/foundation-icons/foundation-icons062f.css?pz4wnb" rel="stylesheet" type="text/css">
         <link href="~/css/custom/style062f.css?pz4wnb" rel="stylesheet" type="text/css">
         <link href="~/css/custom/zurblk062f.css?pz4wnb" type="text/css">
+        <link href="~/assets/css/spin.css" type="text/css">
     </environment>
     <environment exclude="Development,Staging,Production">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -55,41 +56,6 @@
                         <a class="dropdown-item" href="javascript: void(0);">
                             <span>German </span><img src="~/assets/images/flags/germany_flag.jpg" alt="" class="ml-2 float-right" height="14">
                         </a><a class="dropdown-item" href="javascript: void(0);"><span>Italian </span><img src="~/assets/images/flags/italy_flag.jpg" alt="" class="ml-2 float-right" height="14"></a><a class="dropdown-item" href="javascript: void(0);"><span>French </span><img src="~/assets/images/flags/french_flag.jpg" alt="" class="ml-2 float-right" height="14"></a><a class="dropdown-item" href="javascript: void(0);"><span>Spanish </span><img src="~/assets/images/flags/spain_flag.jpg" alt="" class="ml-2 float-right" height="14"></a><a class="dropdown-item" href="javascript: void(0);"><span>Russian </span><img src="~/assets/images/flags/russia_flag.jpg" alt="" class="ml-2 float-right" height="14"></a>
-                    </div>
-                </li>
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"><i class="dripicons-bell noti-icon"></i> <span class="badge badge-danger badge-pill noti-icon-badge">2</span></a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-                        <!-- item-->
-                        <h6 class="dropdown-item-text">Notifications (18)</h6>
-                        <div class="slimscroll notification-list">
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
-                                <p class="notify-details">Your order is placed<small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
-                                <p class="notify-details">New Message received<small class="text-muted">You have 87 unread messages</small></p>
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-info"><i class="mdi mdi-glass-cocktail"></i></div>
-                                <p class="notify-details">Your item is shipped<small class="text-muted">It is a long established fact that a reader will</small></p>
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
-                                <p class="notify-details">Your order is placed<small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
-                            </a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
-                                <p class="notify-details">New Message received<small class="text-muted">You have 87 unread messages</small></p>
-                            </a>
-                        </div>
-                        <!-- All--> <a href="javascript:void(0);" class="dropdown-item text-center text-primary">View all <i class="fi-arrow-right"></i></a>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -131,46 +97,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="my_orders" asp-controller="Dashboard" >My Orders</a></li>
+                                    <li><a asp-action="my_orders" asp-controller="Dashboard">My Orders</a></li>
                                     <li><a asp-action="all_companies" asp-controller="Dashboard">Companies</a></li>
                                 </ul>
-                            </li>
-                            <!--end nav-item-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-trophy"></i><span class="w-100">Payments</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a  asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
-                                    <li><a  asp-action="payment_invoice" asp-controller="Dashboard">Payment Invoice</a></li>
-                                    <li><a  asp-action="cashless_payments" asp-controller="Dashboard">Cashless Payments</a></li>
+                                    <li><a asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <!--end nav-->
                     </div>
                     <!-- end Hospital -->
-                    <div id="MetricaHospitalStaff" class="main-icon-menu-pane">
-                        <div class="title-box">
-                            <h6 class="menu-title">Staff</h6>
-                        </div>
-                        <ul class="nav metismenu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Staff</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="all_staff" asp-controller="Dashboard">All Staff</a></li>
-                                    <li><a asp-action="add_member" asp-controller="Dashboard">Add Member</a></li>
-                                    <li><a asp-action="edit_member" asp-controller="Dashboard">Edit Member</a></li>
-                                    <li><a asp-action="member_profile" asp-controller="Dashboard">Member Profile</a></li>
-                                    <li><a asp-action="salary" asp-controller="Dashboard">Staff Salary</a></li>
-                                </ul>
-                            </li>
-                            <!--end nav-item-->
-                            <li class="nav-item"><a class="nav-link" asp-action="leaves" asp-controller="Dashboard"><i class="dripicons-shopping-bag"></i>Leaves</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-action="holidays" asp-controller="Dashboard"><i class="dripicons-headset"></i>Holidays</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-action="attendance" asp-controller="Dashboard"><i class="dripicons-checkmark"></i>Attendance</a></li>
-                        </ul>
-                        <!--end nav-->
-                    </div>
-                    <!-- end Staff -->
+
                 </div>
                 <!--end menu-body-->
             </div>
@@ -195,6 +133,8 @@
             <script src="~/assets/pages/jquery.hospital_dashboard.init.js"></script>
             <!-- App js -->
             <script src="~/assets/js/app.js"></script>
+            <script src="~/assets/js/spin.js"></script>
+            <script src="~/assets/js/spinCustom.js"></script>
         </environment>
         <environment exclude="Development,Staging,Production">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
