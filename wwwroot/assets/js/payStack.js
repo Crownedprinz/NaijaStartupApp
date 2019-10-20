@@ -1,5 +1,10 @@
 ﻿function payWithPaystack() {
-
+    var data = document.getElementById("edit-data-is-correct").checked
+    if (!data)
+        return alert('Please make sure you check all boxes required');
+    var data1 = document.getElementById("edit-term-and-condition").checked;
+    if (!data1)
+        return alert('Please make sure you check all boxes required');
     var handler = PaystackPop.setup({
         key: 'pk_test_388f35589b6fa63e562b8910782758ce72da7f6f', //put your public key here
         email: 'ademolajhon@gmail.com', //put your customer's email here

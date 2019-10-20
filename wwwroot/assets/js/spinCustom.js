@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    
+
     $(".lgtime").click(function () {
         var isUsername = $("#id_username").val();
         var isPassword = $("#id_password").val();
@@ -21,7 +21,7 @@
                 color: '#000', // #rgb or #rrggbb
                 speed: 1, // Rounds per second
                 trail: 60, // Afterglow percentage
-                shadow: false, // Whether to render a shadow
+                shadow: true, // Whether to render a shadow
                 hwaccel: false // Whether to use hardware acceleration
             };
             var target = document.getElementById('loading');
@@ -39,7 +39,7 @@
             radius: 42,
             scale: 0.4,
             corners: 1,
-            color: '#FFF',
+            color: '#000',
             opacity: 0.25,
             rotate: 0,
             direction: 1,
@@ -50,7 +50,7 @@
             className: 'spinner',
             top: '50%',
             left: '50%',
-            shadow: false,
+            shadow: true,
             hwaccel: false,
             position: 'absolute',
         },

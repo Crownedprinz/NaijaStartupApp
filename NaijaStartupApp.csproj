@@ -6,62 +6,13 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.cs" />
     <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Views\Authentication\auth_login.cshtml" />
-    <Content Remove="Views\Authentication\auth_recover_pw.cshtml" />
-    <Content Remove="Views\Authentication\auth_register.cshtml" />
-    <Content Remove="Views\Dashboard\add_doctor.cshtml" />
-    <Content Remove="Views\Dashboard\add_member.cshtml" />
-    <Content Remove="Views\Dashboard\add_patient.cshtml" />
-    <Content Remove="Views\Dashboard\all_companies.cshtml" />
-    <Content Remove="Views\Dashboard\all_doctors.cshtml" />
-    <Content Remove="Views\Dashboard\all_patients.cshtml" />
-    <Content Remove="Views\Dashboard\all_payments.cshtml" />
-    <Content Remove="Views\Dashboard\all_rooms.cshtml" />
-    <Content Remove="Views\Dashboard\all_staff.cshtml" />
-    <Content Remove="Views\Dashboard\attendance.cshtml" />
-    <Content Remove="Views\Dashboard\cashless_payments.cshtml" />
-    <Content Remove="Views\Dashboard\chat.cshtml" />
-    <Content Remove="Views\Dashboard\company_share.cshtml" />
-    <Content Remove="Views\Dashboard\departments.cshtml" />
-    <Content Remove="Views\Dashboard\doctor_edit.cshtml" />
-    <Content Remove="Views\Dashboard\doctor_profile.cshtml" />
-    <Content Remove="Views\Dashboard\edit_member.cshtml" />
-    <Content Remove="Views\Dashboard\events.cshtml" />
-    <Content Remove="Views\Dashboard\expenses.cshtml" />
-    <Content Remove="Views\Dashboard\holidays.cshtml" />
-    <Content Remove="Views\Dashboard\insurance_company.cshtml" />
-    <Content Remove="Views\Dashboard\leaves.cshtml" />
-    <Content Remove="Views\Dashboard\member_profile.cshtml" />
-    <Content Remove="Views\Dashboard\my_orders.cshtml" />
-    <Content Remove="Views\Dashboard\new_company.cshtml" />
-    <Content Remove="Views\Dashboard\order_details.cshtml" />
-    <Content Remove="Views\Dashboard\order_review.cshtml" />
-    <Content Remove="Views\Dashboard\order_summary.cshtml" />
-    <Content Remove="Views\Dashboard\owner_details.cshtml" />
-    <Content Remove="Views\Dashboard\packages.cshtml" />
-    <Content Remove="Views\Dashboard\patient_edit.cshtml" />
-    <Content Remove="Views\Dashboard\patient_profile.cshtml" />
-    <Content Remove="Views\Dashboard\payment_invoice.cshtml" />
-    <Content Remove="Views\Dashboard\salary.cshtml" />
-    <Content Remove="Views\Others\email_inbox.cshtml" />
-    <Content Remove="Views\Pages\pages_blogs.cshtml" />
-    <Content Remove="Views\Pages\pages_chat.cshtml" />
-    <Content Remove="Views\Pages\pages_contact_list.cshtml" />
-    <Content Remove="Views\Pages\pages_faq.cshtml" />
-    <Content Remove="Views\Pages\pages_gallery.cshtml" />
-    <Content Remove="Views\Pages\pages_invoice.cshtml" />
-    <Content Remove="Views\Pages\pages_pricing.cshtml" />
-    <Content Remove="Views\Pages\pages_profile.cshtml" />
-    <Content Remove="Views\Pages\pages_starter.cshtml" />
-    <Content Remove="Views\Pages\pages_timeline.cshtml" />
-    <Content Remove="Views\Pages\pages_tour.cshtml" />
-    <Content Remove="Views\Pages\pages_treeview.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -171,6 +122,7 @@
     <None Include="wwwroot\js\jquery.min.js" />
     <None Include="wwwroot\js\modernizr.js" />
     <None Include="wwwroot\whmcs\register.html" />
+
   </ItemGroup>
 
 
@@ -179,12 +131,14 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="PayStack.Net" Version="0.7.7" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0-dev-00032" />
   </ItemGroup>
 
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
     <Folder Include="Html\" />
+    <Folder Include="wwwroot\Logs\" />
   </ItemGroup>
 
 </Project>

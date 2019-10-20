@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -12,12 +13,14 @@ using NaijaStartupApp.Data;
 using static NaijaStartupApp.Models.NsuArgs;
 using static NaijaStartupApp.Models.NsuDtos;
 
-namespace DangoteCustomerPortal.Services
+namespace NaijaStartupApp.Services
 {
     public interface IUserService
     {
         Task<GenericResponse> AuthenticateAsync(UserRequest Input);
         Task<GenericResponse> CreateUserAsync(CreateUserRequest Input);
+        Task<User> get_User(string user);
+        User get_User_By_EmailOrUsername(string emailOrUsername);
 
     }
     public class UserService : IUserService
@@ -26,6 +29,7 @@ namespace DangoteCustomerPortal.Services
         private ApplicationDbContext _context;
         private UserManager<User> _userManager;
         private readonly ILogger _logger;
+        private readonly IHttpContextAccessor _hcontext;
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
         {
@@ -36,12 +40,14 @@ namespace DangoteCustomerPortal.Services
         public UserService(UserManager<User> userManager,
                             ApplicationDbContext context,
                             SignInManager<User> signInManager,
-                            ILogger<UserService> logger
+                            ILogger<UserService> logger,
+                            IHttpContextAccessor hcontext
                             )
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
+            _hcontext = hcontext;
         }
         /// <summary>
         /// This Method Authenticates a user and generates a Java web Token
@@ -130,6 +136,19 @@ namespace DangoteCustomerPortal.Services
         //        await _t24.SendEmailFromSpectaAsync("Welcome To Specta", content, user.EmailAddress);
         //    }
         //}
+
+        public async Task<User> get_User(string user)
+        {
+            return await _context.User.FindAsync(user);
+        }
+        public User get_User_By_EmailOrUsername(string emailOrUsername)
+        {
+            return _context.User.Where(x=>x.Email ==emailOrUsername || x.UserName == emailOrUsername).FirstOrDefault();
+        }
+        public async Task<User> get_User_By_Session()
+        {
+            return await _context.User.FindAsync(_hcontext.HttpContext.Session.GetString("UserId"));
+        }
     }
 
 }

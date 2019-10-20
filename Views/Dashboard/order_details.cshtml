@@ -65,7 +65,7 @@
 
                                                             <div class="js-form-item form-item js-form-type-textfield form-item-company-alternative-name js-form-item-company-alternative-name">
                                                                 <label for="edit-company-alternative-name">Alternative Company Name</label>
-                                                                @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text edit-company-alternative-name", maxlength = 128, id = "edit-company-alternative-name", name = "company[alternative_name]", size = "60" })
+                                                                @*@Html.TextBoxFor(m => m.string_var0, new { @class = "form-text edit-company-alternative-name", maxlength = 128, id = "edit-company-alternative-name", name = "company[alternative_name]", size = "60" })*@
 
                                                             </div>
 
@@ -95,19 +95,19 @@
                                                                 @Html.DropDownListFor(m => m.string_var3,
                                                                               new List<SelectListItem>
                                                                                {
-                                                                                   new SelectListItem {Text = "October-2019", Value = "1571068800"},
-                                                                                   new SelectListItem {Text = "November-2019", Value = "1573747200"},
-                                                                                   new SelectListItem {Text = "December-2019", Value = "1576339200"},
-                                                                                   new SelectListItem {Text = "January-2020", Value = "1579017600"},
-                                                                                   new SelectListItem {Text = "February-2020", Value = "1581696000"},
-                                                                                   new SelectListItem {Text = "March-2020", Value = "1584201600"},
-                                                                                   new SelectListItem {Text = "April-2020", Value = "1586880000"},
-                                                                                   new SelectListItem {Text = "May-2020", Value = "1589472000"},
-                                                                                   new SelectListItem {Text = "June-2020", Value = "1592150400"},
+                                                                                   new SelectListItem {Text = "October-2019", Value = "October-2019"},
+                                                                                   new SelectListItem {Text = "November-2019", Value = "November-2019"},
+                                                                                   new SelectListItem {Text = "December-2019", Value = "December-2019"},
+                                                                                   new SelectListItem {Text = "January-2020", Value = "January-2020"},
+                                                                                   new SelectListItem {Text = "February-2020", Value = "February-2020"},
+                                                                                   new SelectListItem {Text = "March-2020", Value = "March-2020"},
+                                                                                   new SelectListItem {Text = "April-2020", Value = "April-2020"},
+                                                                                   new SelectListItem {Text = "May-2020", Value = "May-2020"},
+                                                                                   new SelectListItem {Text = "June-2020", Value = "June-2020"},
 
-                                                                                   new SelectListItem {Text = "July-2020", Value = "1594742400"},
-                                                                                   new SelectListItem {Text = "August-202", Value = "1597420800"},
-                                                                                   new SelectListItem {Text = "September-2020", Value = "1600099200"},
+                                                                                   new SelectListItem {Text = "July-2020", Value = "July-2020"},
+                                                                                   new SelectListItem {Text = "August-2020", Value = "August-2020"},
+                                                                                   new SelectListItem {Text = "September-2020", Value = "September-2020"},
                                                                                }, new { @class = "form-select", @id = "edit-financial-year-end" })
                                                             </div>
 
@@ -132,7 +132,7 @@
 
                                                             <div class="js-form-item form-item js-form-type-entity-autocomplete form-item-activities-ssic-2 js-form-item-activities-ssic-2">
                                                                 <label for="edit-activities-ssic-2">Second Business activity (optional)<span class="small-text"> Please start typing to get the list of matching activities </span></label>
-                                                                @Html.TextBoxFor(m => m.string_var4, new { @class = "form-autocomplete form-text edit-activities-ssic-2 ui-autocomplete-input", maxlength = 255, id = "edit-activities-ssic-1", @placeholder = "E.G. Business Consulting", name = "activities[ssic_2]", size = "60" })
+                                                                @Html.TextBoxFor(m => m.string_var5, new { @class = "form-autocomplete form-text edit-activities-ssic-2 ui-autocomplete-input", maxlength = 255, id = "edit-activities-ssic-1", @placeholder = "E.G. Business Consulting", name = "activities[ssic_2]", size = "60" })
                                                             </div>
 
 
@@ -177,7 +177,7 @@
 
                                                                     <div class="js-form-item form-item js-form-type-textfield form-item-address-address-1 js-form-item-address-address-1">
                                                                         <label for="edit-address-address-1">Address Line 1 *</label>
-                                                                        @Html.TextBoxFor(m => m.string_var5, new { @class = "form-text edit-address-address-1", maxlength = 128, id = "edit-address-address-1", @placeholder = "E.G. 6 EU TONG SEN ST #11-10F", name = "address[address_1]", size = "60" })
+                                                                        @Html.TextBoxFor(m => m.string_var6, new { @class = "form-text edit-address-address-1", maxlength = 128, id = "edit-address-address-1", @placeholder = "E.G. 6 EU TONG SEN ST #11-10F", name = "address[address_1]", size = "60" })
 
                                                                     </div>
 
@@ -186,7 +186,7 @@
 
                                                                     <div class="js-form-item form-item js-form-type-textfield form-item-address-address-2 js-form-item-address-address-2">
                                                                         <label for="edit-address-address-2">Address Line 2</label>
-                                                                        @Html.TextBoxFor(m => m.string_var6, new { @class = "form-text edit-address-address-2", maxlength = 128, id = "edit-address-address-2", @placeholder = "E.G. SOHO1 CENTRAL Nigerian", name = "address[address_2]", size = "60" })
+                                                                        @Html.TextBoxFor(m => m.string_var7, new { @class = "form-text edit-address-address-2", maxlength = 128, id = "edit-address-address-2", @placeholder = "E.G. SOHO1 CENTRAL Nigerian", name = "address[address_2]", size = "60" })
 
                                                                     </div>
 
@@ -195,7 +195,7 @@
 
                                                                     <div class="js-form-item form-item js-form-type-textfield form-item-address-postcode js-form-item-address-postcode">
                                                                         <label for="edit-address-postcode">Postcode</label>
-                                                                        @Html.TextBoxFor(m => m.string_var7, new { @class = "form-text edit-address-postcode", maxlength = 128, id = "edit-address-postcode", @placeholder = "059817", name = "address[postcode]", size = "60" })
+                                                                        @Html.TextBoxFor(m => m.string_var8, new { @class = "form-text edit-address-postcode", maxlength = 128, id = "edit-address-postcode", @placeholder = "059817", name = "address[postcode]", size = "60" })
                                                                     </div>
 
 
@@ -224,3 +224,4 @@
         </div>
         <!-- end page content -->
         </form>
+    <partial name="_SpinnerView" />

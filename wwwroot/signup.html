@@ -33,8 +33,8 @@
                 <div class="panel-heading">
                     <b class="secure"> <a>Naija-Startup</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
-                <input type="text" name="user" value="" autocomplete="off" placeholder="Username" required>
-                <input type="password" name="pass" value="" autocomplete="off" placeholder="Password" required>
+                <input type="text" name="user"  id="id_userName1"  value="" autocomplete="off" placeholder="Username" required>
+                <input type="password"  id="id_password2"  name="pass" value="" autocomplete="off" placeholder="Password" required>
                 <button type="submit" class="btn btn-success btn-lg" onclick="loginPost()">Login</button>
                 <div>
                     <div>
@@ -59,8 +59,8 @@
 
 
     function loginPost() {
-        var val1 = $('#id_userName').val();
-        var val2 = $('#id_password').val();
+        var val1 = $('#id_userName1').val();
+        var val2 = $('#id_password2').val();
         if (val1 === null || val1 === "")
             return alert("Please Input your username or email");
 
@@ -76,8 +76,6 @@
                     window.location.href = "/Dashboard/Index";
                 else {
                     alert("Invalid username or password")
-                    document.location.reload();
-
                 }
 
 
@@ -93,7 +91,10 @@
             } else
                 $('#message').html('Not Matching').css('color', 'red');
         });
-        function signUpPost(e) {
+
+
+
+        function signUpPost() {
             var firstName = $('#id_firstName').val();
             var lastName = $('#id_lastName').val();
             var Email = $('#id_Email').val();
@@ -114,27 +115,24 @@
             if (confirmpassword === null || confirmpassword === "")
                return  alert("Please Confrim your password");
             if (confirmEmail === null || confirmEmail === "")
-              return alert("Please Confrim your Email");
-            $.ajax({
-                type: "post",
-                url: "/Account/SignUp",
-                data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
-                success: function (data) {
-                    if (data)
-                        window.location.href = "/Dashboard/Index";
-                    else {
-                        alert("There seems to be an issue while registering your profile, try again");
-                        document.location.reload();
+                return alert("Please Confrim your Email");
 
-                    }
-                },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status);
-                        alert(thrownError);
-                    }
-            })
-            e.preventDefault();
-        }
+            $.ajax({
+            type: "post",
+            url: "/Account/SignUp",
+            async: true,
+            data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
+            success: function (data) {
+                if (data)
+                    window.location.href = "/Dashboard/Index";
+                else {
+                    alert("There seems to be an issue while registering your profile, try again");
+                    document.location.reload();
+
+                }
+            }
+        });
+    }
     </script>
 </body>
 </html>

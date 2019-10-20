@@ -29,6 +29,8 @@ namespace NaijaStartupApp.Models
             public string string_var12 { get; set; }
             public string string_var13 { get; set; }
             public string string_var14 { get; set; }
+            public string string_var15 { get; set; }
+            public string string_var16 { get; set; }
             public int int_var0 { get; set; }
             public int int_var1 { get; set; }
             public int int_var2 { get; set; }
@@ -67,23 +69,13 @@ namespace NaijaStartupApp.Models
         public class GlobalVariables
         {
             public int saltValue { get; set; }
-            public int userid { get; set; }
+            public string userid { get; set; }
             public string userName { get; set; }
             public int TenantId { get; set; }
             public string[] sarrayt1 { get; set; }
             public string ptitle { get; set; }
-            public string ReportPeriod { get; set; }
-            public string viewflag { get; set; }
 
-            public string filep { get; set; }
-
-            public string tempvar { get; set; }
-            public string branchCode { get; set; }
-            public string region { get; set; }
-
-            public string MenuHtml { get; set; }
-            public string ReportHtml { get; set; }
-            public int RoleId { get; set; }
+            public string RoleId { get; set; }
             public int ApprovalLevel { get; set; }
 
         }
