@@ -1,8 +1,10 @@
-﻿@{
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
     ViewData["Title"] = "packages";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
 <!-- Page Content-->
+
 <div class="page-content">
     <div class="container-fluid">
         <!-- Page-Title -->
@@ -22,750 +24,692 @@
                     <div class="card-body">
                         <div class="grid-container">
                             <section id="block-zurblk-content" class="block-zurblk-content block block-system block-system-main-block">
+                                <form role="form" method="post" enctype="multipart/form-data">
+                                                            @Html.AntiForgeryToken()
+                                                            @Html.ValidationSummary()
+                                                            <input autocomplete="off" data-drupal-selector="form-qbv54esvgebdg476-aml6jpthgftzgb8cohwiej-tn8" type="hidden" name="form_build_id" value="form-Qbv54esVgeBDg476_amL6JpTHGfTzgb8COhWiEJ-Tn8" class="form-qbv54esvgebdg476-aml6jpthgftzgb8cohwiej-tn8">
+
+                                                            <input data-drupal-selector="edit-sgf-incorporate-form-form-token" type="hidden" name="form_token" value="_Z2TdPJeR6m3AYkf8BUm6mhVATM8kueysyQxYbZPg0Q" class="edit-sgf-incorporate-form-form-token">
+
+                                                            <input data-drupal-selector="edit-sgf-incorporate-form" type="hidden" name="form_id" value="sgf_incorporate_form" class="edit-sgf-incorporate-form">
 
 
+                                                            <div class="row sgf-incorporate-page-step-2">
+                                                                <div class="align-center" id="incorporateContent">
+                                                                    <div class="grid-container full white-bg margin-bottom-3">
+                                                                        <div class="grid-container">
+                                                                            <div class="grid-x text-center incorporate-process">
+                                                                                <div class="medium-2 cell">
+                                                                                    <p class="step-active">1. Company Name</p>
+                                                                                </div>
+                                                                                <div class="medium-2 cell padding-horizontal-1">
+                                                                                    <p class="step-active">2. Packages</p>
+                                                                                </div>
+                                                                                <div class="medium-3 cell padding-right-1">
+                                                                                    <p class="">3. Details</p>
+                                                                                </div>
+                                                                                <div class="medium-2 cell padding-horizontal-1">
+                                                                                    <p class="">4. Officers</p>
+                                                                                </div>
+                                                                                <div class="medium-1 cell ">
+                                                                                    <p class="">5. Capital</p>
+                                                                                </div>
+                                                                                <div class="medium-2 cell padding-left-1">
+                                                                                    <p class="">6. Review / Payment</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="large-3 cell">
+
+                                                                        <div class="js-form-item form-item js-form-type-select form-item-packages js-form-item-packages" id="id_package">
+                                                                            <label for="edit-packages">Packages</label>
+                                                                            @Html.DropDownListFor(m => m.string_var0,
+                                                                           new List<SelectListItem>
+                                                                            {
+                                                                                new SelectListItem {Text = "Essential Package", Value = "1"},
+                                                                                new SelectListItem {Text = "Standard Package", Value = "2"},
+                                                                                new SelectListItem {Text = "Premium Package", Value = "3"}
+                                                                            }, new { @class = "form-select", @id = "edit-packages" })
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <input class="hide button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-next" type="submit" id="edit-next" name="op" value="Next">
+                                                                    <input class="hide button js-form-submit form-submit edit-back" data-drupal-selector="edit-back" formnovalidate="formnovalidate" type="submit" id="edit-back" name="op" value="Back Company">
+                                                                    <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
+                                                                        <div class="tabs-panel is-active" id="package-list-tab">
+                                                                            <div class="grid-x block-border text-center align-center align-middle" id="packageTable">
+                                                                                <div class="large-4 medium-12 cell">
+                                                                                    <h3 class="thin-text margin-vertical-3" style="color:black">FEATURES</h3>
+                                                                                </div>
+                                                                                <div class="large-8 medium-12 cell">
+                                                                                    <div class="grid-x white-text ">
+
+                                                                                        <div class="large-4 medium-12 cell st-bg padding-1">
+                                                                                            <h4>Essential</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <p class="margin-vertical-1 height-120px">
+                                                                                                For experienced business owners seeking no-frills services<br>
+                                                                                                <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
+                                                                                            </p>
+                                                                                            <h3>#100,000</h3>
+                                                                                            <button data-hide-package="217-218-219-222-223-225-227-229-" id="id_ess_sel" type="button" class="active-package active-package-232 primary button margin-top-1 font-18 " style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_ess_order" class="primary button margin-top-1 font-18 choose-package package-232 package-top-232 hide" data-default-special-services="251-525-227" data-pid="232" data-pid-top="232" data-value="388.00" data-hide-package="217-218-219-222-223-225-227-229-" data-special-service="227" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1">ORDER</span>
+                                                                                            </a>
+                                                                                            <br>
+                                                                                            <a href="/package/essential-package" target="blank" class="readmore">Learn more</a>
+                                                                                        </div>
+
+                                                                                        <div class="large-4 medium-12 cell nd-bg padding-1">
+                                                                                            <h4>Standard</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <p class="margin-vertical-1 height-120px">
+                                                                                                For new entrepreneurs who want value &amp; simplicity<br>
+                                                                                                <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
+                                                                                            </p>
+                                                                                            <h3>#210,000</h3>
+                                                                                            <button data-hide-package="217-218-219-222-223-225-227-229-448-" type="button" id="id_sta_sel" class="active-package active-package-233 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_sta_order" class="primary button margin-top-1 font-18 choose-package package-233 package-top-233" data-default-special-services="251-525-227" data-pid="233" data-pid-top="233" data-value="888.00" data-hide-package="217-218-219-222-223-225-227-229-448-" data-special-service="227" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1">ORDER</span>
+                                                                                            </a>
+                                                                                            <br>
+                                                                                            <a href="/package/standard-package" target="blank" class="readmore">Learn more</a>
+                                                                                        </div>
+
+                                                                                        <div class="large-4 medium-12 cell four-bg padding-1">
+                                                                                            <h4>Premium</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <p class="margin-vertical-1 height-120px">
+                                                                                                For those who want set up everything<br>
+                                                                                                <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
+                                                                                            </p>
+                                                                                            <h3>#475,000</h3>
+                                                                                            <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" type="button" id="id_pre_sel" class="active-package active-package-235 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_pre_order" class="primary button margin-top-1 font-18 choose-package package-235 package-top-235" data-default-special-services="251-525-227" data-pid="235" data-pid-top="235" data-value="1688.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" data-special-service="227-251" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1">ORDER</span>
+                                                                                            </a>
+                                                                                            <br>
+                                                                                            <a href="/package/premium-package" target="blank" class="readmore">Learn more</a>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="/themes/custom/zurblk/img/computer.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company Name Search and Application Fee</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    An approved company name will be reserved for 120 days from the date of name approval.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/law.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Nigerian Company Registration</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    To set up a company in Nigerian, a company must first be incorporated.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_6.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Share Certificate(s)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    Share Certificate(s)
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/law_0.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company Constitution</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    Company Constitution
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_7.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Free Business Profile</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    An electronic report that provides information such as Unique Entity Number (UEN), business name, business activities, registration date, the details of owners/officers and etc.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_8.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company statutory records</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    Company statutory records
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_9.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>First Board Resolution</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    The first board meeting should be held within the first month from the date of incorporation. At this meeting, the appointment of the first directors of the company will be confirmed.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/people_4.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company Secretary (Free 3mth)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    All companies incorporated in Nigerian must fulfill a key requirement of appointing a company secretary who must be a resident of Nigerian.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/people_3.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company Secretary (1yr)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    All companies incorporated in Nigerian must fulfill a key requirement of appointing a company secretary who must be a resident of Nigerian.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_10.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Maintenance of company statutory records</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    Maintenance of company statutory records
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_11.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Registered Address (1yr)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    A company should have a registered address in Nigerian.&nbsp;
+                                                                                                    We can help you fulfill this requirement by providing an office address on an annual basis.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/stamp.png">
+
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Company Stamp</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    A company stamp is optional, but there will be times when it is required, such as when it comes to government documentation, utility or telephone bills and even courier companies which may be require an official company stamp for authorization purposes. Other instances where a company chop may be required include:
 
 
+                                                                                                    Grant applications
+                                                                                                    License application
+                                                                                                    Signing of purchase orders
+                                                                                                    Rental agreements
+                                                                                                    Business contracts
+                                                                                                    Official invoices
+                                                                                                    Statement of accounts
+                                                                                                    Bills of exchange
+                                                                                                    Promissory note
 
-                                <form class="sgf-incorporate-form" data-drupal-selector="sgf-incorporate-form" action="/incorporate" method="post" id="sgf-incorporate-form" accept-charset="UTF-8" novalidate="novalidate">
-                                    <input autocomplete="off" data-drupal-selector="form-qbv54esvgebdg476-aml6jpthgftzgb8cohwiej-tn8" type="hidden" name="form_build_id" value="form-Qbv54esVgeBDg476_amL6JpTHGfTzgb8COhWiEJ-Tn8" class="form-qbv54esvgebdg476-aml6jpthgftzgb8cohwiej-tn8">
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_12.png">
 
-                                    <input data-drupal-selector="edit-sgf-incorporate-form-form-token" type="hidden" name="form_token" value="_Z2TdPJeR6m3AYkf8BUm6mhVATM8kueysyQxYbZPg0Q" class="edit-sgf-incorporate-form-form-token">
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Filing of Annual Return &amp; AGM (1time)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative"><span class="my-tip">To file the annual return to confirm the particulars of the Company and to file the financial statements, if applicable</span> </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="/themes/custom/zurblk/img/computer.png">
 
-                                    <input data-drupal-selector="edit-sgf-incorporate-form" type="hidden" name="form_id" value="sgf_incorporate_form" class="edit-sgf-incorporate-form">
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>Nominee Director (1yr)</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    It is compulsory for a Nigerian company to appoint a local resident director.&nbsp;
+                                                                                                    The local resident director must should be one of a Nigerian Citizen, &nbsp;Permanent Resident, &nbsp;a person with Employment pass in the name of the company.
+                                                                                                    We can help you fulfill this requirement by appointing one of our team members to act as the nominee resident director for your Nigerian company, on an annual basis.
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="grid-x row-b align-middle contentRow">
+                                                                                <div class="medium-4 cell padding-right-1">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-2 cell align-self-middle">
+                                                                                            <img src="https://sgformation.com/sites/default/files/2019-04/people_6.png">
 
+                                                                                        </div>
+                                                                                        <div class="medium-8 align-self-middle">
+                                                                                            <p>1 foreign individual director &amp; shareholder</p>
+                                                                                        </div>
+                                                                                        <div class="medium-2 cell align-self-middle text-right">
+                                                                                            <i class="fas fa-info-circle position-relative">
+                                                                                                <span class="my-tip">
+                                                                                                    Extra charges of #50 for every additional director or shareholder
+                                                                                                </span>
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="medium-8 cell text-center">
+                                                                                    <div class="grid-x">
+                                                                                        <div class="medium-4 cell st-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell nd-bg-blur padding-1">
+                                                                                        </div>
+                                                                                        <div class="medium-4 cell rd-bg-blur padding-1">
+                                                                                            <i class="fas fa-check"></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="tableFooter" class="grid-x row-b text-center align-center align-middle">
+                                                                                <div class="medium-4 cell">
+                                                                                </div>
+                                                                                <div class="medium-8 cell">
+                                                                                    <div class="grid-x white-text ">
 
-                                    <div class="row sgf-incorporate-page-step-2">
-                                        <div class="align-center" id="incorporateContent">
-                                            <div class="grid-container full white-bg margin-bottom-3">
-                                                <div class="grid-container">
-                                                    <div class="grid-x text-center incorporate-process">
-                                                        <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="">3. Additional</p></div><div class="medium-1 cell"><p class="">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                                                        <div class="medium-4 cell st-bg padding-1">
+                                                                                            <h4>Essential</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <h3 class="margin-vertical-1">#100,000</h3>
+                                                                                            <button data-hide-package="217-218-219-222-223-225-227-229-" type="button" id="id_ess_sel1" class="active-package active-package-232 primary button margin-top-1 font-18" style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_ess_order1" class="primary button margin-top-1 font-18 choose-package package-232 hide" data-default-special-services="251-525-227" data-pid="232" data-pid-bottom="232" data-value="388.00" data-hide-package="217-218-219-222-223-225-227-229-" data-special-service="227" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1  ">ORDER</span>
+                                                                                            </a>
+                                                                                            <a href="/package/essential-package" target="blank" class="readmore">Learn More</a>
+                                                                                        </div>
 
-                                            <div class="large-3 cell">
+                                                                                        <div class="medium-4 cell nd-bg padding-1">
+                                                                                            <h4>Standard</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <h3 class="margin-vertical-1">#210,000</h3>
+                                                                                            <button data-hide-package="217-218-219-222-223-225-227-229-448-" type="button" id="id_sta_sel1" class="active-package active-package-233 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_sta_order1" class="primary button margin-top-1 font-18 choose-package package-233" data-default-special-services="251-525-227" data-pid="233" data-pid-bottom="233" data-value="888.00" data-hide-package="217-218-219-222-223-225-227-229-448-" data-special-service="227" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1  ">ORDER</span>
+                                                                                            </a>
+                                                                                            <a href="/package/standard-package" target="blank" class="readmore">Learn More</a>
+                                                                                        </div>
 
-                                                <div class="js-form-item form-item js-form-type-select form-item-packages js-form-item-packages">
-                                                    <label for="edit-packages">Packages</label>
-                                                    <select data-drupal-selector="edit-packages" id="edit-packages" name="packages" class="form-select"><option value="none" data-label="Select">Select</option><option value="232" data-label="Essential Package">Essential Package</option><option value="233" data-label="Standard Package">Standard Package</option><option value="235" data-label="Premium Package">Premium Package</option><option value="236" data-label="Overseas Package">Overseas Package</option></select>
-                                                </div>
+                                                                                        <div class="medium-4 cell four-bg padding-1">
+                                                                                            <h4>Premium</h4>
+                                                                                            <h5 class="thin-text">Package</h5>
+                                                                                            <h3 class="margin-vertical-1">#475,000</h3>
+                                                                                            <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" type="button" id="id_pre_sel1" class="active-package active-package-235 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
+                                                                                                <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
+                                                                                                <span class="">SELECTED</span>
+                                                                                            </button>
+                                                                                            <a type="button" id="id_pre_order1" class="primary button margin-top-1 font-18 choose-package package-235" data-default-special-services="251-525-227" data-pid="235" data-pid-bottom="235" data-value="1688.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" data-special-service="227-251" data-choose-service-asdefault="0">
+                                                                                                <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
+                                                                                                <span class="padding-left-1  ">ORDER</span>
+                                                                                            </a>
+                                                                                            <a href="/package/premium-package" target="blank" class="readmore">Learn More</a>
+                                                                                        </div>
 
-                                            </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>                <div class="grid-x">
+                                                                                <div class="cell margin-top-2  margin-bottom-1">
+                                                                                    <button type="button" class="secondary button back-step-referent float-left">BACK</button>
+                                                                                    <input class="secondary button next-step-referent float-right" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="NEXT">
 
-
-                                            <input class="hide button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-next" type="submit" id="edit-next" name="op" value="Next">
-                                            <input class="hide button js-form-submit form-submit edit-back" data-drupal-selector="edit-back" formnovalidate="formnovalidate" type="submit" id="edit-back" name="op" value="Back Company">
-
-
-                                            <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
-                                                <div class="tabs-panel is-active" id="package-list-tab">
-                                                    <div class="grid-x block-border text-center align-center align-middle" id="packageTable">
-                                                        <div class="large-4 medium-12 cell">
-                                                            <h3 class="thin-text margin-vertical-3" style="color:black">FEATURES</h3>
-                                                        </div>
-                                                        <div class="large-8 medium-12 cell">
-                                                            <div class="grid-x white-text ">
-
-                                                                <div class="large-3 medium-12 cell st-bg padding-1">
-                                                                    <h4>Essential</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <p class="margin-vertical-1 height-120px">
-                                                                        For experienced business owners seeking no-frills services<br>
-                                                                        <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
-                                                                    </p>
-                                                                    <h3>#388</h3>
-                                                                    <button data-hide-package="217-218-219-222-223-225-227-229-" type="button" class="active-package active-package-232 primary button margin-top-1 font-18" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class="primary button margin-top-1 font-18 choose-package package-232 package-top-232 hide" data-default-special-services="251-525-227" data-pid="232" data-pid-top="232" data-value="388.00" data-hide-package="217-218-219-222-223-225-227-229-" data-special-service="227" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1">ORDER</span>
-                                                                    </a>
-                                                                    <br>
-                                                                    <a href="/package/essential-package" target="blank" class="readmore">Learn more</a>
-                                                                </div>
-
-                                                                <div class="large-3 medium-12 cell nd-bg padding-1">
-                                                                    <h4>Standard</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <p class="margin-vertical-1 height-120px">
-                                                                        For new entrepreneurs who want value &amp; simplicity<br>
-                                                                        <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
-                                                                    </p>
-                                                                    <h3>#888</h3>
-                                                                    <button data-hide-package="217-218-219-222-223-225-227-229-448-" type="button" class="active-package active-package-233 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class=" primary button margin-top-1 font-18 choose-package package-233 package-top-233" data-default-special-services="251-525-227" data-pid="233" data-pid-top="233" data-value="888.00" data-hide-package="217-218-219-222-223-225-227-229-448-" data-special-service="227" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1">ORDER</span>
-                                                                    </a>
-                                                                    <br>
-                                                                    <a href="/package/standard-package" target="blank" class="readmore">Learn more</a>
-                                                                </div>
-
-                                                                <div class="large-3 medium-12 cell four-bg padding-1">
-                                                                    <h4>Premium</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <p class="margin-vertical-1 height-120px">
-                                                                        For those who want set up everything<br>
-                                                                        <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
-                                                                    </p>
-                                                                    <h3>#1,688</h3>
-                                                                    <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" type="button" class="active-package active-package-235 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class=" primary button margin-top-1 font-18 choose-package package-235 package-top-235" data-default-special-services="251-525-227" data-pid="235" data-pid-top="235" data-value="1688.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" data-special-service="227-251" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1">ORDER</span>
-                                                                    </a>
-                                                                    <br>
-                                                                    <a href="/package/premium-package" target="blank" class="readmore">Learn more</a>
-                                                                </div>
-
-                                                                <div class="large-3 medium-12 cell rd-bg padding-1">
-                                                                    <h4>Overseas</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <p class="margin-vertical-1 height-120px">
-                                                                        For foreign directors who want a presence in Singapore<br>
-                                                                        <span style="font-size:0.875rem">[Inclusive of Gov. fee]</span>
-                                                                    </p>
-                                                                    <h3>#3,888</h3>
-                                                                    <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-231-251-448-525-" type="button" class="active-package active-package-236 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class=" primary button margin-top-1 font-18 choose-package package-236 package-top-236" data-default-special-services="251-525-227" data-pid="236" data-pid-top="236" data-value="3888.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-231-251-448-525-" data-special-service="227-251-525" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1">ORDER</span>
-                                                                    </a>
-                                                                    <br>
-                                                                    <a href="/package/overseas-package" target="blank" class="readmore">Learn more</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="/themes/custom/zurblk/img/computer.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company Name Search and Application Fee</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            An approved company name will be reserved for 120 days from the date of name approval.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/law.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Singapore Company Registration</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            To set up a company in Singapore, a company must first be incorporated.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_6.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Share Certificate(s)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            Share Certificate(s)
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/law_0.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company Constitution</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            Company Constitution
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_7.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Free Business Profile</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            An electronic report that provides information such as Unique Entity Number (UEN), business name, business activities, registration date, the details of owners/officers and etc.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_8.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company statutory records</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            Company statutory records
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_9.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>First Board Resolution</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            The first board meeting should be held within the first month from the date of incorporation. At this meeting, the appointment of the first directors of the company will be confirmed.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/people_4.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company Secretary (Free 3mth)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            All companies incorporated in Singapore must fulfill a key requirement of appointing a company secretary who must be a resident of Singapore.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/people_3.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company Secretary (1yr)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            All companies incorporated in Singapore must fulfill a key requirement of appointing a company secretary who must be a resident of Singapore.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_10.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Maintenance of company statutory records</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            Maintenance of company statutory records
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_11.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Registered Address (1yr)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            A company should have a registered address in Singapore.&nbsp;
-                                                                            We can help you fulfill this requirement by providing an office address on an annual basis.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/stamp.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Company Stamp</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            A company stamp is optional, but there will be times when it is required, such as when it comes to government documentation, utility or telephone bills and even courier companies which may be require an official company stamp for authorization purposes. Other instances where a company chop may be required include:
 
 
-                                                                            Grant applications
-                                                                            License application
-                                                                            Signing of purchase orders
-                                                                            Rental agreements
-                                                                            Business contracts
-                                                                            Official invoices
-                                                                            Statement of accounts
-                                                                            Bills of exchange
-                                                                            Promissory note
-
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/paper-work_12.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Filing of Annual Return &amp; AGM (1time)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative"><span class="my-tip">To file the annual return to confirm the particulars of the Company and to file the financial statements, if applicable</span> </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="/themes/custom/zurblk/img/computer.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>Nominee Director (1yr)</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            It is compulsory for a Singapore company to appoint a local resident director.&nbsp;
-                                                                            The local resident director must should be one of a Singapore Citizen, &nbsp;Permanent Resident, &nbsp;a person with Employment pass in the name of the company.
-                                                                            We can help you fulfill this requirement by appointing one of our team members to act as the nominee resident director for your Singapore company, on an annual basis.
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-x row-b align-middle contentRow">
-                                                        <div class="medium-4 cell padding-right-1">
-                                                            <div class="grid-x">
-                                                                <div class="medium-2 cell align-self-middle">
-                                                                    <img src="https://sgformation.com/sites/default/files/2019-04/people_6.png">
-
-                                                                </div>
-                                                                <div class="medium-8 align-self-middle">
-                                                                    <p>1 foreign individual director &amp; shareholder</p>
-                                                                </div>
-                                                                <div class="medium-2 cell align-self-middle text-right">
-                                                                    <i class="fas fa-info-circle position-relative">
-                                                                        <span class="my-tip">
-                                                                            Extra charges of #50 for every additional director or shareholder
-                                                                        </span>
-                                                                    </i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="medium-8 cell text-center">
-                                                            <div class="grid-x">
-                                                                <div class="medium-3 cell st-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell nd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell rd-bg-blur padding-1">
-                                                                </div>
-                                                                <div class="medium-3 cell four-bg-blur padding-1">
-                                                                    <i class="fas fa-check"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="tableFooter" class="grid-x row-b text-center align-center align-middle">
-                                                        <div class="medium-4 cell">
-                                                        </div>
-                                                        <div class="medium-8 cell">
-                                                            <div class="grid-x white-text ">
-
-                                                                <div class="medium-3 cell st-bg padding-1">
-                                                                    <h4>Essential</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <h3 class="margin-vertical-1">#388</h3>
-                                                                    <button data-hide-package="217-218-219-222-223-225-227-229-" type="button" class="active-package active-package-232 primary button margin-top-1 font-18" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class="primary button margin-top-1 font-18 choose-package package-232 hide" data-default-special-services="251-525-227" data-pid="232" data-pid-bottom="232" data-value="388.00" data-hide-package="217-218-219-222-223-225-227-229-" data-special-service="227" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1  ">ORDER</span>
-                                                                    </a>
-                                                                    <a href="/package/essential-package" target="blank" class="readmore">Learn More</a>
-                                                                </div>
-
-                                                                <div class="medium-3 cell nd-bg padding-1">
-                                                                    <h4>Standard</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <h3 class="margin-vertical-1">#888</h3>
-                                                                    <button data-hide-package="217-218-219-222-223-225-227-229-448-" type="button" class="active-package active-package-233 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class="  primary button margin-top-1 font-18 choose-package package-233" data-default-special-services="251-525-227" data-pid="233" data-pid-bottom="233" data-value="888.00" data-hide-package="217-218-219-222-223-225-227-229-448-" data-special-service="227" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1  ">ORDER</span>
-                                                                    </a>
-                                                                    <a href="/package/standard-package" target="blank" class="readmore">Learn More</a>
-                                                                </div>
-
-                                                                <div class="medium-3 cell four-bg padding-1">
-                                                                    <h4>Premium</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <h3 class="margin-vertical-1">#1,688</h3>
-                                                                    <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" type="button" class="active-package active-package-235 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class="  primary button margin-top-1 font-18 choose-package package-235" data-default-special-services="251-525-227" data-pid="235" data-pid-bottom="235" data-value="1688.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-251-448-" data-special-service="227-251" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1  ">ORDER</span>
-                                                                    </a>
-                                                                    <a href="/package/premium-package" target="blank" class="readmore">Learn More</a>
-                                                                </div>
-
-                                                                <div class="medium-3 cell rd-bg padding-1">
-                                                                    <h4>Overseas</h4>
-                                                                    <h5 class="thin-text">Package</h5>
-                                                                    <h3 class="margin-vertical-1">#3,888</h3>
-                                                                    <button data-hide-package="73-138-217-218-219-222-223-225-227-228-229-231-251-448-525-" type="button" class="active-package active-package-236 primary button margin-top-1 font-18 hide" style="background-color:white; opacity:1;">
-                                                                        <span class=""><i class="fas fa-check" style="line-height:1rem;"></i></span>
-                                                                        <span class="">SELECTED</span>
-                                                                    </button>
-                                                                    <a type="button" class="  primary button margin-top-1 font-18 choose-package package-236" data-default-special-services="251-525-227" data-pid="236" data-pid-bottom="236" data-value="3888.00" data-hide-package="73-138-217-218-219-222-223-225-227-228-229-231-251-448-525-" data-special-service="227-251-525" data-choose-service-asdefault="0">
-                                                                        <span class="border-r padding-right-1"><i class="fas fa-cart-plus"></i></span>
-                                                                        <span class="padding-left-1  ">ORDER</span>
-                                                                    </a>
-                                                                    <a href="/package/overseas-package" target="blank" class="readmore">Learn More</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>                <div class="grid-x">
-                                                        <div class="cell margin-top-2  margin-bottom-1">
-                                                            <button type="button" class="secondary button back-step-referent float-left">BACK</button>
-                                                            <a type="button" class="secondary button next-step-referent float-right" asp-area="" asp-controller="Dashboard" asp-action="order_details">NEXT</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </form>
+                                                        </form>
 
 
 
@@ -786,3 +730,284 @@
     <!--end footer-->
 </div>
 <!-- end page content -->
+<partial name="_SpinnerView" />
+@section Scripts
+{
+    <script>
+        $("#id_package").change(function () {
+            var packageSelected = $('#edit-packages').val();
+            if (packageSelected === '1') {
+                var element = document.getElementById("id_ess_sel");
+                element.classList.remove("hide");
+                element = document.getElementById("id_ess_sel1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_sta_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_sta_sel1");
+                element.classList.add("hide");
+                element = document.getElementById("id_pre_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_pre_sel1");
+                element.classList.add("hide");
+
+
+
+                element = document.getElementById("id_ess_order");
+                element.classList.add("hide");
+                element = document.getElementById("id_ess_order1");
+                element.classList.add("hide");
+                element = document.getElementById("id_sta_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_sta_order1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_pre_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_pre_order1");
+                element.classList.remove("hide");
+            }
+            else if (packageSelected === '2') {
+                var element = document.getElementById("id_sta_sel");
+                element.classList.remove("hide");
+                element = document.getElementById("id_sta_sel1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_ess_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_ess_sel1");
+                element.classList.add("hide");
+                element = document.getElementById("id_pre_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_pre_sel1");
+                element.classList.add("hide");
+
+                element = document.getElementById("id_sta_order");
+                element.classList.add("hide");
+                element = document.getElementById("id_sta_order1");
+                element.classList.add("hide");
+                element = document.getElementById("id_ess_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_ess_order1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_pre_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_pre_order1");
+                element.classList.remove("hide");
+            } else if (packageSelected === '3') {
+                var element = document.getElementById("id_pre_sel");
+                element.classList.remove("hide");
+                element = document.getElementById("id_pre_sel1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_ess_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_ess_sel1");
+                element.classList.add("hide");
+                element = document.getElementById("id_sta_sel");
+                element.classList.add("hide");
+                element = document.getElementById("id_sta_sel1");
+                element.classList.add("hide");
+
+                element = document.getElementById("id_pre_order");
+                element.classList.add("hide");
+                element = document.getElementById("id_pre_order1");
+                element.classList.add("hide");
+                element = document.getElementById("id_ess_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_ess_order1");
+                element.classList.remove("hide");
+                element = document.getElementById("id_sta_order");
+                element.classList.remove("hide");
+                element = document.getElementById("id_sta_order1");
+                element.classList.remove("hide");
+            }
+            //$.ajax({
+            //    type: "post",
+            //    url: "/Account/SignUp",
+            //    data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
+            //    success: function (data) {
+            //        if (data)
+            //            window.location.href = "/Dashboard/Index";
+            //        else {
+            //            alert("There seems to be an issue while registering your profile, try again");
+            //            document.location.reload();
+
+            //        }
+            //    },
+            //        error: function (xhr, ajaxOptions, thrownError) {
+            //            alert(xhr.status);
+            //            alert(thrownError);
+            //        }
+            //})
+        });
+        $("#id_ess_order").click(function () {
+            $('#edit-packages').val('1')
+            var element = document.getElementById("id_ess_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.add("hide");
+
+
+
+            element = document.getElementById("id_ess_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.remove("hide");
+        });
+        $("#id_sta_order").click(function () {
+            $('#edit-packages').val('2')
+            var element = document.getElementById("id_sta_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.add("hide");
+
+            element = document.getElementById("id_sta_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.remove("hide");
+        });
+        $("#id_pre_order").click(function () {
+            $('#edit-packages').val('3')
+            var element = document.getElementById("id_pre_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.add("hide");
+
+            element = document.getElementById("id_pre_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.remove("hide");
+        });
+        $("#id_ess_order1").click(function () {
+            $('#edit-packages').val('1')
+            var element = document.getElementById("id_ess_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.add("hide");
+
+
+
+            element = document.getElementById("id_ess_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.remove("hide");
+        });
+        $("#id_sta_order1").click(function () {
+            $('#edit-packages').val('2')
+            var element = document.getElementById("id_sta_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.add("hide");
+
+            element = document.getElementById("id_sta_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.remove("hide");
+        });
+        $("#id_pre_order1").click(function () {
+            $('#edit-packages').val('3')
+            var element = document.getElementById("id_pre_sel");
+            element.classList.remove("hide");
+            element = document.getElementById("id_pre_sel1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_sel1");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel");
+            element.classList.add("hide");
+            element = document.getElementById("id_sta_sel1");
+            element.classList.add("hide");
+
+            element = document.getElementById("id_pre_order");
+            element.classList.add("hide");
+            element = document.getElementById("id_pre_order1");
+            element.classList.add("hide");
+            element = document.getElementById("id_ess_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_ess_order1");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order");
+            element.classList.remove("hide");
+            element = document.getElementById("id_sta_order1");
+            element.classList.remove("hide");
+        });
+    </script>
+}

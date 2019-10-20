@@ -1,120 +1,150 @@
-﻿@{
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
     ViewData["Title"] = "order_review";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
 <!-- Page Content-->
-<div class="page-content">
-    <div class="container-fluid">
-        <!-- Page-Title -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="page-title-box">
-                    <h4 class="page-title">Packages</h4>
+<form role="form" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Packages</h4>
+                    </div>
+                    <!--end page-title-box-->
                 </div>
-                <!--end page-title-box-->
+                <!--end col-->
             </div>
-            <!--end col-->
-        </div>
-        <!-- end page title end breadcrumb -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row sgf-incorporate-page-step-1">
-                            <div class="align-center" id="incorporateContent">
-                                <div class="grid-container full white-bg margin-bottom-3">
-                                    <div class="grid-container">
-                                        <div class="grid-x text-center incorporate-process">
-                                            <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="">3. Additional</p></div><div class="medium-1 cell"><p class="">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row sgf-incorporate-page-step-1">
+                                <div class="align-center" id="incorporateContent">
+                                    <div class="grid-container full white-bg margin-bottom-3">
+                                        <div class="grid-container">
+                                            <div class="grid-x text-center incorporate-process">
+                                                <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="">3. Additional</p></div><div class="medium-1 cell"><p class="">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
-                                    <div class="tabs-panel is-active" id="company-name-tab" role="tabpanel" aria-hidden="false" aria-labelledby="company-name-tab-label">
-                                        <div class="grid-x grid-padding-x block-border padding-2">
-                                            <div class="large-6 cell check-name-company-callback">
+                                    <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
+                                        <div class="tabs-panel is-active" id="company-name-tab" role="tabpanel" aria-hidden="false" aria-labelledby="company-name-tab-label">
+                                            <div class="grid-x grid-padding-x block-border padding-2">
 
-                                                <div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
-                                                    <label for="edit-title" class="form-required">Company Name</label>
-                                                    <input data-drupal-selector="edit-title" type="text" id="edit-title" name="title" value="" size="60" maxlength="128" class="form-text required edit-title valid" required="required" aria-required="true" aria-invalid="false">
+                                                <div class="large-6 cell check-name-company-callback">
+
+                                                    <div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
+                                                        <label for="edit-title" class="form-required">Company Name</label>
+                                                        @*<input data-drupal-selector="edit-title" type="text" id="edit-title" name="title" value="" size="60" maxlength="128" class="form-text required edit-title valid" required="required" aria-required="true" aria-invalid="false">*@
+                                                        @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text required edit-title valid", maxlength = 128, id = "edit-title", name = "title", size = "60", required = "required" })
+
+                                                    </div>
+
+                                                </div><div class="large-3 cell">
+
+                                                    <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
+                                                        <label for="edit-field-company-type">Company Type</label>
+                                                        <select disabled="disabled" data-drupal-selector="edit-field-company-type" id="edit-field-company-type" name="field_company_type" class="form-select"><option value="6" selected="selected" data-label="PTE. LTD.">PTE. LTD.</option><option value="2519" data-label="LTD.">LTD.</option></select>
+                                                    </div>
 
                                                 </div>
-
-                                            </div><div class="large-3 cell">
-
-                                                <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
-                                                    <label for="edit-field-company-type">Company Type</label>
-                                                    <select disabled="disabled" data-drupal-selector="edit-field-company-type" id="edit-field-company-type" name="field_company_type" class="form-select"><option value="6" selected="selected" data-label="PTE. LTD.">PTE. LTD.</option><option value="2519" data-label="LTD.">LTD.</option></select>
+                                                <div class="large-3 cell position-relative">
+                                                    <div class="invisible">checkname button</div>
+                                                    <input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Check Name">
                                                 </div>
+                                                @if(Model.bool_var0){
+                                                <div id="devel-node-access-node-content-div">
+                                                    <div id="checkNameIn" class="text-center  margin-top-1">
+                                                        <i class="fas fa-check result-icon-success"></i>
+                                                        <h1 class="">@Model.string_var0 PTE. LTD.</h1>
+                                                        <h3 class="">Congratulations! The name is available!</h3>
+                                                        <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Save &amp; Continue</a>
+                                                        <p class="text-left margin-vertical-1">
+                                                            A total of <span class="primary-color stat "> @Model.list_var0.Count() </span> similar or
+                                                            matching names were found.
+                                                        </p>
+                                                        <table id="similarTable">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>UEN</th>
+                                                                    <th class="gray-bg">ENTITY NAME</th>
+                                                                    <th>TYPE</th>
+                                                                    <th class="gray-bg">DATE OF ISSUE</th>
+                                                                    <th>STATUS</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="5" class="text-left text-bold">Similar Match</td>
 
-                                            </div><div class="large-3 cell position-relative">
-                                                <div class="invisible">checkname button</div><input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" onclick="showDiv()"  name="op" value="Check Name">
-                                            </div><input class="sgf-incorporate-company-next hide button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-next" type="submit" id="edit-next" name="op" value="Next">
+                                                                </tr>
 
-
-                                            <div style="display:none;" id="devel-node-access-node-content-div">
-                                                <div id="checkNameIn" class="text-center  margin-top-1">
-                                                    <i class="fas fa-check result-icon-success"></i>
-                                                    <h1 class="">DANGOTE PTE. LTD.</h1>
-                                                    <h3 class="">Congratulations! The name is available!</h3>
-                                                    <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" asp-area="" asp-controller="Dashboard" asp-action="packages">Save &amp; Continue</a>
-                                                    <p class="text-left margin-vertical-1">
-                                                        A total of <span class="primary-color stat "> 0 </span> similar or
-                                                        matching names were found. (* Subject to approval by ACRA)
-                                                    </p>
-                                                    <table id="similarTable">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>UEN</th>
-                                                                <th class="gray-bg">ENTITY NAME</th>
-                                                                <th>TYPE</th>
-                                                                <th class="gray-bg">DATE OF ISSUE</th>
-                                                                <th>STATUS</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td colspan="5" class="text-left text-bold">Similar Match</td>
-
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                    <div class="callout four-bg">
-                                                        <div class="grid-x grid-padding-x text-left white-text">
-                                                            <div class="large-12 cell text-bold primary-color">Entity Status Legend:</div>
-                                                            <div class="large-2 medium-4 cell">BN: Business</div>
-                                                            <div class="large-2 medium-4 cell">LC: Company</div>
-                                                            <div class="large-2 medium-4 cell">LP: Limited Partnership</div>
-                                                            <div class="large-2 medium-4 cell">LL: Limited Liability Partnership</div>
-                                                            <div class="large-2 medium-4 cell">FC: Foreign Company</div>
-                                                            <div class="large-2 medium-4 cell">PF: Public Accounting Firm</div>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="callout four-bg">
+                                                            <div class="grid-x grid-padding-x text-left white-text">
+                                                                <div class="large-12 cell text-bold primary-color">Entity Status Legend:</div>
+                                                                <div class="large-2 medium-4 cell">BN: Business</div>
+                                                                <div class="large-2 medium-4 cell">LC: Company</div>
+                                                                <div class="large-2 medium-4 cell">LP: Limited Partnership</div>
+                                                                <div class="large-2 medium-4 cell">LL: Limited Liability Partnership</div>
+                                                                <div class="large-2 medium-4 cell">FC: Foreign Company</div>
+                                                                <div class="large-2 medium-4 cell">PF: Public Accounting Firm</div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <input class="sgf-incorporate-company-next hide button button--primary js-form-submit form-submit edit-next" data-drupal-selector="edit-next" type="submit" id="edit-next" name="op" value="Next">
                         </div>
-                    </div>
                     </div>
                     <!--end card-->
                 </div>
-            <!--end col-->
+                <!--end col-->
+            </div>
+            <!--end row-->
         </div>
-        <!--end row-->
+        <!-- container -->
+        <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
+        <!--end footer-->
     </div>
-    <!-- container -->
-    <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
-    <!--end footer-->
-</div>
-<!-- end page content -->
+</form>
+    <!-- end page content -->
+    <partial name="_SpinnerView" />
+    <script>
+        function showDiv() {
+            document.getElementById('devel-node-access-node-content-div').style.display = "block";
+        }
+        function saveCompany() {
+        var val1 = $('#edit-title').val();
+          if (val1 === null)
+            return alert("Please Input a Company Name");
 
-<script>
-    function showDiv() {
-   document.getElementById('devel-node-access-node-content-div').style.display = "block";
-}
-</script>
+        $.ajax({
+            type: "post",
+            url: "/Dashboard/save_company",
+            data:{ "companyName": val1},
+            success: function (data) {
+                if (data)
+                    window.location.href = "/Dashboard/packages";
+                else {
+                    alert("There seems to be a problem with your application, please contact help desk ")
+                    document.location.reload();
+
+                }
+
+
+            }
+        })
+    }
+    </script>

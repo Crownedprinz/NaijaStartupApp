@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
     ViewData["Title"] = "order_summary";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
@@ -25,7 +26,24 @@
                                 <div class="grid-container full white-bg margin-bottom-3">
                                     <div class="grid-container">
                                         <div class="grid-x text-center incorporate-process">
-                                            <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="step-active">3. Additional</p></div><div class="medium-1 cell"><p class="step-active">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="step-active">5. Officers</p></div><div class="medium-1 cell "><p class="step-active">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+                                            <div class="medium-2 cell">
+                                                <p class="step-active">1. Company Name</p>
+                                            </div>
+                                            <div class="medium-2 cell padding-horizontal-1">
+                                                <p class="step-active">2. Packages</p>
+                                            </div>
+                                            <div class="medium-3 cell padding-right-1">
+                                                <p class="step-active">3. Details</p>
+                                            </div>
+                                            <div class="medium-2 cell padding-horizontal-1">
+                                                <p class="step-active">4. Officers</p>
+                                            </div>
+                                            <div class="medium-1 cell ">
+                                                <p class="step-active">5. Capital</p>
+                                            </div>
+                                            <div class="medium-2 cell padding-left-1">
+                                                <p class="">6. Review / Payment</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -47,33 +65,43 @@
 
                                                                 <div class="js-form-item form-item js-form-type-select form-item-capital-currency js-form-item-capital-currency">
                                                                     <label for="edit-capital-currency">Currency *</label>
-                                                                    <select data-drupal-selector="edit-capital-currency" id="edit-capital-currency" name="capital[currency]" class="form-select"><option value="1357" data-label="SGD">SGD</option><option value="1356" data-label="USD">USD</option><option value="2516" data-label="EUR">EUR</option><option value="2517" data-label="JPY">JPY</option><option value="2515" data-label="CNY">CNY</option></select>
+                                                                    @Html.DropDownListFor(m => m.string_var0,
+                                                                                        new List<SelectListItem>
+                                                                                         {
+                                                                                             new SelectListItem {Text = "-None-", Value = "none"},
+                                                                                             new SelectListItem {Text = "SGD", Value = "SGD"},
+                                                                                             new SelectListItem {Text = "USD", Value = "USD"},
+                                                                                             new SelectListItem {Text = "EUR", Value = "EUR"},
+                                                                                             new SelectListItem {Text = "JPY", Value = "JPY"},
+                                                                                             new SelectListItem {Text = "CNY", Value = "CNY"},
+                                                                                         }, new { @class = "form-select", @id = "edit-capital-currency"})
+
                                                                 </div>
 
                                                             </div><div class="cell small-12 medium-4 large-4 field-number-of-share">
 
-                                                                <div class="js-form-item form-item js-form-type-number form-item-capital-number-issue-share js-form-item-capital-number-issue-share">
-                                                                    <label for="edit-capital-number-issue-share">Number of Issued Share *</label>
-                                                                    <input data-drupal-selector="edit-capital-number-issue-share" type="number" id="edit-capital-number-issue-share" name="capital[number_issue_share]" value="1" step="1" class="form-number edit-capital-number-issue-share">
+                                                                      <div class="js-form-item form-item js-form-type-number form-item-capital-number-issue-share js-form-item-capital-number-issue-share">
+                                                                          <label for="edit-capital-number-issue-share">Number of Issued Share *</label>
+                                                                          @Html.TextBoxFor(m => m.int_var0, new { @class = "form-number edit-capital-number-issue-share" ,id = "edit-capital-number-issue-share", @value = "1" })
 
-                                                                </div>
+                                                                      </div>
 
                                                             </div><div class="cell small-12 medium-4 large-4 field-each-share-price">
 
-                                                                <div class="js-form-item form-item js-form-type-number form-item-capital-each-share-price js-form-item-capital-each-share-price">
-                                                                    <label for="edit-capital-each-share-price">Each share price *</label>
-                                                                    <input data-drupal-selector="edit-capital-each-share-price" type="number" id="edit-capital-each-share-price" name="capital[each_share_price]" value="1.00" step="0.01" class="form-number edit-capital-each-share-price">
+                                                                      <div class="js-form-item form-item js-form-type-number form-item-capital-each-share-price js-form-item-capital-each-share-price">
+                                                                          <label for="edit-capital-each-share-price">Each share price *</label>
+                                                                          @Html.TextBoxFor(m => m.decimal_var0, new { @class = "form-number edit-capital-each-share-price",  id = "edit-capital-each-share-price", @value = "1.00" })
 
-                                                                </div>
+                                                                      </div>
 
                                                             </div>
                                                         </div><div class="hide">
 
-                                                            <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-name js-form-item-capital-shareholder-0-shareholder-name">
-                                                                <label for="edit-capital-shareholder-0-shareholder-name">Shareholder Name</label>
-                                                                <input data-drupal-selector="edit-capital-shareholder-0-shareholder-name" type="text" id="edit-capital-shareholder-0-shareholder-name" name="capital[shareholder][0][shareholder_name]" value="JOHN ADEMOLA" size="60" maxlength="128" class="form-text edit-capital-shareholder-0-shareholder-name">
+                                                                  <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-name js-form-item-capital-shareholder-0-shareholder-name">
+                                                                      <label for="edit-capital-shareholder-0-shareholder-name">Shareholder Name</label>
+                                                                      @Html.TextBoxFor(m => m.string_var1, new {@id="edit-capital-shareholder-0-shareholder-name",@value="JOHN ADEMOLA",@size="60",@maxlength="128",@class="form-text edit-capital-shareholder-0-shareholder-name"})
 
-                                                            </div>
+                                                                  </div>
 
                                                         </div><div data-capital-detail-wrapper="1" class="grid-x grid-margin-x capital-detail-wrapper capital-detail-wrapper-1 align-middle">
                                                             <div class="text-right text-uppercase cell small-12 medium-4 large-4 shareholder-name-1 ">JOHN ADEMOLA</div>
@@ -81,7 +109,8 @@
 
                                                                 <div class="js-form-item form-item js-form-type-number form-item-capital-shareholder-0-shared-allotted js-form-item-capital-shareholder-0-shared-allotted">
                                                                     <label for="edit-capital-shareholder-0-shared-allotted">Shares Allotted *</label>
-                                                                    <input class="capital-detail-shares-allotted form-number edit-capital-shareholder-0-shared-allotted" data-drupal-selector="edit-capital-shareholder-0-shared-allotted" type="number" id="edit-capital-shareholder-0-shared-allotted" name="capital[shareholder][0][shared_allotted]" value="0" step="1">
+                                                                    <input class="capital-detail-shares-allotted form-number edit-capital-shareholder-0-shared-allotted" id="edit-capital-shareholder-0-shared-allotted" name="string_var4" value="0" step="1">
+                                                                    @Html.TextBoxFor(m => m.decimal_var1, new { @class="capital-detail-shares-allotted form-number edit-capital-shareholder-0-shared-allotted",@id="edit-capital-shareholder-0-shared-allotted",@value="0"  })
 
                                                                 </div>
 
@@ -89,7 +118,8 @@
 
                                                                 <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-percent js-form-item-capital-shareholder-0-shareholder-percent">
                                                                     <label for="edit-capital-shareholder-0-shareholder-percent">Shares Allotted *</label>
-                                                                    <input class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent" data-drupal-selector="edit-capital-shareholder-0-shareholder-percent" type="text" id="edit-capital-shareholder-0-shareholder-percent" name="capital[shareholder][0][shareholder_percent]" value="0" size="60" maxlength="128">
+                                                                    <input class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent"  id="edit-capital-shareholder-0-shareholder-percent" name="capital[shareholder][0][shareholder_percent]" value="0" size="60" maxlength="128">
+                                                                     @Html.TextBoxFor(m => m.string_var0, new { @class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent" ,@id="edit-capital-shareholder-0-shareholder-percent",@value="0",@size="60" ,@maxlength="128"})
 
                                                                 </div>
 
@@ -146,10 +176,10 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
                     </div>
-                    <!--end card-->
                 </div>
+                <!--end card-->
+            </div>
             <!--end col-->
         </div>
         <!--end row-->
