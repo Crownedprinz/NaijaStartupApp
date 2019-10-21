@@ -133,12 +133,12 @@
             async: true,
             data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
                 success: function (data) {
-                if (data)
+                    var obj = JSON.stringify(data);
+                    var jsonObj = JSON.parse(obj.toString());
+                if (jsonObj.isSuccessful)
                     window.location.href = "/Dashboard/Index";
                 else {
-                    alert("This Email Address or Username has already been registered");
-                    document.location.reload();
-
+                    alert(jsonObj.error);
                 }
             }
         });
