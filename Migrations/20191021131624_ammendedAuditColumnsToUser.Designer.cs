@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NaijaStartupApp.Data;
 
 namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191021131624_ammendedAuditColumnsToUser")]
+    partial class ammendedAuditColumnsToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -628,19 +630,50 @@ namespace NaijaStartupApp.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("Address");
+                    b.Property<DateTime>("CreationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
 
-                    b.Property<string>("Country");
+                    b.Property<string>("CreatorUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
 
-                    b.Property<string>("FirstName");
+                    b.Property<DateTime>("DeletionTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("DeletionUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
 
                     b.Property<bool>("IsActive");
 
-                    b.Property<string>("LastName");
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<DateTime>("ModificationTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getutcdate())");
+
+                    b.Property<string>("ModificationUserId")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("('')")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
 
                     b.Property<string>("Role");
-
-                    b.Property<string>("State");
 
                     b.HasDiscriminator().HasValue("User");
                 });

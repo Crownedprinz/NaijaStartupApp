@@ -46,20 +46,27 @@ namespace NaijaStartupApp.Controllers
                 Password = password,
                 RememberMe = rememberMe,
             };
-            var checkLogin = await _userService.AuthenticateAsync(Input);
-            if (checkLogin.IsSuccessful)
+            try
             {
-                var user = _userService.get_User_By_EmailOrUsername(Input.EmailOrUsername);
-                //globalVariables = HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
-                //temporaryVariables = HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
-                globalVariables.userid = user.Id;
-                globalVariables.RoleId = user.Role;
-                globalVariables.userName = user.UserName;
-                HttpContext.Session.SetObject("TemporaryVariables", temporaryVariables);
-                HttpContext.Session.SetObject("GlobalVariables", globalVariables);
-                return true;
+                var checkLogin = await _userService.AuthenticateAsync(Input);
+                if (checkLogin.IsSuccessful)
+                {
+                    var user = _userService.get_User_By_EmailOrUsername(Input.EmailOrUsername);
+                    //globalVariables = HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
+                    //temporaryVariables = HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
+                    globalVariables.userid = user.Id;
+                    globalVariables.RoleId = user.Role;
+                    globalVariables.userName = user.UserName;
+                    HttpContext.Session.SetObject("TemporaryVariables", temporaryVariables);
+                    HttpContext.Session.SetObject("GlobalVariables", globalVariables);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
                 return false;
             }
@@ -135,7 +142,71 @@ namespace NaijaStartupApp.Controllers
         }
         public IActionResult Profile()
         {
-            return View();
+            var temp = _context.User.Where((x => x.IsActive == true && x.Id.ToString() == _globalVariables.userid))
+                .Select(x => new TemporaryVariables
+                {
+                    string_var0 = x.FirstName,
+                    string_var1 = x.LastName,
+                    string_var2 = x.Email,
+                    string_var3 = x.State,
+                    string_var4 = x.PhoneNumber,
+                    string_var5 = x.Country,
+                    string_var6 = x.Address,
+                    string_var9 = x.UserName
+                }).FirstOrDefault();
+            return View(temp);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Profile(TemporaryVariables Input)
+        {
+            try
+            {
+                var users = _context.User.Find(_globalVariables.userid);
+                if (users != null)
+                {
+                    users.FirstName = Input.string_var0;
+                    users.LastName = Input.string_var1;
+                    users.Email = Input.string_var2;
+                    users.State = Input.string_var3;
+                    users.PhoneNumber = Input.string_var4;
+                    users.Country = Input.string_var5;
+                    users.Address = Input.string_var6;
+                    users.UserName = Input.string_var9;
+                };
+                if (!string.IsNullOrWhiteSpace(Input.string_var7) && !string.IsNullOrWhiteSpace(Input.string_var8))
+                {
+                    if (Input.string_var7.ToLower() != Input.string_var8.ToLower())
+                    {
+                        var password = await _userService.ChangePasswordAsync(users, Input.string_var7, Input.string_var8);
+                        if (password.IsSuccessful)
+                        {
+                            _context.Update(users);
+                            await _context.SaveChangesAsync();
+                        }
+                        else
+                        {
+                            ViewBag.Message = "An error occurred";
+                        }
+
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Password MisMatch";
+                    }
+                }
+                else
+                {
+                    _context.Update(users);
+                    await _context.SaveChangesAsync();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return View(Input);
         }
         public ActionResult LogOff()
         {

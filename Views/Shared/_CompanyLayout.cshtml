@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@using NaijaStartupApp.Helpers;
+@inject IHttpContextAccessor hcontext
+@{
+    NaijaStartupApp.Models.NsuVariables.GlobalVariables _globalVariables = hcontext.HttpContext.Session.GetObject<NaijaStartupApp.Models.NsuVariables.GlobalVariables>("GlobalVariables");
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -59,11 +65,11 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"><img src="~/assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle"> <span class="ml-1 nav-user-name hidden-sm">lia<i class="mdi mdi-chevron-down"></i></span></a>
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"><img src="~/assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle"> <span class="ml-1 nav-user-name hidden-sm">@_globalVariables.userName<i class="mdi mdi-chevron-down"></i></span></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item"  asp-area="" asp-controller="Account" asp-action="LogOff"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="LogOff"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -119,38 +125,38 @@
         @RenderBody()
     </div>
 
-        <environment include="Development,Staging,Production">
-            <!-- jQuery  -->
-            <script src="~/assets/js/jquery.min.js"></script>
-            <script src="~/assets/js/bootstrap.bundle.min.js"></script>
-            <script src="~/assets/js/metisMenu.min.js"></script>
-            <script src="~/assets/js/waves.min.js"></script>
-            <script src="~/assets/js/jquery.slimscroll.min.js"></script>
-            <script src="~/assets/plugins/apexcharts/apexcharts.min.js"></script>
-            <script src="~/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-            <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-            <script src="~/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-            <script src="~/assets/pages/jquery.hospital_dashboard.init.js"></script>
-            <!-- App js -->
-            <script src="~/assets/js/app.js"></script>
-            <script src="~/assets/js/spin.js"></script>
-            <script src="~/assets/js/spinCustom.js"></script>
-        </environment>
-        <environment exclude="Development,Staging,Production">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                    asp-fallback-src="~/assets/js/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-            </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                    asp-fallback-src="~/assets/js/bootstrap.bundle.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                    crossorigin="anonymous"
-                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-            </script>
-        </environment>
+    <environment include="Development,Staging,Production">
+        <!-- jQuery  -->
+        <script src="~/assets/js/jquery.min.js"></script>
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/js/metisMenu.min.js"></script>
+        <script src="~/assets/js/waves.min.js"></script>
+        <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="~/assets/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="~/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="~/assets/pages/jquery.hospital_dashboard.init.js"></script>
+        <!-- App js -->
+        <script src="~/assets/js/app.js"></script>
+        <script src="~/assets/js/spin.js"></script>
+        <script src="~/assets/js/spinCustom.js"></script>
+    </environment>
+    <environment exclude="Development,Staging,Production">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/assets/js/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/assets/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
 
-        @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
