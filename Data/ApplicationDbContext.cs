@@ -20,105 +20,149 @@ namespace NaijaStartupApp.Data
         public virtual DbSet<Company_Officers> Company_Officers { get; set; }
         public virtual DbSet<AddOnService> AddOnService { get; set; }
         public virtual DbSet<Payments> Payments { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Package>(entity =>
             {
-                entity.Property(e => e.CreatorUserId)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+
                 entity.Property(e => e.IsDeleted)
                     .HasColumnType("bit")
                     .HasDefaultValueSql("0");
+
                 entity.Property(e => e.CreationTime)
-                    .HasColumnType("datetime");
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
 
                 entity.Property(e => e.DeletionTime)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.ModificationUserId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
 
-                entity.Property(e => e.ModificationTime)
+            });
+            modelBuilder.Entity<Contact>(entity =>
+            {
+                    entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+
 
             });
             modelBuilder.Entity<Company_Registration>(entity =>
             {
-                entity.Property(e => e.CreatorUserId)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
                 entity.Property(e => e.IsDeleted)
                     .HasColumnType("bit")
                     .HasDefaultValueSql("0");
-                entity.Property(e => e.RegCompleted)
-                    .HasColumnType("bit")
-                    .HasDefaultValueSql("0");
+
                 entity.Property(e => e.CreationTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
-                entity.Property(e => e.ApprovalStatus)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
 
                 entity.Property(e => e.DeletionTime)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.ModificationUserId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
-
-                entity.Property(e => e.ModificationTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
 
             });
             modelBuilder.Entity<Company_Officers>(entity =>
             {
-                entity.Property(e => e.CreatorUserId)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+
                 entity.Property(e => e.IsDeleted)
                     .HasColumnType("bit")
                     .HasDefaultValueSql("0");
+
                 entity.Property(e => e.CreationTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
-                
+
                 entity.Property(e => e.DeletionTime)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.ModificationUserId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
-
-                entity.Property(e => e.ModificationTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
 
             });
             modelBuilder.Entity<AddOnService>(entity =>
@@ -128,62 +172,72 @@ namespace NaijaStartupApp.Data
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
-                entity.Property(e => e.CreatorUserId)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+
                 entity.Property(e => e.IsDeleted)
                     .HasColumnType("bit")
                     .HasDefaultValueSql("0");
+
                 entity.Property(e => e.CreationTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
 
-
                 entity.Property(e => e.DeletionTime)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.ModificationUserId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
-
-                entity.Property(e => e.ModificationTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
 
             });
             modelBuilder.Entity<Payments>(entity =>
             {
-                entity.Property(e => e.CreatorUserId)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+
                 entity.Property(e => e.IsDeleted)
                     .HasColumnType("bit")
                     .HasDefaultValueSql("0");
+
                 entity.Property(e => e.CreationTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.DeletionTime)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("('')");
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
                 entity.Property(e => e.ModificationUserId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('')");
-
-                entity.Property(e => e.ModificationTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
 
             });
 

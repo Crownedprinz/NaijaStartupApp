@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using NaijaStartupApp.Helpers;
 using static NaijaStartupApp.Models.NsuArgs;
 using static NaijaStartupApp.Models.NsuVariables;
+using static NaijaStartupApp.Models.NsuDtos;
+using NaijaStartupApp.Data;
 
 namespace NaijaStartupApp.Controllers
 {
@@ -19,9 +21,17 @@ namespace NaijaStartupApp.Controllers
         private IUserService _userService;
         TemporaryVariables temporaryVariables;
         GlobalVariables globalVariables;
-        public AccountController(IUserService userService)
+        private readonly ApplicationDbContext _context;
+        private readonly ILogger _logger;
+        private readonly GlobalVariables _globalVariables;
+        private readonly TemporaryVariables _temporaryVariables;
+        public AccountController(IUserService userService, ApplicationDbContext context, ILogger<AccountController> logger, IHttpContextAccessor hcontext)
         {
             _userService = userService;
+            _context = context;
+            _logger = logger;
+            _globalVariables = hcontext.HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
+            _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
         }
         [HttpPost]
         public async Task<bool> Index(string username, string password)
@@ -76,7 +86,52 @@ namespace NaijaStartupApp.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<string> SaveContact(string fullName, string email, string phoneNumber, string message)
+        {
+            var Input = new Contact
+            {
+                FullName = fullName,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                Message = message,
+            };
+            try
+            {
+                await _context.AddAsync(Input);
+                await _context.SaveChangesAsync();
+                return "Successfully Submitted";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.StackTrace);
+                return "There was a problem while trying to submit your request, Please try again later";
+            }
+        }
 
+        [HttpPost]
+        public bool checkSession(string companyName)
+        {
+            var IsSession = false;
+            if (_globalVariables == null)
+                IsSession = false;
+            else
+            {
+                if (_globalVariables.userid != null)
+                {
+                    IsSession = true;
+                    _temporaryVariables.string_var1 = companyName;
+                    HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
+
+                }
+                else
+                {
+                    IsSession = false;
+
+                }
+            }
+                return IsSession;
+        }
         public IActionResult Profile()
         {
             return View();
@@ -85,7 +140,7 @@ namespace NaijaStartupApp.Controllers
         {
             HttpContext.Session.Clear();
 
-            return RedirectToAction("Index", "Dashboard");
+            return Redirect("/Index.html");
         }
 
     }

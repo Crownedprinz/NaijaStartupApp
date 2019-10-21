@@ -143,6 +143,11 @@ namespace NaijaStartupApp.Controllers
                 bool_var0 = false,
                 list_var0 = new List<string>()
             };
+            if (_temporaryVariables !=null)
+            {
+                if (_temporaryVariables.string_var1 != null)
+                    tempValues.string_var0 = _temporaryVariables.string_var1;
+            }
 
             return View(tempValues);
         }
