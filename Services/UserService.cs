@@ -21,6 +21,7 @@ namespace NaijaStartupApp.Services
         Task<GenericResponse> CreateUserAsync(CreateUserRequest Input);
         Task<User> get_User(string user);
         User get_User_By_EmailOrUsername(string emailOrUsername);
+        Task<GenericResponse> ChangePasswordAsync(User user, string CurrentPassword, string NewPassword);
 
     }
     public class UserService : IUserService
@@ -84,6 +85,8 @@ namespace NaijaStartupApp.Services
             {
                 UserName = Input.UserName,
                 Email = Input.Email,
+                IsActive = true,
+                Role = Input.Role,
             };
             var result = await _userManager.CreateAsync(user, Input.Password);
             if (result.Succeeded)
@@ -106,6 +109,27 @@ namespace NaijaStartupApp.Services
             foreach (var error in result.Errors)
             {
                 return new GenericResponse { IsSuccessful = false, Message = "", Error = new List<string> { error.Description } };
+            }
+            return new GenericResponse { };
+        }
+
+        public async Task<GenericResponse> ChangePasswordAsync(User user, string CurrentPassword, string NewPassword)
+        {
+            if (user != null || !string.IsNullOrWhiteSpace(CurrentPassword) || !string.IsNullOrWhiteSpace(NewPassword))
+            {
+                var result = await _userManager.ChangePasswordAsync(user, CurrentPassword, NewPassword);
+                if (result.Succeeded)
+                {
+                    return new GenericResponse { IsSuccessful = true, Message = "User Password Changed Successfully", Error = new List<string> { "" } };
+                }
+                foreach (var error in result.Errors)
+                {
+                    return new GenericResponse { IsSuccessful = false, Message = "", Error = new List<string> { error.Description } };
+                }
+            }
+            else
+            {
+                return new GenericResponse { IsSuccessful = false, Message = "Invalid Request Sent", Error = new List<string> { } };
             }
             return new GenericResponse { };
         }
