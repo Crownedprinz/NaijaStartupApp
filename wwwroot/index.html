@@ -44,7 +44,7 @@
 </script>
 
 <script src="js/contact_form.js"></script>
-</head>
+
 <!-- Start of Async Drift Code -->
 <script>
     "use strict";
@@ -71,6 +71,22 @@
     }();
     drift.SNIPPET_VERSION = '0.3.1';
     drift.load('6se4fvpfwkmm');
+    drift.on('ready',function(api){
+        // hide the widget when it first loads
+        api.widget.hide()
+        // show the widget when you receive a message
+        drift.on('message',function(e){
+            if(!e.data.sidebarOpen){
+            api.widget.show()
+            }
+        })
+        // hide the widget when you close the sidebar
+        drift.on('sidebarClose',function(e){
+        if(e.data.widgetVisible){
+            api.widget.hide()
+            }
+        })
+  })
     </script>
     <!-- End of Async Drift Code -->
     <!-- place this script tag after the Drift embed tag -->
@@ -121,6 +137,7 @@
     })();
   </script>
   <!-- end of id selcetor for drift-->
+</head>
 <body id="home" class="container-fluid" data-spy="scroll" data-target=".navjbar-collapse" data-offset="100">
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -222,12 +239,12 @@
 <div class="row PageHead">
 <div class="col-md-12">
 <h1>About Us</h1>
-<p style="font-size: 16px; font-weight: 500px; line-height: 1.7em; text-align: justify">Naija-Startup Company is a full stack business influencer leveraging on technology and years of quality experience to satisfying and providing businesses
+<p style="font-size: 16px; font-weight: 500px; line-height: 1.7em; text-align: justify">Naija-Startup Company is a full stack business influencer leveraging on technology and quality years of experience, satisfying and providing businesses
     with the platforms for smooth business formation and incorporation services as well as business management solutions.
     We understand the bottleneck with Nigeria business environment and have mastered over time, the terrain so well that we avail our customers with seamless business formation process.
     We pride our business credibility on customer satisfaction and excellent service delivery. <br> We are in the business of helping our
     customers not to lose business focus while going through the tiring business formation processes.
-    Why not allow us unburden your business formation and management process while you invest your energy and time into building a solid business network and foundation.
+    Why not allow us unburden you of the incorporation and management processes while you invest your resources and energy into building a solid business foundation and network.
 </p>
 </div>
 </div>
