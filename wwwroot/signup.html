@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="lgPage">
-        <div class="form">
-            <form class="register-form">
+        <div  class="form">
+            <div id="id_form" class="register-form">
                 <div class="panel-heading">
                     <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
@@ -27,9 +27,9 @@
                     <input type="password" placeholder="Confirm Password" id="id_confirm_password" value="" autocomplete="off" required>
                 </div>
                 <button type="submit" id="id_signup" onclick="signUpPost()" class="btn btn-danger btn-lg">Sign Up</button>
-                <p class="message">Already Registered?  <a href="#">Login</a></p>
-            </form>
-            <form class="login-form">
+                <p class="message">Already Registered?  <a href="#" id="id_LoginLink">Login</a></p>
+            </div>
+            <div id="login-form" style="display:none;">
                 <div class="panel-heading">
                     <b class="secure"> <a>Naija-Startup</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
@@ -40,25 +40,31 @@
                     <div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="remember" /> Remember me
+                                <input type="checkbox" id="id_rememberme" name="remember" /> Remember me
                             </label>
                         </div>
                     </div>
                 </div>
-                <p class="message">Not Registered?  <a href="#">Register here</a></p>
-            </form>
+                <p class="message">Not Registered?  <a  href="#"  id="id_registerLink">Register here</a></p>
+            </div>
         </div>
     </div>
 
     <script src="js/jquery.min.js"></script>
     <script>
-        $('.message a').click(() =>
-            $('form').animate({ height: "toggle", opacity: "toggle" }, "fast")
-        )
+        $("#id_LoginLink").click(function () {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("id_form").style.display = "none";
+        });
+        $("#id_registerLink").click(function () {
+            document.getElementById("id_form").style.display = "block";
+             document.getElementById("login-form").style.display = "none";
+        });
 
 
 
-    function loginPost() {
+        function loginPost() {
+        var val3 = document.getElementById("id_rememberme").checked
         var val1 = $('#id_userName1').val();
         var val2 = $('#id_password2').val();
         if (val1 === null || val1 === "")
@@ -70,12 +76,15 @@
         $.ajax({
             type: "post",
             url: "/Account/Index",
-            data:{ "username": val1, "password": val2 },
+            data:{ "username": val1, "password": val2, "rememberMe":val3  },
             success: function (data) {
-                if (data)
-                    window.location.href = "/Dashboard/Index";
-                else {
-                    alert("Invalid username or password")
+                alert(data);
+                if (data) {
+                     window.location.href = "/Dashboard/Index";
+                }
+                else
+                {
+                    alert("Invalid username or password");
                 }
 
 
@@ -116,18 +125,18 @@
                return  alert("Please Confrim your password");
             if (confirmEmail === null || confirmEmail === "")
                  alert("Please Confrim your Email");
-                
+
 
             $.ajax({
             type: "post",
             url: "/Account/SignUp",
             async: true,
             data: { "firstName": firstName, "lastName": lastName, "email": Email, "username": userName, "password": password },
-            success: function (data) {
+                success: function (data) {
                 if (data)
                     window.location.href = "/Dashboard/Index";
                 else {
-                    alert("There seems to be an issue while registering your profile, try again");
+                    alert("This Email Address or Username has already been registered");
                     document.location.reload();
 
                 }
