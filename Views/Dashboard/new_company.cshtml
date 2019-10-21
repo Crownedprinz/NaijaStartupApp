@@ -41,7 +41,6 @@
 
                                                     <div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
                                                         <label for="edit-title" class="form-required">Company Name</label>
-                                                        @*<input data-drupal-selector="edit-title" type="text" id="edit-title" name="title" value="" size="60" maxlength="128" class="form-text required edit-title valid" required="required" aria-required="true" aria-invalid="false">*@
                                                         @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text required edit-title valid", maxlength = 128, id = "edit-title", name = "title", size = "60", required = "required" })
 
                                                     </div>
@@ -127,7 +126,7 @@
         }
         function saveCompany() {
         var val1 = $('#edit-title').val();
-          if (val1 === null)
+          if (val1 === null ""|| val1 ==="")
             return alert("Please Input a Company Name");
 
         $.ajax({

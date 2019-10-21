@@ -21,22 +21,29 @@ namespace NaijaStartupApp.Controllers
         private ApplicationDbContext _context;
         private AppSettings _appSettings;
         private readonly IUserService _userService;
+        private readonly ICompanyService _companyService;
         GlobalVariables _globalVariables;
         TemporaryVariables _temporaryVariables;
         public DashboardController(ApplicationDbContext context,
             IOptions<AppSettings> appsettings,
-            IUserService userService,IHttpContextAccessor hcontext)
+            IUserService userService,IHttpContextAccessor hcontext,
+            ICompanyService companyService)
         {
             _context = context;
             _appSettings = appsettings.Value;
             _userService = userService;
+            _companyService = companyService;
             _globalVariables = hcontext.HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
             _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var temp = new TemporaryVariables
+            {
+                int_var0 = _companyService.Company_Count()
+            };
+            return View(temp);
         }
 
 

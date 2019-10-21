@@ -10,8 +10,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NaijaStartupApp.Data;
+using NaijaStartupApp.Helpers;
 using static NaijaStartupApp.Models.NsuArgs;
 using static NaijaStartupApp.Models.NsuDtos;
+using static NaijaStartupApp.Models.NsuVariables;
 
 namespace NaijaStartupApp.Services
 {
@@ -22,6 +24,8 @@ namespace NaijaStartupApp.Services
         Task<User> get_User(string user);
         User get_User_By_EmailOrUsername(string emailOrUsername);
         Task<GenericResponse> ChangePasswordAsync(User user, string CurrentPassword, string NewPassword);
+        Task<User> get_User_By_Session();
+        Task<bool> UserExists(string Id);
 
     }
     public class UserService : IUserService
@@ -31,6 +35,8 @@ namespace NaijaStartupApp.Services
         private UserManager<User> _userManager;
         private readonly ILogger _logger;
         private readonly IHttpContextAccessor _hcontext;
+        private GlobalVariables _globalVariables;
+        private TemporaryVariables _temporaryVariables;
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
         {
@@ -49,6 +55,9 @@ namespace NaijaStartupApp.Services
             _userManager = userManager;
             _signInManager = signInManager;
             _hcontext = hcontext;
+            _globalVariables = hcontext.HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
+            _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
+
         }
         /// <summary>
         /// This Method Authenticates a user and generates a Java web Token
@@ -171,7 +180,16 @@ namespace NaijaStartupApp.Services
         }
         public async Task<User> get_User_By_Session()
         {
-            return await _context.User.FindAsync(_hcontext.HttpContext.Session.GetString("UserId"));
+            return await _context.User.FindAsync(_globalVariables.userid);
+        }
+
+        public async Task<bool> UserExists(string Id)
+        {
+            var status = false;
+            var user = await _context.User.FindAsync(_globalVariables.userid);
+            if (user != null) status = true;
+            else status = false;
+            return status;
         }
     }
 
