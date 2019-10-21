@@ -36,6 +36,22 @@ namespace NaijaStartupApp.Models
             public string DeletionUserId { get; set; }
             public bool IsDeleted { get; set; }
         }
+          public class Contact
+        {
+            public int Id { get; set; }
+            public string FullName { get; set; }
+            public string Email { get; set; }
+            public string PhoneNumber { get; set; }
+            public string Message { get; set; }
+
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
 
         public class Company_Registration
         {

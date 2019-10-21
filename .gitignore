@@ -346,3 +346,4 @@ healthchecksdb
 bin/
 obj/
 .vs/
+/NaijaStartupApp/wwwroot/Logs/
