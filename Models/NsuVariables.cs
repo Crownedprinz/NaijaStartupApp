@@ -42,6 +42,8 @@ namespace NaijaStartupApp.Models
             public DateTime date_var2 { get; set; }
             public DateTime date_var4 { get; set; }
             public bool bool_var0 { get; set; }
+            public bool bool_var1 { get; set; }
+            public bool bool_var2 { get; set; }
 
             public decimal decimal_var0 { get; set; }
             public decimal decimal_var1 { get; set; }
