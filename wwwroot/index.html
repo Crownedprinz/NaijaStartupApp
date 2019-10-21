@@ -514,7 +514,7 @@
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="remember"> Remember me
+                                <input type="checkbox" name="remember" id="id_rememberme"> Remember me
                             </label>
                         </div>
                         <div class="form-group">
@@ -561,6 +561,8 @@
 
 
         <script>
+
+
             $(document).ready(function () {
 
                 $(window).scroll(function () {
@@ -579,6 +581,7 @@
             });
 
             function loginPost() {
+                var val3 = document.getElementById("id_rememberme").checked
                 var val1 = $('#id_username').val();
                 var val2 = $('#id_password').val();
                 if (val1 === null || val1 === "")
@@ -590,7 +593,7 @@
                 $.ajax({
                     type: "post",
                     url: "/Account/Index",
-                    data: { "username": val1, "password": val2 },
+                    data: { "username": val1, "password": val2, "rememberMe":val3 },
                     success: function (data) {
                         if (data)
                             window.location.href = "/Dashboard/Index";

@@ -34,7 +34,7 @@ namespace NaijaStartupApp.Controllers
             _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
         }
         [HttpPost]
-        public async Task<bool> Index(string username, string password)
+        public async Task<bool> Index(string username, string password, bool rememberMe)
         {
 
             temporaryVariables = new TemporaryVariables();
@@ -43,7 +43,8 @@ namespace NaijaStartupApp.Controllers
             var Input = new UserRequest
             {
                 EmailOrUsername = username,
-                Password = password
+                Password = password,
+                RememberMe = rememberMe,
             };
             var checkLogin = await _userService.AuthenticateAsync(Input);
             if (checkLogin.IsSuccessful)
