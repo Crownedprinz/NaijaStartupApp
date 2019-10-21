@@ -72,7 +72,7 @@ namespace NaijaStartupApp.Controllers
             }
         }
         [HttpPost]
-        public async Task<bool> SignUp(string firstName, string lastName, string email, string username, string password)
+        public async Task<JsonResult> SignUp(string firstName, string lastName, string email, string username, string password)
         {
             var Input = new CreateUserRequest
             {
@@ -86,11 +86,11 @@ namespace NaijaStartupApp.Controllers
             var checkLogin = await _userService.CreateUserAsync(Input);
             if (checkLogin.IsSuccessful)
             {
-                return true;
+                return Json(checkLogin);
             }
             else
             {
-                return false;
+                return Json(checkLogin);
             }
         }
 
