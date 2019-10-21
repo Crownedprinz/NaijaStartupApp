@@ -170,6 +170,7 @@ namespace NaijaStartupApp.Controllers
                     var simCopanies = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).Select(e => e.CompanyName).ToList();
 
                     Input.bool_var0 = false;
+                    Input.bool_var1 = true;
                     foreach (var item in simCopanies)
                     {
                         Input.list_var0.Add(item);
@@ -184,6 +185,7 @@ namespace NaijaStartupApp.Controllers
                         Input.list_var0.Add(item);
                     }
                     Input.bool_var0 = true;
+                    Input.bool_var1 = false;
                     return View(Input);
                 }
             }
