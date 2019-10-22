@@ -52,5 +52,8 @@ body {
     padding: 10px 1px !important;
     width: 100%;
     }
-
+    .field-icon {
+        margin-left: -10%;
+        z-index: 2;
+      }
     

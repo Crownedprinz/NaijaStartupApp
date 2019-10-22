@@ -24,10 +24,15 @@
                 <input type="email" placeholder="Email" value="" id="id_Email" autocomplete="off" required>
                 <input type="email" placeholder="Confirm Email" id="id_confirm_email" value="" autocomplete="off" required>
                 <input type="text" placeholder="Username" value="" id="id_userName" autocomplete="off" required>
-                <input type="password" placeholder="Password" id="id_password" value="" autocomplete="off" required>
+                <div>
+                    <input type="password" placeholder="Password" id="id_password" value="" autocomplete="off" required>
+                    <span toggle="#id_password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
                 <div>
                     <span id='message'></span>
                     <input type="password" placeholder="Confirm Password" id="id_confirm_password" value="" autocomplete="off" required>
+                    <span toggle="#id_confirm_password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+
                 </div>
                 <button type="submit" id="id_signup" onclick="signUpPost()" class="btn btn-danger btn-lg">Sign Up</button>
                 <p class="message">Already Registered?  <a href="#">Login</a></p>
@@ -36,8 +41,13 @@
                 <div class="panel-heading">
                     <b class="secure"> <a>Naija-Startup</a> - Login</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
-                <input type="text" name="user"  id="id_userName1"  value="" autocomplete="off" placeholder="Username" required>
-                <input type="password"  id="id_password2"  name="pass" value="" autocomplete="off" placeholder="Password" required>
+                <div>
+                    <input type="text" name="user"  id="id_userName1"  value="" autocomplete="off" placeholder="Username" required>
+                </div>
+                <div class="d-inline-flex">
+                    <input type="password"  id="id_password2"  name="pass" value="" autocomplete="off" placeholder="Password" required>
+                    <span toggle="#id_password2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
                 <button type="submit" class="btn btn-success btn-lg" onclick="loginPost()">Login</button>
                 <div>
                     <div>
@@ -59,20 +69,36 @@
 	$(window).load(function() {
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");
+
+
     });
     $("#id_signup").submit(function (event) {
 
-var isValid = $('#id_signup').valid();
-if (isValid) {    
-    // Animate loader
-    $(".se-pre-con").fadeIn("slow");
-}
-});
-</script>
+        var isValid = $('#id_signup').valid();
+        if (isValid) {    
+            // Animate loader
+            $(".se-pre-con").fadeIn("slow");
+        }
+    });
+
+
+    </script>
     <script>
         $('.message a').click(() =>
             $('form').animate({ height: "toggle", opacity: "toggle" }, "fast")
         )
+
+
+                    //TOGGLE PASSWORD VISIBILITY
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+            input.attr("type", "text");
+            } else {
+        input.attr("type", "password");
+        }
+        });
 
 
 
