@@ -12,6 +12,7 @@
 <link href="css/font-awe some.css" rel="stylesheet">
 
 <link href="css/hosting.css" rel="stylesheet" media="all">
+<link href="css/loadingicon.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -25,6 +26,8 @@
 <script src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
   $(window).load(function() {
+      // Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");
      $('.flexslider').flexslider({
         animation: "slide",
         slideshowSpeed: 3500,   //slides every 3.5 seconds
@@ -139,6 +142,7 @@
   <!-- end of id selcetor for drift-->
 </head>
 <body id="home" class="container-fluid" data-spy="scroll" data-target=".navjbar-collapse" data-offset="100">
+<div class="se-pre-con"></div>
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 

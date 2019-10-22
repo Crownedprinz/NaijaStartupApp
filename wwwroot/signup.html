@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/loadingicon.css">
+    
 </head>
 <body>
+        <div class="se-pre-con"></div>
     <div class="lgPage">
         <div class="form">
             <form class="register-form">
                 <div class="panel-heading">
-                    <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span class="pull-right"><i class="fa fa-lock fa-2x  "></i></span>
+                    <b class="secure"> <a>Naija-Startup</a> - Sign Up</b><span><i class="fa fa-lock fa-2x  "></i></span>
                 </div>
                 <input type="text" placeholder="First Name" id="id_firstName" value="" autocomplete="off" required>
                 <input type="text" placeholder="Last Name" id="id_lastName" value="" autocomplete="off" required>
@@ -39,9 +42,8 @@
                 <div>
                     <div>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="remember" /> Remember me
-                            </label>
+                            <label style="padding-left: 0px">Remember me</label>
+                                <input type="checkbox" name="remember" style="width:12px; margin: 5px 2px;"/> 
                         </div>
                     </div>
                 </div>
@@ -51,6 +53,22 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script>
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");
+    });
+    $("#id_signup").submit(function (event) {
+
+var isValid = $('#id_signup').valid();
+if (isValid) {    
+    // Animate loader
+    $(".se-pre-con").fadeIn("slow");
+}
+});
+</script>
     <script>
         $('.message a').click(() =>
             $('form').animate({ height: "toggle", opacity: "toggle" }, "fast")
