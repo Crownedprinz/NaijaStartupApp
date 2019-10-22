@@ -55,6 +55,7 @@ namespace NaijaStartupApp.Models
         {
             [Key]
             public Guid Id { get; set; }
+            public string CacRegistrationNumber { get; set; }
             public string CompanyName { get; set; }
             public string CompanyType { get; set; }
             public string AlternateCompanyName { get; set; }
@@ -67,6 +68,9 @@ namespace NaijaStartupApp.Models
             public string BusinessActivity { get; set; }
             public string ApprovalStatus { get; set; }
             public string SndBusinessActivity { get; set; }
+            public bool IsAddressRegistered { get; set; }
+            public bool LocalResidentDirector { get; set; }
+            public decimal LocalResidentDirectorPrice { get; set; }
             public string Address1 { get; set; }
             public string Address2 { get; set; }
             public string Postcode { get; set; }

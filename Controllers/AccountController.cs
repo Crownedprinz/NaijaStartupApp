@@ -94,6 +94,39 @@ namespace NaijaStartupApp.Controllers
             }
         }
 
+        public ActionResult AdminSignUp()
+        {
+            return View();
+        }
+        public ActionResult all_admin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> AdminSignUp(TemporaryVariables admin)
+        {
+            var Input = new CreateUserRequest
+            {
+                FirstName = admin.string_var0,
+                LastName = admin.string_var1,
+                Email = admin.string_var2,
+                UserName = admin.string_var4,
+                Password = admin.string_var6,
+                Role = "Admin"
+            };
+            var checkLogin = await _userService.CreateUserAsync(Input);
+            if (checkLogin.IsSuccessful)
+            {
+                ViewBag.message = "Successfully Created";
+                return View();
+            }
+            else
+            {
+                ViewBag.message = checkLogin.Error.FirstOrDefault();
+                return View();
+            }
+        }
+
         [HttpPost]
         public async Task<string> SaveContact(string fullName, string email, string phoneNumber, string message)
         {

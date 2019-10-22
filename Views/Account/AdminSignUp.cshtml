@@ -1,0 +1,94 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
+    ViewData["Title"] = "AdminSignUp";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>@ViewBag.message</h3>
+                <div class="page-title-box">
+                    <h4 class="page-title">Add New Admin</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <div class="">
+                            <form role="form" method="post" enctype="multipart/form-data">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary()
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        @Html.TextBoxFor(m => m.string_var0, new { @placeholder = "First Name", @class = "form-control", @id = "First_Name", @required = "required" })
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.TextBoxFor(m => m.string_var1, new { @placeholder = "Last Name", @class = "form-control", @id = "Last_Name", @required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        @Html.TextBoxFor(m => m.string_var2, new { @placeholder = "Email",@type="email", @class = "form-control", @id = "Email", @required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(m => m.string_var3, new { @placeholder = "Phone No", @class = "form-control", @id = "Phone_No" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.TextBoxFor(m => m.string_var4, new { @placeholder = "Username", @class = "form-control", @id = "Username", @required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <span class='message'></span>
+                                        @Html.TextBoxFor(m => m.string_var5, new { @placeholder = "Password", @type = "password", @class = "form-control", @id = "id_password", @required = "required" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class='message'></span>
+                                        @Html.TextBoxFor(m => m.string_var6, new { @placeholder = "Confirm Password",@type="password", @class = "form-control", @id = "id_confirmpassword", @required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-danger btn-sm text-light px-4 mt-3 float-right mb-0 ml-2">Cancel</button>
+                                    <button type="submit" id="id_submit" class="btn btn-primary btn-sm text-light px-4 mt-3 float-right mb-0">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
+@section Scripts{
+    <script>
+        var element = document.getElementById("id_submit");
+        $('#id_password, #id_confirmpassword').on('keyup', function () {
+            if ($('#id_password').val() == $('#id_confirmpassword').val()) {
+                $('.message').html('Matching').css('color', 'green');
+                        element.classList.remove("disabled");
+            } else {
+                $('.message').html('Not Matching').css('color', 'red');
+            element.classList.add("disabled");
+            }
+        });
+    </script>
+    }
+

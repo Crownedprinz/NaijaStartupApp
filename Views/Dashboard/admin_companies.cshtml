@@ -1,0 +1,73 @@
+﻿@model IEnumerable<NaijaStartupApp.Models.NsuVariables.TemporaryVariables>
+@{
+    ViewData["Title"] = "admin_companies";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+    int count = 1;
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Doctors Shedule</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>s/N</th>
+                                        <th>Customer Name</th>
+                                        <th>Customer Email</th>
+                                        <th>Company Name</th>
+                                        <th>Company Type</th>
+                                        <th>Package</th>
+                                        <th>Status</th>
+                                        <th>Registered Date</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                    <!--end tr-->
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.string_var0</td>
+                                        <td>@item.string_var1</td>
+                                        <td>@item.string_var2</td>
+                                        <td>@item.string_var3</td>
+                                        <td>@item.string_var4</td>
+                                        <td>@item.string_var5</td>
+                                        <td><span class="badge badge-soft-success">@item.date_var0.ToString("dd MMM yyyy")</span></td>
+                                        <td class="text-right"><a href="#" class="mr-2"><i class="fas fa-edit text-info font-16"></i></a></td>
+                                    </tr>
+                                        count = count + 1;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

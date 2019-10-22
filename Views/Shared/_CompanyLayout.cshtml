@@ -93,23 +93,53 @@
             <div class="main-menu-inner">
                 <div class="menu-body slimscroll">
                     <div id="MetricaHospital" class="main-icon-menu-pane">
-                        <div class="title-box">
-                            <h6 class="menu-title">Company</h6>
-                        </div>
-                        <ul class="nav metismenu">
-                            <li></li>
-                            <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Dashboard"><i class="dripicons-meter"></i>Dashboard</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    @*<li><a asp-action="my_orders" asp-controller="Dashboard">My Orders</a></li>*@
-                                    <li><a asp-action="all_companies" asp-controller="Dashboard">Companies</a></li>
-                                </ul>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        @if (_globalVariables.RoleId != "Admin")
+                        {
+
+                            <div class="title-box">
+                                <h6 class="menu-title">Company</h6>
+                            </div>
+                            <ul class="nav metismenu">
+                                <li></li>
+                                <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Dashboard"><i class="dripicons-meter"></i>Dashboard</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        @*<li><a asp-action="my_orders" asp-controller="Dashboard">My Orders</a></li>*@
+                                        <li><a asp-action="all_companies" asp-controller="Dashboard">Companies</a></li>
+                                    </ul>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <div class="title-box">
+                                <h6 class="menu-title">Administration</h6>
+                            </div>
+                            <ul class="nav metismenu">
+                                <li></li>
+                                <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Dashboard"><i class="dripicons-meter"></i>Dashboard</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Manage Companies</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="admin_companies" asp-controller="Dashboard">Companies</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Admin Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="AdminSignUp" asp-controller="Account">Add New Admin</a></li>
+                                    </ul>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="all_admin" asp-controller="Account">All Admins</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }
+
                         <!--end nav-->
                     </div>
                     <!-- end Hospital -->

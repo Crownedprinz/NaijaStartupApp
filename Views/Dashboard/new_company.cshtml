@@ -47,10 +47,17 @@
 
                                                 </div><div class="large-3 cell">
 
-                                                    <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
-                                                        <label for="edit-field-company-type">Company Type</label>
-                                                        <select disabled="disabled" data-drupal-selector="edit-field-company-type" id="edit-field-company-type" name="field_company_type" class="form-select"><option value="6" selected="selected" data-label="PTE. LTD.">PTE. LTD.</option><option value="2519" data-label="LTD.">LTD.</option></select>
-                                                    </div>
+                                                          <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
+                                                              <label for="edit-field-company-type">Company Type</label>
+                                                              @Html.DropDownListFor(m => m.string_var10,
+                                                                           new List<SelectListItem>
+                                                                            {
+                                                                                new SelectListItem {Text = "Limited/LTD", Value = "Limited/LTD"},
+                                                                                new SelectListItem {Text = "Charity/NGO", Value = "Charity/NGO"},
+                                                                                new SelectListItem {Text = "PLC Company", Value = "PLC Company"}
+                                                                            }, "Select",new { @class = "form-select",id = "edit-field-company-type", required = "required"})
+
+                                                          </div>
 
                                                 </div>
                                                 <div class="large-3 cell position-relative">
@@ -62,7 +69,7 @@
                                                     <div id="devel-node-access-node-content-div">
                                                         <div id="checkNameIn" class="text-center  margin-top-1">
                                                             <i class="fas fa-check result-icon-success"></i>
-                                                            <h1 class="">@Model.string_var0 PTE. LTD.</h1>
+                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
                                                             <h3 class="">Congratulations! The name is available!</h3>
                                                             <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Save &amp; Continue</a>
                                                             <p class="text-left margin-vertical-1">
@@ -80,10 +87,7 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td colspan="5" class="text-left text-bold">Similar Match</td>
-                                                                    </tr>
-
+                                                                    @Html.Raw(Model.string_var2)
                                                                 </tbody>
                                                             </table>
                                                             <div class="callout four-bg">
@@ -104,7 +108,7 @@
                                                 {
                                                         <div id="checkNameIn" class="text-center  margin-top-1">
                                                             <i class="fas fa-times result-icon-fail"></i>
-                                                            <h1 class="">@Model.string_var0 PTE. LTD.</h1>
+                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
                                                             <h3 class="">The name is not available! Try other names</h3>
                                                         </div>
                                                 }
@@ -134,13 +138,17 @@
         }
         function saveCompany() {
         var val1 = $('#edit-title').val();
-          if (val1 === null ""|| val1 ==="")
-            return alert("Please Input a Company Name");
+          if (val1 === null || val1 ==="")
+                return alert("Please Input a Company Name");
+
+            var val2 = $('#edit-field-company-type').val();
+          if (val2 === null || val2 ==="")
+            return alert("Please Select a Company Type");
 
         $.ajax({
             type: "post",
             url: "/Dashboard/save_company",
-            data:{ "companyName": val1},
+            data:{ "companyName": val1, "Type": val2},
             success: function (data) {
                 if (data)
                     window.location.href = "/Dashboard/packages";

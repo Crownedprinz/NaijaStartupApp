@@ -240,6 +240,8 @@ namespace NaijaStartupApp.Data
                     .HasDefaultValueSql("('')");
 
             });
+            //modelBuilder.Entity<User>().HasData(
+            //new User() { UserName = "admin", Email="NaijaStarup@gmail.com", Role = "Admin" });
 
         }
 
