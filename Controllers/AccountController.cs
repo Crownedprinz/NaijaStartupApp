@@ -93,6 +93,65 @@ namespace NaijaStartupApp.Controllers
                 return Json(checkLogin);
             }
         }
+        public ActionResult all_admin()
+        {
+            return View(_context.User.Where((x => x.Role=="Admin"))
+                .Select(x => new TemporaryVariables
+                {
+                    string_var0 = string.IsNullOrWhiteSpace(x.FirstName)?"": x.FirstName,
+                    string_var1 = string.IsNullOrWhiteSpace(x.LastName) ? "" : x.LastName,
+                    string_var2 = string.IsNullOrWhiteSpace(x.Email) ? "" : x.Email,
+                    string_var3 = string.IsNullOrWhiteSpace(x.PhoneNumber) ? "" : x.PhoneNumber,
+                    string_var4 = string.IsNullOrWhiteSpace(x.UserName) ? "" : x.UserName,
+                    string_var5 = x.IsActive ?"Active": "InActive",
+                    string_var6 = x.Id,
+                    date_var0 = x.CreationTime
+                }).ToList());
+        }
+        [HttpPost]
+        public async Task<ActionResult> deactivate_admin(string Id)
+        {
+            var admin = _context.User.Where(x => x.IsDeleted == false && x.Id == Id).FirstOrDefault();
+            if (admin != null)
+            {
+                admin.IsActive = false;
+                admin.ModificationTime = DateTime.Now;
+                admin.ModificationUserId = _globalVariables.userid;
+
+                _context.Update(admin);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("all_admin", null, null);
+        }
+        public ActionResult AdminSignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> AdminSignUp(TemporaryVariables admin)
+        {
+            var Input = new CreateUserRequest
+            {
+                FirstName = admin.string_var0,
+                LastName = admin.string_var1,
+                Email = admin.string_var2,
+                UserName = admin.string_var4,
+                Password = admin.string_var6,
+                Role = "Admin"
+            };
+            var checkLogin = await _userService.CreateUserAsync(Input);
+            if (checkLogin.IsSuccessful)
+            {
+                ViewBag.message = "Successfully Created";
+                return View();
+            }
+            else
+            {
+                ViewBag.message = checkLogin.Error.FirstOrDefault();
+                return View();
+            }
+        }
 
         [HttpPost]
         public async Task<string> SaveContact(string fullName, string email, string phoneNumber, string message)

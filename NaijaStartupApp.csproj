@@ -42,7 +42,7 @@
     <None Include="Views\Dashboard\departments.cshtml" />
     <None Include="Views\Dashboard\doctor_edit.cshtml" />
     <None Include="Views\Dashboard\doctor_profile.cshtml" />
-    <None Include="Views\Dashboard\my_orders.cshtml" />
+    <None Include="Views\Dashboard\admin_companies.cshtml" />
     <None Include="Views\Dashboard\edit_member.cshtml" />
     <None Include="Views\Dashboard\events.cshtml" />
     <None Include="Views\Dashboard\expenses.cshtml" />
@@ -129,7 +129,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="PayStack.Net" Version="0.7.7" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0-dev-00032" />
   </ItemGroup>
@@ -139,6 +139,13 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="Html\" />
     <Folder Include="wwwroot\Logs\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="Views\Account\all_admin.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

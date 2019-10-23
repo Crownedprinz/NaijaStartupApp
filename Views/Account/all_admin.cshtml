@@ -1,10 +1,9 @@
 ﻿@model IEnumerable<NaijaStartupApp.Models.NsuVariables.TemporaryVariables>
 @{
-    ViewData["Title"] = "all_companies";
+    ViewData["Title"] = "all_admin";
     Layout = "~/Views/Shared/_DbLayout.cshtml";
     int count = 1;
 }
-
 <!-- Page Content-->
 <div class="page-content">
     <div class="container-fluid">
@@ -12,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Companies</h4>
+                    <h4 class="page-title">Doctors Shedule</h4>
                 </div>
                 <!--end page-title-box-->
             </div>
@@ -23,18 +22,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a class="btn btn-primary px-4 mt-0 mb-3" asp-area="" asp-controller="Dashboard" asp-action="new_company"><i class="mdi mdi-plus-circle-outline mr-2"></i>Incorporate New company</a>
+                        <a class="btn btn-primary px-4 mt-0 mb-3" asp-area="" asp-controller="Account" asp-action="AdminSignUp"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Member</a>
                         <div class="table-responsive">
                             <table id="datatable" class="table">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>S/N</th>
-                                        <th>Company Name</th>
-                                        <th>CAC Reg Number</th>
-                                        <th>Date of Appication</th>
-                                        <th>Financial Year End</th>
-                                        <th>Address</th>
+                                        <th>s/N</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>UserName</th>
                                         <th>Status</th>
+                                        <th>Created Date</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                     <!--end tr-->
@@ -45,20 +45,16 @@
                                         <tr>
                                             <td>@count</td>
                                             <td>@item.string_var0</td>
-                                            <td>@item.string_var10</td>
-                                            <td>@item.date_var0.ToString("dd MMM yyyy")</td>
                                             <td>@item.string_var1</td>
                                             <td>@item.string_var2</td>
+                                            <td>@item.string_var3</td>
                                             <td>@item.string_var4</td>
-                                            <td class="text-right">
-                                                <a href="#" +@item.string_var3" class="mr-2" onclick="editPost('@item.string_var3')"><i class="fas fa-edit text-info font-16"></i> </a>
-                                                <a href="#" +@item.string_var3" onclick="deletePost('@item.string_var3')"><i class="fas fa-trash-alt text-danger font-16"></i> </a>
-
-                                            </td>
+                                            <td>@item.string_var5</td>
+                                            <td><span class="badge badge-soft-success">@item.date_var0.ToString("dd MMM yyyy")</span></td>
+                                            <td class="text-right"><span class="mr-2 deleteitem" data-keyg="@item.string_var6"><i class="fas fa-box text-info font-16"></i></span></td>
                                         </tr>
                                         count = count + 1;
                                     }
-                                    <!--end tr-->
                                 </tbody>
                             </table>
                         </div>
@@ -76,48 +72,43 @@
     <!--end footer-->
 </div>
 <!-- end page content -->
+
 @section Scripts{
     <script>
-        function editPost(parameter) {
-            $.ajax({
-                type: "put",
-                url: "/Dashboard/edit_companies",
-                data: { "Id": parameter },
-                success: function (data) {
-                    if (data) {
-                        alert("Successful")
-                        document.location.reload();
+        $("#datatable").on('click',
+            '.deleteitem',
+            function () {
+                var ispan = $(this).closest("td");
+                var keyg = ispan.children("[data-keyg]").data('keyg');
+                bootbox.confirm({
+                    message: "<h4><font color=red>Are you sure you want to deactivate the record?</font></h4>",
+                    buttons: {
+                        confirm: {
+                            label: '<i class="glyphicon glyphicon-ok"></i> Yes',
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: '<i class="glyphicon glyphicon-remove"></i> No',
+                            className: 'btn-danger'
                         }
-                    else {
-                        alert("Failed to Update")
-                        document.location.reload();
+                    },
+                    callback: function (a) {
+                        if (a) {
+                            $.ajax({
+                                type: "post",
+                                url: "/Account/deactivate_admin",
+                                data: { "Id": keyg},
+                                success: function (data) {
+                                    location.reload();
+                                }
+                            })
 
-                    }
-
-
-                }
-            })
-        }
-        function deletePost(parameter) {
-             $.ajax({
-                type: "delete",
-                url: "/Dashboard/delete_companies",
-                data: { "Id": parameter },
-                success: function (data) {
-                    if (data) {
-                        alert("Successful")
-                        document.location.reload();
+                        } else {
+                            $("#id_xhrt").val("X");
                         }
-                    else {
-                        alert("Failed to Update")
-                        document.location.reload();
-
                     }
-
-
-                }
-            })
-        }
+                });
+            });
     </script>
 
 }

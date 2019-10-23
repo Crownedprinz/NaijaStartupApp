@@ -18,6 +18,13 @@ namespace NaijaStartupApp.Models
             public string Address { get; set; }
             public bool IsActive { get; set; }
             public string Role { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public bool IsDeleted { get; set; }
+            public string DeletionUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
         }
 
         public class Package
@@ -55,6 +62,7 @@ namespace NaijaStartupApp.Models
         {
             [Key]
             public Guid Id { get; set; }
+            public string CacRegistrationNumber { get; set; }
             public string CompanyName { get; set; }
             public string CompanyType { get; set; }
             public string AlternateCompanyName { get; set; }
@@ -67,6 +75,9 @@ namespace NaijaStartupApp.Models
             public string BusinessActivity { get; set; }
             public string ApprovalStatus { get; set; }
             public string SndBusinessActivity { get; set; }
+            public bool IsAddressRegistered { get; set; }
+            public bool LocalResidentDirector { get; set; }
+            public decimal LocalResidentDirectorPrice { get; set; }
             public string Address1 { get; set; }
             public string Address2 { get; set; }
             public string Postcode { get; set; }
