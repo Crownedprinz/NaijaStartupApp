@@ -18,6 +18,13 @@ namespace NaijaStartupApp.Models
             public string Address { get; set; }
             public bool IsActive { get; set; }
             public string Role { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public bool IsDeleted { get; set; }
+            public string DeletionUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
         }
 
         public class Package

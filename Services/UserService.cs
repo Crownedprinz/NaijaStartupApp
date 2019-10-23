@@ -94,8 +94,14 @@ namespace NaijaStartupApp.Services
             {
                 UserName = Input.UserName,
                 Email = Input.Email,
+                FirstName = Input.FirstName,
+                LastName = Input.LastName,
                 IsActive = true,
                 Role = Input.Role,
+                CreationTime = DateTime.Now,
+                ModificationTime = DateTime.Now,
+                DeletionTime = DateTime.Now,
+                IsDeleted = false
             };
             var result = await _userManager.CreateAsync(user, Input.Password);
             if (result.Succeeded)

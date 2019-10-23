@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<NaijaStartupApp.Models.NsuVariables.TemporaryVariables>
 @{
-    ViewData["Title"] = "admin_companies";
+    ViewData["Title"] = "all_admin";
     Layout = "~/Views/Shared/_DbLayout.cshtml";
     int count = 1;
 }
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Companies</h4>
+                    <h4 class="page-title">Doctors Shedule</h4>
                 </div>
                 <!--end page-title-box-->
             </div>
@@ -22,19 +22,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <a class="btn btn-primary px-4 mt-0 mb-3" asp-area="" asp-controller="Account" asp-action="AdminSignUp"><i class="mdi mdi-plus-circle-outline mr-2"></i>Add New Member</a>
                         <div class="table-responsive">
                             <table id="datatable" class="table">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>View</th>
-                                        <th>S/N</th>
-                                        <th>Customer Name</th>
-                                        <th>Customer Email</th>
-                                        <th>Company Name</th>
-                                        <th>Company Type</th>
-                                        <th>Package</th>
+                                        <th>s/N</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>UserName</th>
                                         <th>Status</th>
-                                        <th>Registered Date</th>
+                                        <th>Created Date</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                     <!--end tr-->
@@ -42,20 +42,17 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
-                                        <td class="text-right">
-                                            @Html.ActionLink("", "view_company", new { Id = @item.string_var7 }, new { @class = "fas fa-folder-open text-info font-16 mr-2" })
-                                        </td>
-                                        <td>@count</td>
-                                        <td>@item.string_var0</td>
-                                        <td>@item.string_var1</td>
-                                        <td>@item.string_var2</td>
-                                        <td>@item.string_var3</td>
-                                        <td>@item.string_var4</td>
-                                        <td>@item.string_var5</td>
-                                        <td><span class="badge badge-soft-success">@item.date_var0.ToString("dd MMM yyyy")</span></td>
-                                        <td class="text-right"><a class="mr-2 updateitem" data-keyg="@item.string_var7"><i class="fas fa-marker text-info font-16"></i></a></td>
-                                    </tr>
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.string_var0</td>
+                                            <td>@item.string_var1</td>
+                                            <td>@item.string_var2</td>
+                                            <td>@item.string_var3</td>
+                                            <td>@item.string_var4</td>
+                                            <td>@item.string_var5</td>
+                                            <td><span class="badge badge-soft-success">@item.date_var0.ToString("dd MMM yyyy")</span></td>
+                                            <td class="text-right"><span class="mr-2 deleteitem" data-keyg="@item.string_var6"><i class="fas fa-box text-info font-16"></i></span></td>
+                                        </tr>
                                         count = count + 1;
                                     }
                                 </tbody>
@@ -79,12 +76,12 @@
 @section Scripts{
     <script>
         $("#datatable").on('click',
-            '.updateitem',
+            '.deleteitem',
             function () {
                 var ispan = $(this).closest("td");
                 var keyg = ispan.children("[data-keyg]").data('keyg');
                 bootbox.confirm({
-                    message: "<h4><font color=red>Are you sure you want to approve?</font></h4>",
+                    message: "<h4><font color=red>Are you sure you want to deactivate the record?</font></h4>",
                     buttons: {
                         confirm: {
                             label: '<i class="glyphicon glyphicon-ok"></i> Yes',
@@ -99,8 +96,8 @@
                         if (a) {
                             $.ajax({
                                 type: "post",
-                                url: "/Dashboard/approve_company",
-                                data: { "Id": keyg },
+                                url: "/Account/deactivate_admin",
+                                data: { "Id": keyg},
                                 success: function (data) {
                                     location.reload();
                                 }
@@ -112,7 +109,6 @@
                     }
                 });
             });
-
     </script>
 
 }

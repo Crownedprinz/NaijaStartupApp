@@ -141,4 +141,11 @@
     <Folder Include="wwwroot\Logs\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="Views\Account\all_admin.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

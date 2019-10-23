@@ -1,0 +1,197 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
+    ViewData["Title"] = "view_company";
+    Layout = "~/Views/Shared/_CompanyLayout.cshtml";
+}
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Packages</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="grid-container full white-bg block-content-p">
+                        <div class="grid-container">
+                            <section id="block-zurblk-content" class="block-zurblk-content block block-system block-system-main-block">
+                                <input autocomplete="off" data-drupal-selector="form-endohvkei8uvnrpcurqt6mjlpdylsmrdnu6ui55lgze" type="hidden" name="form_build_id" value="form-eNdOhVkEi8uvnRPCUrqt6MjlPdYlsmrDNu6UI55LGZE" class="form-endohvkei8uvnrpcurqt6mjlpdylsmrdnu6ui55lgze">
+
+                                <input data-drupal-selector="edit-sgf-incorporate-form-form-token" type="hidden" name="form_token" value="_Z2TdPJeR6m3AYkf8BUm6mhVATM8kueysyQxYbZPg0Q" class="edit-sgf-incorporate-form-form-token">
+
+                                <input data-drupal-selector="edit-sgf-incorporate-form" type="hidden" name="form_id" value="sgf_incorporate_form" class="edit-sgf-incorporate-form">
+                                <div class="row sgf-incorporate-page-step-5">
+                                    <div class="align-center" id="incorporateContent">
+                                        <div class="tabs-panel is-active" id="capital-tab">
+                                            <div class="grid-x grid-padding-x">
+                                                <div id="previewForm">
+                                                    <div id="previewPage" class="grid-container full">
+                                                        <div class="grid-container">
+                                                            <div class="grid-x grid-padding-x align-center">
+                                                                <div class="large-12 cell">
+                                                                    <div class="table-title">COMPANY DETAILS</div>
+                                                                    <table class="hover">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="200">Company Name</td>
+                                                                                <td class="text-bold">@Model.string_var0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Alternative Company Name</td>
+                                                                                <td colspan="2" class="text-bold">@Model.string_var1</td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td>SSIC 1</td>
+                                                                                <td class="text-bold">@Model.string_var2</td>
+                                                                            </tr>
+
+
+                                                                            <tr>
+                                                                                <td>Financial Year End</td>
+                                                                                <td class="text-bold">
+                                                                                    @Model.string_var3
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Address Line 1</td>
+                                                                                <td class="text-bold">@Model.string_var4</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Address Line 2</td>
+                                                                                <td class="text-bold">@Model.string_var5</td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <div class="grid-x grid-margin-x">
+                                                                        <div class="small-12 cell table-title">OFFICER DETAILS</div>
+                                                                        <div class="large-6 medium-12 cell">
+                                                                            @Html.Raw(@Model.string_var13)
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="large-12 cell">
+                                                                    <div class="table-title">CAPITAL DETAILS</div>
+                                                                    <table class="hover">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="200">Currency</td>
+                                                                                <td class="text-bold">@Model.string_var6</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="200">Number of Share</td>
+                                                                                <td class="text-bold">@Model.int_var0</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="200">Each Share Price</td>
+                                                                                <td class="text-bold">@Model.string_var7</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="large-12 cell">
+                                                                    <div class="table-title">SHAREHOLDER DETAILS</div>
+                                                                    <table class="hover">
+                                                                        <thead>
+                                                                            <tr class="text-center">
+                                                                                <th width="400">Shareholder Name</th>
+                                                                                <th width="150">Allotted</th>
+                                                                                <th width="100">Date</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>@Model.string_var8</td>
+                                                                                <td class="text-center">@Model.decimal_var0</td>
+                                                                                <td class="text-center">@Model.string_var9</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="large-12 cell">
+                                                                    <div class="table-title">ORDER DETAILS</div>
+                                                                    <table class="hover">
+                                                                        <thead>
+                                                                            <tr class="text-center">
+                                                                                <th width="400">Package Name</th>
+                                                                                <th width="150">Date Issue </th>
+                                                                                <th width="100">Price</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>@Model.string_var10</td>
+                                                                                <td class="text-center">@Model.string_var11</td>
+                                                                                <td class="text-right">@Model.string_var12</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="hover">
+                                                                        <thead>
+                                                                            <tr class="text-center">
+                                                                                <th width="400">Services Name</th>
+                                                                                <th width="150">Date Issue </th>
+                                                                                <th width="100">Price</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            @Html.Raw(@Model.string_var14)
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="hover">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="550" class="semibold">Total</td>
+                                                                                <td width="100" class="semibold text-right">#2,788</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </section>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
+<partial name="_SpinnerView" />
+@section Scripts{
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="~/assets/js/payStack.js"></script>">
+    <script>
+
+    </script>
+
+}

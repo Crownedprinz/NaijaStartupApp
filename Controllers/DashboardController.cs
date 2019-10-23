@@ -142,11 +142,93 @@ namespace NaijaStartupApp.Controllers
                     string_var2 = x.CompanyName,
                     string_var3 = x.CompanyType,
                     string_var4 = x.Package.PackageName,
-                    string_var5 = x.CompanyType,
+                    string_var5 = x.ApprovalStatus,
                     date_var0 = x.CreationTime,
                     string_var6 = x.ApprovalStatus,
+                    string_var7 = x.Id.ToString()
                 }).ToList());
         }
+
+        [HttpPost]
+        public async Task<ActionResult> approve_company(string Id)
+        {
+            var company = _context.Company_Registration.Where(x => x.IsDeleted == false && x.Id.ToString() == Id).FirstOrDefault();
+            if (company != null)
+            {
+                company.ApprovalStatus = "Confirmed";
+                company.ModificationTime = DateTime.Now;
+                company.ModificationUserId = _globalVariables.userid;
+
+                _context.Update(company);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("admin_companies", null, null);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> view_company(string Id)
+        {
+            var companyInfo = new TemporaryVariables();
+            var company = await _context.Company_Registration.Include(x => x.Package).Include(s => s.addOnServices).Include(o => o.company_Officers).Where(x => x.Id.ToString() == Id).FirstOrDefaultAsync();
+            if (company != null)
+            {
+                companyInfo = new TemporaryVariables
+                {
+                    string_var0 = company.CompanyName,
+                    string_var1 = company.AlternateCompanyName,
+                    string_var2 = company.BusinessActivity + " and " + company.SndBusinessActivity,
+                    string_var3 = company.FinancialYearEnd,
+                    string_var4 = company.Address1,
+                    string_var5 = company.Address2,
+                    string_var6 = company.CompanyCapitalCurrency,
+                    int_var0 = company.NoOfSharesIssue,
+                    string_var7 = company.SharePrice.ToString(),
+                    string_var8 = company.ShareHolderName,
+                    decimal_var0 = company.SharesAllocated,
+                    string_var9 = company.CreationTime.ToString(),
+                    string_var10 = company.Package.PackageName,
+                    string_var11 = company.Package.CreationTime.ToString(),
+                    string_var12 = company.Package.Price.ToString(),
+                };
+                if (company.company_Officers != null && company.company_Officers.Any())
+                {
+                    foreach (var item in company.company_Officers)
+                    {
+                        string table = "<table class='hover'><tbody>";
+                        table += "<tr><th colspan='2' class='text-left'> OFFICER 1 - " + item.FullName + " </th></tr>";
+                        table += "<tr><td width='200'>Full Name</td><td class='text-bold'>" + item.FullName + "</td></tr>";
+                        table += "<tr><td>Gender</td><td colspan='2' class='text-bold'>" + item.Gender + "</td></tr>";
+                        table += "<tr><td>Position</td><td class='text-bold'>" + item.Designation + "</td></tr>";
+                        table += "<tr><td>ID Number</td><td class='text-bold'> " + item.Id_Number + " </td></tr>";
+                        table += "<tr><td>ID Type</td><td class='text-bold'>" + item.Id_Type + "</td></tr>";
+                        table += "<tr><td>Date of Birth</td><td class='text-bold'>" + item.Dob + "</td></tr>";
+                        table += "<tr><td>Country of Birth</td><td class='text-bold'>" + item.Birth_Country + "</td></tr>";
+                        table += "<tr><td>Nationality</td><td class='text-bold'>" + item.Nationality + "</td></tr>";
+                        table += "<tr><td>Address Line 1</td><td class='text-bold'>" + item.Address1 + "</td></tr>";
+                        table += "<tr><td>Address Line 2</td><td class='text-bold'>" + item.Address2 + "</td></tr>";
+                        table += "<tr><td>Postcode</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
+                        table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
+                        table += "<tr><td>Work Phone</td><td class='text-bold'>" + item.Phone_No + "</td></tr>";
+                        table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr>";
+                        table += "<tr><td>Proof of ID</td><td class='text-bold'><ul></ul></td></tr>";
+                        table += "<tr><td>Proof of Address</td><td class='text-bold'><ul></ul></td></tr></tbody></table>";
+                        companyInfo.string_var13 += table;
+                    }
+                }
+                if (company.addOnServices != null && company.addOnServices.Any())
+                {
+                    foreach (var item in company.addOnServices)
+                    {
+                        string officers = "<tr><td>" + item.ServiceName + "</td>";
+                        officers += "<td class='text-center'>" + item.CreationTime + "</td>";
+                        officers += "<td class='text-right'>" + item.Price + "</td></tr>";
+                        companyInfo.string_var14 += officers;
+                    }
+                }
+            }
+            return View(companyInfo);
+        }
+
         public ActionResult all_rooms()
         {
             return View();
