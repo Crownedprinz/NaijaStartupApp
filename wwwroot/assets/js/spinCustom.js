@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
 
+    $(".datet").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "dd/mm/yy",
+        yearRange: '1950:2050'
+    });
 
     $(".lgtime").click(function () {
         var isUsername = $("#id_username").val();

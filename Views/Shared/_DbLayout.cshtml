@@ -27,6 +27,7 @@
         <link href="~/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
         <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
         <link href="~/assets/css/spin.css" type="text/css">
+        <link href="~/assets/css/jquery-ui.min.css" rel="stylesheet" />
     </environment>
 
     <environment exclude="Development,Staging,Production">
@@ -42,12 +43,12 @@
     <div class="topbar">
         <!-- LOGO -->
         <div class="topbar-left">
-            <a asp-area="" asp-controller="Dashboard" asp-action="Index" class="logo">
-                <span><img src="~/assets/images/logo-sm.png" alt="logo-small" class="logo-sm"> </span>
-                <span class="navbar-brand" style="font-size: 20px; font-weight: 900; color:dimgrey;"> Naija StartUp</span>
-
+            <a href="https://mannatthemes.com/metrica/hospital-vertical/projects/projects-index.html" class="logo">
+                <span><img src="~/assets/images/logo-sm.png" alt="logo-small" class="logo-sm"> </span><span>
+                    <img src="~/assets/images/logo-dark.png" alt="logo-large" class="logo-lg">
+                </span>
             </a>
-        </div>
+        </div><!--end logo-->
         <!--end logo-->
         <nav class="navbar-custom">
             <ul class="list-unstyled topbar-nav float-right mb-0">
@@ -198,7 +199,10 @@
         <script src="~/assets/pages/jquery.hospital_dashboard.init.js"></script>
         <!-- App js -->
         <script src="~/assets/js/app.js"></script>
+        <script src="~/assets/js/spin.js"></script>
+        <script src="~/assets/js/spinCustom.js"></script>
         <script src="~/assets/js/puscript.js"></script>
+        <script src="~/assets/js/jquery-ui-1.12.1.js"></script>
     </environment>
     <environment exclude="Development,Staging,Production">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"

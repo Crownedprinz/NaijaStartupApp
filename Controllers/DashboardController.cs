@@ -15,9 +15,11 @@ using static NaijaStartupApp.Models.NsuDtos;
 using static NaijaStartupApp.Models.NsuVariables;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
+using DangoteCustomerPortal.Handlers;
 
 namespace NaijaStartupApp.Controllers
 {
+    [UnauthorizedCustomFilter]
     public class DashboardController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -46,7 +48,9 @@ namespace NaijaStartupApp.Controllers
         {
             var temp = new TemporaryVariables
             {
-                int_var0 = _companyService.Company_Count()
+                int_var0 = _companyService.Company_Count(),
+                int_var1 = _companyService.Ticket_Count(),
+                int_var2 = _companyService.Pending_Tasks(),
             };
             return View(temp);
         }
@@ -669,7 +673,8 @@ namespace NaijaStartupApp.Controllers
                 temp.decimal_var1 = 2400 + company.Package.Price;
 
             }
-           
+            var country = await _context.Settings.Where(x => x.code.ToLower() == "country").ToListAsync();
+            ViewBag.country = new SelectList(country, "description", "description");
             return View(temp);
         }
         [HttpPost]
@@ -693,23 +698,23 @@ namespace NaijaStartupApp.Controllers
                         {
                             FullName = Input.string_array_temp0[0],
                             Gender = Input.string_array_temp0[1],
-                            Id_Type = Input.string_array_temp0[2],
-                            Id_Number = Input.string_array_temp0[3],
-                            Nationality = Input.string_array_temp0[4],
-                            Birth_Country = Input.string_array_temp0[5],
-                            Dob = Input.string_array_temp0[6],
-                            Email = Input.string_array_temp0[7],
-                            Phone_No = Input.string_array_temp0[8],
-                            Address1 = Input.string_array_temp0[9],
-                            Address2 = Input.string_array_temp0[10],
-                            PostalCode = Input.string_array_temp0[11],
-                            MobileNo = Input.string_array_temp0[12],
+                            Id_Type = Input.string_array_temp0[6],
+                            Id_Number = Input.string_array_temp0[7],
+                            Nationality = Input.string_array_temp0[8],
+                            Birth_Country = Input.string_array_temp0[9],
+                            Dob = Input.string_array_temp0[10],
+                            Email = Input.string_array_temp0[11],
+                            Phone_No = Input.string_array_temp0[12],
+                            Address1 = Input.string_array_temp0[13],
+                            Address2 = Input.string_array_temp0[14],
+                            PostalCode = Input.string_array_temp0[15],
+                            MobileNo = Input.string_array_temp0[16],
                             Registration = company,
                         };
                         company.company_Officers.Add(officers);
                         _context.Update(company);
                         await _context.SaveChangesAsync();
-                        return RedirectToAction("order_review");
+                        return RedirectToAction("company_share");
                     }
                     else
                     {
@@ -724,22 +729,34 @@ namespace NaijaStartupApp.Controllers
             return View();
         }
 
-        public ActionResult company_share()
+        public async Task<ActionResult> company_share()
         {
-            return View();
+            var temp = new TemporaryVariables();
+            var company = await _context.Company_Registration.Include(s => s.Package).Include(u=>u.User).Where(x => x.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
+            if (company != null)
+            {
+                temp.string_var0 = company.Package.PackageName;
+                temp.string_var1 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var2 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var3 = "NGN" + ("2,400");
+                temp.string_var4 = company.CompanyName + " " + company.CompanyType;
+                temp.string_var5 = company.User.FirstName + " " + company.User.LastName;
+
+            }
+            return View(temp);
         }
 
         [HttpPost]
         public async Task<ActionResult> company_share(TemporaryVariables Input)
         {
-            var company = _context.Company_Registration.Find(Guid.Parse(_temporaryVariables.string_var0));
+            var company =await _context.Company_Registration.Include(u => u.User).Where(s=>s.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
             if (company != null)
             {
-                company.CompanyCapitalCurrency = Input.string_var0;
+                company.CompanyCapitalCurrency = Input.string_var6;
                 company.NoOfSharesIssue = Input.int_var0;
                 company.SharePrice = Input.decimal_var0;
                 company.SharesAllocated = Input.decimal_var1;
-                company.ShareHolderName = Input.string_var1;
+                company.ShareHolderName = company.User.FirstName + " " + company.User.LastName;
             }
             try
             {
@@ -863,11 +880,9 @@ namespace NaijaStartupApp.Controllers
                         table += "<tr><td>Address Line 1</td><td class='text-bold'>" + item.Address1 + "</td></tr>";
                         table += "<tr><td>Address Line 2</td><td class='text-bold'>" + item.Address2 + "</td></tr>";
                         table += "<tr><td>Postcode</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
-                        table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
+                        table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.MobileNo + "</td></tr>";
                         table += "<tr><td>Work Phone</td><td class='text-bold'>" + item.Phone_No + "</td></tr>";
-                        table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr>";
-                        table += "<tr><td>Proof of ID</td><td class='text-bold'><ul></ul></td></tr>";
-                        table += "<tr><td>Proof of Address</td><td class='text-bold'><ul></ul></td></tr></tbody></table>";
+                        table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr></tbody></table>";
                         companyInfo.string_var13 += table;
                     }
                 }

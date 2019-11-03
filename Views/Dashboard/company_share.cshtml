@@ -4,188 +4,188 @@
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
 <!-- Page Content-->
-<div class="page-content">
-    <div class="container-fluid">
-        <!-- Page-Title -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="page-title-box">
-                    <h4 class="page-title">Packages</h4>
+<form role="form" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Packages</h4>
+                    </div>
+                    <!--end page-title-box-->
                 </div>
-                <!--end page-title-box-->
+                <!--end col-->
             </div>
-            <!--end col-->
-        </div>
-        <!-- end page title end breadcrumb -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row sgf-incorporate-page-step-6">
-                            <div class="align-center" id="incorporateContent">
-                                <div class="grid-container full white-bg margin-bottom-3">
-                                    <div class="grid-container">
-                                        <div class="grid-x text-center incorporate-process">
-                                            <div class="medium-2 cell">
-                                                <p class="step-active">1. Company Name</p>
-                                            </div>
-                                            <div class="medium-2 cell padding-horizontal-1">
-                                                <p class="step-active">2. Packages</p>
-                                            </div>
-                                            <div class="medium-3 cell padding-right-1">
-                                                <p class="step-active">3. Details</p>
-                                            </div>
-                                            <div class="medium-2 cell padding-horizontal-1">
-                                                <p class="step-active">4. Officers</p>
-                                            </div>
-                                            <div class="medium-1 cell ">
-                                                <p class="step-active">5. Capital</p>
-                                            </div>
-                                            <div class="medium-2 cell padding-left-1">
-                                                <p class="">6. Review / Payment</p>
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row sgf-incorporate-page-step-6">
+                                <div class="align-center" id="incorporateContent">
+                                    <div class="grid-container full white-bg margin-bottom-3">
+                                        <div class="grid-container">
+                                            <div class="grid-x text-center incorporate-process">
+                                                <div class="medium-2 cell">
+                                                    <p class="step-active">1. Company Name</p>
+                                                </div>
+                                                <div class="medium-2 cell padding-horizontal-1">
+                                                    <p class="step-active">2. Packages</p>
+                                                </div>
+                                                <div class="medium-3 cell padding-right-1">
+                                                    <p class="step-active">3. Details</p>
+                                                </div>
+                                                <div class="medium-2 cell padding-horizontal-1">
+                                                    <p class="step-active">4. Officers</p>
+                                                </div>
+                                                <div class="medium-1 cell ">
+                                                    <p class="step-active">5. Capital</p>
+                                                </div>
+                                                <div class="medium-2 cell padding-left-1">
+                                                    <p class="">6. Review / Payment</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="tabs-panel is-active" id="capital-tab">
-                                    <div class="grid-x grid-padding-x">
-                                        <div class="large-8 medium-12 cell">
-                                            <h3 class="thin-text text-center">
-                                                <span class="incorporate-company-name">DANGOTE</span>
-                                                <span class="company-type-tail"> PTE. LTD.</span>
-                                                <a href="#" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-change-company-name-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
-                                            </h3>
-                                            <div id="capitalForm" class="grid-x grid-margin-x light-bg padding-vertical-1">
-                                                <div class="cell">
-                                                    <div id="field-capital-detail-add-more-wrapper">
-                                                        Company Capital
-                                                        <div class="required-fields field-group-html-element grid-x grid-margin-x group-main-info">
-                                                            <div class="cell small-12 medium-4 large-4">
+                                    <div class="tabs-panel is-active" id="capital-tab">
+                                        <div class="grid-x grid-padding-x">
+                                            <div class="large-8 medium-12 cell">
+                                                <h3 class="thin-text text-center">
+                                                    <span class="incorporate-company-name">@Model.string_var4</span>
+                                                </h3>
+                                                <div id="capitalForm" class="grid-x grid-margin-x light-bg padding-vertical-1">
+                                                    <div class="cell">
+                                                        <div id="field-capital-detail-add-more-wrapper">
+                                                            Company Capital
+                                                            <div class="required-fields field-group-html-element grid-x grid-margin-x group-main-info">
+                                                                <div class="cell small-12 medium-4 large-4">
 
-                                                                <div class="js-form-item form-item js-form-type-select form-item-capital-currency js-form-item-capital-currency">
-                                                                    <label for="edit-capital-currency">Currency *</label>
-                                                                    @Html.DropDownListFor(m => m.string_var0,
-                                                                                        new List<SelectListItem>
-                                                                                         {
-                                                                                             new SelectListItem {Text = "-None-", Value = "none"},
-                                                                                             new SelectListItem {Text = "SGD", Value = "SGD"},
-                                                                                             new SelectListItem {Text = "USD", Value = "USD"},
-                                                                                             new SelectListItem {Text = "EUR", Value = "EUR"},
-                                                                                             new SelectListItem {Text = "JPY", Value = "JPY"},
-                                                                                             new SelectListItem {Text = "CNY", Value = "CNY"},
-                                                                                         }, new { @class = "form-select", @id = "edit-capital-currency"})
+                                                                    <div class="js-form-item form-item js-form-type-select form-item-capital-currency js-form-item-capital-currency">
+                                                                        <label for="edit-capital-currency">Currency *</label>
+                                                                        @Html.DropDownListFor(m => m.string_var6,
+                                                                                            new List<SelectListItem>
+                                                                                             {
+                                                                                                 new SelectListItem {Text = "-None-", Value = "none"},
+                                                                                                 new SelectListItem {Text = "NGN", Value = "NGN"},
+                                                                                                 new SelectListItem {Text = "USD", Value = "USD"},
+                                                                                                 new SelectListItem {Text = "EUR", Value = "EUR"},
+                                                                                                 new SelectListItem {Text = "JPY", Value = "JPY"},
+                                                                                             }, new { @class = "form-select", @id = "edit-capital-currency", @required = "required" })
+
+                                                                    </div>
+
+                                                                </div><div class="cell small-12 medium-4 large-4 field-number-of-share">
+
+                                                                    <div class="js-form-item form-item js-form-type-number form-item-capital-number-issue-share js-form-item-capital-number-issue-share">
+                                                                        <label for="edit-capital-number-issue-share">Number of Issued Share *</label>
+                                                                        @Html.TextBoxFor(m => m.int_var0, new { @class = "form-number edit-capital-number-issue-share", id = "edit-capital-number-issue-share", @required = "required" })
+
+                                                                    </div>
+
+                                                                </div><div class="cell small-12 medium-4 large-4 field-each-share-price">
+
+                                                                    <div class="js-form-item form-item js-form-type-number form-item-capital-each-share-price js-form-item-capital-each-share-price">
+                                                                        <label for="edit-capital-each-share-price">Each share price *</label>
+                                                                        @Html.TextBoxFor(m => m.decimal_var0, new { @class = "form-number edit-capital-each-share-price", id = "edit-capital-each-share-price", @required = "required" })
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div><div class="hide">
+
+                                                                <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-name js-form-item-capital-shareholder-0-shareholder-name">
+                                                                    <label for="edit-capital-shareholder-0-shareholder-name">Shareholder Name</label>
+                                                                    @Html.TextBoxFor(m => m.string_var1, new { @id = "edit-capital-shareholder-0-shareholder-name", @size = "60", @maxlength = "128", @class = "form-text edit-capital-shareholder-0-shareholder-name" })
 
                                                                 </div>
 
-                                                            </div><div class="cell small-12 medium-4 large-4 field-number-of-share">
+                                                            </div><div data-capital-detail-wrapper="1" class="grid-x grid-margin-x capital-detail-wrapper capital-detail-wrapper-1 align-middle">
+                                                                <div class="text-right text-uppercase cell small-12 medium-4 large-4 shareholder-name-1 ">@Model.string_var5</div>
+                                                                <div class="cell small-12 medium-4 large-4 share-holder-wrapper">
 
-                                                                      <div class="js-form-item form-item js-form-type-number form-item-capital-number-issue-share js-form-item-capital-number-issue-share">
-                                                                          <label for="edit-capital-number-issue-share">Number of Issued Share *</label>
-                                                                          @Html.TextBoxFor(m => m.int_var0, new { @class = "form-number edit-capital-number-issue-share" ,id = "edit-capital-number-issue-share", @value = "1" })
+                                                                    <div class="js-form-item form-item js-form-type-number form-item-capital-shareholder-0-shared-allotted js-form-item-capital-shareholder-0-shared-allotted">
+                                                                        <label for="edit-capital-shareholder-0-shared-allotted">Shares Allotted *</label>
+                                                                        @Html.TextBoxFor(m => m.decimal_var1, new { @class = "capital-detail-shares-al  lotted form-number edit-capital-shareholder-0-shared-allotted", @id = "edit-capital-shareholder-0-shared-allotted", @value = "0", @min = "1", @max = "100", @required = "required" })
 
-                                                                      </div>
+                                                                    </div>
 
-                                                            </div><div class="cell small-12 medium-4 large-4 field-each-share-price">
+                                                                </div><div class="cell small-12 medium-4 large-4 show-percent shareholder-percent-1">0%</div><div class="hide">
 
-                                                                      <div class="js-form-item form-item js-form-type-number form-item-capital-each-share-price js-form-item-capital-each-share-price">
-                                                                          <label for="edit-capital-each-share-price">Each share price *</label>
-                                                                          @Html.TextBoxFor(m => m.decimal_var0, new { @class = "form-number edit-capital-each-share-price",  id = "edit-capital-each-share-price", @value = "1.00" })
+                                                                    <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-percent js-form-item-capital-shareholder-0-shareholder-percent">
+                                                                        <label for="edit-capital-shareholder-0-shareholder-percent">Shares Allotted *</label>
+                                                                        <input class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent" id="edit-capital-shareholder-0-shareholder-percent" name="capital[shareholder][0][shareholder_percent]" value="0" size="60" maxlength="128">
+                                                                        @Html.TextBoxFor(m => m.string_var0, new { @class = "shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent", @id = "edit-capital-shareholder-0-shareholder-percent", @value = "0", @size = "60", @maxlength = "128" })
 
-                                                                      </div>
-
-                                                            </div>
-                                                        </div><div class="hide">
-
-                                                                  <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-name js-form-item-capital-shareholder-0-shareholder-name">
-                                                                      <label for="edit-capital-shareholder-0-shareholder-name">Shareholder Name</label>
-                                                                      @Html.TextBoxFor(m => m.string_var1, new {@id="edit-capital-shareholder-0-shareholder-name",@value="JOHN ADEMOLA",@size="60",@maxlength="128",@class="form-text edit-capital-shareholder-0-shareholder-name"})
-
-                                                                  </div>
-
-                                                        </div><div data-capital-detail-wrapper="1" class="grid-x grid-margin-x capital-detail-wrapper capital-detail-wrapper-1 align-middle">
-                                                            <div class="text-right text-uppercase cell small-12 medium-4 large-4 shareholder-name-1 ">JOHN ADEMOLA</div>
-                                                            <div class="cell small-12 medium-4 large-4 share-holder-wrapper">
-
-                                                                <div class="js-form-item form-item js-form-type-number form-item-capital-shareholder-0-shared-allotted js-form-item-capital-shareholder-0-shared-allotted">
-                                                                    <label for="edit-capital-shareholder-0-shared-allotted">Shares Allotted *</label>
-                                                                    <input class="capital-detail-shares-allotted form-number edit-capital-shareholder-0-shared-allotted" id="edit-capital-shareholder-0-shared-allotted" name="string_var4" value="0" step="1">
-                                                                    @Html.TextBoxFor(m => m.decimal_var1, new { @class="capital-detail-shares-allotted form-number edit-capital-shareholder-0-shared-allotted",@id="edit-capital-shareholder-0-shared-allotted",@value="0"  })
+                                                                    </div>
 
                                                                 </div>
-
-                                                            </div><div class="cell small-12 medium-4 large-4 show-percent shareholder-percent-1">0%</div><div class="hide">
-
-                                                                <div class="js-form-item form-item js-form-type-textfield form-item-capital-shareholder-0-shareholder-percent js-form-item-capital-shareholder-0-shareholder-percent">
-                                                                    <label for="edit-capital-shareholder-0-shareholder-percent">Shares Allotted *</label>
-                                                                    <input class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent"  id="edit-capital-shareholder-0-shareholder-percent" name="capital[shareholder][0][shareholder_percent]" value="0" size="60" maxlength="128">
-                                                                     @Html.TextBoxFor(m => m.string_var0, new { @class="shareholder_percent_value form-text edit-capital-shareholder-0-shareholder-percent" ,@id="edit-capital-shareholder-0-shareholder-percent",@value="0",@size="60" ,@maxlength="128"})
-
-                                                                </div>
-
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <input class="secondary float-left margin-top-2 text-center margin-bottom-1 button js-form-submit form-submit edit-actions-back" data-drupal-selector="edit-actions-back" type="submit" id="edit-actions-back" name="op" value="Back">
+                                                <input type="submit" class="secondary float-right margin-top-2 text-center margin-bottom-1 button button--primary js-form-submit form-submit edit-next" id="edit-next" value="Next">
+
                                             </div>
-                                            <input class="secondary float-left margin-top-2 text-center margin-bottom-1 button js-form-submit form-submit edit-actions-back" data-drupal-selector="edit-actions-back" type="submit" id="edit-actions-back" name="op" value="Back">
-                                            <a class="secondary float-right margin-top-2 text-center margin-bottom-1 button button--primary js-form-submit form-submit edit-next" id="edit-next" asp-area="" asp-controller="Dashboard" asp-action="order_review">Next</a>
 
-                                        </div>
-                                        <div class="large-4 medium-12 cell billingTable">
-                                            <div class="billing-fix">
-                                                <h3 class="thin-text text-center">Order Details</h3>
-                                                <div class="table-wraped gray-bg width-100">
-                                                    <div class="hide">
 
-                                                        <div class="js-form-item form-item js-form-type-textfield form-item-total js-form-item-total">
-                                                            <label for="edit-total" class="form-required">Total</label>
-                                                            <input data-drupal-selector="edit-total" type="text" id="edit-total" name="total" value="2788" size="60" maxlength="128" class="form-text required edit-total" required="required" aria-required="true">
+                                            <div class="large-4 medium-12 cell billingTable">
+                                                <div class="billing-fix">
+                                                    <h3 class="thin-text text-center">Order Details</h3>
+                                                    <div class="table-wraped gray-bg width-100">
+                                                        <div class="hide">
 
-                                                        </div>
+                                                            <div class="js-form-item form-item js-form-type-textfield form-item-total js-form-item-total">
+                                                                <label for="edit-total" class="form-required">Total</label>
+                                                                <input data-drupal-selector="edit-total" type="text" id="edit-total" name="total" value="388.00" size="60" maxlength="128" class="form-text required edit-total" required="required" aria-required="true">
 
-                                                    </div><table class="gray-bg unstriped">
-                                                        <tbody>
-                                                            <tr class="package-name p-s-item package-232" data-package-id="232">
-                                                                <td width="300" class="semibold title ">
-                                                                    Essential Package
-                                                                    <a href="#" class="small-text text-underline display-inline-block" data-toggle="modal" data-target="#sgf-incorporate-packages-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
-                                                                </td>
-                                                                <td width="90" class="text-right value">#388</td>
-                                                            </tr>
-                                                            <tr class="service-name">
-                                                                <td colspan="2" class="semibold">Add-on Services</td>
-                                                            </tr>
+                                                            </div>
 
-                                                            <tr class="service-name p-s-item service-local-resident">
-                                                                <td width="300" class=" title ">• Nominee Director (1yr)</td>
-                                                                <td width="80" class="text-right value " data-price="2400">#2,400</td>
-                                                            </tr>
-
-                                                            <tr class="sgf-additional-total-row">
-                                                                <td class="semibold">Total Amount</td>
-                                                                <td class="semibold text-right total-price">#2,788.00</td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                                        </div><table class="gray-bg unstriped">
+                                                            <tbody>
+                                                                <tr class="package-name p-s-item package-232" data-package-id="232">
+                                                                    <td width="300" class=" title ">
+                                                                        @Model.string_var0
+                                                                        <a href="~/Dashboard/packages" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-packages-popup" tabindex="0">Edit</a>
+                                                                    </td>
+                                                                    <td width="90" class="text-right value">@Model.string_var1</td>
+                                                                </tr>
+                                                                <tr class="service-nameA" hidden>
+                                                                    <td colspan="2" class="semibold">Add-on Services</td>
+                                                                </tr>
+                                                                <tr class="service-nameD" hidden>
+                                                                    <td class="semibold">Nominee Director (1yr)</td>
+                                                                    <td class="text-right value">@Model.string_var3</td>
+                                                                </tr>
+                                                                <tr class="sgf-additional-total-row">
+                                                                    <td class="semibold">Total Amount</td>
+                                                                    <td class="semibold text-right total-price">@Model.string_var2</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!--end card-->
                 </div>
-                <!--end card-->
+                <!--end col-->
             </div>
-            <!--end col-->
+            <!--end row-->
         </div>
-        <!--end row-->
+        <!-- container -->
+        <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+        <!--end footer-->
     </div>
-    <!-- container -->
-    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
-    <!--end footer-->
-</div>
+    </form>
 <!-- end page content -->
