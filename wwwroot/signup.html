@@ -196,6 +196,18 @@
                 return;
             }
 
+            if (confirmEmail !=Email) {
+                alert("Please make sure you confirm email matches your email");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+
+            if (confirmpassword != password) {
+                alert("Please make sure you confirm password matches your password");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+
 
             $.ajax({
             type: "post",
@@ -206,7 +218,8 @@
                     var obj = JSON.stringify(data);
                     var jsonObj = JSON.parse(obj.toString());
                 if (jsonObj.isSuccessful)
-                    window.location.href = "/Dashboard/Index";
+                    alert("Successfully Registered, Please click the Login Button to Sign in");
+                    return;
                 else {
                     alert(jsonObj.error);
                      $(".se-pre-con").fadeOut("slow");
