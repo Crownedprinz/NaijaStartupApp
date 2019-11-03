@@ -1,7 +1,12 @@
 ﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@using NaijaStartupApp.Helpers;
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor hcontext;
 @{
     ViewData["Title"] = "view_company";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
+    NaijaStartupApp.Models.NsuVariables.GlobalVariables _globalVariables = hcontext.HttpContext.Session.GetObject<NaijaStartupApp.Models.NsuVariables.GlobalVariables>("GlobalVariables");
+
 }
 <!-- Page Content-->
 <div class="page-content">
@@ -9,9 +14,6 @@
         <!-- Page-Title -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="page-title-box">
-                    <h4 class="page-title">Packages</h4>
-                </div>
                 <!--end page-title-box-->
             </div>
             <!--end col-->
@@ -35,6 +37,11 @@
                                                 <div id="previewForm">
                                                     <div id="previewPage" class="grid-container full">
                                                         <div class="grid-container">
+                                                            @if (_globalVariables.RoleId.ToLower() == "admin")
+                                                            {
+                                                                @Html.ActionLink("Update Incentives", "attach_incentives", new { Id = Model.string_var15 }, new { @class = "btn btn-primary px-4 mt-0 mb-3" })
+                                                            }
+                                                                @*<a class="btn btn-primary px-4 mt-0 mb-3" asp-area="" asp-controller="Dashboard" asp-action="incentives" asp-all-route-data=""><i class="mdi mdi-plus-circle-outline mr-2"></i>View Incentives</a>*@
                                                             <div class="grid-x grid-padding-x align-center">
                                                                 <div class="large-12 cell">
                                                                     <div class="table-title">COMPANY DETAILS</div>
@@ -78,6 +85,22 @@
                                                                         <div class="large-6 medium-12 cell">
                                                                             @Html.Raw(@Model.string_var13)
                                                                         </div>
+                                                                    </div>
+
+                                                                    <div class="grid-x grid-margin-x">
+                                                                        <div class="small-12 cell table-title">Additional Benefits </div>
+                                                                        <table class="hover">
+                                                                            <thead>
+                                                                                <tr class="text-center">
+                                                                                    <th width="400">Incentive Name</th>
+                                                                                    <th width="150">Description </th>
+                                                                                    <th width="100">Date</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @Html.Raw(@Model.string_var16)
+                                                                            </tbody>
+                                                                        </table>
                                                                     </div>
 
                                                                 </div>

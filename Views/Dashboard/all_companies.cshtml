@@ -30,6 +30,7 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Company Name</th>
+                                        <th>Company Type</th>
                                         <th>CAC Reg Number</th>
                                         <th>Date of Appication</th>
                                         <th>Financial Year End</th>
@@ -46,15 +47,33 @@
                                             <td>@count</td>
                                             <td>@item.string_var0</td>
                                             <td>@item.string_var10</td>
+                                            <td>@item.string_var5</td>
                                             <td>@item.date_var0.ToString("dd MMM yyyy")</td>
                                             <td>@item.string_var1</td>
                                             <td>@item.string_var2</td>
                                             <td>@item.string_var4</td>
-                                            <td class="text-right">
-                                                <a href="#" +@item.string_var3" class="mr-2" onclick="editPost('@item.string_var3')"><i class="fas fa-edit text-info font-16"></i> </a>
-                                                <a href="#" +@item.string_var3" onclick="deletePost('@item.string_var3')"><i class="fas fa-trash-alt text-danger font-16"></i> </a>
+                                            @if (item.bool_var0)
+                                            {
+                                                if (item.bool_var2)
+                                                {
+                                                    <td class="text-right">
+                                                        @Html.ActionLink("", "view_company", new { Id = @item.string_var7 }, new { @class = "fas fa-folder-open text-info font-16 mr-2" })
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="text-right">
+                                                        @Html.ActionLink("", "new_company", new { Id = @item.string_var3 }, new { @class = "mr-2 fas fa-edit text-info font-16" })
+                                                    </td>
+                                                }
 
-                                            </td>
+
+                                            }
+                                            else
+                                            {
+                                                <td></td>
+                                            }
+
                                         </tr>
                                         count = count + 1;
                                     }
@@ -87,7 +106,7 @@
                     if (data) {
                         alert("Successful")
                         document.location.reload();
-                        }
+                    }
                     else {
                         alert("Failed to Update")
                         document.location.reload();
@@ -99,7 +118,7 @@
             })
         }
         function deletePost(parameter) {
-             $.ajax({
+            $.ajax({
                 type: "delete",
                 url: "/Dashboard/delete_companies",
                 data: { "Id": parameter },
@@ -107,7 +126,7 @@
                     if (data) {
                         alert("Successful")
                         document.location.reload();
-                        }
+                    }
                     else {
                         alert("Failed to Update")
                         document.location.reload();

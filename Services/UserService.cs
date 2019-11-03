@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NaijaStartupApp.Data;
@@ -26,7 +27,11 @@ namespace NaijaStartupApp.Services
         Task<GenericResponse> ChangePasswordAsync(User user, string CurrentPassword, string NewPassword);
         Task<User> get_User_By_Session();
         Task<bool> UserExists(string Id);
-
+        Task<User> get_admin_user(string Id);
+        Task<User> get_customer(string Id);
+        Task<string> get_name(string Id);
+        Task<bool> IsUserCustomer(string Id);
+        Task<bool> IsUserAdmin(string Id);
     }
     public class UserService : IUserService
     {
@@ -180,6 +185,24 @@ namespace NaijaStartupApp.Services
         {
             return await _context.User.FindAsync(user);
         }
+        public async Task<bool> IsUserAdmin(string Id)
+        {
+            var status = false;
+            var user = await _context.User.Where(x => x.Id == Id && x.IsDeleted == false && x.Role.ToLower() == "admin").FirstOrDefaultAsync();
+            if (user != null)
+                status = true;
+            return status;
+
+        }
+        public async Task<bool> IsUserCustomer(string Id)
+        {
+            var status = false;
+            var user = await _context.User.Where(x => x.Id == Id && x.IsDeleted == false && x.Role.ToLower() == "user").FirstOrDefaultAsync();
+            if (user != null)
+                status = true;
+            return status;
+
+        }
         public User get_User_By_EmailOrUsername(string emailOrUsername)
         {
             return _context.User.Where(x=>x.Email ==emailOrUsername || x.UserName == emailOrUsername).FirstOrDefault();
@@ -188,7 +211,28 @@ namespace NaijaStartupApp.Services
         {
             return await _context.User.FindAsync(_globalVariables.userid);
         }
+        public async Task<User> get_admin_user(string user)
+        {
+            return await _context.User.Where(x => x.Id == user && x.IsDeleted == false && x.Role.ToLower() == "admin").FirstOrDefaultAsync();
 
+        }
+
+        public async Task<string> get_name(string Id)
+        {
+            User user = await _context.User.Where(x => x.Id == Id && x.IsDeleted == false && x.Role.ToLower() == "admin").FirstOrDefaultAsync();
+            string Name = "";
+            if (user != null)
+            {
+                Name = user.FirstName + " " + user.LastName;
+            }
+            return Name;
+
+        }
+
+        public async Task<User> get_customer(string user)
+        {
+            return await _context.User.Where(x => x.Id == user && x.IsDeleted == false && x.Role.ToLower() == "user").FirstOrDefaultAsync();
+        }
         public async Task<bool> UserExists(string Id)
         {
             var status = false;

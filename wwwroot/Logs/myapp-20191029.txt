@@ -1,0 +1,371 @@
+2019-10-29T21:06:34.6672459+01:00 800001f3-0003-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/   (ca22a1cb)
+2019-10-29T21:06:34.7368193+01:00 800001f3-0003-f300-b63f-84710c7967bb [INF] The file "/index.html" was not modified (f1f8d725)
+2019-10-29T21:06:34.8848458+01:00 800001f3-0003-f300-b63f-84710c7967bb [INF] Request finished in 218.6645ms 304 text/html (791a596a)
+2019-10-29T21:06:35.0040353+01:00 8000038c-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/loadingicon.css   (ca22a1cb)
+2019-10-29T21:06:35.0221301+01:00 80000157-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/font-awe some.css   (ca22a1cb)
+2019-10-29T21:06:35.0254478+01:00 8000038c-0002-f700-b63f-84710c7967bb [INF] The file "/css/loadingicon.css" was not modified (f1f8d725)
+2019-10-29T21:06:35.0386378+01:00 800001a1-0002-e100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/apps/head/-mEFVS8y7qx5pVzWHQTCQu5gnVM.js   (ca22a1cb)
+2019-10-29T21:06:35.0490943+01:00 8000038c-0002-f700-b63f-84710c7967bb [INF] Request finished in 57.6627ms 304 text/css (791a596a)
+2019-10-29T21:06:35.7124667+01:00 8000038e-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/hosting.css   (ca22a1cb)
+2019-10-29T21:06:35.7173217+01:00 80000123-0002-ea00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js   (ca22a1cb)
+2019-10-29T21:06:35.7354519+01:00 8000038e-0002-f700-b63f-84710c7967bb [INF] The file "/css/hosting.css" was not modified (f1f8d725)
+2019-10-29T21:06:35.7432873+01:00 8000038e-0002-f700-b63f-84710c7967bb [INF] Request finished in 34.1885ms 304 text/css (791a596a)
+2019-10-29T21:06:35.7515229+01:00 80000164-0002-ec00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/rocket1.png   (ca22a1cb)
+2019-10-29T21:06:35.7582239+01:00 80000164-0002-ec00-b63f-84710c7967bb [INF] The file "/images/rocket1.png" was not modified (f1f8d725)
+2019-10-29T21:06:35.7652142+01:00 80000164-0002-ec00-b63f-84710c7967bb [INF] Request finished in 12.9385ms 304 image/png (791a596a)
+2019-10-29T21:06:35.7957209+01:00 8000016b-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/security1.png   (ca22a1cb)
+2019-10-29T21:06:35.8345373+01:00 8000016b-0000-f200-b63f-84710c7967bb [INF] The file "/images/security1.png" was not modified (f1f8d725)
+2019-10-29T21:06:35.8659542+01:00 8000016b-0000-f200-b63f-84710c7967bb [INF] Request finished in 57.6088ms 304 image/png (791a596a)
+2019-10-29T21:06:35.8719069+01:00 8000016d-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/web-app1.png   (ca22a1cb)
+2019-10-29T21:06:35.8769555+01:00 8000016d-0000-f200-b63f-84710c7967bb [INF] The file "/images/web-app1.png" was not modified (f1f8d725)
+2019-10-29T21:06:35.8885694+01:00 8000016d-0000-f200-b63f-84710c7967bb [INF] Request finished in 13.995ms 304 image/png (791a596a)
+2019-10-29T21:06:35.8947590+01:00 8000016f-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/events1.png   (ca22a1cb)
+2019-10-29T21:06:35.9005012+01:00 8000016f-0000-f200-b63f-84710c7967bb [INF] The file "/images/events1.png" was not modified (f1f8d725)
+2019-10-29T21:06:35.9197965+01:00 8000016f-0000-f200-b63f-84710c7967bb [INF] Request finished in 13.7275ms 304 image/png (791a596a)
+2019-10-29T21:06:35.9288239+01:00 800000c6-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/diaspora1.png   (ca22a1cb)
+2019-10-29T21:06:36.0080355+01:00 800000c6-0001-f200-b63f-84710c7967bb [INF] The file "/images/diaspora1.png" was not modified (f1f8d725)
+2019-10-29T21:06:36.1632354+01:00 800000c6-0001-f200-b63f-84710c7967bb [INF] Request finished in 182.6985ms 304 image/png (791a596a)
+2019-10-29T21:06:36.1675633+01:00 800000c8-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/RMD1.jpg   (ca22a1cb)
+2019-10-29T21:06:36.2208996+01:00 800000c8-0001-f200-b63f-84710c7967bb [INF] The file "/images/RMD1.jpg" was not modified (f1f8d725)
+2019-10-29T21:06:36.2284886+01:00 800000c8-0001-f200-b63f-84710c7967bb [INF] Request finished in 67.8955ms 304 image/jpeg (791a596a)
+2019-10-29T21:06:36.2502535+01:00 80000171-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/Genie1.jpg   (ca22a1cb)
+2019-10-29T21:06:36.2551962+01:00 80000171-0000-f200-b63f-84710c7967bb [INF] The file "/images/Genie1.jpg" was not modified (f1f8d725)
+2019-10-29T21:06:36.2671175+01:00 80000171-0000-f200-b63f-84710c7967bb [INF] Request finished in 11.7467ms 304 image/jpeg (791a596a)
+2019-10-29T21:06:36.3151152+01:00 80000173-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/desmond1.jpg   (ca22a1cb)
+2019-10-29T21:06:36.3196774+01:00 80000173-0000-f200-b63f-84710c7967bb [INF] The file "/images/desmond1.jpg" was not modified (f1f8d725)
+2019-10-29T21:06:36.3256193+01:00 80000173-0000-f200-b63f-84710c7967bb [INF] Request finished in 54.2117ms 304 image/jpeg (791a596a)
+2019-10-29T21:06:38.6191064+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"AddOnService"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6246018+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Company_Officers"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6289970+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Company_Registration"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6330366+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Contact"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6363441+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Package"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6411562+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Payments"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-29T21:06:38.6488072+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"AddOnService"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6523556+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"LocalResidentDirectorPrice"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6559400+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"SharePrice"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6593306+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"SharesAllocated"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6630248+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Package"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6665938+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Amount"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6699350+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Discount"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6732805+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Tax"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.6766929+01:00 80000157-0002-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Total"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-29T21:06:38.9531050+01:00 80000157-0002-f000-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:06:38.9531128+01:00 80000123-0002-ea00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:06:38.9531050+01:00 800001a1-0002-e100-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:06:41.9448810+01:00 80000123-0002-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("308"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-29T21:06:42.4566064+01:00 80000123-0002-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("244"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-29T21:06:42.7242611+01:00 80000123-0002-ea00-b63f-84710c7967bb [INF] Request finished in 7014.1045ms 404  (791a596a)
+2019-10-29T21:06:43.0056928+01:00 80000157-0002-f000-b63f-84710c7967bb [INF] Executed DbCommand ("267"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-29T21:06:43.0150593+01:00 800001a1-0002-e100-b63f-84710c7967bb [INF] Executed DbCommand ("277"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-29T21:06:43.2338411+01:00 80000157-0002-f000-b63f-84710c7967bb [INF] Executed DbCommand ("221"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-29T21:06:43.2420208+01:00 80000157-0002-f000-b63f-84710c7967bb [INF] Request finished in 8229.8537ms 404  (791a596a)
+2019-10-29T21:06:43.2486036+01:00 800001a1-0002-e100-b63f-84710c7967bb [INF] Executed DbCommand ("226"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-29T21:06:43.2553347+01:00 800001a1-0002-e100-b63f-84710c7967bb [INF] Request finished in 8228.3136ms 404  (791a596a)
+2019-10-29T21:06:43.2694873+01:00 800001f5-0003-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/font-awe some.css   (ca22a1cb)
+2019-10-29T21:06:43.2765950+01:00 800001f5-0003-f300-b63f-84710c7967bb [INF] Request finished in 6.7637ms 404  (791a596a)
+2019-10-29T21:06:43.3582302+01:00 800001a3-0002-e100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/loadingicon.gif   (ca22a1cb)
+2019-10-29T21:06:43.3621646+01:00 80000159-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/images/lagos1.jpg   (ca22a1cb)
+2019-10-29T21:06:43.3719669+01:00 800001a3-0002-e100-b63f-84710c7967bb [INF] The file "/images/loadingicon.gif" was not modified (f1f8d725)
+2019-10-29T21:06:43.3760709+01:00 80000159-0002-f000-b63f-84710c7967bb [INF] The file "/images/lagos1.jpg" was not modified (f1f8d725)
+2019-10-29T21:06:43.3829911+01:00 800001a3-0002-e100-b63f-84710c7967bb [INF] Request finished in 28.1085ms 304 image/gif (791a596a)
+2019-10-29T21:06:43.3847108+01:00 80000159-0002-f000-b63f-84710c7967bb [INF] Request finished in 29.0123ms 304 image/jpeg (791a596a)
+2019-10-29T21:06:44.0130406+01:00 800001f7-0003-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js   (ca22a1cb)
+2019-10-29T21:06:44.0259048+01:00 800001f7-0003-f300-b63f-84710c7967bb [INF] Request finished in 13.7752ms 404  (791a596a)
+2019-10-29T21:08:44.5547183+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-29T21:08:44.5663314+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:08:44.6241164+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:08:44.6499240+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-29T21:08:44.7929028+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:08:44.8038625+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:08:45.2726383+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("449"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-29T21:08:45.7499356+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("336"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-29T21:08:45.7618844+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-29T21:08:46.0687762+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("284"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-29T21:08:46.2047491+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1406.4016ms. (50a9e262)
+2019-10-29T21:08:46.2185427+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-29T21:08:46.2357068+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 1600.8525ms (afa2e885)
+2019-10-29T21:08:46.2399477+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:08:46.2452090+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Session started; Key:"1494ea52-aa92-7052-8969-0549b3895735", Id:"f1d6eafd-983d-363a-576d-6ae0a54424ad" (1d7cf8c0)
+2019-10-29T21:08:46.2502388+01:00 80000175-0000-f200-b63f-84710c7967bb [INF] Request finished in 1705.4554ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-29T21:08:46.2772837+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/Index   (ca22a1cb)
+2019-10-29T21:08:46.2826485+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:08:46.2917579+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index()" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:08:46.3372146+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:08:46.3431136+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:08:46.7554223+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executed DbCommand ("368"ms) [Parameters=["@___globalVariables_userid_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Company_Registration] AS [x]
+WHERE ([x].[UserId] = @___globalVariables_userid_0) AND ([x].[RegCompleted] = 1)" (0723d8ff)
+2019-10-29T21:08:46.7677877+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 425.6903ms. (50a9e262)
+2019-10-29T21:08:46.8054165+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-10-29T21:08:47.1036018+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 322.2986ms. (f66409e9)
+2019-10-29T21:08:47.1113150+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" in 811.7928ms (afa2e885)
+2019-10-29T21:08:47.1360134+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:08:47.1547386+01:00 80000126-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css   (ca22a1cb)
+2019-10-29T21:08:47.1824583+01:00 80000085-0003-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/responsive.bootstrap4.min.css   (ca22a1cb)
+2019-10-29T21:08:47.2005719+01:00 800001f9-0003-f300-b63f-84710c7967bb [INF] Request finished in 910.408ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-29T21:08:47.2072707+01:00 800001a3-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/buttons.bootstrap4.min.css   (ca22a1cb)
+2019-10-29T21:08:47.2636076+01:00 80000006-0003-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/css/metisMenu.min.css   (ca22a1cb)
+2019-10-29T21:08:47.2646231+01:00 80000034-0003-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/germany_flag.jpg   (ca22a1cb)
+2019-10-29T21:08:47.2669714+01:00 80000031-0003-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/css/icons.css   (ca22a1cb)
+2019-10-29T21:08:47.2871510+01:00 8000000c-0003-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/css/bootstrap.min.css   (ca22a1cb)
+2019-10-29T21:08:47.2915938+01:00 80000137-0000-ed00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/waves.min.js   (ca22a1cb)
+2019-10-29T21:08:47.2954064+01:00 80000220-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/dataTables.bootstrap4.min.js   (ca22a1cb)
+2019-10-29T21:08:47.3052581+01:00 8000022d-0000-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/jquery.slimscroll.min.js   (ca22a1cb)
+2019-10-29T21:08:47.3077889+01:00 80000085-0003-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/responsive.bootstrap4.min.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\responsive.bootstrap4.min.css"' (27b0a520)
+2019-10-29T21:08:47.3202047+01:00 80000085-0003-f600-b63f-84710c7967bb [INF] Request finished in 167.9985ms 200 text/css (791a596a)
+2019-10-29T21:08:47.3239122+01:00 800000ca-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/jquery.dataTables.min.js   (ca22a1cb)
+2019-10-29T21:08:47.3263398+01:00 80000210-0001-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/pages/jquery.hospital_dashboard.init.js   (ca22a1cb)
+2019-10-29T21:08:47.3386924+01:00 80000002-0003-ec00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/app.js   (ca22a1cb)
+2019-10-29T21:08:47.3426981+01:00 800001fb-0003-f300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/apexcharts/apexcharts.min.js   (ca22a1cb)
+2019-10-29T21:08:47.3449895+01:00 80000126-0003-fc00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\bootstrap-datepicker\bootstrap-datepicker.css"' (27b0a520)
+2019-10-29T21:08:47.3538074+01:00 80000126-0003-fc00-b63f-84710c7967bb [INF] Request finished in 203.4886ms 200 text/css (791a596a)
+2019-10-29T21:08:47.3560162+01:00 80000034-0003-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/germany_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\germany_flag.jpg"' (27b0a520)
+2019-10-29T21:08:47.3843671+01:00 80000137-0000-ed00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/waves.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\waves.min.js"' (27b0a520)
+2019-10-29T21:08:47.3878556+01:00 80000034-0003-fa00-b63f-84710c7967bb [INF] Request finished in 101.8886ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.3917633+01:00 8000022d-0000-f000-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/jquery.slimscroll.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\jquery.slimscroll.min.js"' (27b0a520)
+2019-10-29T21:08:47.4009482+01:00 80000210-0001-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/pages/jquery.hospital_dashboard.init.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\pages\jquery.hospital_dashboard.init.js"' (27b0a520)
+2019-10-29T21:08:47.4035524+01:00 80000002-0003-ec00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/app.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\app.js"' (27b0a520)
+2019-10-29T21:08:47.4053044+01:00 8000022d-0000-f000-b63f-84710c7967bb [INF] Request finished in 116.418ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.4125858+01:00 80000210-0001-f900-b63f-84710c7967bb [INF] Request finished in 88.8417ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.4136615+01:00 80000002-0003-ec00-b63f-84710c7967bb [INF] Request finished in 88.3194ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.4506392+01:00 80000137-0000-ed00-b63f-84710c7967bb [INF] Request finished in 133.3701ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.4613135+01:00 80000220-0001-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/dataTables.bootstrap4.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\dataTables.bootstrap4.min.js"' (27b0a520)
+2019-10-29T21:08:47.4686856+01:00 800001a3-0003-ff00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/buttons.bootstrap4.min.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\buttons.bootstrap4.min.css"' (27b0a520)
+2019-10-29T21:08:47.4710689+01:00 80000220-0001-f800-b63f-84710c7967bb [INF] Request finished in 180.8097ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.4772296+01:00 800001a3-0003-ff00-b63f-84710c7967bb [INF] Request finished in 327.9306ms 200 text/css (791a596a)
+2019-10-29T21:08:47.4792047+01:00 80000002-0003-ed00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js   (ca22a1cb)
+2019-10-29T21:08:47.4860077+01:00 80000006-0003-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/css/metisMenu.min.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\css\metisMenu.min.css"' (27b0a520)
+2019-10-29T21:08:47.4886119+01:00 80000006-0003-f100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/css/style.css   (ca22a1cb)
+2019-10-29T21:08:47.4944061+01:00 80000006-0003-f200-b63f-84710c7967bb [INF] Request finished in 270.3431ms 200 text/css (791a596a)
+2019-10-29T21:08:47.4974689+01:00 80000024-0003-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/bootstrap.bundle.min.js   (ca22a1cb)
+2019-10-29T21:08:47.5039735+01:00 80000002-0003-ed00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\bootstrap-datepicker\bootstrap-datepicker.min.js"' (27b0a520)
+2019-10-29T21:08:47.5121456+01:00 80000006-0003-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/logo-sm.png   (ca22a1cb)
+2019-10-29T21:08:47.5144228+01:00 80000002-0003-ed00-b63f-84710c7967bb [INF] Request finished in 181.1794ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.5239794+01:00 80000177-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/bootbox.min.js   (ca22a1cb)
+2019-10-29T21:08:47.5274311+01:00 800003f0-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/dataTables.bootstrap4.min.css   (ca22a1cb)
+2019-10-29T21:08:47.5318708+01:00 800000ca-0001-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/jquery.dataTables.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\jquery.dataTables.min.js"' (27b0a520)
+2019-10-29T21:08:47.5370193+01:00 8000000c-0003-f700-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/css/bootstrap.min.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\css\bootstrap.min.css"' (27b0a520)
+2019-10-29T21:08:47.5422452+01:00 80000006-0003-f000-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/logo-sm.png"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\logo-sm.png"' (27b0a520)
+2019-10-29T21:08:47.5440419+01:00 8000000c-0003-f700-b63f-84710c7967bb [INF] Request finished in 358.9881ms 200 text/css (791a596a)
+2019-10-29T21:08:47.5504818+01:00 80000006-0003-f000-b63f-84710c7967bb [INF] Request finished in 347.6388ms 200 image/png (791a596a)
+2019-10-29T21:08:47.5543916+01:00 800000ca-0001-f200-b63f-84710c7967bb [INF] Request finished in 220.7432ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.5652515+01:00 80000022-0003-f500-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/spain_flag.jpg   (ca22a1cb)
+2019-10-29T21:08:47.5675367+01:00 8000000a-0003-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/french_flag.jpg   (ca22a1cb)
+2019-10-29T21:08:47.5704336+01:00 80000006-0003-f100-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/css/style.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\css\style.css"' (27b0a520)
+2019-10-29T21:08:47.5780440+01:00 80000006-0003-f100-b63f-84710c7967bb [INF] Request finished in 380.0811ms 200 text/css (791a596a)
+2019-10-29T21:08:47.5811159+01:00 800001fb-0003-f300-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/apexcharts/apexcharts.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\apexcharts\apexcharts.min.js"' (27b0a520)
+2019-10-29T21:08:47.5884738+01:00 800003f0-0003-fd00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/dataTables.bootstrap4.min.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\dataTables.bootstrap4.min.css"' (27b0a520)
+2019-10-29T21:08:47.5921499+01:00 8000000a-0003-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/french_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\french_flag.jpg"' (27b0a520)
+2019-10-29T21:08:47.5945489+01:00 800001fb-0003-f300-b63f-84710c7967bb [INF] Request finished in 255.413ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.6047506+01:00 800003f0-0003-fd00-b63f-84710c7967bb [INF] Request finished in 396.6312ms 200 text/css (791a596a)
+2019-10-29T21:08:47.6052274+01:00 8000000a-0003-f900-b63f-84710c7967bb [INF] Request finished in 379.8581ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.6081411+01:00 80000008-0003-f400-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/italy_flag.jpg   (ca22a1cb)
+2019-10-29T21:08:47.6157415+01:00 80000008-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/jquery.min.js   (ca22a1cb)
+2019-10-29T21:08:47.6175955+01:00 80000002-0003-ee00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/users/user-4.jpg   (ca22a1cb)
+2019-10-29T21:08:47.6228513+01:00 80000002-0003-ef00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/russia_flag.jpg   (ca22a1cb)
+2019-10-29T21:08:47.6254600+01:00 8000041d-0000-ea00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/metisMenu.min.js   (ca22a1cb)
+2019-10-29T21:08:47.6341902+01:00 80000002-0003-ef00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/russia_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\russia_flag.jpg"' (27b0a520)
+2019-10-29T21:08:47.6365899+01:00 80000008-0003-f400-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/italy_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\italy_flag.jpg"' (27b0a520)
+2019-10-29T21:08:47.6416584+01:00 80000022-0003-f500-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/spain_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\spain_flag.jpg"' (27b0a520)
+2019-10-29T21:08:47.6431689+01:00 80000008-0003-f400-b63f-84710c7967bb [INF] Request finished in 420.3523ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.6492548+01:00 80000022-0003-f500-b63f-84710c7967bb [INF] Request finished in 396.6912ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.6511454+01:00 80000177-0000-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/bootbox.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\bootbox.min.js"' (27b0a520)
+2019-10-29T21:08:47.6584273+01:00 80000002-0003-ef00-b63f-84710c7967bb [INF] Request finished in 379.1688ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.6601460+01:00 80000177-0000-f200-b63f-84710c7967bb [INF] Request finished in 440.051ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.6903890+01:00 80000002-0003-ee00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/users/user-4.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\users\user-4.jpg"' (27b0a520)
+2019-10-29T21:08:47.6942324+01:00 80000002-0003-ee00-b63f-84710c7967bb [INF] Request finished in 433.0727ms 200 image/jpeg (791a596a)
+2019-10-29T21:08:47.7361586+01:00 8000041d-0000-ea00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/metisMenu.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\metisMenu.min.js"' (27b0a520)
+2019-10-29T21:08:47.7403066+01:00 8000041d-0000-ea00-b63f-84710c7967bb [INF] Request finished in 479.639ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.7463275+01:00 80000024-0003-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/bootstrap.bundle.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\bootstrap.bundle.min.js"' (27b0a520)
+2019-10-29T21:08:47.7495610+01:00 80000024-0003-fb00-b63f-84710c7967bb [INF] Request finished in 547.2521ms 200 application/javascript (791a596a)
+2019-10-29T21:08:47.8034665+01:00 80000031-0003-fe00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/css/icons.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\css\icons.css"' (27b0a520)
+2019-10-29T21:08:47.8221655+01:00 80000031-0003-fe00-b63f-84710c7967bb [INF] Request finished in 633.3394ms 200 text/css (791a596a)
+2019-10-29T21:08:47.8649889+01:00 80000008-0003-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/jquery.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\jquery.min.js"' (27b0a520)
+2019-10-29T21:08:47.8694507+01:00 80000008-0003-f800-b63f-84710c7967bb [INF] Request finished in 604.941ms 200 application/javascript (791a596a)
+2019-10-29T21:08:48.2050059+01:00 8000015b-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89   (ca22a1cb)
+2019-10-29T21:08:48.2062731+01:00 80000033-0003-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/fonts/fa-solid-900.woff2   (ca22a1cb)
+2019-10-29T21:08:48.2082726+01:00 8000000a-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/fonts/dripicons-v2.woff   (ca22a1cb)
+2019-10-29T21:08:48.2212558+01:00 80000033-0003-fe00-b63f-84710c7967bb [INF] The file "/assets/fonts/fa-solid-900.woff2" was not modified (f1f8d725)
+2019-10-29T21:08:48.2355300+01:00 80000033-0003-fe00-b63f-84710c7967bb [INF] Request finished in 30.1015ms 304 font/woff2 (791a596a)
+2019-10-29T21:08:48.3091725+01:00 8000000a-0003-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/fonts/dripicons-v2.woff"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\fonts\dripicons-v2.woff"' (27b0a520)
+2019-10-29T21:08:48.3144188+01:00 8000000a-0003-f800-b63f-84710c7967bb [INF] Request finished in 108.4191ms 200 application/font-woff (791a596a)
+2019-10-29T21:08:48.3551957+01:00 8000015b-0002-f000-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/fonts/materialdesignicons-webfont.woff2"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\fonts\materialdesignicons-webfont.woff2"' (27b0a520)
+2019-10-29T21:08:48.3632887+01:00 8000015b-0002-f000-b63f-84710c7967bb [INF] Request finished in 160.4187ms 200 font/woff2 (791a596a)
+2019-10-29T21:08:48.4228780+01:00 8000000c-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/favicon.ico   (ca22a1cb)
+2019-10-29T21:08:48.4271287+01:00 8000000c-0003-f800-b63f-84710c7967bb [INF] Request finished in 4.8366ms 404  (791a596a)
+2019-10-29T21:08:53.6953543+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Account/all_admin   (ca22a1cb)
+2019-10-29T21:08:53.7039819+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.all_admin (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:08:53.7091068+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Route matched with "{action = \"all_admin\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult all_admin()" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:08:53.7146606+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.all_admin (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:08:53.7214861+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:08:54.0558336+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("311"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN [x].[FirstName] IS NULL OR (LTRIM(RTRIM([x].[FirstName])) = N'')
+    THEN N'' ELSE [x].[FirstName]
+END AS [string_var0], CASE
+    WHEN [x].[LastName] IS NULL OR (LTRIM(RTRIM([x].[LastName])) = N'')
+    THEN N'' ELSE [x].[LastName]
+END AS [string_var1], CASE
+    WHEN [x].[Email] IS NULL OR (LTRIM(RTRIM([x].[Email])) = N'')
+    THEN N'' ELSE [x].[Email]
+END AS [string_var2], CASE
+    WHEN [x].[PhoneNumber] IS NULL OR (LTRIM(RTRIM([x].[PhoneNumber])) = N'')
+    THEN N'' ELSE [x].[PhoneNumber]
+END AS [string_var3], CASE
+    WHEN [x].[UserName] IS NULL OR (LTRIM(RTRIM([x].[UserName])) = N'')
+    THEN N'' ELSE [x].[UserName]
+END AS [string_var4], CASE
+    WHEN [x].[IsActive] = 1
+    THEN N'Active' ELSE N'InActive'
+END AS [string_var5], [x].[Id] AS [string_var6], [x].[CreationTime] AS [date_var0]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND ([x].[Role] = N'Admin')" (0723d8ff)
+2019-10-29T21:08:54.0621162+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.all_admin (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 343.411ms. (50a9e262)
+2019-10-29T21:08:54.0699756+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executing ViewResult, running view "all_admin". (c83d0e25)
+2019-10-29T21:08:54.0849152+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executed ViewResult - view "all_admin" executed in 16.2103ms. (f66409e9)
+2019-10-29T21:08:54.0909927+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.all_admin (NaijaStartupApp)" in 376.2398ms (afa2e885)
+2019-10-29T21:08:54.0974946+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.all_admin (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:08:54.1102898+01:00 8000041f-0000-ea00-b63f-84710c7967bb [INF] Request finished in 414.5808ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-29T21:08:56.4971869+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/admin_companies   (ca22a1cb)
+2019-10-29T21:08:56.5176444+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.admin_companies (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:08:56.5254244+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"admin_companies\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult admin_companies()" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:08:56.5306435+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.admin_companies (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:08:59.3967915+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:08:59.4421734+01:00 8000000e-0003-f800-b63f-84710c7967bb [WRN] The Include operation for navigation '"[x].Package"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-10-29T21:08:59.4491393+01:00 8000000e-0003-f800-b63f-84710c7967bb [WRN] The Include operation for navigation '"[x].User"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-10-29T21:08:59.7911947+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executed DbCommand ("283"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT ([t].[FirstName] + N' ') + [t].[LastName] AS [string_var0], [t].[Email] AS [string_var1], [x].[CompanyName] AS [string_var2], [x].[CompanyType] AS [string_var3], [x.Package].[PackageName] AS [string_var4], [x].[ApprovalStatus] AS [string_var6], [x].[CreationTime] AS [date_var0], CONVERT(VARCHAR(36), [x].[Id]) AS [string_var7]
+FROM [Company_Registration] AS [x]
+LEFT JOIN [Package] AS [x.Package] ON [x].[PackageId] = [x.Package].[Id]
+LEFT JOIN (
+    SELECT [x.User].*
+    FROM [AspNetUsers] AS [x.User]
+    WHERE [x.User].[Discriminator] = N'User'
+) AS [t] ON [x].[UserId] = [t].[Id]
+WHERE (([x].[IsDeleted] = 0) AND ([x].[IsCacAvailable] = 1)) AND ([x].[RegCompleted] = 1)
+ORDER BY [date_var0] DESC" (0723d8ff)
+2019-10-29T21:08:59.7983041+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.admin_companies (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3261.855ms. (50a9e262)
+2019-10-29T21:08:59.8072416+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executing ViewResult, running view "admin_companies". (c83d0e25)
+2019-10-29T21:08:59.8214225+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executed ViewResult - view "admin_companies" executed in 18.1665ms. (f66409e9)
+2019-10-29T21:08:59.8277344+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.admin_companies (NaijaStartupApp)" in 3296.8133ms (afa2e885)
+2019-10-29T21:08:59.8349919+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.admin_companies (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:08:59.8420833+01:00 8000000e-0003-f800-b63f-84710c7967bb [INF] Request finished in 3345.9724ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-29T21:09:08.0762126+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/unconfirmed_companies   (ca22a1cb)
+2019-10-29T21:09:08.0865052+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.unconfirmed_companies (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:09:08.0962052+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Route matched with "{action = \"unconfirmed_companies\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult unconfirmed_companies()" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:09:08.1021187+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.unconfirmed_companies (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:09:09.7193106+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:09:09.7289944+01:00 8000015d-0002-f000-b63f-84710c7967bb [WRN] The Include operation for navigation '"[x].Package"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-10-29T21:09:09.7349811+01:00 8000015d-0002-f000-b63f-84710c7967bb [WRN] The Include operation for navigation '"[x].User"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-10-29T21:09:10.0399896+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT ([t].[FirstName] + N' ') + [t].[LastName] AS [string_var0], [t].[Email] AS [string_var1], [x].[CompanyName] AS [string_var2], [x].[CompanyType] AS [string_var3], [x.Package].[PackageName] AS [string_var4], [x].[ApprovalStatus] AS [string_var6], [x].[CreationTime] AS [date_var0], CONVERT(VARCHAR(36), [x].[Id]) AS [string_var7]
+FROM [Company_Registration] AS [x]
+LEFT JOIN [Package] AS [x.Package] ON [x].[PackageId] = [x.Package].[Id]
+LEFT JOIN (
+    SELECT [x.User].*
+    FROM [AspNetUsers] AS [x.User]
+    WHERE [x.User].[Discriminator] = N'User'
+) AS [t] ON [x].[UserId] = [t].[Id]
+WHERE ([x].[IsDeleted] = 0) AND ([x].[IsCacAvailable] = 1)
+ORDER BY [date_var0] DESC" (0723d8ff)
+2019-10-29T21:09:10.0445876+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.unconfirmed_companies (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1937.5623ms. (50a9e262)
+2019-10-29T21:09:10.0494027+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executing ViewResult, running view "admin_companies". (c83d0e25)
+2019-10-29T21:09:10.0555241+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executed ViewResult - view "admin_companies" executed in 6.571ms. (f66409e9)
+2019-10-29T21:09:10.0605434+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.unconfirmed_companies (NaijaStartupApp)" in 1959.3395ms (afa2e885)
+2019-10-29T21:09:10.0668923+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.unconfirmed_companies (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:09:10.0744129+01:00 8000015d-0002-f000-b63f-84710c7967bb [INF] Request finished in 2007.6003ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-29T21:09:18.6552689+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/view_company/B537F430-121A-4AB5-0412-08D7583E71CA   (ca22a1cb)
+2019-10-29T21:09:18.6656769+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.view_company (NaijaStartupApp)"' (500cc934)
+2019-10-29T21:09:18.6767443+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Route matched with "{action = \"view_company\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] view_company(System.String)" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-29T21:09:18.6820383+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.view_company (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-29T21:09:18.6903920+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-29T21:09:19.1483556+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("378"ms) [Parameters=["@__Id_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[Address1], [x].[Address2], [x].[AlternateCompanyName], [x].[AlternateCompanyType], [x].[ApprovalStatus], [x].[BusinessActivity], [x].[CacRegistrationNumber], [x].[CompanyCapitalCurrency], [x].[CompanyName], [x].[CompanyType], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FinancialYearEnd], [x].[IsAddressRegistered], [x].[IsCacAvailable], [x].[IsDeleted], [x].[LocalDirector], [x].[LocalResidentDirector], [x].[LocalResidentDirectorPrice], [x].[ModificationTime], [x].[ModificationUserId], [x].[NoOfSharesIssue], [x].[PackageId], [x].[Postcode], [x].[RegCompleted], [x].[ShareHolderName], [x].[SharePrice], [x].[SharesAllocated], [x].[SndBusinessActivity], [x].[UserId], [x.Package].[Id], [x.Package].[CreationTime], [x.Package].[CreatorUserId], [x.Package].[DeletionTime], [x.Package].[DeletionUserId], [x.Package].[IsDeleted], [x.Package].[ModificationTime], [x.Package].[ModificationUserId], [x.Package].[PackageName], [x.Package].[Price]
+FROM [Company_Registration] AS [x]
+LEFT JOIN [Package] AS [x.Package] ON [x].[PackageId] = [x.Package].[Id]
+WHERE CONVERT(VARCHAR(36), [x].[Id]) = @__Id_0
+ORDER BY [x].[Id]" (0723d8ff)
+2019-10-29T21:09:19.5917644+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("319"ms) [Parameters=["@__Id_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x.addOnServices].[Id], [x.addOnServices].[CreationTime], [x.addOnServices].[CreatorUserId], [x.addOnServices].[DeletionTime], [x.addOnServices].[DeletionUserId], [x.addOnServices].[IsDeleted], [x.addOnServices].[ModificationTime], [x.addOnServices].[ModificationUserId], [x.addOnServices].[Price], [x.addOnServices].[RegistrationId], [x.addOnServices].[ServiceName]
+FROM [AddOnService] AS [x.addOnServices]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [x0].[Id]
+        FROM [Company_Registration] AS [x0]
+        LEFT JOIN [Package] AS [x.Package0] ON [x0].[PackageId] = [x.Package0].[Id]
+        WHERE CONVERT(VARCHAR(36), [x0].[Id]) = @__Id_0
+        ORDER BY [x0].[Id]
+    ) AS [t]
+) AS [t0] ON [x.addOnServices].[RegistrationId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-10-29T21:09:19.9405804+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed DbCommand ("338"ms) [Parameters=["@__Id_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x.company_Officers].[Id], [x.company_Officers].[Address1], [x.company_Officers].[Address2], [x.company_Officers].[AddressFile], [x.company_Officers].[Birth_Country], [x.company_Officers].[CreationTime], [x.company_Officers].[CreatorUserId], [x.company_Officers].[DeletionTime], [x.company_Officers].[DeletionUserId], [x.company_Officers].[Designation], [x.company_Officers].[Dob], [x.company_Officers].[Email], [x.company_Officers].[FullName], [x.company_Officers].[Gender], [x.company_Officers].[Id_Number], [x.company_Officers].[Id_Type], [x.company_Officers].[IsDeleted], [x.company_Officers].[MobileNo], [x.company_Officers].[ModificationTime], [x.company_Officers].[ModificationUserId], [x.company_Officers].[Nationality], [x.company_Officers].[PassportFile], [x.company_Officers].[Phone_No], [x.company_Officers].[PostalCode], [x.company_Officers].[RegistrationId]
+FROM [Company_Officers] AS [x.company_Officers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [x1].[Id]
+        FROM [Company_Registration] AS [x1]
+        LEFT JOIN [Package] AS [x.Package1] ON [x1].[PackageId] = [x.Package1].[Id]
+        WHERE CONVERT(VARCHAR(36), [x1].[Id]) = @__Id_0
+        ORDER BY [x1].[Id]
+    ) AS [t1]
+) AS [t2] ON [x.company_Officers].[RegistrationId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-10-29T21:09:19.9559221+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.view_company (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1269.0516ms. (50a9e262)
+2019-10-29T21:09:19.9656178+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executing ViewResult, running view "view_company". (c83d0e25)
+2019-10-29T21:09:20.0501569+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed ViewResult - view "view_company" executed in 89.3133ms. (f66409e9)
+2019-10-29T21:09:20.0558803+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.view_company (NaijaStartupApp)" in 1373.8008ms (afa2e885)
+2019-10-29T21:09:20.0603596+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.view_company (NaijaStartupApp)"' (99874f2b)
+2019-10-29T21:09:20.0690221+01:00 80000421-0000-ea00-b63f-84710c7967bb [INF] Request finished in 1418.5697ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-29T21:09:20.1240315+01:00 80000010-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/custom/foundation.min062f.css?pz4wnb   (ca22a1cb)
+2019-10-29T21:09:20.1263650+01:00 80000179-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/custom/motion-ui.min062f.css?pz4wnb   (ca22a1cb)
+2019-10-29T21:09:20.1364013+01:00 8000015f-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/custom/foundation-6-5-1/foundation-icons/foundation-icons062f.css?pz4wnb   (ca22a1cb)
+2019-10-29T21:09:20.1387150+01:00 80000035-0003-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/custom/style062f.css?pz4wnb   (ca22a1cb)
+2019-10-29T21:09:20.1459531+01:00 8000015f-0002-f000-b63f-84710c7967bb [INF] Request finished in 42.1138ms 404  (791a596a)
+2019-10-29T21:09:20.2234444+01:00 80000179-0000-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/custom/motion-ui.min062f.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\css\custom\motion-ui.min062f.css"' (27b0a520)
+2019-10-29T21:09:20.2268614+01:00 80000179-0000-f200-b63f-84710c7967bb [INF] Request finished in 107.3437ms 200 text/css (791a596a)
+2019-10-29T21:09:20.2347171+01:00 80000161-0002-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/spin.js   (ca22a1cb)
+2019-10-29T21:09:20.2370532+01:00 80000026-0003-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/spinCustom.js   (ca22a1cb)
+2019-10-29T21:09:20.4438219+01:00 80000035-0003-fe00-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/custom/style062f.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\css\custom\style062f.css"' (27b0a520)
+2019-10-29T21:09:20.4508656+01:00 80000161-0002-f000-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/spin.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\spin.js"' (27b0a520)
+2019-10-29T21:09:20.4573887+01:00 80000026-0003-fb00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/spinCustom.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\spinCustom.js"' (27b0a520)
+2019-10-29T21:09:20.4652289+01:00 80000161-0002-f000-b63f-84710c7967bb [INF] Request finished in 227.1774ms 200 application/javascript (791a596a)
+2019-10-29T21:09:20.4698538+01:00 80000026-0003-fb00-b63f-84710c7967bb [INF] Request finished in 230.2466ms 200 application/javascript (791a596a)
+2019-10-29T21:09:20.4780762+01:00 80000035-0003-fe00-b63f-84710c7967bb [INF] Request finished in 339.5461ms 200 text/css (791a596a)
+2019-10-29T21:09:20.4849063+01:00 800000cc-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/payStack.js   (ca22a1cb)
+2019-10-29T21:09:20.5433216+01:00 80000010-0003-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/css/custom/foundation.min062f.css"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\css\custom\foundation.min062f.css"' (27b0a520)
+2019-10-29T21:09:20.5592072+01:00 80000010-0003-f800-b63f-84710c7967bb [INF] Request finished in 460.7254ms 200 text/css (791a596a)
+2019-10-29T21:09:20.5652088+01:00 800000cc-0001-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/payStack.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\payStack.js"' (27b0a520)
+2019-10-29T21:09:20.5794200+01:00 800000cc-0001-f200-b63f-84710c7967bb [INF] Request finished in 91.0201ms 200 application/javascript (791a596a)
+2019-10-29T21:09:20.6412675+01:00 80000012-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/img/bg.jpg   (ca22a1cb)
+2019-10-29T21:09:20.6527102+01:00 80000012-0003-f800-b63f-84710c7967bb [INF] Request finished in 8.4642ms 404  (791a596a)

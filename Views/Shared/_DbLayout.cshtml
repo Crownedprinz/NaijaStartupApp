@@ -52,6 +52,32 @@
         <nav class="navbar-custom">
             <ul class="list-unstyled topbar-nav float-right mb-0">
                 <li class="hidden-sm">
+                </li>
+                <li class="dropdown notification-list">
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text"></h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            </a>
+                        </div>
+                        <!-- All--><a href="javascript:void(0);" class="dropdown-item text-center text-primary">View all <i class="fi-arrow-right"></i></a>
+                    </div>
+                </li>
+                <li class="hidden-sm">
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="javascript: void(0);">
                             <span>German </span><img src="~/assets/images/flags/germany_flag.jpg" alt="" class="ml-2 float-right" height="14">
@@ -100,13 +126,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Services</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                                     <ul class="nav-second-level" aria-expanded="false">
-                                        @*<li><a asp-action="my_orders" asp-controller="Dashboard">My Orders</a></li>*@
-                                        <li><a asp-action="all_companies" asp-controller="Dashboard">Companies</a></li>
+                                        <li><a asp-action="all_companies" asp-controller="Dashboard">Registered Companies</a></li>
+                                        <li><a asp-action="unconfirmed_companies" asp-controller="Dashboard">Unregistered Companies</a></li>
                                     </ul>
                                     <ul class="nav-second-level" aria-expanded="false">
                                         <li><a asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
                                     </ul>
                                 </li>
+                                <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Tickets</a></li>
                             </ul>
                         }
                         else
@@ -120,7 +147,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Manage Companies</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                                     <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a asp-action="admin_companies" asp-controller="Dashboard">Companies</a></li>
+                                        <li><a asp-action="admin_companies" asp-controller="Dashboard">CompaniesToApprove</a></li>
+                                        <li><a asp-action="unconfirmed_companies" asp-controller="Dashboard">CompaniesToConfirm</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -132,6 +160,13 @@
                                         <li><a asp-action="all_admin" asp-controller="Account">All Admins</a></li>
                                     </ul>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Settings Management</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="Incentives" asp-controller="Dashboard">Incentives</a></li>
+                                    </ul>
+                                </li>
+                                    <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Tickets</a></li>
                             </ul>
                         }
 
@@ -163,6 +198,7 @@
         <script src="~/assets/pages/jquery.hospital_dashboard.init.js"></script>
         <!-- App js -->
         <script src="~/assets/js/app.js"></script>
+        <script src="~/assets/js/puscript.js"></script>
     </environment>
     <environment exclude="Development,Staging,Production">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"

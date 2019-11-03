@@ -13,6 +13,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.cs" />
     <Compile Remove="Migrations\20191015230204_changed unique identifier to int in package.Designer.cs" />
+    <Compile Remove="Migrations\20191030203342_incentiveModel.cs" />
+    <Compile Remove="Migrations\20191030203342_incentiveModel.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
