@@ -1,46 +1,64 @@
 ﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@using Microsoft.AspNetCore.Http;
+@using NaijaStartupApp.Helpers;
+@inject IHttpContextAccessor hcontext
 @{
     ViewData["Title"] = "chat";
     Layout = "~/Views/Shared/_DbLayout.cshtml";
+    NaijaStartupApp.Models.NsuVariables.GlobalVariables _globalVariables = hcontext.HttpContext.Session.GetObject<NaijaStartupApp.Models.NsuVariables.GlobalVariables>("GlobalVariables");
+
 }
 <!-- Page Content-->
-    <form role="form" method="post" enctype="multipart/form-data">
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary()
-        @Html.HiddenFor(x=>x.int_var0)
-        <div class="page-content">
-            <div class="container-fluid">
-                <!-- Page-Title -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="page-title-box">
-                            <div class="float-right">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Tickets</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Tickets</h4>
+<form role="form" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(x => x.int_var0)
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="float-right">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Tickets</li>
+                            </ol>
                         </div>
-                        <!--end page-title-box-->
+                        <h4 class="page-title">Tickets</h4>
                     </div>
-                    <!--end col-->
+                    <!--end page-title-box-->
                 </div>
-                <!-- end page title end breadcrumb -->
-                <div class="row">
+                <!--end col-->
+            </div>
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+
+                @if (_globalVariables.RoleId.ToLower() != "admin")
+                {
                     <div class="col-12">
                         @await Html.PartialAsync("_chatPane", Model)
                         <!--end chat-box-left -->
                         @await Html.PartialAsync("_chatBox", Model)
                         <!--end chat-box-right -->
                     </div>
-                    <!-- end col -->
-                </div>
+                }
+                else
+                {
+                    <div class="col-12">
+                        @await Html.PartialAsync("_chatAdminPane", Model)
+                        <!--end chat-box-left -->
+                        @await Html.PartialAsync("_chatAdminBox", Model)
+                        <!--end chat-box-right -->
+                    </div>
+                }
+                <!-- end col -->
+            </div>
                 <!-- end row -->
             </div>
             <!-- container -->
             <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
             <!--end footer-->
         </div>
-        </form>
-        <!-- end page content -->
+    </form>
+    <!-- end page content -->

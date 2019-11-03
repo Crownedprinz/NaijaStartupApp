@@ -66,11 +66,15 @@
                                                             <td width="50" class="text-center">
                                                                 <div class="switch margin-0 small">
                                                                     <div class="hide">
-
+                                                                        @Html.HiddenFor(m=>m.decimal_var0)
+                                                                        @Html.HiddenFor(m=>m.decimal_var1)
                                                                         <div class="js-form-item form-item js-form-type-checkbox form-item-local-resident js-form-item-local-resident">
-                                                                            <input price="2400" data-drupal-selector="edit-local-resident" type="checkbox" id="edit-local-resident" name="local_resident" value="1" class="form-checkbox edit-local-resident">
-
-                                                                            <label for="edit-local-resident" class="option">Local Resident</label>
+                                                                            @*<input data-drupal-selector="edit-local-resident" type="checkbox" id="edit-local-resident" name="bool_var0" value="1" class="form-checkbox edit-local-resident">*@
+                                                                            <div class=form-checkbox edit-local-resident">
+                                                                                @Html.CheckBoxFor(model => Model.bool_var0, new { @id = "edit-local-resident" })
+                                                                                <label for="edit-local-resident" class="option">Local Resident</label>
+                                                                            </div>
+                                                                           
                                                                         </div>
 
                                                                     </div>
@@ -83,7 +87,7 @@
                                                         </tr>
                                                         <tr class="service-name p-s-item service-local-resident" style="">
                                                             <td width="300" class=" title ">• Nominee Director (1yr)</td>
-                                                            <td width="80" class="text-right value " data-price="2400">#2,400.00</td>
+                                                            <td width="80" class="text-right value " data-price="2400">@Model.string_var3</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -499,40 +503,10 @@
 
                                                                                 </div>
 
-                                                                            </div><div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
-                                                                                <details data-drupal-selector="edit-officers-0-content-nric-id-wrapper" id="edit-officers-0-content-nric-id-wrapper" class="js-form-wrapper form-wrapper" open="open">
-                                                                                    <summary role="button" aria-controls="edit-officers-0-content-nric-id-wrapper" aria-expanded="true" aria-pressed="true">NRIC/ID/FIN/Passport/Others</summary>
-
-                                                                                    <div id="ajax-wrapper">
-
-                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-nric-id-wrapper-nric-id-fin-passport js-form-item-officers-0-content-nric-id-wrapper-nric-id-fin-passport">
-
-                                                                                            <div class="sgf-choose-file-hidden">
-                                                                                                <div id="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload" class="js-form-managed-file form-managed-file">
-                                                                                                    <input multiple="multiple" type="file" id="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload" name="files[officers_0_content_nric_id_wrapper_nric_id_fin_passport][]" size="22" class="js-form-file form-file">
-                                                                                                    <input class="js-hide button js-form-submit form-submit edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload-button" data-drupal-selector="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload-button" formnovalidate="formnovalidate" type="submit" id="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload-button" name="officers_0_content_nric_id_wrapper_nric_id_fin_passport_upload_button" value="Upload">
-                                                                                                    <input data-drupal-selector="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-fids" type="hidden" name="officers[0][content][nric_id_wrapper][nric_id_fin_passport][fids]" class="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-fids">
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="grid-x grid-margin-x">
-                                                                                                <div class="large-4 cell margin-vertical-1 inputfile-wrapper">
-                                                                                                    <input type="button" name="file" id="file-nric-id-fin-passport" class="inputfile sgf-file-markup">
-                                                                                                    <label for="file" class="sgf-file-markup">Choose a file</label>
-                                                                                                </div>
-                                                                                                <div class="large-8 cell margin-vertical-1 small-text">
-                                                                                                    Unlimited number of files can be uploaded to this field.<br>10 MB limit.<br>Allowed types: pdf jpg jpeg png.
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div id="edit-officers-0-content-nric-id-wrapper-nric-id-fin-passport-upload--description" class="description">
-                                                                                                Unlimited number of files can be uploaded to this field.<br>10 MB limit.<br>Allowed types: pdf jpg jpeg png.
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div>
-
-                                                                                </details>
-                                                                            </div><div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
+                                                                            </div>
+                                                                        
+                                                                        
+                                                                        @*<div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
                                                                                 <details data-drupal-selector="edit-officers-0-content-residential-address-wrapper" id="edit-officers-0-content-residential-address-wrapper" class="js-form-wrapper form-wrapper" open="open">
                                                                                     <summary role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Proof of (overseas) residential address (Issued within 3months)</summary>
 
@@ -565,7 +539,8 @@
                                                                                     </div>
 
                                                                                 </details>
-                                                                            </div><div class="grid-x grid-padding-x light-bg margin-horizontal-0 padding-bottom-1 cell">
+                                                                            </div>*@
+                                                                        <div class="grid-x grid-padding-x light-bg margin-horizontal-0 padding-bottom-1 cell">
                                                                                 <div class="cell text-center add-officer margin-bottom-1">
                                                                                     <input class="alert officer-remove-btn button js-form-submit form-submit edit-officers-0-content-remove-this-officer" data-drupal-selector="edit-officers-0-content-remove-this-officer" type="submit" id="edit-officers-0-content-remove-this-officer" name="remove_this_officer_0" value="REMOVE THIS OFFICER">
                                                                                 </div>
@@ -644,22 +619,26 @@
                                                             </div>
 
                                                         </div><table class="gray-bg unstriped">
-                                                            <tbody>
-                                                                <tr class="package-name p-s-item package-232" data-package-id="232">
-                                                                    <td width="300" class="semibold title ">
-                                                                        Essential Package
-                                                                        <a href="#" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-packages-popup" tabindex="0"><i class="far fa-edit"></i> Edit</a>
-                                                                    </td>
-                                                                    <td width="90" class="text-right value">#388</td>
-                                                                </tr>
-                                                                <tr class="service-name">
-                                                                    <td colspan="2" class="semibold">Add-on Services</td>
-                                                                </tr>
-                                                                <tr class="sgf-additional-total-row">
-                                                                    <td class="semibold">Total Amount</td>
-                                                                    <td class="semibold text-right total-price">#388.00</td>
-                                                                </tr>
-                                                            </tbody>
+                                                                  <tbody>
+                                                                      <tr class="package-name p-s-item package-232" data-package-id="232">
+                                                                          <td width="300" class=" title ">
+                                                                              @Model.string_var0
+                                                                              <a href="~/Dashboard/packages" class="small-text text-underline" data-toggle="modal" data-target="#sgf-incorporate-packages-popup" tabindex="0">Edit</a>
+                                                                          </td>
+                                                                          <td width="90" class="text-right value">@Model.string_var1</td>
+                                                                      </tr>
+                                                                      <tr class="service-name">
+                                                                          <td colspan="2" class="semibold">Add-on Services</td>
+                                                                      </tr>
+                                                                      <tr class="service-name">
+                                                                          <td class="semibold">Nominee Director (1yr)</td>
+                                                                          <td class="text-right value">@Model.string_var3</td>
+                                                                      </tr>
+                                                                      <tr class="sgf-additional-total-row">
+                                                                          <td class="semibold">Total Amount</td>
+                                                                          <td class="semibold text-right total-price">@Model.string_var2</td>
+                                                                      </tr>
+                                                                  </tbody>
                                                         </table>
                                                     </div>
                                                 </div>

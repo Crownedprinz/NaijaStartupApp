@@ -1,14 +1,13 @@
 ﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
 <div class="chat-box-left">
     @*<ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
-        <li class="nav-item"><a class="nav-link active" id="general_chat_tab" data-toggle="pill" href="#general_chat">General</a></li>
-        <li class="nav-item"><a class="nav-link" id="group_chat_tab" data-toggle="pill" href="#group_chat">Groups</a></li>
-        <li class="nav-item"><a class="nav-link" id="personal_chat_tab" data-toggle="pill" href="#personal_chat">Personal</a></li>
-    </ul>*@
+            <li class="nav-item"><a class="nav-link active" id="general_chat_tab" data-toggle="pill" href="#general_chat">General</a></li>
+            <li class="nav-item"><a class="nav-link" id="group_chat_tab" data-toggle="pill" href="#group_chat">Groups</a></li>
+            <li class="nav-item"><a class="nav-link" id="personal_chat_tab" data-toggle="pill" href="#personal_chat">Personal</a></li>
+        </ul>*@
     <div class="chat-search">
         <div class="form-group">
             <div class="input-group">
-                <a asp-controller="Dashboard" asp-action="new_ticket" class="btn btn-primary shadow-none">New Ticket</a>
             </div>
         </div>
     </div>
@@ -28,11 +27,12 @@
                                 <h6>#@item.TicketNumber</h6>
                                 <p>@item.Status</p>
                             </div>
-                            <div><span>@item.Date.ToString("dd MMM yyyy")</span> 
-                            @if (!@item.NoOfNew.Equals(0))
-                            {
-                            <span>@item.NoOfNew</span>
-                            }
+                            <div>
+                                <span>@item.Date.ToString("dd MMM yyyy")</span>
+                                @if (!@item.NoOfNew.Equals(0))
+                                {
+                                    <span>@item.NoOfNew</span>
+                                }
                             </div>
                         </div>
                         <!-- end media-body -->
@@ -40,20 +40,19 @@
                 }
                 else
                 {
-        <a href="#" class="media">
-            <div class="media-img"><img src="~/assets/images/users/patient-pro.png" alt="user" class="rounded-circle thumb-md"></div>
-            <div class="media-left">
-            </div>
-            <!-- media-left -->
-            <div class="media-body">
-                <div>
-                    <h6>#@item.TicketNumber</h6>
-                    <p>@item.Status</p>
-                </div>
-                <div><span>@item.Date.ToString("dd MMM yyyy")</span></div>
-            </div>
-            <!-- end media-body -->
-        </a>
+                    <a href="#" class="media">
+                        <div class="media-left">
+                        </div>
+                        <!-- media-left -->
+                        <div class="media-body">
+                            <div>
+                                <h6>#@item.TicketNumber</h6>
+                                <p>@item.Status</p>
+                            </div>
+                            <div><span>@item.Date.ToString("dd MMM yyyy")</span></div>
+                        </div>
+                        <!-- end media-body -->
+                    </a>
                 }
             }
 

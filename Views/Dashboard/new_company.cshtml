@@ -4,183 +4,185 @@
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
 }
 <!-- Page Content-->
-<form role="form" method="post" enctype="multipart/form-data">
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    <div class="page-content">
-        <div class="container-fluid">
-            <!-- Page-Title -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-title-box">
-                        <h4 class="page-title">Packages</h4>
+    <form role="form" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Packages</h4>
+                        </div>
+                        <!--end page-title-box-->
                     </div>
-                    <!--end page-title-box-->
+                    <!--end col-->
                 </div>
-                <!--end col-->
-            </div>
-            <!-- end page title end breadcrumb -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row sgf-incorporate-page-step-1">
-                                <div class="align-center" id="incorporateContent">
-                                    <div class="grid-container full white-bg margin-bottom-3">
-                                        <div class="grid-container">
-                                            <div class="grid-x text-center incorporate-process">
-                                                <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="">3. Additional</p></div><div class="medium-1 cell"><p class="">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row sgf-incorporate-page-step-1">
+                                    <div class="align-center" id="incorporateContent">
+                                        <div class="grid-container full white-bg margin-bottom-3">
+                                            <div class="grid-container">
+                                                <div class="grid-x text-center incorporate-process">
+                                                    <div class="medium-2 cell"><p class="step-active">1. Company Name</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">2. Packages</p></div><div class="medium-2 cell padding-right-1"><p class="">3. Additional</p></div><div class="medium-1 cell"><p class="">4. Details</p></div><div class="medium-2 cell padding-horizontal-1"><p class="">5. Officers</p></div><div class="medium-1 cell "><p class="">6. Capital</p></div><div class="medium-2 cell padding-left-1"><p class="">7. Review / Payment</p></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
-                                        <div class="tabs-panel is-active" id="company-name-tab" role="tabpanel" aria-hidden="false" aria-labelledby="company-name-tab-label">
-                                            <div class="grid-x grid-padding-x block-border padding-2">
+                                        <div class="tabs-content" data-tabs-content="incorporate-form" id="incorporate-form-data-content">
+                                            <div class="tabs-panel is-active" id="company-name-tab" role="tabpanel" aria-hidden="false" aria-labelledby="company-name-tab-label">
+                                                <div class="grid-x grid-padding-x block-border padding-2">
 
-                                                <div class="large-6 cell check-name-company-callback">
+                                                    <div class="large-6 cell check-name-company-callback">
 
-                                                    <div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
-                                                        <label for="edit-title" class="form-required">Company Name</label>
-                                                        @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text required edit-title valid", maxlength = 128, id = "edit-title", name = "title", size = "60", required = "required" })
+                                                        <div class="js-form-item form-item js-form-type-textfield form-item-title js-form-item-title">
+                                                            <label for="edit-title" class="form-required">Company Name</label>
+                                                            @Html.TextBoxFor(m => m.string_var0, new { @class = "form-text required edit-title valid", maxlength = 128, id = "edit-title", name = "title", size = "60", required = "required" })
+
+                                                        </div>
+
+                                                    </div><div class="large-3 cell">
+
+                                                        <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
+                                                            <label for="edit-field-company-type">Company Type</label>
+                                                            @Html.DropDownListFor(m => m.string_var10,
+                                                                         new List<SelectListItem>
+                                                                          {
+                                                                              new SelectListItem {Text = "Limited/LTD", Value = "Limited/LTD"},
+                                                                              new SelectListItem {Text = "Charity/NGO", Value = "Charity/NGO"},
+                                                                              new SelectListItem {Text = "PLC Company", Value = "PLC Company"}
+                                                                          }, "Select", new { @class = "form-select", id = "edit-field-company-type", required = "required" })
+
+                                                        </div>
 
                                                     </div>
 
-                                                </div><div class="large-3 cell">
 
-                                                    <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
-                                                        <label for="edit-field-company-type">Company Type</label>
-                                                        @Html.DropDownListFor(m => m.string_var10,
-                                                                     new List<SelectListItem>
-                                                                      {
-                                                                          new SelectListItem {Text = "Limited/LTD", Value = "Limited/LTD"},
-                                                                          new SelectListItem {Text = "Charity/NGO", Value = "Charity/NGO"},
-                                                                          new SelectListItem {Text = "PLC Company", Value = "PLC Company"}
-                                                                      }, "Select", new { @class = "form-select", id = "edit-field-company-type", required = "required" })
-
+                                                    <div class="large-3 cell position-relative">
+                                                        <div class="invisible">checkname button</div>
+                                                        <input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Check Name">
                                                     </div>
-
-                                                </div>
-                                                <div class="large-3 cell position-relative">
-                                                    <div class="invisible">checkname button</div>
-                                                    <input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Check Name">
-                                                </div>F
-                                                @if (Model.bool_var0)
-                                                {
-                                                    <div id="devel-node-access-node-content-div">
-                                                        <div id="checkNameIn" class="text-center  margin-top-1">
-                                                            <i class="fas fa-check result-icon-success"></i>
-                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
-                                                            <h3 class="">Congratulations! The name is available!</h3>
-                                                            <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Continue</a>
-                                                            <p class="text-left margin-vertical-1">
-                                                                A total of <span class="primary-color stat "> @Model.list_var0.Count() </span> similar or
-                                                                matching names were found.
-                                                            </p>
-                                                            <table id="similarTable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>UEN</th>
-                                                                        <th class="gray-bg">ENTITY NAME</th>
-                                                                        <th>TYPE</th>
-                                                                        <th class="gray-bg">DATE OF ISSUE</th>
-                                                                        <th>STATUS</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    @Html.Raw(Model.string_var2)
-                                                                </tbody>
-                                                            </table>
-                                                            <div class="callout four-bg">
-                                                                <div class="grid-x grid-padding-x text-left white-text">
-                                                                    <div class="large-12 cell text-bold primary-color">Entity Status Legend:</div>
-                                                                    <div class="large-2 medium-4 cell">BN: Business</div>
-                                                                    <div class="large-2 medium-4 cell">LC: Company</div>
-                                                                    <div class="large-2 medium-4 cell">LP: Limited Partnership</div>
-                                                                    <div class="large-2 medium-4 cell">LL: Limited Liability Partnership</div>
-                                                                    <div class="large-2 medium-4 cell">FC: Foreign Company</div>
-                                                                    <div class="large-2 medium-4 cell">PF: Public Accounting Firm</div>
+                                                    @if (Model.bool_var0)
+                                                    {
+                                                        <div id="devel-node-access-node-content-div">
+                                                            <div id="checkNameIn" class="text-center  margin-top-1">
+                                                                <i class="fas fa-check result-icon-success"></i>
+                                                                <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                                <h3 class="">Congratulations! The name is available!</h3>
+                                                                <a href="~/Dashboard/packages" class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none">Continue</a>
+                                                                <p class="text-left margin-vertical-1">
+                                                                    A total of <span class="primary-color stat "> @Model.list_var0.Count() </span> similar or
+                                                                    matching names were found.
+                                                                </p>
+                                                                <table id="similarTable">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>UEN</th>
+                                                                            <th class="gray-bg">ENTITY NAME</th>
+                                                                            <th>TYPE</th>
+                                                                            <th class="gray-bg">DATE OF ISSUE</th>
+                                                                            <th>STATUS</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        @Html.Raw(Model.string_var2)
+                                                                    </tbody>
+                                                                </table>
+                                                                <div class="callout four-bg">
+                                                                    <div class="grid-x grid-padding-x text-left white-text">
+                                                                        <div class="large-12 cell text-bold primary-color">Entity Status Legend:</div>
+                                                                        <div class="large-2 medium-4 cell">BN: Business</div>
+                                                                        <div class="large-2 medium-4 cell">LC: Company</div>
+                                                                        <div class="large-2 medium-4 cell">LP: Limited Partnership</div>
+                                                                        <div class="large-2 medium-4 cell">LL: Limited Liability Partnership</div>
+                                                                        <div class="large-2 medium-4 cell">FC: Foreign Company</div>
+                                                                        <div class="large-2 medium-4 cell">PF: Public Accounting Firm</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                }
-                                                @if (Model.bool_var1)
-                                                {
-                                                    
-                                                    <div id="checkNameIn" class="text-center  margin-top-1">
-                                                        <i class="fas ti-face-sad result-icon-fail"></i>
-                                                        <h1 class="">@Model.string_var0 @Model.string_var10</h1>
-                                                        <h3 class="">The Business name is not available! Try other names.</h3>
-                                                    </div>
-                                                }
-                                                @if (Model.bool_var2)
-                                                {
-                                            <div id="checkNameIn" class="text-center  margin-top-1">
-                                                <i class="fas fa-smile result-icon-success"></i>
-                                                <h1 class="">@Model.string_var0 @Model.string_var10</h1>
-                                                <h3 class="">You are just one step to acquiring your business name. Kindly await confirmation within 24 hours</h3>
-                                                @Html.ActionLink("Confirm and Continue", "Index", new { Id = Model.string_var0 }, new { @class = "button primary large margin-vertical-1 go-package-tab", @style="text-shadow:none" })
+                                                    }
+                                                    @if (Model.bool_var1)
+                                                    {
 
-                                            </div>
+                                                        <div id="checkNameIn" class="text-center  margin-top-1">
+                                                            <i class="fas ti-face-sad result-icon-fail"></i>
+                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                            <h3 class="">The Business name is not available! Try other names.</h3>
+                                                        </div>
+                                                    }
+                                                    @if (Model.bool_var2)
+                                                    {
+                                                        <div id="checkNameIn" class="text-center  margin-top-1">
+                                                            <i class="fas fa-smile result-icon-success"></i>
+                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                            <h3 class="">You are just one step to acquiring your business name. Kindly await confirmation within 24 hours</h3>
+                                                            <button class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Confirm and Continue</button>
 
-                                                }
-                                                @if (Model.bool_var3)
-                                                {
-                                                    <div id="checkNameIn" class="text-center  margin-top-1">
-                                                        <i class="fas fa-smile result-icon-success"></i>
-                                                        <h1 class="">@Model.string_var0 @Model.string_var10</h1>
-                                                        <h3 class="">You have made a request to register this business name. We are still processing your request.</h3>
-                                                    </div>
+                                                        </div>
 
-                                                }
+                                                    }
+                                                    @if (Model.bool_var3)
+                                                    {
+                                                        <div id="checkNameIn" class="text-center  margin-top-1">
+                                                            <i class="fas fa-smile result-icon-success"></i>
+                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                            <h3 class="">You have made a request to register this business name. We are still processing your request.</h3>
+                                                        </div>
+
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!--end card-->
                     </div>
-                    <!--end card-->
+                    <!--end col-->
                 </div>
-                <!--end col-->
+                <!--end row-->
             </div>
-            <!--end row-->
+            <!-- container -->
+            <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+            <!--end footer-->
         </div>
-        <!-- container -->
-        <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
-        <!--end footer-->
-    </div>
-</form>
-    <!-- end page content -->
-    <partial name="_SpinnerView" />
-    <script>
-        function showDiv() {
-            document.getElementById('devel-node-access-node-content-div').style.display = "block";
-        }
-        function saveCompany() {
-        var val1 = $('#edit-title').val();
-          if (val1 === null || val1 ==="")
-                return alert("Please Input a Company Name");
-
-            var val2 = $('#edit-field-company-type').val();
-          if (val2 === null || val2 ==="")
-            return alert("Please Select a Company Type");
-
-        $.ajax({
-            type: "post",
-            url: "/Dashboard/save_company",
-            data:{ "companyName": val1, "Type": val2},
-            success: function (data) {
-                if (data)
-                    window.location.href = "/Dashboard/packages";
-                else {
-                    alert("There seems to be a problem with your application, please contact help desk ")
-                    document.location.reload();
-
-                }
-
-
+        </form>
+        <!-- end page content -->
+        <partial name="_SpinnerView" />
+        <script>
+            function showDiv() {
+                document.getElementById('devel-node-access-node-content-div').style.display = "block";
             }
-        })
-    }
-    </script>
+            function saveCompany() {
+                var val1 = $('#edit-title').val();
+                if (val1 === null || val1 === "")
+                    return alert("Please Input a Company Name");
+
+                var val2 = $('#edit-field-company-type').val();
+                if (val2 === null || val2 === "")
+                    return alert("Please Select a Company Type");
+
+                $.ajax({
+                    type: "post",
+                    url: "/Dashboard/save_company",
+                    data: { "companyName": val1, "Type": val2 },
+                    success: function (data) {
+                        if (data)
+                            window.location.href = "/Dashboard/packages";
+                        else {
+                            alert("There seems to be a problem with your application, please contact help desk ")
+                            document.location.reload();
+
+                        }
+
+
+                    }
+                })
+            }
+        </script>

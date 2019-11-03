@@ -56,71 +56,6 @@
                                         </div>
 
                                        
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <div class="card profile-card">
-                                                        <div class="card-body p-0">
-                                                            <div class="media p-3 align-items-center">
-                                                                <img src="../assets/images/widgets/comp1.png" alt="user" class="rounded-circle thumb-xl">
-                                                                <div class="media-body ml-3 align-self-center">
-                                                                    <h5 class="pro-title">Meri Gold Insurance</h5>
-                                                                    <p class="mb-2 text-muted">MeriGoldInsurance@example.com</p>
-                                                                    <button type="button" class="btn btn-xs btn-primary">Message</button>
-                                                                </div>
-                                                                <div class="action-btn">
-                                                                    <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
-                                                                    <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end card-body-->
-                                                    </div>
-                                                    <!--end card-->
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-4">
-                                                    <div class="card profile-card">
-                                                        <div class="card-body p-0">
-                                                            <div class="media p-3 align-items-center">
-                                                                <img src="../assets/images/widgets/comp2.png" alt="user" class="rounded-circle thumb-xl">
-                                                                <div class="media-body ml-3 align-self-center">
-                                                                    <h5 class="pro-title">National Insurance</h5>
-                                                                    <p class="mb-2 text-muted">NationalInsurance@example.com</p>
-                                                                    <button type="button" class="btn btn-xs btn-primary">Message</button>
-                                                                </div>
-                                                                <div class="action-btn">
-                                                                    <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
-                                                                    <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end card-body-->
-                                                    </div>
-                                                    <!--end card-->
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-4">
-                                                    <div class="card profile-card">
-                                                        <div class="card-body p-0">
-                                                            <div class="media p-3 align-items-center">
-                                                                <img src="../assets/images/widgets/comp3.png" alt="user" class="rounded-circle thumb-xl">
-                                                                <div class="media-body ml-3 align-self-center">
-                                                                    <h5 class="pro-title">7Star Insurance</h5>
-                                                                    <p class="mb-2 text-muted">7StarInsurance@example.com</p>
-                                                                    <button type="button" class="btn btn-xs btn-primary">Message</button>
-                                                                </div>
-                                                                <div class="action-btn">
-                                                                    <button class="mr-1 btn btn-sm btn-soft-info"><i class="fas fa-pen"></i></button>
-                                                                    <button class="btn btn-sm btn-soft-danger"><i class="far fa-trash-alt"></i></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end card-body-->
-                                                    </div>
-                                                    <!--end card-->
-                                                </div>
-                                                <!--end col-->
-                                            </div>
 
                                         <div class="tabs-panel is-active" id="capital-tab">
                                             <div class="grid-x grid-padding-x">
@@ -246,7 +181,7 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td width="550" class="semibold">Total</td>
-                                                                                <td width="100" class="semibold text-right">#2,788</td>
+                                                                                <td width="100" class="semibold text-right">@Model.string_var17</td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
@@ -255,6 +190,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <input hidden id="id_email" value="@Model.string_var15" />
+                                                <input hidden id="id_amount" value=@Model.decimal_var1 />
+                                                <input hidden id="id_phoneNumber" value="@Model.string_var16" />
                                                 <div class="cell margin-vertical-2">
                                                     <div class="callout light-bg">
 

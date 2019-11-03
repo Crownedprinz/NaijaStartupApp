@@ -666,14 +666,21 @@ Nigeria<br>
             });
 
             function loginPost() {
+                $(".se-pre-con").fadeIn("slow");
                 var val3 = document.getElementById("id_rememberme").checked
                 var val1 = $('#id_username').val();
                 var val2 = $('#id_password').val();
-                if (val1 === null || val1 === "")
-                    return alert("Please Input your username or email");
+                if (val1 === null || val1 === "") {
+                    alert("Please Input your username or email");
+                    $(".se-pre-con").fadeOut("slow");
+                    return;
+                }
 
-                if (val2 === null || val2 === "")
-                    return alert("Please Input your password");
+                if (val2 === null || val2 === "") {
+                    alert("Please Input your password");
+                    $(".se-pre-con").fadeOut("slow");
+                    return;
+                }
 
                 $.ajax({
                     type: "post",
@@ -684,6 +691,8 @@ Nigeria<br>
                             window.location.href = "/Dashboard/Index";
                         else {
                             alert("Invalid username or password")
+                             $(".se-pre-con").fadeOut("slow");
+                             return;
 
                         }
 

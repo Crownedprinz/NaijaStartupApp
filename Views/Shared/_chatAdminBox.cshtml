@@ -1,0 +1,86 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+<div class="chat-box-right" style="width:55vw;">
+    <div class="chat-header">
+        <a href="#" class="media">
+            <div class="media-left">
+            </div>
+            <!-- media-left -->
+            <div class="media-body">
+                <div>
+                    <h6 class="mb-1 mt-0">@Model.string_var0</h6>
+                </div>
+            </div>
+            <!-- end media-body -->
+        </a>
+        <!--end media-->
+        <div class="chat-features">
+            <div class="d-none d-sm-inline-block">
+            </div>
+        </div>
+        <!-- end chat-features -->
+    </div>
+    <!-- end chat-header -->
+    <div class="chat-body">
+        <div class="chat-detail slimscroll">
+            @foreach (var item in Model.ChatModel.ViewChatDetails)
+            {
+                if (item.User.ToLower() == "admin")
+                {
+            <div class="media">
+                <div class="media-img"><img src="~/assets/images/users/patient-pro.png" alt="user" class="rounded-circle thumb-md"></div>
+                <div class="media-body">
+                    <div class="chat-msg">
+                        <p>@item.Message1</p>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(item.Message2))
+                    {
+                        <div class="chat-msg">
+                            <p>@item.Message2</p>
+                        </div>
+                    }
+                </div>
+                <!--end media-body-->
+            </div>
+                }
+                else
+                {
+                    <div class="media">
+                        <div class="media-body reverse">
+                            <div class="chat-msg">
+                                <p>@item.Message1</p>
+                            </div>
+                            @if (!string.IsNullOrWhiteSpace(item.Message2))
+                            {
+                                <div class="chat-msg">
+                                    <p>@item.Message2</p>
+                                </div>
+                            }
+                        </div>
+                        <!--end media-body-->
+                        <div class="media-img">
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+        <!-- end chat-detail -->
+    </div>
+    <!-- end chat-body -->
+    <div class="chat-footer">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <span class="chat-admin">
+                </span>
+                <input type="text" required name="string_var2" class="form-control" placeholder="Type something here...">
+            </div>
+            <!-- col-8 -->
+            <div class="col-3 text-right">
+                <button type="submit" class="fas fa-sign-in-alt"></button>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end chat-footer -->
+</div>
