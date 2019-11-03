@@ -23,6 +23,8 @@ namespace NaijaStartupApp.Services
          int Company_Count();
         Task<List<Company_Registration>> GetCompanies();
         Task<Company_Registration> GetCompanyById(Guid Id);
+        int Ticket_Count();
+        int Pending_Tasks();
 
     }
     public class CompanyService : ICompanyService
@@ -50,16 +52,39 @@ namespace NaijaStartupApp.Services
 
         public int Company_Count()
         {
-            return _context.Company_Registration.Where(x =>x.User.Id == _globalVariables.userid && x.RegCompleted ==true).Count();
+            if(_globalVariables.RoleId.ToLower()=="user")
+            return _context.Company_Registration.Where(x =>x.User.Id == _globalVariables.userid && x.RegCompleted ==true && x.IsDeleted==false).Count();
+            else
+            return _context.Company_Registration.Where(x =>x.RegCompleted ==true && x.IsDeleted==false).Count();
         }
 
         public async Task<List<Company_Registration>> GetCompanies()
         {
-            return  await _context.Company_Registration.Where(x => x.User.Id == _globalVariables.userid && x.RegCompleted == true).ToListAsync();
+            if (_globalVariables.RoleId.ToLower() == "user")
+                return await _context.Company_Registration.Where(x => x.User.Id == _globalVariables.userid && x.RegCompleted == true).ToListAsync();
+            else
+                return await _context.Company_Registration.Where(x => x.RegCompleted == true).ToListAsync();
+
         }
-    public async Task<Company_Registration> GetCompanyById(Guid Id)
+        public async Task<Company_Registration> GetCompanyById(Guid Id)
         {
             return  await _context.Company_Registration.Where(x => x.IsDeleted == false && x.Id == Id).FirstOrDefaultAsync();
+        }
+        public int Ticket_Count()
+        {
+            if (_globalVariables.RoleId.ToLower() == "user")
+                return _context.ChatHeader.Where(x => x.User.Id == _globalVariables.userid && x.IsDeleted == false).Count();
+            else
+                return _context.ChatHeader.Where(x => x.IsDeleted == false).Count();
+
+        }
+        public int Pending_Tasks()
+        {
+            if (_globalVariables.RoleId.ToLower() == "user")
+                return _context.Company_Registration.Where(x => x.IsDeleted == false && x.IsCacAvailable == true && x.User.Id.Equals(_globalVariables.userid) && x.RegCompleted == false).Count();
+            else
+                return _context.Company_Registration.Where((x => x.IsDeleted == false && x.IsCacAvailable == false)).Count();
+
         }
     }
 

@@ -234,5 +234,21 @@ namespace NaijaStartupApp.Models
             public bool IsDeleted { get; set; }
         }
 
+        public class Settings
+        {
+            public int Id { get; set; }
+            public string code { get; set; }
+            public string description { get; set; }
+            public string field1 { get; set; }
+            public string field2 { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
+
     }
 }

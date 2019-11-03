@@ -15,9 +15,11 @@ using static NaijaStartupApp.Models.NsuDtos;
 using static NaijaStartupApp.Models.NsuVariables;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
+using DangoteCustomerPortal.Handlers;
 
 namespace NaijaStartupApp.Controllers
 {
+    [UnauthorizedCustomFilter]
     public class DashboardController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -46,7 +48,9 @@ namespace NaijaStartupApp.Controllers
         {
             var temp = new TemporaryVariables
             {
-                int_var0 = _companyService.Company_Count()
+                int_var0 = _companyService.Company_Count(),
+                int_var1 = _companyService.Ticket_Count(),
+                int_var2 = _companyService.Pending_Tasks(),
             };
             return View(temp);
         }
@@ -693,17 +697,17 @@ namespace NaijaStartupApp.Controllers
                         {
                             FullName = Input.string_array_temp0[0],
                             Gender = Input.string_array_temp0[1],
-                            Id_Type = Input.string_array_temp0[2],
-                            Id_Number = Input.string_array_temp0[3],
-                            Nationality = Input.string_array_temp0[4],
-                            Birth_Country = Input.string_array_temp0[5],
-                            Dob = Input.string_array_temp0[6],
-                            Email = Input.string_array_temp0[7],
-                            Phone_No = Input.string_array_temp0[8],
-                            Address1 = Input.string_array_temp0[9],
-                            Address2 = Input.string_array_temp0[10],
-                            PostalCode = Input.string_array_temp0[11],
-                            MobileNo = Input.string_array_temp0[12],
+                            Id_Type = Input.string_array_temp0[6],
+                            Id_Number = Input.string_array_temp0[7],
+                            Nationality = Input.string_array_temp0[8],
+                            Birth_Country = Input.string_array_temp0[9],
+                            Dob = Input.string_array_temp0[10],
+                            Email = Input.string_array_temp0[11],
+                            Phone_No = Input.string_array_temp0[12],
+                            Address1 = Input.string_array_temp0[13],
+                            Address2 = Input.string_array_temp0[14],
+                            PostalCode = Input.string_array_temp0[15],
+                            MobileNo = Input.string_array_temp0[16],
                             Registration = company,
                         };
                         company.company_Officers.Add(officers);

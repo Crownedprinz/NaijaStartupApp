@@ -29,121 +29,206 @@
 
         </div>
         <!--end row-->
-
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <div class="card">
-                    <div class="card-body invoice-head">
-                        <div class="wrapper-lg">
-                            <div class="text-center">
-                                <div class="col-lg-12 col-md-12 center-block">
-                                    <div class="onboarding-title text-center">
-                                        <h3><b class="ng-binding">Hi, @_globalVariables.userName - Welcome to NaijaStartUp!</b></h3>
-                                        <p>
-                                            <h3>Are you ready to set up your company?</h3>
-                                            <h4>Need help? Call our friendly customer support team at +65 6950 1858</h4>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="card hospital-info">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div><h4 class="header-title mt-0 mb-3">Companies</h4></div>
-                                                <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="all_companies">view</a></div>
-                                            </div>
-                                            <div class="media">
-                                                <div class="data-icon align-self-center"><i class="fas fa-registered rounded-circle text-danger"></i></div>
-                                                <div class="media-body ml-3 align-self-center text-right">
-                                                    <h3 class="mt-0">@Model.int_var0</h3>
-                                                    <p class="text-muted mb-0 text-nowrap">Yesterday 32 App.</p>
-                                                </div>
-                                                <!--end media body-->
-                                            </div>
+        @if (_globalVariables.RoleId.ToLower() == "user")
+        {
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="card">
+                        <div class="card-body invoice-head">
+                            <div class="wrapper-lg">
+                                <div class="text-center">
+                                    <div class="col-lg-12 col-md-12 center-block">
+                                        <div class="onboarding-title text-center">
+                                            <h3><b class="ng-binding">Hi, @_globalVariables.userName - Welcome to NaijaStartUp!</b></h3>
+                                            <p>
+                                                <h3>Are you ready to set up your company?</h3>
+                                                <h4>Need help? Call our friendly customer support team at +65 6950 1858</h4>
+                                            </p>
                                         </div>
-                                        <!--end card-body-->
                                     </div>
-                                    <!--end card-->
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="card hospital-info">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div><h4 class="header-title mt-0 mb-3">Pending Tasks</h4></div>
-                                                <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="all_companies">view</a></div>
-                                            </div>
-                                            <div class="media">
-                                                <div class="data-icon align-self-center"><i class="fas fa-tasks rounded-circle text-warning"></i></div>
-                                                <div class="media-body ml-3 align-self-center text-right">
-                                                    <h3 class="mt-0">21</h3>
-                                                    <p class="text-muted mb-0 text-nowrap">Yesterday 22 Add.</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Companies</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="all_companies">view</a></div>
                                                 </div>
-                                                <!--end media body-->
-                                            </div>
-                                        </div>
-                                        <!--end card-body-->
-                                    </div>
-                                    <!--end card-->
-                                </div>
-                                <!-- end col-->
-                                <div class="col-lg-4">
-                                    <div class="card hospital-info">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div><h4 class="header-title mt-0 mb-3">Tickets</h4></div>
-                                                <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="all_companies">view</a></div>
-                                            </div>
-                                            <div class="media">
-                                                <div class="data-icon align-self-center"><i class="fas fa-ticket-alt rounded-circle text-success"></i></div>
-                                                <div class="media-body ml-3 align-self-center text-right">
-                                                    <h3 class="mt-0">10</h3>
-                                                    <p class="text-muted mb-0 text-nowrap">Yesterday 12 Ope.</p>
-                                                </div>
-                                                <!--end media body-->
-                                            </div>
-                                        </div>
-                                        <!--end card-body-->
-                                    </div>
-                                    <!--end card-->
-                                </div>
-                                <!-- end col-->
-                                <div class="col-sm-5">
-                                    <div class="ibox float-e-margins">
-                                        <div class="panel panel-success">
-                                            <div class="panel-heading">
-
-                                            </div>
-                                            <div class="panel-body">
-                                                <label for="searchbox" class="control-label">  Type company name</label><br>
-                                                <form name="submitbiz" class="signup-form" action="../confirm" onsubmit="return validateForm()" method="post">
-                                                    <div class="input-group">
-                                                        <input type="text" name="search-box" id="edit-title" class="form-control searcharea" placeholder="Enter a company name" required="required" autocomplete="off">
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-success" onclick="saveCompany()" type="button">Go! </button>
-                                                        </span>
-
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-registered rounded-circle text-danger"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var0</h3>
                                                     </div>
-                                                </form>
+                                                    <!--end media body-->
+                                                </div>
                                             </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Pending Tasks</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="unconfirmed_companies">view</a></div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-tasks rounded-circle text-warning"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var2</h3>
+                                                    </div>
+                                                    <!--end media body-->
+                                                </div>
+                                            </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <!-- end col-->
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Tickets</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="chat">view</a></div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-ticket-alt rounded-circle text-success"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var1</h3>
+                                                    </div>
+                                                    <!--end media body-->
+                                                </div>
+                                            </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <!-- end col-->
+                                    <div class="col-sm-5">
+                                        <div class="ibox float-e-margins">
+                                            <div class="panel panel-success">
+                                                <div class="panel-heading">
+
+                                                </div>
+                                                <div class="panel-body">
+                                                    <label for="searchbox" class="control-label">  Type company name</label><br>
+                                                    <form name="submitbiz" class="signup-form" action="../confirm" onsubmit="return validateForm()" method="post">
+                                                        <div class="input-group">
+                                                            <input type="text" name="search-box" id="edit-title" class="form-control searcharea" placeholder="Enter a company name" required="required" autocomplete="off">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-success" onclick="saveCompany()" type="button">Go! </button>
+                                                            </span>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+
                                         </div>
 
-
                                     </div>
-
                                 </div>
-                            </div>
-                            <!--end col-->
-                            <div class="clear"></div>
-                        </div><!-- end ngIf: User.is_developer -->
+                                <!--end col-->
+                                <div class="clear"></div>
+                            </div><!-- end ngIf: User.is_developer -->
 
+                        </div>
                     </div>
+                    <!--end card-->
                 </div>
-                <!--end card-->
+                <!--end col-->
             </div>
-            <!--end col-->
-        </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="card">
+                        <div class="card-body invoice-head">
+                            <div class="wrapper-lg">
+                                <div class="text-center">
+                                    <div class="col-lg-12 col-md-12 center-block">
+                                        <div class="onboarding-title text-center">
+                                            <h3><b class="ng-binding">Hi, @_globalVariables.userName - Welcome to NaijaStartUp!</b></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Companies</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="admin_companies">view</a></div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-registered rounded-circle text-danger"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var0</h3>
+                                                    </div>
+                                                    <!--end media body-->
+                                                </div>
+                                            </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Pending Tasks</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="unconfirmed_companies">view</a></div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-tasks rounded-circle text-warning"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var2</h3>
+                                                    </div>
+                                                    <!--end media body-->
+                                                </div>
+                                            </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <!-- end col-->
+                                    <div class="col-lg-4">
+                                        <div class="card hospital-info">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div><h4 class="header-title mt-0 mb-3">Tickets</h4></div>
+                                                    <div><a class="btn-sm btn-danger" asp-controller="Dashboard" asp-action="chat">view</a></div>
+                                                </div>
+                                                <div class="media">
+                                                    <div class="data-icon align-self-center"><i class="fas fa-ticket-alt rounded-circle text-success"></i></div>
+                                                    <div class="media-body ml-3 align-self-center text-right">
+                                                        <h3 class="mt-0">@Model.int_var1</h3>
+                                                    </div>
+                                                    <!--end media body-->
+                                                </div>
+                                            </div>
+                                            <!--end card-body-->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!--end col-->
+                                <div class="clear"></div>
+                            </div><!-- end ngIf: User.is_developer -->
+
+                        </div>
+                    </div>
+                    <!--end card-->
+                </div>
+                <!--end col-->
+            </div>
+        }
     </div>
     <!-- container -->
     <footer class="footer text-center text-sm-left">&copy; 2019 BloydIntelligi <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by bloydintelligi</span></footer>
@@ -153,6 +238,7 @@
 <partial name="_SpinnerView" />
 <script>
     function saveCompany() {
+        
         var val1 = $('#edit-title').val();
         if (val1 === null || val1 === "")
             return alert("Please Input a Company Name");
