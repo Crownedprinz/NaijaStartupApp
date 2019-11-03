@@ -673,7 +673,8 @@ namespace NaijaStartupApp.Controllers
                 temp.decimal_var1 = 2400 + company.Package.Price;
 
             }
-           
+            var country = await _context.Settings.Where(x => x.code.ToLower() == "country").ToListAsync();
+            ViewBag.country = new SelectList(country, "description", "description");
             return View(temp);
         }
         [HttpPost]
@@ -713,7 +714,7 @@ namespace NaijaStartupApp.Controllers
                         company.company_Officers.Add(officers);
                         _context.Update(company);
                         await _context.SaveChangesAsync();
-                        return RedirectToAction("order_review");
+                        return RedirectToAction("company_share");
                     }
                     else
                     {
@@ -728,22 +729,34 @@ namespace NaijaStartupApp.Controllers
             return View();
         }
 
-        public ActionResult company_share()
+        public async Task<ActionResult> company_share()
         {
-            return View();
+            var temp = new TemporaryVariables();
+            var company = await _context.Company_Registration.Include(s => s.Package).Include(u=>u.User).Where(x => x.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
+            if (company != null)
+            {
+                temp.string_var0 = company.Package.PackageName;
+                temp.string_var1 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var2 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var3 = "NGN" + ("2,400");
+                temp.string_var4 = company.CompanyName + " " + company.CompanyType;
+                temp.string_var5 = company.User.FirstName + " " + company.User.LastName;
+
+            }
+            return View(temp);
         }
 
         [HttpPost]
         public async Task<ActionResult> company_share(TemporaryVariables Input)
         {
-            var company = _context.Company_Registration.Find(Guid.Parse(_temporaryVariables.string_var0));
+            var company =await _context.Company_Registration.Include(u => u.User).Where(s=>s.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
             if (company != null)
             {
-                company.CompanyCapitalCurrency = Input.string_var0;
+                company.CompanyCapitalCurrency = Input.string_var6;
                 company.NoOfSharesIssue = Input.int_var0;
                 company.SharePrice = Input.decimal_var0;
                 company.SharesAllocated = Input.decimal_var1;
-                company.ShareHolderName = Input.string_var1;
+                company.ShareHolderName = company.User.FirstName + " " + company.User.LastName;
             }
             try
             {
@@ -867,11 +880,9 @@ namespace NaijaStartupApp.Controllers
                         table += "<tr><td>Address Line 1</td><td class='text-bold'>" + item.Address1 + "</td></tr>";
                         table += "<tr><td>Address Line 2</td><td class='text-bold'>" + item.Address2 + "</td></tr>";
                         table += "<tr><td>Postcode</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
-                        table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
+                        table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.MobileNo + "</td></tr>";
                         table += "<tr><td>Work Phone</td><td class='text-bold'>" + item.Phone_No + "</td></tr>";
-                        table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr>";
-                        table += "<tr><td>Proof of ID</td><td class='text-bold'><ul></ul></td></tr>";
-                        table += "<tr><td>Proof of Address</td><td class='text-bold'><ul></ul></td></tr></tbody></table>";
+                        table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr></tbody></table>";
                         companyInfo.string_var13 += table;
                     }
                 }
