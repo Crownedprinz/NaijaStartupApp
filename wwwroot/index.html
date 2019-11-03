@@ -44,7 +44,7 @@
 
       }
 };
-</script>
+</script>   
 
 <script src="js/contact_form.js"></script>
 
@@ -563,7 +563,7 @@ Nigeria<br>
 </div>
 </div>
 <div class="row copyright">
-<div class="pull-right"><img src="images/logo-footer.png" alt="logo"></div>
+<div class="pull-right"><img src="images/footerlogo.png" alt="logo"></div>
 <p>Copyright &copy; 2019. Naija-Startup Ltd</p>
 </div>
 </div>
@@ -591,7 +591,7 @@ Nigeria<br>
             </label>
         </div>
         <div class="form-group">
-            <input type="button" onclick="loginPost()"  value="Login to my Account" class="btn btn-success btn-lg" />
+            <input id="log1" type="button" onclick="loginPost()"  value="Login to my Account" class="btn btn-success btn-lg" />
             <!--<a class="btn btn-success btn-lg" href="../Dashboard/new_company">Login to my Account</a>-->
         </div>
     </form>
@@ -677,6 +677,15 @@ Nigeria<br>
             }
         })
     }
+
+    // $("#log1").submit(function (event) {
+
+    //     var isValid = $('#log1').valid();
+    //     if (isValid) {    
+    //         // Animate loader
+    //         $(".se-pre-con").fadeIn("slow");
+    //     }
+    //     });
 </script>
 
 </body>
