@@ -1,0 +1,477 @@
+2019-10-25T00:40:55.9879998+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:40:56.7807121+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"AddOnService"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.7893457+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Company_Officers"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.7956413+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Company_Registration"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.8050783+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Contact"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.8196209+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Package"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.8387534+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] The 'bool' property '"IsDeleted"' on entity type '"Payments"' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead so that the default will only be used for inserts when the property value is 'null'. (a2a8ca4b)
+2019-10-25T00:40:56.8623345+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"AddOnService"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:56.8734569+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"LocalResidentDirectorPrice"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:56.8811553+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"SharePrice"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:56.9329270+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"SharesAllocated"' on entity type '"Company_Registration"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:56.9739459+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Package"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:57.0312653+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Amount"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:57.0421454+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Discount"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:57.0513161+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Tax"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:57.0598946+01:00 8000007d-0000-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Total"' on entity type '"Payments"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2019-10-25T00:40:57.3274829+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:00.4457016+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:00.6152976+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:01.2201532+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:01.2541659+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:01.3824042+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:01.3928516+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:01.9144951+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed DbCommand ("494"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:02.5708623+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executed DbCommand ("255"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:02.5733437+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("273"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:02.8180470+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executed DbCommand ("223"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:02.8298927+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("229"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:02.8894595+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:02.8922818+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:02.8939623+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:02.9172086+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:03.0072030+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:03.0072008+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:03.0752380+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:03.0990678+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:03.1095177+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:03.1316581+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:03.2276028+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("261"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:03.3908770+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:03.4440380+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed DbCommand ("252"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:03.4878494+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:03.4910853+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("265"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:03.8208367+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:03.8266230+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed DbCommand ("263"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:03.8569532+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:03.8629024+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:03.8699524+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:03.8880624+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:03.8948260+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:03.9097526+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:03.9169606+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:03.9511331+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44333/Account/Index application/x-www-form-urlencoded; charset=UTF-8 55 (ca22a1cb)
+2019-10-25T00:41:03.9566917+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:04.0363606+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:04.1005768+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:04.1450219+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:04.1872555+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:04.2072622+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:04.2668072+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("245"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:04.3611746+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:04.3816846+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed DbCommand ("237"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:04.4168506+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:04.4396002+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:04.4756051+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:04.4816809+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:04.6876512+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:04.8655967+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("422"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:05.0651271+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("530"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:05.1612379+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("305"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:05.1814252+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:05.2974452+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("622"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:05.4028062+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:05.7898662+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("446"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:05.7898854+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("561"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:05.9471631+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:05.9472137+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:05.9686105+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:05.9797149+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Accessing expired session, Key:"1494ea52-aa92-7052-8969-0549b3895735" (08c5a9e7)
+2019-10-25T00:41:05.9906225+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:06.0186207+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:06.0817556+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("769"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:06.0946967+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:06.3217723+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2319.4448ms. (50a9e262)
+2019-10-25T00:41:06.3463807+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed DbCommand ("373"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:06.3719313+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:06.3719697+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1861.9746ms. (50a9e262)
+2019-10-25T00:41:06.3882019+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:06.3964416+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2981.5797ms. (50a9e262)
+2019-10-25T00:41:06.4053760+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:06.4347330+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:06.4595369+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("391"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:06.5018500+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 2075.6705ms (afa2e885)
+2019-10-25T00:41:06.5066040+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 2571.1966ms (afa2e885)
+2019-10-25T00:41:06.5267303+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:06.5338189+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:06.5466464+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Session started; Key:"1494ea52-aa92-7052-8969-0549b3895735", Id:"973f9360-3b8f-2aee-c086-9e4d677cb79d" (1d7cf8c0)
+2019-10-25T00:41:06.5509237+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Session started; Key:"1494ea52-aa92-7052-8969-0549b3895735", Id:"b0e33dcf-aef0-13ca-1286-2dc866ca4e2d" (1d7cf8c0)
+2019-10-25T00:41:06.5509917+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 3453.3744ms (afa2e885)
+2019-10-25T00:41:06.5691749+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:06.5861302+01:00 8000001a-0000-ed00-b63f-84710c7967bb [INF] Request finished in 5208.2654ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:06.5953000+01:00 80000012-0003-f600-b63f-84710c7967bb [INF] Request finished in 3695.5801ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:06.6177822+01:00 80000039-0000-f900-b63f-84710c7967bb [INF] Request finished in 5398.6472ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:06.6515121+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/Index   (ca22a1cb)
+2019-10-25T00:41:06.6646398+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:06.6851158+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index()" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:06.7896762+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("247"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:06.8529655+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:06.8614862+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:06.8836696+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:07.1462354+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed DbCommand ("261"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:07.1765978+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1129.8319ms. (50a9e262)
+2019-10-25T00:41:07.1963592+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:07.2059467+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("236"ms) [Parameters=["@___globalVariables_userid_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Company_Registration] AS [x]
+WHERE ([x].[UserId] = @___globalVariables_userid_0) AND ([x].[RegCompleted] = 1)" (0723d8ff)
+2019-10-25T00:41:07.2359039+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 1240.2319ms (afa2e885)
+2019-10-25T00:41:07.3140003+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 356.3545ms. (50a9e262)
+2019-10-25T00:41:07.3303705+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:07.3673702+01:00 80000037-0000-f200-b63f-84710c7967bb [INF] Request finished in 3562.7537ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:07.4433204+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/Dashboard/Index   (ca22a1cb)
+2019-10-25T00:41:07.4872130+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-10-25T00:41:07.5246633+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:07.8514928+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Dashboard\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index()" on controller "NaijaStartupApp.Controllers.DashboardController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:07.8675016+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executing action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" - Validation state: Valid (dad538d7)
+2019-10-25T00:41:07.9133864+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-10-25T00:41:08.1585325+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executed DbCommand ("227"ms) [Parameters=["@___globalVariables_userid_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Company_Registration] AS [x]
+WHERE ([x].[UserId] = @___globalVariables_userid_0) AND ([x].[RegCompleted] = 1)" (0723d8ff)
+2019-10-25T00:41:08.1752312+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 266.1534ms. (50a9e262)
+2019-10-25T00:41:08.1924575+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-10-25T00:41:08.6774131+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 1049.0813ms. (f66409e9)
+2019-10-25T00:41:08.6813614+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executed ViewResult - view "Index" executed in 225.3392ms. (f66409e9)
+2019-10-25T00:41:08.6897535+01:00 80000018-0003-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/jquery.min.js   (ca22a1cb)
+2019-10-25T00:41:08.7428301+01:00 80000082-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/bootstrap.bundle.min.js   (ca22a1cb)
+2019-10-25T00:41:08.7638934+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" in 2028.3922ms (afa2e885)
+2019-10-25T00:41:08.7731388+01:00 80000010-0001-ee00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/metisMenu.min.js   (ca22a1cb)
+2019-10-25T00:41:08.8052957+01:00 8000007f-0000-f000-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/germany_flag.jpg   (ca22a1cb)
+2019-10-25T00:41:08.8128182+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:08.8378975+01:00 80000032-0000-e100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/logo-sm.png   (ca22a1cb)
+2019-10-25T00:41:08.8512061+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)" in 975.3021ms (afa2e885)
+2019-10-25T00:41:08.8539220+01:00 80000010-0001-ee00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/metisMenu.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\metisMenu.min.js"' (27b0a520)
+2019-10-25T00:41:08.8611746+01:00 8000007f-0000-f000-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/germany_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\germany_flag.jpg"' (27b0a520)
+2019-10-25T00:41:08.8843189+01:00 80000010-0001-ee00-b63f-84710c7967bb [INF] Request finished in 196.2203ms 200 application/javascript (791a596a)
+2019-10-25T00:41:08.8915275+01:00 8000007f-0000-f000-b63f-84710c7967bb [INF] Request finished in 220.7367ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:08.9115507+01:00 80000093-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/apexcharts/apexcharts.min.js   (ca22a1cb)
+2019-10-25T00:41:08.9220489+01:00 800000c8-0002-e100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/jquery.slimscroll.min.js   (ca22a1cb)
+2019-10-25T00:41:08.9426594+01:00 8000016b-0002-e300-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/waves.min.js   (ca22a1cb)
+2019-10-25T00:41:08.9487039+01:00 80000030-0002-ef00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js   (ca22a1cb)
+2019-10-25T00:41:08.9734571+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.DashboardController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:09.0506276+01:00 800000c8-0002-e100-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/jquery.slimscroll.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\jquery.slimscroll.min.js"' (27b0a520)
+2019-10-25T00:41:09.1277690+01:00 8000016b-0002-e300-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/waves.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\waves.min.js"' (27b0a520)
+2019-10-25T00:41:09.1529144+01:00 800000c8-0002-e100-b63f-84710c7967bb [INF] Request finished in 211.1546ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.1632854+01:00 80000039-0000-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/pages/jquery.hospital_dashboard.init.js   (ca22a1cb)
+2019-10-25T00:41:09.2169880+01:00 80000006-0002-de00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/dataTables.bootstrap4.min.js   (ca22a1cb)
+2019-10-25T00:41:09.2598304+01:00 8000016b-0002-e300-b63f-84710c7967bb [INF] Request finished in 300.9331ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.2836260+01:00 80000039-0000-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/pages/jquery.hospital_dashboard.init.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\pages\jquery.hospital_dashboard.init.js"' (27b0a520)
+2019-10-25T00:41:09.3996192+01:00 80000039-0000-f200-b63f-84710c7967bb [INF] Request finished in 208.8413ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.4092837+01:00 80000030-0002-ef00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\bootstrap-datepicker\bootstrap-datepicker.min.js"' (27b0a520)
+2019-10-25T00:41:09.4844087+01:00 800000c6-0001-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/app.js   (ca22a1cb)
+2019-10-25T00:41:09.5800174+01:00 80000035-0002-ea00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/plugins/datatables/jquery.dataTables.min.js   (ca22a1cb)
+2019-10-25T00:41:09.5923943+01:00 80000006-0002-de00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/dataTables.bootstrap4.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\dataTables.bootstrap4.min.js"' (27b0a520)
+2019-10-25T00:41:09.6256949+01:00 80000006-0002-de00-b63f-84710c7967bb [INF] Request finished in 410.5419ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.6463328+01:00 80000030-0002-ef00-b63f-84710c7967bb [INF] Request finished in 728.6633ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.6517167+01:00 80000032-0000-e100-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/logo-sm.png"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\logo-sm.png"' (27b0a520)
+2019-10-25T00:41:09.6590257+01:00 80000020-0001-f100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/italy_flag.jpg   (ca22a1cb)
+2019-10-25T00:41:09.6640060+01:00 800000c6-0001-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/app.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\app.js"' (27b0a520)
+2019-10-25T00:41:09.6707987+01:00 80000071-0001-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/french_flag.jpg   (ca22a1cb)
+2019-10-25T00:41:09.7581442+01:00 80000020-0001-f100-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/italy_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\italy_flag.jpg"' (27b0a520)
+2019-10-25T00:41:09.7667328+01:00 800000c6-0001-f600-b63f-84710c7967bb [INF] Request finished in 321.943ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.7852547+01:00 80000071-0001-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/french_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\french_flag.jpg"' (27b0a520)
+2019-10-25T00:41:09.8010197+01:00 80000020-0001-f100-b63f-84710c7967bb [INF] Request finished in 131.3781ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:09.8220082+01:00 80000071-0001-f200-b63f-84710c7967bb [INF] Request finished in 152.0837ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:09.8527169+01:00 80000009-0001-ec00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/russia_flag.jpg   (ca22a1cb)
+2019-10-25T00:41:09.8576166+01:00 8000016b-0001-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/js/bootbox.min.js   (ca22a1cb)
+2019-10-25T00:41:09.8892150+01:00 80000112-0001-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/users/user-4.jpg   (ca22a1cb)
+2019-10-25T00:41:09.8991973+01:00 80000006-0001-ef00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/images/flags/spain_flag.jpg   (ca22a1cb)
+2019-10-25T00:41:09.9249930+01:00 8000016b-0001-f900-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/bootbox.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\bootbox.min.js"' (27b0a520)
+2019-10-25T00:41:09.9420868+01:00 80000009-0001-ec00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/russia_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\russia_flag.jpg"' (27b0a520)
+2019-10-25T00:41:09.9841325+01:00 8000016b-0001-f900-b63f-84710c7967bb [INF] Request finished in 107.9164ms 200 application/javascript (791a596a)
+2019-10-25T00:41:09.9906498+01:00 80000009-0001-ec00-b63f-84710c7967bb [INF] Request finished in 154.6671ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:10.0689928+01:00 80000112-0001-f800-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/users/user-4.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\users\user-4.jpg"' (27b0a520)
+2019-10-25T00:41:10.0774201+01:00 8000001c-0000-ed00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/fonts/dripicons-v2.woff   (ca22a1cb)
+2019-10-25T00:41:10.0907481+01:00 80000072-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/assets/fonts/materialdesignicons-webfont.woff2?v=3.2.89   (ca22a1cb)
+2019-10-25T00:41:10.1189545+01:00 8000001c-0000-ed00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/fonts/dripicons-v2.woff"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\fonts\dripicons-v2.woff"' (27b0a520)
+2019-10-25T00:41:10.1276326+01:00 80000112-0001-f800-b63f-84710c7967bb [INF] Request finished in 260.8893ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:10.1470494+01:00 8000001c-0000-ed00-b63f-84710c7967bb [INF] Request finished in 88.9282ms 200 application/font-woff (791a596a)
+2019-10-25T00:41:10.1560569+01:00 80000006-0001-ef00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/images/flags/spain_flag.jpg"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\images\flags\spain_flag.jpg"' (27b0a520)
+2019-10-25T00:41:10.1840297+01:00 8000003b-0000-f900-b63f-84710c7967bb [INF] Request finished in 3522.3333ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-25T00:41:10.1855748+01:00 80000006-0001-ef00-b63f-84710c7967bb [INF] Request finished in 424.5143ms 200 image/jpeg (791a596a)
+2019-10-25T00:41:10.2161184+01:00 8000003d-0000-f900-b63f-84710c7967bb [INF] Request finished in 2762.2426ms 200 text/html; charset=utf-8 (791a596a)
+2019-10-25T00:41:10.2222259+01:00 80000018-0003-f600-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/jquery.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\jquery.min.js"' (27b0a520)
+2019-10-25T00:41:10.2418484+01:00 80000032-0000-e100-b63f-84710c7967bb [INF] Request finished in 1520.9544ms 200 image/png (791a596a)
+2019-10-25T00:41:10.2520753+01:00 80000018-0003-f600-b63f-84710c7967bb [INF] Request finished in 1580.2109ms 200 application/javascript (791a596a)
+2019-10-25T00:41:10.2590920+01:00 80000082-0003-ff00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/js/bootstrap.bundle.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\js\bootstrap.bundle.min.js"' (27b0a520)
+2019-10-25T00:41:10.4062800+01:00 80000035-0002-ea00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/datatables/jquery.dataTables.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\datatables\jquery.dataTables.min.js"' (27b0a520)
+2019-10-25T00:41:10.4171891+01:00 80000082-0003-ff00-b63f-84710c7967bb [INF] Request finished in 1622.6517ms 200 application/javascript (791a596a)
+2019-10-25T00:41:10.4479298+01:00 80000035-0002-ea00-b63f-84710c7967bb [INF] Request finished in 961.1275ms 200 application/javascript (791a596a)
+2019-10-25T00:41:10.4536286+01:00 80000072-0001-fa00-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/fonts/materialdesignicons-webfont.woff2"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\fonts\materialdesignicons-webfont.woff2"' (27b0a520)
+2019-10-25T00:41:10.5092886+01:00 80000072-0001-fa00-b63f-84710c7967bb [INF] Request finished in 434.6584ms 200 font/woff2 (791a596a)
+2019-10-25T00:41:10.5501660+01:00 80000093-0002-f700-b63f-84710c7967bb [INF] Sending file. Request path: '"/assets/plugins/apexcharts/apexcharts.min.js"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\assets\plugins\apexcharts\apexcharts.min.js"' (27b0a520)
+2019-10-25T00:41:10.5662074+01:00 80000093-0002-f700-b63f-84710c7967bb [INF] Request finished in 1654.2913ms 200 application/javascript (791a596a)
+2019-10-25T00:41:48.6101472+01:00 80000169-0001-f900-b63f-84710c7967bb [ERR] An error occurred using the connection to database '"NaijaStartUp"' on server '"mssql.politicalaffairsmagazine.com"'. (5fc3407c)
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2019-10-25T00:41:48.8490841+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Executed DbCommand ("397"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-10-25T00:41:48.8577419+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed DbCommand ("330"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:48.9010790+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed DbCommand ("341"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[Address], [u].[Country], [u].[CreationTime], [u].[CreatorUserId], [u].[DeletionTime], [u].[DeletionUserId], [u].[FirstName], [u].[IsActive], [u].[IsDeleted], [u].[LastName], [u].[ModificationTime], [u].[ModificationUserId], [u].[Role], [u].[State]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'User') AND ([u].[NormalizedUserName] = @__normalizedUserName_0)" (0723d8ff)
+2019-10-25T00:41:48.9440395+01:00 80000169-0001-f900-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"NaijaStartupApp.Data.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2019-10-25T00:41:49.0765265+01:00 80000169-0001-f900-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"NaijaStartupApp.Data.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2019-10-25T00:41:49.1347093+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Executed DbCommand ("234"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:49.2901752+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed DbCommand ("229"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:49.3953096+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Executing endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (500cc934)
+2019-10-25T00:41:49.4148048+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:49.4203893+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Route matched with "{action = \"Index\", controller = \"Account\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Boolean] Index(System.String, System.String, Boolean)" on controller "NaijaStartupApp.Controllers.AccountController" ("NaijaStartupApp"). (122b2fdf)
+2019-10-25T00:41:49.4340113+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed DbCommand ("444"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-10-25T00:41:49.5978831+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-10-25T00:41:49.6041269+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 45792.7076ms. (50a9e262)
+2019-10-25T00:41:49.6173766+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:49.6271706+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 46602.4823ms (afa2e885)
+2019-10-25T00:41:49.6405576+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:49.6496421+01:00 80000169-0001-f900-b63f-84710c7967bb [INF] Request finished in 49217.8323ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:49.6831016+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed DbCommand ("250"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:49.6943788+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 45563.4005ms. (50a9e262)
+2019-10-25T00:41:49.7110309+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:49.7331689+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 45824.235ms (afa2e885)
+2019-10-25T00:41:49.7655054+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:49.8336709+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Committing the session was canceled. (12038ba6)
+2019-10-25T00:41:49.8822849+01:00 80000169-0002-e300-b63f-84710c7967bb [INF] Request finished in 46762.2707ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:50.0443053+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed DbCommand ("384"ms) [Parameters=["@__emailOrUsername_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[ConcurrencyStamp], [x].[Discriminator], [x].[Email], [x].[EmailConfirmed], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName], [x].[Address], [x].[Country], [x].[CreationTime], [x].[CreatorUserId], [x].[DeletionTime], [x].[DeletionUserId], [x].[FirstName], [x].[IsActive], [x].[IsDeleted], [x].[LastName], [x].[ModificationTime], [x].[ModificationUserId], [x].[Role], [x].[State]
+FROM [AspNetUsers] AS [x]
+WHERE ([x].[Discriminator] = N'User') AND (([x].[Email] = @__emailOrUsername_0) OR ([x].[UserName] = @__emailOrUsername_0))" (0723d8ff)
+2019-10-25T00:41:50.0666202+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed action method "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 44808.3481ms. (50a9e262)
+2019-10-25T00:41:50.0889282+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 659.5554ms (afa2e885)
+2019-10-25T00:41:50.0935124+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-10-25T00:41:50.1075253+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed action "NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)" in 45581.485ms (afa2e885)
+2019-10-25T00:41:50.1102274+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:50.1205927+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Executed endpoint '"NaijaStartupApp.Controllers.AccountController.Index (NaijaStartupApp)"' (99874f2b)
+2019-10-25T00:41:50.1444365+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Committing the session was canceled. (12038ba6)
+2019-10-25T00:41:50.1607518+01:00 8000007d-0000-f000-b63f-84710c7967bb [INF] Request finished in 54169.5614ms 200 application/json; charset=utf-8 (791a596a)
+2019-10-25T00:41:50.2717719+01:00 80000030-0000-e100-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected ---> System.Runtime.InteropServices.COMException: An operation was attempted on a nonexistent network connection. (Exception from HRESULT: 0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.StreamReader.ReadBufferAsync()
+   at System.IO.StreamReader.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormReader.BufferAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormReader.ReadNextPairAsyncImpl(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormReader.ReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.FormValueProviderFactory.AddValueProviderAsync(ValueProviderFactoryContext context)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.CompositeValueProvider.CreateAsync(ActionContext actionContext, IList`1 factories)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.CompositeValueProvider.CreateAsync(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-10-25T00:41:50.4107668+01:00 80000030-0000-e100-b63f-84710c7967bb [INF] Request finished in 46471.1596ms 500 text/html; charset=utf-8 (791a596a)

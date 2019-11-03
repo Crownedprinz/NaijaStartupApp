@@ -41,7 +41,22 @@ namespace NaijaStartupApp.Models
             public string DeletionUserId { get; set; }
             public bool IsDeleted { get; set; }
         }
-          public class Contact
+
+        public class Incentives
+        {
+            public int Id { get; set; }
+            public string IncentiveName { get; set; }
+            public string Description { get; set; }
+
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
+        public class Contact
         {
             public int Id { get; set; }
             public string FullName { get; set; }
@@ -68,6 +83,7 @@ namespace NaijaStartupApp.Models
             public string AlternateCompanyName { get; set; }
 
             public List<Payments> Payments { get; set; }
+            public List<Comp_Incentives> Comp_Incentives { get; set; }
             public string AlternateCompanyType { get; set; }
             public string FinancialYearEnd { get; set; }
             public Package Package { get; set; }
@@ -86,6 +102,7 @@ namespace NaijaStartupApp.Models
             public string ShareHolderName { get; set; }
             public int NoOfSharesIssue { get; set; }
             public bool RegCompleted { get; set; }
+            public bool IsCacAvailable { get; set; }
             public Decimal SharePrice { get; set; }
             public Decimal SharesAllocated { get; set; }
             public DateTime CreationTime { get; set; }
@@ -99,6 +116,7 @@ namespace NaijaStartupApp.Models
             public List<Company_Officers> company_Officers { get; set; }
         }
 
+       
         public class AddOnService
         {
             [Key]
@@ -165,5 +183,54 @@ namespace NaijaStartupApp.Models
             public string DeletionUserId { get; set; }
             public bool IsDeleted { get; set; }
         }
+        public class Comp_Incentives
+        {
+            public int Id { get; set; }
+            public Incentives Incentive { get; set; }
+            public Company_Registration Registration { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
+
+        public class ChatHeader
+        {
+            public int Id { get; set; }
+            public User User { get; set; }
+            public Company_Registration Company { get; set; }
+            public string Group { get; set; }
+            public string Subject { get; set; }
+            public List<ChatThread> ChatThread { get; set; }
+            public string Body { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
+
+
+        public class ChatThread
+        {
+            public int Id { get; set; }
+            public User User { get; set; }
+            public ChatHeader Chat { get; set; }
+            public string Body { get; set; }
+            public bool IsRead { get; set; }
+            public DateTime CreationTime { get; set; }
+            public string CreatorUserId { get; set; }
+            public DateTime ModificationTime { get; set; }
+            public string ModificationUserId { get; set; }
+            public DateTime DeletionTime { get; set; }
+            public string DeletionUserId { get; set; }
+            public bool IsDeleted { get; set; }
+        }
+
     }
 }

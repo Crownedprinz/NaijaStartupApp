@@ -21,6 +21,10 @@ namespace NaijaStartupApp.Data
         public virtual DbSet<AddOnService> AddOnService { get; set; }
         public virtual DbSet<Payments> Payments { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Incentives> Incentives { get; set; }
+        public virtual DbSet<Comp_Incentives> Comp_Incentives { get; set; }
+        public virtual DbSet<ChatHeader> ChatHeader { get; set; }
+        public virtual DbSet<ChatThread> ChatThread { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -206,6 +210,181 @@ namespace NaijaStartupApp.Data
 
             });
             modelBuilder.Entity<Payments>(entity =>
+            {
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+            });
+            modelBuilder.Entity<Package>(entity =>
+            {
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+            });
+            modelBuilder.Entity<Incentives>(entity =>
+            {
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+            });
+            modelBuilder.Entity<Comp_Incentives>(entity =>
+            {
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+            });
+            modelBuilder.Entity<ChatHeader>(entity =>
+            {
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnType("bit")
+                    .HasDefaultValueSql("0");
+
+                entity.Property(e => e.CreationTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.DeletionTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+                entity.Property(e => e.ModificationTime)
+                   .HasColumnType("datetime")
+                   .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.ModificationUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+                entity.Property(e => e.DeletionUserId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("('')");
+
+            });
+            modelBuilder.Entity<ChatThread>(entity =>
             {
 
                 entity.Property(e => e.IsDeleted)

@@ -13,12 +13,13 @@ using Newtonsoft.Json;
 using PayStack.Net;
 using static NaijaStartupApp.Models.NsuDtos;
 using static NaijaStartupApp.Models.NsuVariables;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace NaijaStartupApp.Controllers
 {
     public class DashboardController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private AppSettings _appSettings;
         private readonly IUserService _userService;
         private readonly ICompanyService _companyService;
@@ -26,7 +27,7 @@ namespace NaijaStartupApp.Controllers
         TemporaryVariables _temporaryVariables;
         public DashboardController(ApplicationDbContext context,
             IOptions<AppSettings> appsettings,
-            IUserService userService,IHttpContextAccessor hcontext,
+            IUserService userService, IHttpContextAccessor hcontext,
             ICompanyService companyService)
         {
             _context = context;
@@ -66,35 +67,30 @@ namespace NaijaStartupApp.Controllers
         {
             int count = 0;
 
-            return View(_context.Company_Registration.Where((x => x.IsDeleted == false)).OrderByDescending(s => s.CreationTime)
+            return View(_context.Company_Registration.Include(x => x.User).Where((x => x.IsDeleted == false && x.IsCacAvailable == true && x.User.Id.Equals(_globalVariables.userid) && x.RegCompleted == true)).OrderByDescending(s => s.CreationTime)
                 .Select(x => new TemporaryVariables
                 {
                     string_var0 = x.CompanyName,
+                    string_var5 = x.CompanyType,
                     date_var0 = x.CreationTime,
                     string_var1 = x.FinancialYearEnd,
                     string_var2 = x.Address1,
                     string_var3 = x.Id.ToString(),
                     string_var4 = x.ApprovalStatus,
                     string_var10 = x.CacRegistrationNumber,
-                    bool_var0 = x.RegCompleted,
+                    bool_var2 = x.RegCompleted,
+                    bool_var0 = x.IsCacAvailable
                 }).ToList());
         }
         [HttpGet]
-        public ActionResult edit_companies()
+        public async Task<ActionResult> edit_companies(string Id)
         {
-            return View();
-        }
-        [HttpPut]
-        public async Task<bool> edit_companies(string Id)
-        {
-            var company = await _context.Company_Registration.FindAsync(Id);
+            var company = await _context.Company_Registration.FindAsync(Guid.Parse(Id));
             if (company != null)
             {
-                return true;
+
             }
-            else
-                return false;
-            return false;
+            return View();
         }
         [HttpDelete]
         public async Task<bool> delete_companies(string Id)
@@ -104,6 +100,8 @@ namespace NaijaStartupApp.Controllers
             {
                 company.IsDeleted = true;
                 company.ModificationTime = DateTime.Now;
+                _context.Update(company);
+                await _context.SaveChangesAsync();
                 return true;
             }
             else
@@ -120,7 +118,7 @@ namespace NaijaStartupApp.Controllers
         }
         public ActionResult all_payments()
         {
-            return View(_context.Payments.Include(x=>x.Registration).Where((x => x.IsDeleted == false)).OrderByDescending(s => s.CreationTime)
+            return View(_context.Payments.Include(x => x.Registration).Where((x => x.IsDeleted == false)).OrderByDescending(s => s.CreationTime)
                 .Select(x => new TemporaryVariables
                 {
                     string_var0 = x.Id.ToString(),
@@ -134,10 +132,10 @@ namespace NaijaStartupApp.Controllers
         }
         public ActionResult admin_companies()
         {
-            return View(_context.Company_Registration.Include(x => x.Package).Include(s=>s.User).Where((x => x.IsDeleted == false)).OrderByDescending(s => s.CreationTime)
+            return View(_context.Company_Registration.Include(x => x.Package).Include(s => s.User).Where((x => x.IsDeleted == false && x.IsCacAvailable == true && x.RegCompleted == true)).OrderByDescending(s => s.CreationTime)
                 .Select(x => new TemporaryVariables
                 {
-                    string_var0 = x.User.FirstName +" "+x.User.LastName,
+                    string_var0 = x.User.FirstName + " " + x.User.LastName,
                     string_var1 = x.User.Email,
                     string_var2 = x.CompanyName,
                     string_var3 = x.CompanyType,
@@ -145,8 +143,168 @@ namespace NaijaStartupApp.Controllers
                     string_var5 = x.ApprovalStatus,
                     date_var0 = x.CreationTime,
                     string_var6 = x.ApprovalStatus,
-                    string_var7 = x.Id.ToString()
+                    string_var7 = x.Id.ToString(),
                 }).ToList());
+        }
+        public async Task<ActionResult> incentives()
+        {
+
+            return View(await _context.Incentives.Where(x => x.IsDeleted == false).OrderByDescending(s => s.CreationTime).
+                            Select(x => new TemporaryVariables
+                            {
+                                int_var0 = x.Id,
+                                string_var0 = x.IncentiveName,
+                                string_var1 = x.Description,
+                                string_var2 = "",
+                                date_var0 = x.CreationTime,
+                            }).ToListAsync());
+        }
+
+        public async Task<ActionResult> view_incentives(int Id)
+        {
+            var inc = await _context.Incentives.FindAsync(Id);
+            var temp = new TemporaryVariables
+            {
+                string_var0 = inc.IncentiveName,
+                string_var1 = inc.Description,
+            };
+            return View("new_incentive", temp);
+        }
+
+        public async Task<bool> delete_incentives(int Id)
+        {
+            var company = await _context.Incentives.FindAsync(Id);
+            if (company != null)
+            {
+                company.IsDeleted = true;
+                company.ModificationTime = DateTime.Now;
+                _context.Update(company);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            else
+                return false;
+            return false;
+        }
+
+
+        public ActionResult new_incentive()
+        {
+            return View();
+        }
+
+        public async Task<ActionResult> attach_incentives(string Id)
+        {
+            TemporaryVariables Input = new TemporaryVariables
+            {
+                string_var0 = Id
+            };
+            var get_inc = await _context.Comp_Incentives.Include(s => s.Registration).Where(x => x.Registration.Id.ToString() == Id && x.IsDeleted == false).ToListAsync();
+            var list2 = (from compIn in _context.Comp_Incentives
+                         join incents in _context.Incentives
+                         on new { a1 = compIn.Incentive.Id } equals new { a1 = incents.Id }
+                         into incents1
+                         from incents2 in incents1.DefaultIfEmpty()
+                         where compIn.Registration.Id.ToString() == Id && compIn.IsDeleted == false
+                         select new { c1 = compIn.Incentive.Id, c2 = incents2.IncentiveName }).ToList();
+            ViewBag.list2 = new SelectList(list2, "c1", "c2");
+
+            var list1 = (from incents in _context.Incentives
+                         join compIn in _context.Comp_Incentives
+                         on new { a1 = incents.Id } equals new { a1 = compIn.Incentive.Id }
+                         into compIn1
+                         from compIn2 in compIn1.DefaultIfEmpty()
+                         where incents.IsDeleted == false && incents.Id != compIn2.Incentive.Id
+                         select new { c1 = incents.Id, c2 = incents.IncentiveName }).ToList();
+            ViewBag.list1 = new SelectList(list1, "c1", "c2");
+            return View(Input);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> attach_incentives(TemporaryVariables Input, int[] snumber2)
+        {
+
+            var compInt = _context.Comp_Incentives.Where(x=>x.Registration.Id ==Guid.Parse(Input.string_var0)).ToList();
+            _context.Comp_Incentives.RemoveRange(compInt);
+            await _context.SaveChangesAsync();
+
+            var comp = await _context.Company_Registration.Where(x => x.Id == Guid.Parse(Input.string_var0)).FirstOrDefaultAsync();
+            
+            if (snumber2 != null)
+            {
+                foreach (var bh in snumber2)
+                {
+                    var inc = await _context.Incentives.Where(x => x.Id == bh).FirstOrDefaultAsync();
+                    var temp = new Comp_Incentives
+                    {
+                        Incentive = inc,
+                        Registration = comp,
+                    };
+                    await _context.AddAsync(temp);
+                }
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("attach_incentives",new { Id = Input.string_var0 });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> new_incentive(TemporaryVariables Input)
+        {
+            Incentives inc = new Incentives
+            {
+                IncentiveName = Input.string_var0,
+                Description = Input.string_var1,
+                CreationTime = DateTime.Now,
+                CreatorUserId = _globalVariables.userid,
+            };
+            try
+            {
+                await _context.AddAsync(inc);
+                await _context.SaveChangesAsync();
+            }catch(Exception ex)
+            {
+
+            }
+            return View(Input);
+        }
+
+        public ActionResult unconfirmed_companies()
+        {
+            if (_globalVariables.RoleId == "Admin")
+            {
+                return View("admin_companies",_context.Company_Registration.Include(x => x.Package).Include(s => s.User).Where((x => x.IsDeleted == false && x.IsCacAvailable == false)).OrderByDescending(s => s.CreationTime)
+                    .Select(x => new TemporaryVariables
+                    {
+                        string_var0 = x.User.FirstName + " " + x.User.LastName,
+                        string_var1 = x.User.Email,
+                        string_var2 = x.CompanyName,
+                        string_var3 = x.CompanyType,
+                        string_var4 = x.Package.PackageName,
+                        string_var5 = x.ApprovalStatus,
+                        date_var0 = x.CreationTime,
+                        string_var6 = x.ApprovalStatus,
+                        string_var7 = x.Id.ToString()
+                    }).ToList());
+            }
+            else
+            {
+
+                return View("all_companies", _context.Company_Registration.Include(x => x.Package).Include(s => s.User).Where((x => x.IsDeleted == false && x.IsCacAvailable == true && x.User.Id.Equals(_globalVariables.userid) && x.RegCompleted == false)).OrderByDescending(s => s.CreationTime)
+                   .Select(x => new TemporaryVariables
+                   {
+                       string_var0 = x.CompanyName,
+                       string_var5 = x.CompanyType,
+                       date_var0 = x.CreationTime,
+                       string_var1 = x.FinancialYearEnd,
+                       string_var2 = x.Address1,
+                       string_var3 = x.Id.ToString(),
+                       string_var4 = x.ApprovalStatus,  
+                       string_var10 = x.CacRegistrationNumber,
+                       bool_var2 = x.RegCompleted,
+                       bool_var0 = x.IsCacAvailable
+
+                   }).ToList());
+            }
         }
 
         [HttpPost]
@@ -157,6 +315,7 @@ namespace NaijaStartupApp.Controllers
             {
                 company.ApprovalStatus = "Confirmed";
                 company.ModificationTime = DateTime.Now;
+                company.IsCacAvailable = true;
                 company.ModificationUserId = _globalVariables.userid;
 
                 _context.Update(company);
@@ -169,7 +328,7 @@ namespace NaijaStartupApp.Controllers
         public async Task<ActionResult> view_company(string Id)
         {
             var companyInfo = new TemporaryVariables();
-            var company = await _context.Company_Registration.Include(x => x.Package).Include(s => s.addOnServices).Include(o => o.company_Officers).Where(x => x.Id.ToString() == Id).FirstOrDefaultAsync();
+            var company = await _context.Company_Registration.Include(x => x.Package).Include(s => s.addOnServices).Include(o => o.company_Officers).Include(x=>x.Comp_Incentives).ThenInclude(s=>s.Incentive).Where(x => x.Id.ToString() == Id).FirstOrDefaultAsync();
             if (company != null)
             {
                 companyInfo = new TemporaryVariables
@@ -189,6 +348,7 @@ namespace NaijaStartupApp.Controllers
                     string_var10 = company.Package.PackageName,
                     string_var11 = company.Package.CreationTime.ToString(),
                     string_var12 = company.Package.Price.ToString(),
+                    string_var15 = company.Id.ToString(),
                 };
                 if (company.company_Officers != null && company.company_Officers.Any())
                 {
@@ -225,7 +385,17 @@ namespace NaijaStartupApp.Controllers
                         companyInfo.string_var14 += officers;
                     }
                 }
+                if(company.Comp_Incentives != null && company.Comp_Incentives.Any())
+                {
+                    foreach (var item in company.Comp_Incentives)
+                    {
+                        string incentives = "<tr><td>" + item.Incentive.IncentiveName + "</td>";
+                        incentives += "<td class='text-center'>" + item.Incentive.Description + "</td>";
+                        incentives += "<td class='text-right'>" + item.CreationTime + "</td></tr>";
+                        companyInfo.string_var16 += incentives;
+                }
             }
+        }
             return View(companyInfo);
         }
 
@@ -237,13 +407,22 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
-        public ActionResult new_company()
+        public async Task<ActionResult> new_company(string Id)
         {
             TemporaryVariables tempValues = new TemporaryVariables
             {
                 bool_var0 = false,
                 list_var0 = new List<string>()
             };
+            if (!string.IsNullOrWhiteSpace(Id))
+            {
+                var company = await _context.Company_Registration.FindAsync(Guid.Parse(Id));
+                if (company != null)
+                {
+                    return View(tempValues = new TemporaryVariables {string_var0=company.CompanyName, string_var10= company.CompanyType, bool_var0=true,list_var0=new List<string>() });
+                }
+                
+            }
             if (_temporaryVariables !=null)
             {
                 if (_temporaryVariables.string_var1 != null)
@@ -262,13 +441,14 @@ namespace NaijaStartupApp.Controllers
                 string table = "<tr><td colspan='5' class='text-left text-bold'>Similar Match</td></tr>";
                 _temporaryVariables.string_var1 = Input.string_var0 + " " + Input.string_var10;
                 HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
-                var exComp = _context.Company_Registration.Where(x => x.CompanyName.Equals(Input.string_var0) && x.IsDeleted == false && x.RegCompleted == true).Select(e => e.CompanyName).FirstOrDefault();
+                var exComp = _context.Company_Registration.Where(x => x.CompanyName.Equals(Input.string_var0) && x.CompanyType.Equals(Input.string_var10) && x.IsDeleted == false && x.RegCompleted == true).FirstOrDefault();
                 if (exComp != null)
                 {
                     var simCopanies = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).ToList();
 
                     Input.bool_var0 = false;
                     Input.bool_var1 = true;
+                    Input.bool_var2 = false;
                     foreach (var item in simCopanies)
                     {
                         Input.list_var0.Add(item.CompanyName);
@@ -280,6 +460,28 @@ namespace NaijaStartupApp.Controllers
                 }
                 else
                 {
+                    exComp = _context.Company_Registration.Include(x=>x.User).Where(x => x.CompanyName.Equals(Input.string_var0) && x.CompanyType.Equals(Input.string_var10) && x.IsDeleted == false && x.RegCompleted==false && x.IsCacAvailable==false).FirstOrDefault();
+                    if (exComp != null)
+                    {
+                        if(exComp.User.Id != _globalVariables.userid)
+                            Input.bool_var1 = true;
+                        else
+                            Input.bool_var3 = true;
+                        var simCopanies1 = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).ToList();
+                            foreach (var item in simCopanies1)
+                            {
+                                Input.list_var0.Add(item.CompanyName);
+                                table = "<td>" + count + "</td><td class='gray-bg'>" + item.CompanyName + "</td><td>" + item.CompanyType + "</td><td class='gray-bg'>" + item.CreationTime.ToString("dd MMMM yyyy") + "</td><td>" + item.ApprovalStatus + "</td>";
+                                Input.string_var2 += table;
+                                count++;
+                            }
+                            if (string.IsNullOrWhiteSpace(Input.string_var2))
+                                Input.string_var2 = table;
+                            Input.bool_var0 = false;
+                            Input.bool_var2 = false;
+                            return View(Input);
+                    }
+
                     count = 1;
                     var simCopanies = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).ToList();
                     foreach (var item in simCopanies)
@@ -291,8 +493,9 @@ namespace NaijaStartupApp.Controllers
                     }
                     if (string.IsNullOrWhiteSpace(Input.string_var2))
                         Input.string_var2 = table;
-                    Input.bool_var0 = true;
+                    Input.bool_var0 = false;
                     Input.bool_var1 = false;
+                    Input.bool_var2 = true;
                     return View(Input);
                 }
             }
@@ -318,7 +521,9 @@ namespace NaijaStartupApp.Controllers
                         CompanyType = Type,
                         IsDeleted = false,
                         User = await _userService.get_User(_globalVariables.userid),
-                        ApprovalStatus = "Processing",
+                        ApprovalStatus = "Awaiting Confirmation",
+                        IsCacAvailable =false,
+                        CreationTime = DateTime.Now
                     };
                     try
                     {
@@ -639,10 +844,138 @@ namespace NaijaStartupApp.Controllers
         {
             return View();
         }
-        public ActionResult chat()
+        public async Task<ActionResult> chat(int Id)
         {
-            return View();
+            int count = 0;
+            var user = await _userService.get_User_By_Session();
+            var temp = new TemporaryVariables
+            {
+                ChatModel = new ChatModel
+                {
+                    ViewChatList = new List<ChatModel.ChatList>(),
+                    ViewChatDetails = new List<ChatModel.ChatDetails>(),
+                }
+            };
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false && s.User == user).OrderByDescending(m=>m.CreationTime).ToListAsync();
+            foreach(var item in chats)
+            {
+                count = 0;
+                foreach (var x in item.ChatThread)
+                {
+                //    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                //    {
+                //        Message1 = x.Body,
+                //    });
+                    if (!x.IsRead)
+                        count++;
+                }
+                temp.ChatModel.ViewChatList.Add(new ChatModel.ChatList
+                {
+                    Date = item.CreationTime,
+                    Status = item.Group,
+                    TicketNumber = item.Id,
+                    NoOfNew = count
+                });
+                
+                
+            };
+            if (Id != 0)
+            {
+                
+                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                temp.int_var0 = getChatById.Id;
+                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                {
+                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                    {
+                        Message1 = x.Body,
+                        User = x.User.Role,
+                    });
+                    if (x.User == user)
+                    {
+                        x.IsRead = true;
+                        _context.Update(x);
+                    }
+                }
+                await _context.SaveChangesAsync();
+            }
+            
+            temp.string_var0 = user.FirstName + " " + user.LastName;
+            return View(temp);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> chat(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var chat =await  _context.ChatHeader.FindAsync(Input.int_var0);
+                var ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var2,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id,
+                        Chat = chat,
+                    }
+                    };
+                await _context.AddRangeAsync(ChatThread);
+                await _context.SaveChangesAsync();
+                Input.string_var2 = "";
+            }
+            return RedirectToAction("chat", new { Id = Input.int_var0 });
+        }
+
+         public async Task<ActionResult> new_ticket()
+        {
+            var user = await _userService.get_User_By_Session();
+            var Input = new TemporaryVariables
+            {
+                string_var0 = user.FirstName + " " + user.LastName,
+                string_var1 = user.Email
+            };
+            var companies = from bg in await _companyService.GetCompanies()
+                            select new { c1 = bg.Id.ToString(), c2 = bg.CompanyName + " " + bg.CompanyType };
+            ViewBag.companies = new SelectList(companies, "c1","c2");
+            return View(Input);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> new_ticket(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var cHeader = new ChatHeader
+                {
+                    User = user,
+                    Company = string.IsNullOrWhiteSpace(Input.string_var3)?null: await _companyService.GetCompanyById(Guid.Parse(Input.string_var3)),
+                    CreationTime = DateTime.Now,
+                    CreatorUserId = user.Id,
+                    Subject = Input.string_var2,
+                    Body = Input.string_var4,
+                    Group="New",
+                    ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var4,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id
+                    }
+                    }
+                };
+                await _context.AddAsync(cHeader);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("chat");
+        }
+
+
         public ActionResult departments()
         {
             return View();

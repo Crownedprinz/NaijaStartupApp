@@ -1,0 +1,94 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
+    ViewData["Title"] = "attach_incentives";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">new_incentive</a></li>
+                            <li class="breadcrumb-item active">Add Incentive</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Add Incentive</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <div class="">
+                            <form role="form" method="post" enctype="multipart/form-data">
+                                <div class="form-horizontal form-material mb-0">
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            @Html.TextBoxFor(m => m.string_var0, new { @class = "form-control required", @placeholder = "Incentive Name", id = "id_name", name = "incentive_name", @disabled = "disabled" })
+                                            @Html.HiddenFor(m => m.string_var0)
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-sm-offset-1">Menu Options</div>
+                                        <div class="col-sm-3 col-sm-offset-4">Selected Options</div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-sm-offset-1">
+                                            @Html.DropDownList("snumber1", ViewBag.list1 as SelectList, new { @class = "basket form-control", id = "list1", size = 12, multiple = "multiple" })
+                                        </div>
+                                        <div class="col-sm-1 vert-align ">
+                                            <br /><br /><br />
+                                            @*            <input type="image" src='../../images/agt_reload.png'  id="sidearrow"/>*@
+                                            <button type="button" class="btn btn-success col-sm-12 " id="btnx-right"><i class="fa fa-chevron-right"></i>  </button><br /><br /><br />
+                                            <button type="button" class="btn btn-warning col-sm-12 " id="btnx-left"><i class="fa fa-chevron-left"></i>  </button><br />
+                                        </div>
+                                        <div class="col-sm-3 ">
+                                            @*<select class="form-control mypadding " id="list2" name="snumber2" size=10 multiple="multiple"> <option value=""></option> </select>*@
+                                            @Html.DropDownList("snumber2", ViewBag.list2 as SelectList, new { @class = "basket form-control", id = "list2", size = 12, multiple = "multiple", rows = 6 })
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ActionLink("Cancel", "admin_companies", new { Id = Model.string_var0 }, new { @class = "btn btn-danger btn-sm text-light px-4 mt-3 float-right mb-0 ml-2" })
+                                        <button type="submit" id="sub" class="btn btn-primary btn-sm text-light px-4 mt-3 float-right mb-0">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
+
+@section Scripts{
+    <script>
+        $('#btnx-right').click(function () {
+            $('#list2 option').prop('selected', true);
+            });
+        $('#sub').click(function () {
+
+             $("select option").attr("selected", "true");
+                $('#list2 option').prop('selected', true);
+        });
+    </script>
+
+}

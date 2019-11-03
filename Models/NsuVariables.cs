@@ -44,6 +44,9 @@ namespace NaijaStartupApp.Models
             public bool bool_var0 { get; set; }
             public bool bool_var1 { get; set; }
             public bool bool_var2 { get; set; }
+            public bool bool_var3 { get; set; }
+            public bool bool_var4 { get; set; }
+            public bool bool_var5 { get; set; }
 
             public decimal decimal_var0 { get; set; }
             public decimal decimal_var1 { get; set; }
@@ -66,6 +69,7 @@ namespace NaijaStartupApp.Models
             public string idrep { get; set; }
 
             public string ApprovalLevelStatus { get; set; }
+            public ChatModel ChatModel { get; set; }
         }
 
         public class GlobalVariables
@@ -80,6 +84,29 @@ namespace NaijaStartupApp.Models
             public string RoleId { get; set; }
             public int ApprovalLevel { get; set; }
 
+        }
+
+        public class ChatModel
+        {
+            public List<ChatList> ViewChatList { get; set; }
+            public List<ChatDetails> ViewChatDetails { get; set; }
+            public string Response { get; set; }
+            public class ChatList
+            {
+                public int TicketNumber { get; set; }
+                public byte[] Image { get; set; }
+                public string Status { get; set; }
+                public int NoOfNew { get; set; }
+                public DateTime Date { get; set; }
+            }
+            public class ChatDetails
+            {
+                public byte[] Image { get; set; }
+                public string Message1 { get; set; }
+                public string Message2 { get; set; }
+                public string User { get; set; }
+                
+            }
         }
 
     }

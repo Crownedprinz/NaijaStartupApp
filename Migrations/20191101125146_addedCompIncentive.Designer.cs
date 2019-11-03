@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NaijaStartupApp.Data;
 
 namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191101125146_addedCompIncentive")]
+    partial class addedCompIncentive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,136 +255,6 @@ namespace NaijaStartupApp.Migrations
                     b.ToTable("AddOnService");
                 });
 
-            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+ChatHeader", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Body");
-
-                    b.Property<Guid?>("CompanyId");
-
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("CreatorUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<DateTime>("DeletionTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("DeletionUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Group");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<DateTime>("ModificationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("ModificationUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Subject");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ChatHeader");
-                });
-
-            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+ChatThread", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Body");
-
-                    b.Property<int?>("ChatId");
-
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("CreatorUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<DateTime>("DeletionTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("DeletionUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool>("IsRead");
-
-                    b.Property<DateTime>("ModificationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
-
-                    b.Property<string>("ModificationUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ChatId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ChatThread");
-                });
-
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Comp_Incentives", b =>
                 {
                     b.Property<int>("Id")
@@ -413,7 +285,7 @@ namespace NaijaStartupApp.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
-                    b.Property<int?>("IncentiveId");
+                    b.Property<int>("IncentiveId");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -435,8 +307,6 @@ namespace NaijaStartupApp.Migrations
                     b.Property<Guid?>("RegistrationId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IncentiveId");
 
                     b.HasIndex("RegistrationId");
 
@@ -701,50 +571,23 @@ namespace NaijaStartupApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
+                    b.Property<DateTime>("CreationTime");
 
-                    b.Property<string>("CreatorUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                    b.Property<string>("CreatorUserId");
 
-                    b.Property<DateTime>("DeletionTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
+                    b.Property<DateTime>("DeletionTime");
 
-                    b.Property<string>("DeletionUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                    b.Property<string>("DeletionUserId");
 
                     b.Property<string>("Description");
 
                     b.Property<string>("IncentiveName");
 
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
+                    b.Property<bool>("IsDeleted");
 
-                    b.Property<DateTime>("ModificationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
+                    b.Property<DateTime>("ModificationTime");
 
-                    b.Property<string>("ModificationUserId")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("('')")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                    b.Property<string>("ModificationUserId");
 
                     b.HasKey("Id");
 
@@ -967,36 +810,10 @@ namespace NaijaStartupApp.Migrations
                         .HasForeignKey("RegistrationId");
                 });
 
-            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+ChatHeader", b =>
-                {
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+Company_Registration", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId");
-
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+ChatThread", b =>
-                {
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+ChatHeader", "Chat")
-                        .WithMany()
-                        .HasForeignKey("ChatId");
-
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
             modelBuilder.Entity("NaijaStartupApp.Models.NsuDtos+Comp_Incentives", b =>
                 {
-                    b.HasOne("NaijaStartupApp.Models.NsuDtos+Incentives", "Incentive")
-                        .WithMany()
-                        .HasForeignKey("IncentiveId");
-
                     b.HasOne("NaijaStartupApp.Models.NsuDtos+Company_Registration", "Registration")
-                        .WithMany("Comp_Incentives")
+                        .WithMany()
                         .HasForeignKey("RegistrationId");
                 });
 

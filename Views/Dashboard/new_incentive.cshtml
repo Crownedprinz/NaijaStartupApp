@@ -1,0 +1,57 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
+    ViewData["Title"] = "new_incentive";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="float-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">new_incentive</a></li>
+                            <li class="breadcrumb-item active">Add Incentive</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Add Incentive</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <div class="">
+                            <form role="form" method="post" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(m => m.string_var0, new { @class = "form-control required", @placeholder = "Incentive Name", id = "id_name", name = "incentive_name", required = "required" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                     @Html.TextAreaFor(m => m.string_var1, new { @class = "form-control required", @placeholder = "Incentive Description", id = "incentive_desc", name = "incentive_desc", rows = "5", required = "required" })
+                                    <button class="btn btn-danger btn-sm text-light px-4 mt-3 float-right mb-0 ml-2">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-sm text-light px-4 mt-3 float-right mb-0">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

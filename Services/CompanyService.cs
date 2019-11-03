@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NaijaStartupApp.Data;
@@ -20,6 +21,8 @@ namespace NaijaStartupApp.Services
     public interface ICompanyService
     {
          int Company_Count();
+        Task<List<Company_Registration>> GetCompanies();
+        Task<Company_Registration> GetCompanyById(Guid Id);
 
     }
     public class CompanyService : ICompanyService
@@ -48,6 +51,15 @@ namespace NaijaStartupApp.Services
         public int Company_Count()
         {
             return _context.Company_Registration.Where(x =>x.User.Id == _globalVariables.userid && x.RegCompleted ==true).Count();
+        }
+
+        public async Task<List<Company_Registration>> GetCompanies()
+        {
+            return  await _context.Company_Registration.Where(x => x.User.Id == _globalVariables.userid && x.RegCompleted == true).ToListAsync();
+        }
+    public async Task<Company_Registration> GetCompanyById(Guid Id)
+        {
+            return  await _context.Company_Registration.Where(x => x.IsDeleted == false && x.Id == Id).FirstOrDefaultAsync();
         }
     }
 

@@ -47,23 +47,23 @@
 
                                                 </div><div class="large-3 cell">
 
-                                                          <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
-                                                              <label for="edit-field-company-type">Company Type</label>
-                                                              @Html.DropDownListFor(m => m.string_var10,
-                                                                           new List<SelectListItem>
-                                                                            {
-                                                                                new SelectListItem {Text = "Limited/LTD", Value = "Limited/LTD"},
-                                                                                new SelectListItem {Text = "Charity/NGO", Value = "Charity/NGO"},
-                                                                                new SelectListItem {Text = "PLC Company", Value = "PLC Company"}
-                                                                            }, "Select",new { @class = "form-select",id = "edit-field-company-type", required = "required"})
+                                                    <div class="js-form-item form-item js-form-type-select form-item-field-company-type js-form-item-field-company-type form-disabled">
+                                                        <label for="edit-field-company-type">Company Type</label>
+                                                        @Html.DropDownListFor(m => m.string_var10,
+                                                                     new List<SelectListItem>
+                                                                      {
+                                                                          new SelectListItem {Text = "Limited/LTD", Value = "Limited/LTD"},
+                                                                          new SelectListItem {Text = "Charity/NGO", Value = "Charity/NGO"},
+                                                                          new SelectListItem {Text = "PLC Company", Value = "PLC Company"}
+                                                                      }, "Select", new { @class = "form-select", id = "edit-field-company-type", required = "required" })
 
-                                                          </div>
+                                                    </div>
 
                                                 </div>
                                                 <div class="large-3 cell position-relative">
                                                     <div class="invisible">checkname button</div>
                                                     <input class="check-name-btn expanded button js-form-submit form-submit edit-button" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Check Name">
-                                                </div>
+                                                </div>F
                                                 @if (Model.bool_var0)
                                                 {
                                                     <div id="devel-node-access-node-content-div">
@@ -71,7 +71,7 @@
                                                             <i class="fas fa-check result-icon-success"></i>
                                                             <h1 class="">@Model.string_var0 @Model.string_var10</h1>
                                                             <h3 class="">Congratulations! The name is available!</h3>
-                                                            <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Save &amp; Continue</a>
+                                                            <a class="button primary large margin-vertical-1 go-package-tab" style="text-shadow:none" onclick="saveCompany()">Continue</a>
                                                             <p class="text-left margin-vertical-1">
                                                                 A total of <span class="primary-color stat "> @Model.list_var0.Count() </span> similar or
                                                                 matching names were found.
@@ -106,11 +106,32 @@
                                                 }
                                                 @if (Model.bool_var1)
                                                 {
-                                                        <div id="checkNameIn" class="text-center  margin-top-1">
-                                                            <i class="fas fa-times result-icon-fail"></i>
-                                                            <h1 class="">@Model.string_var0 @Model.string_var10</h1>
-                                                            <h3 class="">The name is not available! Try other names</h3>
-                                                        </div>
+                                                    
+                                                    <div id="checkNameIn" class="text-center  margin-top-1">
+                                                        <i class="fas ti-face-sad result-icon-fail"></i>
+                                                        <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                        <h3 class="">The Business name is not available! Try other names.</h3>
+                                                    </div>
+                                                }
+                                                @if (Model.bool_var2)
+                                                {
+                                            <div id="checkNameIn" class="text-center  margin-top-1">
+                                                <i class="fas fa-smile result-icon-success"></i>
+                                                <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                <h3 class="">You are just one step to acquiring your business name. Kindly await confirmation within 24 hours</h3>
+                                                @Html.ActionLink("Confirm and Continue", "Index", new { Id = Model.string_var0 }, new { @class = "button primary large margin-vertical-1 go-package-tab", @style="text-shadow:none" })
+
+                                            </div>
+
+                                                }
+                                                @if (Model.bool_var3)
+                                                {
+                                                    <div id="checkNameIn" class="text-center  margin-top-1">
+                                                        <i class="fas fa-smile result-icon-success"></i>
+                                                        <h1 class="">@Model.string_var0 @Model.string_var10</h1>
+                                                        <h3 class="">You have made a request to register this business name. We are still processing your request.</h3>
+                                                    </div>
+
                                                 }
                                             </div>
                                         </div>
