@@ -152,6 +152,7 @@
 
 
         function signUpPost() {
+            $(".se-pre-con").fadeIn("slow");
             var firstName = $('#id_firstName').val();
             var lastName = $('#id_lastName').val();
             var Email = $('#id_Email').val();
@@ -159,20 +160,41 @@
             var password = $('#id_password').val();
             var confirmpassword = $('#id_confirm_password').val();
             var confirmEmail = $('#id_confirm_email').val();
-            if (firstName === null || firstName === "")
-                 return alert("Please Input your First Name");
-            if (lastName === null || lastName === "")
-                 alert("Please Input your Last Name");
-            if (Email === null || Email === "")
-               return  alert("Please Input your Email");
-            if (userName === null || userName === "")
-               return  alert("Please Input your userName");
-            if (password === null || password === "")
-                 alert("Please Input your password");
-            if (confirmpassword === null || confirmpassword === "")
-               return  alert("Please Confrim your password");
-            if (confirmEmail === null || confirmEmail === "")
-                 alert("Please Confrim your Email");
+            if (firstName === null || firstName === "") {
+                alert("Please Input your First Name");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (lastName === null || lastName === "") {
+                alert("Please Input your Last Name");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (Email === null || Email === "") {
+                return alert("Please Input your Email");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (userName === null || userName === "") {
+                return alert("Please Input your userName");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (password === null || password === "") {
+                alert("Please Input your password");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (confirmpassword === null || confirmpassword === "") {
+                return alert("Please Confrim your password");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
+            if (confirmEmail === null || confirmEmail === "") {
+                alert("Please Confrim your Email");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
 
 
             $.ajax({
@@ -187,6 +209,8 @@
                     window.location.href = "/Dashboard/Index";
                 else {
                     alert(jsonObj.error);
+                     $(".se-pre-con").fadeOut("slow");
+                    return;
                 }
             }
         });

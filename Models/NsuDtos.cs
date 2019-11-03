@@ -101,6 +101,7 @@ namespace NaijaStartupApp.Models
             public string CompanyCapitalCurrency { get; set; }
             public string ShareHolderName { get; set; }
             public int NoOfSharesIssue { get; set; }
+            public decimal TotalAmount { get; set; }
             public bool RegCompleted { get; set; }
             public bool IsCacAvailable { get; set; }
             public Decimal SharePrice { get; set; }
@@ -132,6 +133,7 @@ namespace NaijaStartupApp.Models
             public string DeletionUserId { get; set; }
             public bool IsDeleted { get; set; }
         }
+
         public class Payments
         {
             [Key]

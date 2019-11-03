@@ -31,6 +31,7 @@ namespace NaijaStartupApp.Models
             public string string_var14 { get; set; }
             public string string_var15 { get; set; }
             public string string_var16 { get; set; }
+            public string string_var17 { get; set; }
             public int int_var0 { get; set; }
             public int int_var1 { get; set; }
             public int int_var2 { get; set; }

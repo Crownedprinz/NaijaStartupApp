@@ -14,6 +14,7 @@ using PayStack.Net;
 using static NaijaStartupApp.Models.NsuDtos;
 using static NaijaStartupApp.Models.NsuVariables;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Configuration;
 
 namespace NaijaStartupApp.Controllers
 {
@@ -25,10 +26,12 @@ namespace NaijaStartupApp.Controllers
         private readonly ICompanyService _companyService;
         GlobalVariables _globalVariables;
         TemporaryVariables _temporaryVariables;
+        private readonly IConfiguration _configuration;
         public DashboardController(ApplicationDbContext context,
             IOptions<AppSettings> appsettings,
             IUserService userService, IHttpContextAccessor hcontext,
-            ICompanyService companyService)
+            ICompanyService companyService,
+            IConfiguration configuration)
         {
             _context = context;
             _appSettings = appsettings.Value;
@@ -36,6 +39,7 @@ namespace NaijaStartupApp.Controllers
             _companyService = companyService;
             _globalVariables = hcontext.HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
             _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
+            this._configuration = configuration;
         }
 
         public async Task<ActionResult> Index()
@@ -419,6 +423,8 @@ namespace NaijaStartupApp.Controllers
                 var company = await _context.Company_Registration.FindAsync(Guid.Parse(Id));
                 if (company != null)
                 {
+                    _temporaryVariables.string_var0 = company.Id.ToString();
+                    HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
                     return View(tempValues = new TemporaryVariables {string_var0=company.CompanyName, string_var10= company.CompanyType, bool_var0=true,list_var0=new List<string>() });
                 }
                 
@@ -449,6 +455,8 @@ namespace NaijaStartupApp.Controllers
                     Input.bool_var0 = false;
                     Input.bool_var1 = true;
                     Input.bool_var2 = false;
+                    _temporaryVariables.string_var0 = exComp.Id.ToString();
+                    HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
                     foreach (var item in simCopanies)
                     {
                         Input.list_var0.Add(item.CompanyName);
@@ -467,6 +475,8 @@ namespace NaijaStartupApp.Controllers
                             Input.bool_var1 = true;
                         else
                             Input.bool_var3 = true;
+                        _temporaryVariables.string_var0 = exComp.Id.ToString();
+                        HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
                         var simCopanies1 = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).ToList();
                             foreach (var item in simCopanies1)
                             {
@@ -477,9 +487,29 @@ namespace NaijaStartupApp.Controllers
                             }
                             if (string.IsNullOrWhiteSpace(Input.string_var2))
                                 Input.string_var2 = table;
+
                             Input.bool_var0 = false;
                             Input.bool_var2 = false;
                             return View(Input);
+                    }
+                    exComp = _context.Company_Registration.Include(x => x.User).Where(x => x.CompanyName.Equals(Input.string_var0) && x.CompanyType.Equals(Input.string_var10) && x.IsDeleted == false && x.RegCompleted == false && x.IsCacAvailable == true).FirstOrDefault();
+                    if (exComp != null)
+                    {
+                        var simCopanies1 = _context.Company_Registration.Where(x => x.CompanyName.Contains(Input.string_var0) && x.RegCompleted == true).ToList();
+                        foreach (var item in simCopanies1)
+                        {
+                            Input.list_var0.Add(item.CompanyName);
+                            table = "<td>" + count + "</td><td class='gray-bg'>" + item.CompanyName + "</td><td>" + item.CompanyType + "</td><td class='gray-bg'>" + item.CreationTime.ToString("dd MMMM yyyy") + "</td><td>" + item.ApprovalStatus + "</td>";
+                            Input.string_var2 += table;
+                            count++;
+                        }
+                        if (string.IsNullOrWhiteSpace(Input.string_var2))
+                            Input.string_var2 = table;
+                        Input.bool_var0 = true;
+                        Input.bool_var2 = false;
+                        _temporaryVariables.string_var0 = exComp.Id.ToString();
+                        HttpContext.Session.SetObject("TemporaryVariables", _temporaryVariables);
+                        return View(Input);
                     }
 
                     count = 1;
@@ -553,12 +583,13 @@ namespace NaijaStartupApp.Controllers
         [HttpPost]
         public async Task<ActionResult> packages(TemporaryVariables Input)
         {
-
+            
             var company = _context.Company_Registration.Find(Guid.Parse(_temporaryVariables.string_var0));
-            if (company != null)
+            if (company != null)    
             {
                 company.Package = GetProductId(Input.string_var0);
-            }
+                company.TotalAmount = company.Package.Price;
+                }
             try
             {
                 _context.Update(company);
@@ -593,7 +624,7 @@ namespace NaijaStartupApp.Controllers
         [HttpPost]
         public async Task<ActionResult> order_details(TemporaryVariables Input)
         {
-            var company = _context.Company_Registration.Find(Guid.Parse(_temporaryVariables.string_var0));
+            var company = await _context.Company_Registration.Include(s=>s.Package).Where(x=>x.Id==Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
             if (company != null)
             {
                 company.AlternateCompanyName = Input.string_var1;
@@ -605,6 +636,7 @@ namespace NaijaStartupApp.Controllers
                 company.Address2 = Input.string_var7;
                 company.Postcode = Input.string_var8;
                 company.IsAddressRegistered = Input.bool_var1;
+                
             }
             try
             {
@@ -618,7 +650,7 @@ namespace NaijaStartupApp.Controllers
             }
             return View();
         }
-        public ActionResult owner_details()
+        public async Task<ActionResult> owner_details()
         {
             var temp = new TemporaryVariables();
             temp.string_array_temp0 = new string[30];
@@ -626,13 +658,24 @@ namespace NaijaStartupApp.Controllers
             {
                 temp.string_array_temp0[i] = "";
             }
+            var company = await _context.Company_Registration.Include(s => s.Package).Where(x => x.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
+            if (company != null)
+            {
+                temp.string_var0 = company.Package.PackageName;
+                temp.string_var1 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var2 = "NGN" + company.Package.Price.ToString("#,##0.00");
+                temp.string_var3 = "NGN" + ("2,400");
+                temp.decimal_var0 = company.Package.Price;
+                temp.decimal_var1 = 2400 + company.Package.Price;
 
+            }
+           
             return View(temp);
         }
         [HttpPost]
         public async Task<ActionResult> owner_details(TemporaryVariables Input)
         {
-            var company = _context.Company_Registration.Find(Guid.Parse(_temporaryVariables.string_var0));
+            var company = await _context.Company_Registration.Include(s=>s.company_Officers).Where(x=>x.Id==Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
             try
             {
                 if (company != null)
@@ -640,7 +683,8 @@ namespace NaijaStartupApp.Controllers
                     var passNumber = string.IsNullOrWhiteSpace(Input.string_var3) ? "" : Input.string_var3;
                     var email = string.IsNullOrWhiteSpace(Input.string_var9) ? "" : Input.string_var9;
                     var phone = string.IsNullOrWhiteSpace(Input.string_var10) ? "" : Input.string_var10;
-
+                    if (Input.bool_var0)
+                        company.TotalAmount = Input.decimal_var0;
                     var getOfficers = _context.Company_Officers.Where(x => (x.Id_Number == passNumber) || (x.Email == email) || (x.Phone_No == phone)).FirstOrDefault();
 
                     if (getOfficers == null)
@@ -662,8 +706,8 @@ namespace NaijaStartupApp.Controllers
                             MobileNo = Input.string_array_temp0[12],
                             Registration = company,
                         };
-
-                        await _context.AddAsync(officers);
+                        company.company_Officers.Add(officers);
+                        _context.Update(company);
                         await _context.SaveChangesAsync();
                         return RedirectToAction("order_review");
                     }
@@ -777,7 +821,7 @@ namespace NaijaStartupApp.Controllers
         public ActionResult order_review()
         {
             var companyInfo = new TemporaryVariables();
-            var company = _context.Company_Registration.Include(x => x.Package).Include(s => s.addOnServices).Include(o => o.company_Officers).Where(x => x.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefault();
+            var company = _context.Company_Registration.Include(c=>c.User).Include(x => x.Package).Include(s => s.addOnServices).Include(o => o.company_Officers).Where(x => x.Id == Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefault();
             if (company != null)
             {
                 companyInfo = new TemporaryVariables
@@ -789,7 +833,7 @@ namespace NaijaStartupApp.Controllers
                     string_var4 = company.Address1,
                     string_var5 = company.Address2,
                     string_var6 = company.CompanyCapitalCurrency,
-                    int_var0 = company.NoOfSharesIssue,
+                    int_var0 =    company.NoOfSharesIssue,
                     string_var7 = company.SharePrice.ToString(),
                     string_var8 = company.ShareHolderName,
                     decimal_var0 = company.SharesAllocated,
@@ -797,6 +841,10 @@ namespace NaijaStartupApp.Controllers
                     string_var10 = company.Package.PackageName,
                     string_var11 = company.Package.CreationTime.ToString(),
                     string_var12 = company.Package.Price.ToString(),
+                    string_var15 = company.User.Email,
+                    string_var16 = company.User.PhoneNumber,
+                    string_var17 = "NGN"+ company.TotalAmount.ToString("#,##0.00"),
+                    decimal_var1 = company.TotalAmount,
                 };
                 if (company.company_Officers != null && company.company_Officers.Any())
                 {
@@ -856,8 +904,11 @@ namespace NaijaStartupApp.Controllers
                     ViewChatDetails = new List<ChatModel.ChatDetails>(),
                 }
             };
+            temp.string_var0 = user.FirstName + " " + user.LastName;
             var chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false && s.User == user).OrderByDescending(m=>m.CreationTime).ToListAsync();
-            foreach(var item in chats)
+            if (user.Role.ToLower().Equals("admin"))
+            chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false).OrderByDescending(m => m.CreationTime).ToListAsync();
+            foreach (var item in chats)
             {
                 count = 0;
                 foreach (var x in item.ChatThread)
@@ -879,28 +930,29 @@ namespace NaijaStartupApp.Controllers
                 
                 
             };
-            if (Id != 0)
-            {
-                
-                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
-                temp.int_var0 = getChatById.Id;
-                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                if (Id != 0)
                 {
-                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+
+                    var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                    temp.int_var0 = getChatById.Id;
+                    foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
                     {
-                        Message1 = x.Body,
-                        User = x.User.Role,
-                    });
-                    if (x.User == user)
-                    {
-                        x.IsRead = true;
-                        _context.Update(x);
+                        temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                        {
+                            Message1 = x.Body,
+                            User = x.User.Role,
+                        });
+                        if (x.User == user)
+                        {
+                            x.IsRead = true;
+                            _context.Update(x);
+                        }
                     }
-                }
+                temp.string_var0 = getChatById.User.FirstName + " " + getChatById.User.LastName;
                 await _context.SaveChangesAsync();
-            }
-            
-            temp.string_var0 = user.FirstName + " " + user.LastName;
+                }
+
+                
             return View(temp);
         }
 
@@ -975,7 +1027,11 @@ namespace NaijaStartupApp.Controllers
             return RedirectToAction("chat");
         }
 
-
+        public ActionResult GetConfigurationValue(string sectionName, string paramName)
+        {
+            var parameterValue = _configuration[$"{sectionName}:{paramName}"];
+            return Json(new { parameter = parameterValue });
+        }
         public ActionResult departments()
         {
             return View();
