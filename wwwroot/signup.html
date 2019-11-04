@@ -112,27 +112,34 @@
 
 
         function loginPost() {
+            $(".se-pre-con").fadeIn("slow");
         var val3 = document.getElementById("id_rememberme").checked
         var val1 = $('#id_userName1').val();
         var val2 = $('#id_password2').val();
-        if (val1 === null || val1 === "")
-            return alert("Please Input your username or email");
-
-          if (val2 === null || val2 === "")
-            return alert("Please Input your password");
+        if (val1 === null || val1 === ""){
+                    alert("Please Input your username or email");
+                    $(".se-pre-con").fadeOut("slow");
+                    return;
+                }
+            if (val2 === null || val2 === "") {
+                alert("Please Input your password");
+                $(".se-pre-con").fadeOut("slow");
+                return;
+            }
 
         $.ajax({
             type: "post",
             url: "/Account/Index",
             data:{ "username": val1, "password": val2, "rememberMe":val3  },
             success: function (data) {
-                alert(data);
                 if (data) {
                      window.location.href = "/Dashboard/Index";
                 }
                 else
                 {
-                    alert("Invalid username or password");
+                   alert("Invalid username or password")
+                             $(".se-pre-con").fadeOut("slow");
+                             return;
                 }
 
 
@@ -217,9 +224,10 @@
                 success: function (data) {
                     var obj = JSON.stringify(data);
                     var jsonObj = JSON.parse(obj.toString());
-                if (jsonObj.isSuccessful)
-                    alert("Successfully Registered, Please click the Login Button to Sign in");
-                    return;
+                    if (jsonObj.isSuccessful) {
+                        alert("Successfully Registered, Please click the Login Button to Sign in");
+                        return;
+                    }
                 else {
                     alert(jsonObj.error);
                      $(".se-pre-con").fadeOut("slow");
