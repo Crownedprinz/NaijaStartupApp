@@ -22,6 +22,11 @@ namespace DangoteCustomerPortal.Handlers
                 context.Result = new RedirectResult("~/Index.html");
                 return;
             }
+            if (context.HttpContext.Session == null)
+            {
+                context.Result = new RedirectResult("~/Index.html");
+                return;
+            }
         }
 
             public void OnActionExecuted(ActionExecutedContext context)

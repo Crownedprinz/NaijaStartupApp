@@ -355,8 +355,9 @@ namespace NaijaStartupApp.Controllers
                     string_var9 = company.CreationTime.ToString(),
                     string_var10 = company.Package.PackageName,
                     string_var11 = company.Package.CreationTime.ToString(),
-                    string_var12 = company.Package.Price.ToString(),
+                    string_var12 = company.Package.Price.ToString("#,##0.00"),
                     string_var15 = company.Id.ToString(),
+                    string_var17 = company.TotalAmount.ToString("#,##0.00"),
                 };
                 if (company.company_Officers != null && company.company_Officers.Any())
                 {
@@ -389,7 +390,7 @@ namespace NaijaStartupApp.Controllers
                     {
                         string officers = "<tr><td>" + item.ServiceName + "</td>";
                         officers += "<td class='text-center'>" + item.CreationTime + "</td>";
-                        officers += "<td class='text-right'>" + item.Price + "</td></tr>";
+                        officers += "<td class='text-right'>" + item.Price.ToString("#,##0.00") + "</td></tr>";
                         companyInfo.string_var14 += officers;
                     }
                 }
