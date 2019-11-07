@@ -41,7 +41,6 @@
                                                             {
                                                                 @Html.ActionLink("Update Incentives", "attach_incentives", new { Id = Model.string_var15 }, new { @class = "btn btn-primary px-4 mt-0 mb-3" })
                                                             }
-                                                                @*<a class="btn btn-primary px-4 mt-0 mb-3" asp-area="" asp-controller="Dashboard" asp-action="incentives" asp-all-route-data=""><i class="mdi mdi-plus-circle-outline mr-2"></i>View Incentives</a>*@
                                                             <div class="grid-x grid-padding-x align-center">
                                                                 <div class="large-12 cell">
                                                                     <div class="table-title">COMPANY DETAILS</div>
@@ -176,7 +175,7 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td width="550" class="semibold">Total</td>
-                                                                                <td width="100" class="semibold text-right">#2,788</td>
+                                                                                <td width="100" class="semibold text-right">@Model.string_var17</td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
