@@ -297,7 +297,7 @@ namespace NaijaStartupApp.Controllers
             else
             {
 
-                return View("all_companies", _context.Company_Registration.Include(x => x.Package).Include(s => s.User).Where((x => x.IsDeleted == false && x.IsCacAvailable == true && x.User.Id.Equals(_globalVariables.userid) && x.RegCompleted == false)).OrderByDescending(s => s.CreationTime)
+                return View("all_companies", _context.Company_Registration.Include(x => x.Package).Include(s => s.User).Where((x => x.IsDeleted == false && x.User.Id.Equals(_globalVariables.userid) && x.RegCompleted == false)).OrderByDescending(s => s.CreationTime)
                    .Select(x => new TemporaryVariables
                    {
                        string_var0 = x.CompanyName,
