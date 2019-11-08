@@ -8,6 +8,7 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     <div class="page-content">
+        <h2 style="color:red">@ViewBag.message</h2>
         <div class="container-fluid">
             <!-- Page-Title -->
             <div class="row">
@@ -92,23 +93,7 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-
-
-
                                                 <div id="newOfficer" class="width-100">
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                     <div id="sgf-incorporate-officers-wrapper">
                                                         <ul class="accordion" data-accordion="t043pq-accordion" data-allow-all-closed="true" id="tableOfficer" role="tablist">
                                                             <li class="accordion-item officer-full-detail-0 margin-bottom-1 is-active" data-accordion-item="">
@@ -152,32 +137,21 @@
 
                                                                                             <label for="edit-officers-0-content-designation-position-1119" class="option">Cheif Executive Officer</label>
                                                                                         </div>
-
-
-
                                                                                         <div class="js-form-item form-item js-form-type-checkbox form-item-officers-0-content-designation-position-1116 js-form-item-officers-0-content-designation-position-1116">
                                                                                             <input data-drupal-selector="edit-officers-0-content-designation-position-1116" type="checkbox" id="edit-officers-0-content-designation-position-1116" name="string_array_temp0[3]" value="1116" class="form-checkbox edit-officers-0-content-designation-position-1116">
 
                                                                                             <label for="edit-officers-0-content-designation-position-1116" class="option">Director</label>
                                                                                         </div>
-
-
-
                                                                                         <div class="js-form-item form-item js-form-type-checkbox form-item-officers-0-content-designation-position-1118 js-form-item-officers-0-content-designation-position-1118">
                                                                                             <input data-drupal-selector="edit-officers-0-content-designation-position-1118" type="checkbox" id="edit-officers-0-content-designation-position-1118" name="string_array_temp0[4]" value="1118" class="form4checkbox edit-officers-0-content-designation-position-1118" disabled="disabled">
 
                                                                                             <label for="edit-officers-0-content-designation-position-1118" class="option">Managing Director</label>
                                                                                         </div>
-
-
-
                                                                                         <div class="js-form-item form-item js-form-type-checkbox form-item-officers-0-content-designation-position-1117 js-form-item-officers-0-content-designation-position-1117">
                                                                                             <input data-drupal-selector="edit-officers-0-content-designation-position-1117" type="checkbox" id="edit-officers-0-content-designation-position-1117" name="string_array_temp0[5]" value="1117" class="form-checkbox edit-officers-0-content-designation-position-1117">
 
                                                                                             <label for="edit-officers-0-content-designation-position-1117" class="option">Shareholder</label>
                                                                                         </div>
-
-
                                                                                         <div style="clear:both;"></div>
                                                                                     </div>
 
@@ -271,42 +245,46 @@
                                                                                 </div>
 
                                                                             </div>
+                                                                            <div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
+                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Proof Of Identification</span>
+                                                                                    <div id="ajax-wrapper--2">
 
+                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
 
-                                                                            @*<div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
-                                                                                    <details data-drupal-selector="edit-officers-0-content-residential-address-wrapper" id="edit-officers-0-content-residential-address-wrapper" class="js-form-wrapper form-wrapper" open="open">
-                                                                                        <summary role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Proof of (overseas) residential address (Issued within 3months)</summary>
-
-                                                                                        <div id="ajax-wrapper--2">
-
-                                                                                            <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
-
-                                                                                                <div class="sgf-choose-file-hidden">
-                                                                                                    <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
-                                                                                                        <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="files[officers_0_content_residential_address_wrapper_residential_address][]" size="22" class="js-form-file form-file">
-                                                                                                        <input class="js-hide button js-form-submit form-submit edit-officers-0-content-residential-address-wrapper-residential-address-upload-button" data-drupal-selector="edit-officers-0-content-residential-address-wrapper-residential-address-upload-button" formnovalidate="formnovalidate" type="submit" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload-button" name="officers_0_content_residential_address_wrapper_residential_address_upload_button" value="Upload">
-                                                                                                        <input data-drupal-selector="edit-officers-0-content-residential-address-wrapper-residential-address-fids" type="hidden" name="officers[0][content][residential_address_wrapper][residential_address][fids]" class="edit-officers-0-content-residential-address-wrapper-residential-address-fids">
-
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="grid-x grid-margin-x">
-                                                                                                    <div class="large-4 cell margin-vertical-1 inputfile-wrapper">
-                                                                                                        <input type="button" name="file" id="file-nric-id-fin-passport" class="inputfile sgf-file-markup">
-                                                                                                        <label for="file" class="sgf-file-markup">Choose a file</label>
-                                                                                                    </div>
-                                                                                                    <div class="large-8 cell margin-vertical-1 small-text">
-                                                                                                        Unlimited number of files can be uploaded to this field.<br>10 MB limit.<br>Allowed types: pdf jpg jpeg png.
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload--description" class="description">
-                                                                                                    Unlimited number of files can be uploaded to this field.<br>10 MB limit.<br>Allowed types: pdf jpg jpeg png.
+                                                                                            <div class="sgf-choose-file-hidden">
+                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                    <input multiple="multiple" required="required" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File1" size="22" class="js-form-file form-file">
                                                                                                 </div>
                                                                                             </div>
-
                                                                                         </div>
 
-                                                                                    </details>
-                                                                                </div>*@
+                                                                                    </div>
+                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Birth (If officer is an infant)</span>
+                                                                                    <div id="ajax-wrapper--2">
+
+                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
+
+                                                                                            <div class="sgf-choose-file-hidden">
+                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                    <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File2" size="22" class="js-form-file form-file">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Proficiency (not required)</span>
+                                                                                    <div id="ajax-wrapper--2">
+
+                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
+
+                                                                                            <div class="sgf-choose-file-hidden">
+                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                    <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File3" size="22" class="js-form-file form-file">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>

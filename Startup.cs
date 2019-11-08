@@ -39,7 +39,8 @@ namespace NaijaStartupApp
             {
                 // Set a short timeout for easy testing.
                 options.IdleTimeout = TimeSpan.FromHours(1);
-                options.Cookie.HttpOnly = true;
+
+                options.Cookie.HttpOnly = false;
                 // Make the session cookie essential
                 options.Cookie.IsEssential = true;
             });

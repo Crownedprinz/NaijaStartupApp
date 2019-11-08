@@ -175,8 +175,9 @@ namespace NaijaStartupApp.Models
             public string Address2 { get; set; }
             public string PostalCode { get; set; }
             public string MobileNo { get; set; }
-            public byte[] PassportFile { get; set; }
-            public byte[] AddressFile { get; set; }
+            public byte[] Identification { get; set; }
+            public byte[] Proficiency { get; set; }
+            public byte[] CerficationOfBirth { get; set; }
             public DateTime CreationTime { get; set; }
             public string CreatorUserId { get; set; }
             public DateTime ModificationTime { get; set; }

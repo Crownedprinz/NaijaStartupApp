@@ -8,6 +8,26 @@
     NaijaStartupApp.Models.NsuVariables.GlobalVariables _globalVariables = hcontext.HttpContext.Session.GetObject<NaijaStartupApp.Models.NsuVariables.GlobalVariables>("GlobalVariables");
 
 }
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Naija StartUp</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="" class="img-responsive" style="height: 100%; width: 100%"  alt="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Page Content-->
 <div class="page-content">
     <div class="container-fluid">
@@ -213,7 +233,17 @@
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="~/assets/js/payStack.js"></script>">
     <script>
-
+        function displayPhotos(Id,type) {
+             $.ajax({
+                    type: "get",
+                 url: "/Dashboard/GetBytes",
+                 data: { "Id": Id, "type": type },
+                 success: function (data) {
+                         $('.modal-body img').attr('src', data);
+                         $('#trslphotos').modal();
+                    }
+                })
+           
+        }
     </script>
-
 }
