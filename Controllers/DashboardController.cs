@@ -15,7 +15,7 @@ using static NaijaStartupApp.Models.NsuDtos;
 using static NaijaStartupApp.Models.NsuVariables;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
-using DangoteCustomerPortal.Handlers;
+using System.IO;
 
 namespace NaijaStartupApp.Controllers
 {
@@ -359,6 +359,7 @@ namespace NaijaStartupApp.Controllers
                     string_var15 = company.Id.ToString(),
                     string_var17 = company.TotalAmount.ToString("#,##0.00"),
                 };
+                
                 if (company.company_Officers != null && company.company_Officers.Any())
                 {
                     foreach (var item in company.company_Officers)
@@ -379,8 +380,13 @@ namespace NaijaStartupApp.Controllers
                         table += "<tr><td>Mobile Phone</td><td class='text-bold'>" + item.PostalCode + "</td></tr>";
                         table += "<tr><td>Work Phone</td><td class='text-bold'>" + item.Phone_No + "</td></tr>";
                         table += "<tr><td>Email</td><td class='text-bold'>" + item.Email + "</td></tr>";
-                        table += "<tr><td>Proof of ID</td><td class='text-bold'><ul></ul></td></tr>";
-                        table += "<tr><td>Proof of Address</td><td class='text-bold'><ul></ul></td></tr></tbody></table>";
+                        if(item.Identification!=null)
+                        table += "<tr><td>Proof of ID</td><td class='text-bold'><span onclick=displayPhotos('"+item.Id.ToString()+"','image') data-toggle='modal' data-target='#exampleModalCenter'>View Image</span></td></tr>";
+                        if (item.CerficationOfBirth != null)
+                            table += "<tr><td>Proof of Certificate</td><td class='text-bold'><span onclick=displayPhotos('" + item.Id.ToString() + "','birth') data-toggle='modal' data-target='#exampleModalCenter'>View Image</span></td></tr>";
+                        if (item.Proficiency != null)
+                            table += "<tr><td>Proof of Proficiency</td><td class='text-bold'><span onclick=displayPhotos('" + item.Id.ToString() + "','proficiency') data-toggle='modal' data-target='#exampleModalCenter'>View Image</span></td></tr>";
+                        table += "</tbody></table>";
                         companyInfo.string_var13 += table;
                     }
                 }
@@ -405,7 +411,47 @@ namespace NaijaStartupApp.Controllers
                 }
             }
         }
+
+            
             return View(companyInfo);
+        }
+
+        [HttpGet]
+        public async Task<string> GetBytes(string Id, string type)
+        {
+            string base64 = "";
+            byte[] byteConvert = new byte[0];
+            var officer = await _context.Company_Officers.Where(x => x.Id.ToString() == Id && x.IsDeleted == false).FirstOrDefaultAsync();
+            if (string.IsNullOrWhiteSpace(Id) || string.IsNullOrWhiteSpace(type))
+                return "";
+
+            if (type == "image")
+            {
+                if (officer.Identification == null)
+                    return "";
+                byteConvert = officer.Identification;
+                base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                return String.Format("data:image/gif;base64,{0}", base64);
+            }
+
+            if (type == "proficiency")
+            {
+                if (officer.Proficiency == null)
+                    return "";
+                byteConvert = officer.Proficiency;
+                base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                return String.Format("data:image/gif;base64,{0}", base64);
+            }
+
+            if (type == "birth")
+            {
+                if (officer.CerficationOfBirth == null)
+                    return "";
+                byteConvert = officer.CerficationOfBirth;
+                base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                return String.Format("data:image/gif;base64,{0}", base64);
+            }
+            return "";
         }
 
         public ActionResult all_rooms()
@@ -674,24 +720,46 @@ namespace NaijaStartupApp.Controllers
                 temp.decimal_var1 = 2400 + company.Package.Price;
 
             }
+            await select_query();
+            return View(temp);
+        }
+
+        public async Task<string> select_query()
+        {
             var country = await _context.Settings.Where(x => x.code.ToLower() == "country").ToListAsync();
             ViewBag.country = new SelectList(country, "description", "description");
-            return View(temp);
+            return "";
         }
         [HttpPost]
         public async Task<ActionResult> owner_details(TemporaryVariables Input)
         {
+
+            if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2)|| !await ValidateFilesFormat(Input.File3)||
+                !await ValidateFilesFormat(Input.File4)|| !await ValidateFilesFormat(Input.File5)|| !await ValidateFilesFormat(Input.File6))
+            {
+                ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file or pdf";
+                await select_query();
+                return View(Input);
+            }
+
+            if (!ValidateFileSize(Input.File1) || !ValidateFileSize(Input.File2) || !ValidateFileSize(Input.File3) ||
+                !ValidateFileSize(Input.File4) || !ValidateFileSize(Input.File5) || !ValidateFileSize(Input.File6))
+            {
+                ViewBag.message = "File Size Exceeded, Kindly upload image with less than 10mb size";
+                await select_query();
+                return View(Input);
+            }
             var company = await _context.Company_Registration.Include(s=>s.company_Officers).Where(x=>x.Id==Guid.Parse(_temporaryVariables.string_var0)).FirstOrDefaultAsync();
             try
             {
                 if (company != null)
                 {
-                    var passNumber = string.IsNullOrWhiteSpace(Input.string_var3) ? "" : Input.string_var3;
-                    var email = string.IsNullOrWhiteSpace(Input.string_var9) ? "" : Input.string_var9;
-                    var phone = string.IsNullOrWhiteSpace(Input.string_var10) ? "" : Input.string_var10;
+                    var passNumber = string.IsNullOrWhiteSpace(Input.string_array_temp0[7]) ? "" : Input.string_array_temp0[7];
+                    var email = string.IsNullOrWhiteSpace(Input.string_array_temp0[11]) ? "" : Input.string_array_temp0[11];
+                    var phone = string.IsNullOrWhiteSpace(Input.string_array_temp0[12]) ? "" : Input.string_array_temp0[12];
                     if (Input.bool_var0)
                         company.TotalAmount = Input.decimal_var0;
-                    var getOfficers = _context.Company_Officers.Where(x => (x.Id_Number == passNumber) || (x.Email == email) || (x.Phone_No == phone)).FirstOrDefault();
+                    var getOfficers = _context.Company_Officers.Include(s=>s.Registration).Where(x => (x.Id_Number == passNumber && x.Registration.Id == company.Id) || (x.Email == email && x.Registration.Id == company.Id) || (x.Phone_No == phone && x.Registration.Id == company.Id)).FirstOrDefault();
 
                     if (getOfficers == null)
                     {
@@ -710,7 +778,11 @@ namespace NaijaStartupApp.Controllers
                             Address2 = Input.string_array_temp0[14],
                             PostalCode = Input.string_array_temp0[15],
                             MobileNo = Input.string_array_temp0[16],
-                            Registration = company,
+                            Registration = company, 
+                            Identification = await ConvertFileToByte(Input.File1),
+                            CerficationOfBirth = await ConvertFileToByte(Input.File2),
+                            Proficiency = await ConvertFileToByte(Input.File3),
+
                         };
                         company.company_Officers.Add(officers);
                         _context.Update(company);
@@ -719,7 +791,7 @@ namespace NaijaStartupApp.Controllers
                     }
                     else
                     {
-                        //officer already exist;
+                        return RedirectToAction("company_share");
                     }
                 };
             }
@@ -728,6 +800,36 @@ namespace NaijaStartupApp.Controllers
 
             }
             return View();
+        }
+
+        public async Task<bool> ValidateFilesFormat(IFormFile file)
+        {
+            if (file == null)
+                return true;
+            return ImageWriterHelper.GetImageFormat(await ConvertFileToByte(file)) != ImageWriterHelper.ImageFormat.unknown;
+            if (ImageWriterHelper.GetPdfFormat(await ConvertFileToByte(file)))
+                return true;
+        }
+
+        public bool ValidateFileSize(IFormFile file)
+        {
+            if (file == null)
+                return true;
+            if (file.Length< 10000000)
+                return true;
+
+            return false;
+        }
+
+        public async Task<byte[]> ConvertFileToByte(IFormFile file)
+        {
+            if (file == null)
+                return null;
+                using (var memoryStream = new MemoryStream())
+            {
+                await file.CopyToAsync(memoryStream);
+                    return memoryStream.ToArray();
+            }
         }
 
         public async Task<ActionResult> company_share()
@@ -844,8 +946,8 @@ namespace NaijaStartupApp.Controllers
             {
                 companyInfo = new TemporaryVariables
                 {
-                    string_var0 = company.CompanyName,
-                    string_var1 = company.AlternateCompanyName,
+                    string_var0 = company.CompanyName + " " +company.CompanyType,
+                    string_var1 = company.AlternateCompanyName + " " + company.AlternateCompanyType,
                     string_var2 = company.BusinessActivity + " and " + company.SndBusinessActivity,
                     string_var3 = company.FinancialYearEnd,
                     string_var4 = company.Address1,

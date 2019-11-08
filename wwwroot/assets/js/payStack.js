@@ -42,8 +42,10 @@
                         url: "/Dashboard/Verify_PayStack",
                         data: { "reference": response.reference },
                         success: function (data) {
-                            if (data)
+                            if (data) {
                                 alert('Transaction was successful');
+                                window.location.href = "/Dashboard/all_companies";
+                            }
                             else {
                                 alert(response);
 

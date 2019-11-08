@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -71,6 +72,15 @@ namespace NaijaStartupApp.Models
 
             public string ApprovalLevelStatus { get; set; }
             public ChatModel ChatModel { get; set; }
+            public IFormFile File1 { get; set; }
+            public IFormFile File2 { get; set; }
+            public IFormFile File3 { get; set; }
+            public IFormFile File4 { get; set; }
+            public IFormFile File5 { get; set; }
+            public IFormFile File6 { get; set; }
+            public IFormFile File7 { get; set; }
+            public IFormFile File8 { get; set; }
+            public IFormFile File9 { get; set; }
         }
 
         public class GlobalVariables
