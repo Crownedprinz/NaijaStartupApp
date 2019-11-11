@@ -273,7 +273,7 @@ namespace NaijaStartupApp.Controllers
             {
 
             }
-            return View(Input);
+            return RedirectToAction("incentives");
         }
 
         public ActionResult unconfirmed_companies()
