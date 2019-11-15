@@ -1,0 +1,100 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+@{
+    ViewData["Title"] = "new_request";
+    Layout = "~/Views/Shared/_DbLayout.cshtml";
+}
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 style="color:red">@ViewBag.message</h3>
+                <div class="page-title-box">
+                    <h4 class="page-title">Add New Request</h4>
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card dr-pro-pic">
+                    <div class="card-body">
+                        <div class="">
+                            <form role="form" method="post" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" name="name" id="inputName" value="@Model.string_var0" class="form-control disabled" disabled="disabled">
+                                    </div>
+                                    <div class="form-group col-sm-5">
+                                        <label for="inputEmail">Email Address</label>
+                                        <input type="email" name="email" id="inputEmail" value="@Model.string_var1" class="form-control disabled" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-10">
+                                        <label for="inputSubject">Company Name</label>
+                                        <input type="text" name="string_var5" id="inputSubject" value="" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-7">
+                                        <label for="inputRelatedService">Related Service</label>
+                                        <input type="text" name="string_var3" id="inputSubject" value="@Model.string_var3" disabled class="form-control" required>
+                                        @Html.Hidden("string_var3")
+                                        @Html.Hidden("string_var2","")
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMessage">Message</label>
+                                    <textarea name="string_var4" id="inputMessage" rows="12" class="form-control markdown-editor md-input" data-auto-save-name="client_ticket_open" required style="resize: vertical;"></textarea>
+                                </div>
+
+
+                                <div id="customFieldsContainer">
+                                </div>
+
+                                <div id="autoAnswerSuggestions" class="well hidden"></div>
+
+                                <div class="text-center margin-bottom">
+                                </div>
+
+                                <p class="text-center">
+                                    <input type="submit" id="openTicketSubmit" value="Submit" class="btn btn-primary">
+                                    <a asp-controller="Dashboard" asp-action="chat" class="btn btn-default">Cancel</a>
+                                </p>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- container -->
+    <footer class="footer text-center text-sm-left">&copy; @DateTime.Now.Year <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by BloydIntelligi</span></footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->
+@section Scripts{
+    <script>
+        var element = document.getElementById("id_submit");
+        $('#id_password, #id_confirmpassword').on('keyup', function () {
+            if ($('#id_password').val() == $('#id_confirmpassword').val()) {
+                $('.message').html('Matching').css('color', 'green');
+                        element.classList.remove("disabled");
+            } else {
+                $('.message').html('Not Matching').css('color', 'red');
+            element.classList.add("disabled");
+            }
+        });
+    </script>
+}
+

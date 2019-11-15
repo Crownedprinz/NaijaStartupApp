@@ -73,9 +73,9 @@ namespace NaijaStartupApp.Services
         public int Ticket_Count()
         {
             if (_globalVariables.RoleId.ToLower() == "user")
-                return _context.ChatHeader.Where(x => x.User.Id == _globalVariables.userid && x.IsDeleted == false).Count();
+                return _context.ChatHeader.Where(x => x.User.Id == _globalVariables.userid && x.IsDeleted == false && x.IsTicket).Count();
             else
-                return _context.ChatHeader.Where(x => x.IsDeleted == false).Count();
+                return _context.ChatHeader.Where(x => x.IsDeleted == false && x.IsTicket).Count();
 
         }
         public int Pending_Tasks()

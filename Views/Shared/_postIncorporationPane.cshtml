@@ -1,0 +1,39 @@
+﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+<div class="chat-box-left">
+    <div class="chat-search">
+        <div class="form-group">
+            <div class="input-group">
+                <a asp-controller="Dashboard" asp-action="new_requests" asp-route-Id="@Model.string_var10"  class="btn btn-primary shadow-none">New Request</a>
+            </div>
+        </div>
+    </div>
+    <!--end chat-search-->
+    <div class="tab-content chat-list slimscroll" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="general_chat">
+            @foreach (var item in Model.ChatModel.ViewChatList)
+            {
+                    <a asp-controller="Dashboard" asp-action="@Model.string_var11" asp-route-Id="@item.TicketNumber" class="media new-message">
+                        <div class="media-left">
+                        </div>
+                        <!-- media-left -->
+                        <div class="media-body">
+                            <div class="d-inline-block">
+                                <h6>#@item.TicketNumber</h6>
+                                <p>@item.Status</p>
+                            </div>
+                            <div><span>@item.Date.ToString("dd MMM yyyy")</span> 
+                            @if (!@item.NoOfNew.Equals(0))
+                            {
+                            <span>@item.NoOfNew</span>
+                            }
+                            </div>
+                        </div>
+                        <!-- end media-body -->
+                    </a>
+               
+            }
+
+        </div>
+    </div>
+    <!--end tab-content-->
+</div>
