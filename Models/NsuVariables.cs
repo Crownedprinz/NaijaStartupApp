@@ -115,6 +115,7 @@ namespace NaijaStartupApp.Models
                 public byte[] Image { get; set; }
                 public string Message1 { get; set; }
                 public string Message2 { get; set; }
+                public string documents { get; set; }
                 public string User { get; set; }
                 
             }

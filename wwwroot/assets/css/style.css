@@ -1,6 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload img {
+    width: 80px;
+    cursor: pointer;
+}
 html {
     position: relative;
     min-height: 100%;

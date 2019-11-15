@@ -133,7 +133,17 @@
                                         <li><a asp-action="all_payments" asp-controller="Dashboard">All Payments</a></li>
                                     </ul>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Post-Incorporation Requests</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="post_incop" asp-controller="Dashboard">Bank Account Requests</a></li>
+                                        <li><a asp-action="statutory" asp-controller="Dashboard">Statutory Advisory</a></li>
+                                        <li><a asp-action="officelease" asp-controller="Dashboard">Office Space and Lease</a></li>
+                                        <li><a asp-action="cacchange" asp-controller="Dashboard">CAC Ammendments Requests</a></li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Tickets</a></li>
+
                             </ul>
                         }
                         else
@@ -166,8 +176,17 @@
                                         <li><a asp-action="Incentives" asp-controller="Dashboard">Incentives</a></li>
                                     </ul>
                                 </li>
-                                    <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Tickets</a></li>
-                            </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="dripicons-clipboard"></i><span class="w-100">Post-Incorporation Requests</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a asp-action="post_incop" asp-controller="Dashboard">Bank Account Requests</a></li>
+                                        <li><a asp-action="statutory" asp-controller="Dashboard">Statutory Advisory</a></li>
+                                        <li><a asp-action="officelease" asp-controller="Dashboard">Office Space and Lease</a></li>
+                                        <li><a asp-action="cacchange" asp-controller="Dashboard">CAC Ammendments Requests</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" asp-action="chat" asp-controller="Dashboard"><i class="dripicons-conversation"></i>Tickets</a></li>
+                             </ul>
                         }
 
                         <!--end nav-->

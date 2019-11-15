@@ -205,10 +205,12 @@ namespace NaijaStartupApp.Models
             public int Id { get; set; }
             public User User { get; set; }
             public Company_Registration Company { get; set; }
+            public string PostIncooperationName {get;set;}
             public string Group { get; set; }
             public string Subject { get; set; }
             public List<ChatThread> ChatThread { get; set; }
             public string Body { get; set; }
+            public bool IsTicket { get; set; }
             public DateTime CreationTime { get; set; }
             public string CreatorUserId { get; set; }
             public DateTime ModificationTime { get; set; }
@@ -226,6 +228,7 @@ namespace NaijaStartupApp.Models
             public ChatHeader Chat { get; set; }
             public string Body { get; set; }
             public bool IsRead { get; set; }
+            public byte[] document { get; set; }
             public DateTime CreationTime { get; set; }
             public string CreatorUserId { get; set; }
             public DateTime ModificationTime { get; set; }

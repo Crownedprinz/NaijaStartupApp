@@ -55,6 +55,543 @@ namespace NaijaStartupApp.Controllers
             return View(temp);
         }
 
+         public async Task<ActionResult> post_incop(int Id)
+        {
+            int count = 0;
+            byte[] byteConvert = null;
+            string base64 = "";
+            var user = await _userService.get_User_By_Session();
+            var temp = new TemporaryVariables
+            {
+                string_var10 = "BankAccounts",
+                ChatModel = new ChatModel
+                {
+                    ViewChatList = new List<ChatModel.ChatList>(),
+                    ViewChatDetails = new List<ChatModel.ChatDetails>(),
+                }
+            };
+            temp.string_var0 = user.FirstName + " " + user.LastName;
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.User == user && s.IsTicket == false && s.Group.ToLower()=="bankaccounts").OrderByDescending(m => m.CreationTime).ToListAsync();
+            if (user.Role.ToLower().Equals("admin"))
+                chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.IsTicket == false && s.Group.ToLower() == "bankaccounts").OrderByDescending(m => m.CreationTime).ToListAsync();
+            foreach (var item in chats)
+            {
+                count = 0;
+                foreach (var x in item.ChatThread)
+                {
+                    if (x.Chat.User.Role != _globalVariables.RoleId)
+                    {
+                        if (!x.IsRead)
+                            count++;
+                    }
+                }
+                temp.ChatModel.ViewChatList.Add(new ChatModel.ChatList
+                {
+                    Date = item.CreationTime,
+                    Status = item.PostIncooperationName,
+                    TicketNumber = item.Id,
+                    NoOfNew = count
+                });
+
+
+            };
+            if (Id != 0)
+            {
+
+                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                temp.int_var0 = getChatById.Id;
+                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                {
+                    string doc = "";
+                    if (x.document != null)
+                    {
+                        byteConvert = x.document;
+                        base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                        doc=  String.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                    {
+                        Message1 = x.Body,
+                        User = x.User.Role,
+                        documents = doc,
+
+                    });
+                    
+                    if (x.User != user)
+                    {
+                        x.IsRead = true;
+                        _context.Update(x);
+                    }
+                }
+                temp.string_var0 = getChatById.User.FirstName + " " + getChatById.User.LastName;
+                await _context.SaveChangesAsync();
+            }
+
+            temp.string_var11 = "post_incop";
+            return View(temp);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> post_incop(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var chat = await _context.ChatHeader.FindAsync(Input.int_var0);
+                if (!ValidateFileSize(Input.File1))
+                {
+                    ViewBag.message = "File Size Exceeded, Kindly upload image with less than 10mb size";
+                    await select_query();
+                    return View(Input);
+                }
+                if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2) || !await ValidateFilesFormat(Input.File3) ||
+                !await ValidateFilesFormat(Input.File4) || !await ValidateFilesFormat(Input.File5) || !await ValidateFilesFormat(Input.File6))
+                {
+                    ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file";
+                    await select_query();
+                    return View(Input);
+                }
+
+                var ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var2,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id,
+                        document =await ConvertFileToByte(Input.File1),
+                        Chat = chat,
+                    }
+                    };
+                await _context.AddRangeAsync(ChatThread);
+                await _context.SaveChangesAsync();
+                Input.string_var2 = "";
+            }
+            return RedirectToAction("post_incop", new { Id = Input.int_var0 });
+        }
+
+        public async Task<ActionResult> statutory(int Id)
+        {
+            int count = 0;
+            byte[] byteConvert = null;
+            string base64 = "";
+            var user = await _userService.get_User_By_Session();
+            var temp = new TemporaryVariables
+            {
+                string_var10 = "Statutory",
+                ChatModel = new ChatModel
+                {
+                    ViewChatList = new List<ChatModel.ChatList>(),
+                    ViewChatDetails = new List<ChatModel.ChatDetails>(),
+                }
+            };
+            temp.string_var0 = user.FirstName + " " + user.LastName;
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.User == user && s.IsTicket == false && s.Group.ToLower() == "statutory").OrderByDescending(m => m.CreationTime).ToListAsync();
+            if (user.Role.ToLower().Equals("admin"))
+                chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.IsTicket == false && s.Group.ToLower() == "statutory").OrderByDescending(m => m.CreationTime).ToListAsync();
+            foreach (var item in chats)
+            {
+                count = 0;
+                foreach (var x in item.ChatThread)
+                {
+                    if (x.Chat.User.Role != _globalVariables.RoleId)
+                    {
+                        if (!x.IsRead)
+                            count++;
+                    }
+                }
+                temp.ChatModel.ViewChatList.Add(new ChatModel.ChatList
+                {
+                    Date = item.CreationTime,
+                    Status = item.PostIncooperationName,
+                    TicketNumber = item.Id,
+                    NoOfNew = count
+                });
+
+
+            };
+            if (Id != 0)
+            {
+
+                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                temp.int_var0 = getChatById.Id;
+                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                {
+                    string doc = "";
+                    if (x.document != null)
+                    {
+                        byteConvert = x.document;
+                        base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                        doc = String.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                    {
+                        Message1 = x.Body,
+                        User = x.User.Role,
+                        documents = doc,
+
+                    });
+
+                    if (x.User != user)
+                    {
+                        x.IsRead = true;
+                        _context.Update(x);
+                    }
+                }
+                temp.string_var0 = getChatById.User.FirstName + " " + getChatById.User.LastName;
+                await _context.SaveChangesAsync();
+            }
+
+
+            temp.string_var11 = "statutory";
+            return View("post_incop", temp);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> statutory(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var chat = await _context.ChatHeader.FindAsync(Input.int_var0);
+                if (!ValidateFileSize(Input.File1))
+                {
+                    ViewBag.message = "File Size Exceeded, Kindly upload image with less than 10mb size";
+                    await select_query();
+                    return View(Input);
+                }
+                if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2) || !await ValidateFilesFormat(Input.File3) ||
+                !await ValidateFilesFormat(Input.File4) || !await ValidateFilesFormat(Input.File5) || !await ValidateFilesFormat(Input.File6))
+                {
+                    ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file";
+                    await select_query();
+                    return View(Input);
+                }
+
+                var ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var2,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id,
+                        document =await ConvertFileToByte(Input.File1),
+                        Chat = chat,
+                    }
+                    };
+                await _context.AddRangeAsync(ChatThread);
+                await _context.SaveChangesAsync();
+                Input.string_var2 = "";
+            }
+            return RedirectToAction("statutory", new { Id = Input.int_var0 });
+        }
+
+
+
+        public async Task<ActionResult> officelease(int Id)
+        {
+            int count = 0;
+            byte[] byteConvert = null;
+            string base64 = "";
+            string redirectUrl = "officelease";
+            var user = await _userService.get_User_By_Session();
+            var temp = new TemporaryVariables
+            {
+                string_var10 = redirectUrl,
+                ChatModel = new ChatModel
+                {
+                    ViewChatList = new List<ChatModel.ChatList>(),
+                    ViewChatDetails = new List<ChatModel.ChatDetails>(),
+                }
+            };
+            temp.string_var0 = user.FirstName + " " + user.LastName;
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.User == user && s.IsTicket == false && s.Group.ToLower() == redirectUrl).OrderByDescending(m => m.CreationTime).ToListAsync();
+            if (user.Role.ToLower().Equals("admin"))
+                chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.IsTicket == false && s.Group.ToLower() == redirectUrl).OrderByDescending(m => m.CreationTime).ToListAsync();
+            foreach (var item in chats)
+            {
+                count = 0;
+                foreach (var x in item.ChatThread)
+                {
+                    if (x.Chat.User.Role != _globalVariables.RoleId)
+                    {
+                        if (!x.IsRead)
+                            count++;
+                    }
+                }
+                temp.ChatModel.ViewChatList.Add(new ChatModel.ChatList
+                {
+                    Date = item.CreationTime,
+                    Status = item.PostIncooperationName,
+                    TicketNumber = item.Id,
+                    NoOfNew = count
+                });
+
+
+            };
+            if (Id != 0)
+            {
+
+                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                temp.int_var0 = getChatById.Id;
+                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                {
+                    string doc = "";
+                    if (x.document != null)
+                    {
+                        byteConvert = x.document;
+                        base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                        doc = String.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                    {
+                        Message1 = x.Body,
+                        User = x.User.Role,
+                        documents = doc,
+
+                    });
+
+                    if (x.User != user)
+                    {
+                        x.IsRead = true;
+                        _context.Update(x);
+                    }
+                }
+                temp.string_var0 = getChatById.User.FirstName + " " + getChatById.User.LastName;
+                await _context.SaveChangesAsync();
+            }
+
+
+            temp.string_var11 = redirectUrl;
+            return View("post_incop", temp);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> officelease(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var chat = await _context.ChatHeader.FindAsync(Input.int_var0);
+                if (!ValidateFileSize(Input.File1))
+                {
+                    ViewBag.message = "File Size Exceeded, Kindly upload image with less than 10mb size";
+                    await select_query();
+                    return View(Input);
+                }
+                if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2) || !await ValidateFilesFormat(Input.File3) ||
+                !await ValidateFilesFormat(Input.File4) || !await ValidateFilesFormat(Input.File5) || !await ValidateFilesFormat(Input.File6))
+                {
+                    ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file";
+                    await select_query();
+                    return View(Input);
+                }
+
+                var ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var2,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id,
+                        document =await ConvertFileToByte(Input.File1),
+                        Chat = chat,
+                    }
+                    };
+                await _context.AddRangeAsync(ChatThread);
+                await _context.SaveChangesAsync();
+                Input.string_var2 = "";
+            }
+            return RedirectToAction("officelease", new { Id = Input.int_var0 });
+        }
+
+        public async Task<ActionResult> cacchange(int Id)
+        {
+            int count = 0;
+            byte[] byteConvert = null;
+            string base64 = "";
+            string redirectUrl = "cacchange";
+            var user = await _userService.get_User_By_Session();
+            var temp = new TemporaryVariables
+            {
+                string_var10 = redirectUrl,
+                ChatModel = new ChatModel
+                {
+                    ViewChatList = new List<ChatModel.ChatList>(),
+                    ViewChatDetails = new List<ChatModel.ChatDetails>(),
+                }
+            };
+            temp.string_var0 = user.FirstName + " " + user.LastName;
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.User == user && s.IsTicket == false && s.Group.ToLower() == redirectUrl).OrderByDescending(m => m.CreationTime).ToListAsync();
+            if (user.Role.ToLower().Equals("admin"))
+                chats = await _context.ChatHeader.Include(x => x.ChatThread).ThenInclude(s=>s.Chat).ThenInclude(u=>u.User).Where(s => s.IsDeleted == false && s.IsTicket == false && s.Group.ToLower() == redirectUrl).OrderByDescending(m => m.CreationTime).ToListAsync();
+            foreach (var item in chats)
+            {
+                count = 0;
+                foreach (var x in item.ChatThread)
+                {
+                    if (x.Chat.User.Role != _globalVariables.RoleId)
+                    {
+                        if (!x.IsRead)
+                            count++;
+                    }
+                }
+                temp.ChatModel.ViewChatList.Add(new ChatModel.ChatList
+                {
+                    Date = item.CreationTime,
+                    Status = item.PostIncooperationName,
+                    TicketNumber = item.Id,
+                    NoOfNew = count
+                });
+
+
+            };
+            if (Id != 0)
+            {
+
+                var getChatById = chats.Where(x => x.Id == Id).FirstOrDefault();
+                temp.int_var0 = getChatById.Id;
+                foreach (var x in await _context.ChatThread.Include(s => s.User).Where(x => x.IsDeleted == false && x.Chat == getChatById).ToListAsync())
+                {
+                    string doc = "";
+                    if (x.document != null)
+                    {
+                        byteConvert = x.document;
+                        base64 = Convert.ToBase64String(byteConvert, 0, byteConvert.Length);
+                        doc = String.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    temp.ChatModel.ViewChatDetails.Add(new ChatModel.ChatDetails
+                    {
+                        Message1 = x.Body,
+                        User = x.User.Role,
+                        documents = doc,
+
+                    });
+
+                    if (x.User != user)
+                    {
+                        x.IsRead = true;
+                        _context.Update(x);
+                    }
+                }
+                temp.string_var0 = getChatById.User.FirstName + " " + getChatById.User.LastName;
+                await _context.SaveChangesAsync();
+            }
+
+
+            temp.string_var11 = redirectUrl;
+            return View("post_incop", temp);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> cacchange(TemporaryVariables Input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userService.get_User_By_Session();
+                var chat = await _context.ChatHeader.FindAsync(Input.int_var0);
+                if (!ValidateFileSize(Input.File1))
+                {
+                    ViewBag.message = "File Size Exceeded, Kindly upload image with less than 10mb size";
+                    await select_query();
+                    return View(Input);
+                }
+                if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2) || !await ValidateFilesFormat(Input.File3) ||
+                !await ValidateFilesFormat(Input.File4) || !await ValidateFilesFormat(Input.File5) || !await ValidateFilesFormat(Input.File6))
+                {
+                    ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file";
+                    await select_query();
+                    return View(Input);
+                }
+
+                var ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var2,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id,
+                        document =await ConvertFileToByte(Input.File1),
+                        Chat = chat,
+                    }
+                    };
+                await _context.AddRangeAsync(ChatThread);
+                await _context.SaveChangesAsync();
+                Input.string_var2 = "";
+            }
+            return RedirectToAction("cacchange", new { Id = Input.int_var0 });
+        }
+        public async Task<ActionResult> new_requests(string Id)
+        {
+            var user = await _userService.get_User_By_Session();
+            
+            var Input = new TemporaryVariables
+            {
+                string_var0 = user.FirstName + " " + user.LastName,
+                string_var1 = user.Email,
+                string_var3 = Id
+        };
+            var companies = from bg in await _companyService.GetCompanies()
+                            select new { c1 = bg.Id.ToString(), c2 = bg.CompanyName + " " + bg.CompanyType };
+            ViewBag.requests = new SelectList(companies, "c1", "c2");
+            return View(Input);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> new_requests(TemporaryVariables Input)
+        {
+            string redirectUrl = "";
+            if (Input.string_var3.ToLower().Contains("bankaccounts"))
+            redirectUrl = "post_incop";
+            else if (Input.string_var3.ToLower().Contains("statutory"))
+            redirectUrl = "statutory";
+            else if(Input.string_var3.ToLower().Contains("officelease"))
+                redirectUrl = "officelease";
+            else if (Input.string_var3.ToLower().Contains("cacchange"))
+                redirectUrl = "cacchange";
+            if (ModelState.IsValid)
+            {
+                Input.string_var2 = "";
+                var companyName = await _context.ChatHeader.Where(x => x.IsDeleted == false && x.Group.ToLower().Equals(Input.string_var3.ToLower()) && x.Subject.ToLower().Equals(Input.string_var2.ToLower()) && x.PostIncooperationName.ToLower().Equals(Input.string_var4.ToLower())).FirstOrDefaultAsync();
+                if (companyName != null)
+                {
+                    ViewBag.message = "This Subject and Company name request already exist, Kindly go to the existing thread and proceed";
+                    return View(Input);
+                }
+                var user = await _userService.get_User_By_Session();
+                var cHeader = new ChatHeader
+                {
+                    User = user,
+                    CreationTime = DateTime.Now,
+                    CreatorUserId = user.Id,
+                    Subject = Input.string_var2,
+                    Body = Input.string_var4,
+                    PostIncooperationName = Input.string_var5,
+                    Group = Input.string_var3,
+                    ChatThread = new List<ChatThread>()
+                    { new ChatThread
+                    {
+                        User = user,
+                        Body = Input.string_var4,
+                        IsRead = false,
+                        CreationTime = DateTime.Now,
+                        CreatorUserId = user.Id
+                    }
+                    }
+                };
+                await _context.AddAsync(cHeader);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(redirectUrl);
+        }
+
+
+
+
 
         public ActionResult add_doctor()
         {
@@ -737,7 +1274,7 @@ namespace NaijaStartupApp.Controllers
             if (!await ValidateFilesFormat(Input.File1) || !await ValidateFilesFormat(Input.File2)|| !await ValidateFilesFormat(Input.File3)||
                 !await ValidateFilesFormat(Input.File4)|| !await ValidateFilesFormat(Input.File5)|| !await ValidateFilesFormat(Input.File6))
             {
-                ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file or pdf";
+                ViewBag.message = "Invalid File Format Uploaded, Kindly upload image file";
                 await select_query();
                 return View(Input);
             }
@@ -807,8 +1344,8 @@ namespace NaijaStartupApp.Controllers
             if (file == null)
                 return true;
             return ImageWriterHelper.GetImageFormat(await ConvertFileToByte(file)) != ImageWriterHelper.ImageFormat.unknown;
-            if (ImageWriterHelper.GetPdfFormat(await ConvertFileToByte(file)))
-                return true;
+            //if (ImageWriterHelper.GetPdfFormat(await ConvertFileToByte(file)))
+            //    return true;
         }
 
         public bool ValidateFileSize(IFormFile file)
@@ -1023,9 +1560,9 @@ namespace NaijaStartupApp.Controllers
                 }
             };
             temp.string_var0 = user.FirstName + " " + user.LastName;
-            var chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false && s.User == user).OrderByDescending(m=>m.CreationTime).ToListAsync();
+            var chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false && s.User == user && s.IsTicket).OrderByDescending(m=>m.CreationTime).ToListAsync();
             if (user.Role.ToLower().Equals("admin"))
-            chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false).OrderByDescending(m => m.CreationTime).ToListAsync();
+            chats = await _context.ChatHeader.Include(x => x.ChatThread).Where(s => s.IsDeleted == false && s.IsTicket).OrderByDescending(m => m.CreationTime).ToListAsync();
             foreach (var item in chats)
             {
                 count = 0;
@@ -1060,7 +1597,7 @@ namespace NaijaStartupApp.Controllers
                             Message1 = x.Body,
                             User = x.User.Role,
                         });
-                        if (x.User == user)
+                        if (x.User != user)
                         {
                             x.IsRead = true;
                             _context.Update(x);
@@ -1081,6 +1618,7 @@ namespace NaijaStartupApp.Controllers
             {
                 var user = await _userService.get_User_By_Session();
                 var chat =await  _context.ChatHeader.FindAsync(Input.int_var0);
+                chat.IsTicket = true;
                 var ChatThread = new List<ChatThread>()
                     { new ChatThread
                     {

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NaijaStartupApp.Data;
 
 namespace NaijaStartupApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191113200453_ticketsammended")]
+    partial class ticketsammended
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -308,8 +310,6 @@ namespace NaijaStartupApp.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false);
 
-                    b.Property<string>("PostIncooperationName");
-
                     b.Property<string>("Subject");
 
                     b.Property<string>("UserId");
@@ -377,8 +377,6 @@ namespace NaijaStartupApp.Migrations
                         .IsUnicode(false);
 
                     b.Property<string>("UserId");
-
-                    b.Property<byte[]>("document");
 
                     b.HasKey("Id");
 
