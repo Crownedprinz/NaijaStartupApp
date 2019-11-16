@@ -1,0 +1,43 @@
+2019-11-16T12:53:57.7908686+01:00 80000091-0001-f100-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/   (ca22a1cb)
+2019-11-16T12:53:58.0773350+01:00 80000091-0001-f100-b63f-84710c7967bb [INF] Sending file. Request path: '"/index.html"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\index.html"' (27b0a520)
+2019-11-16T12:53:58.4356698+01:00 80000091-0001-f100-b63f-84710c7967bb [INF] Request finished in 465.5037ms 200 text/html (791a596a)
+2019-11-16T12:53:58.5469620+01:00 8000004a-0000-db00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/font-awe some.css   (ca22a1cb)
+2019-11-16T12:53:58.5810758+01:00 8000008a-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js   (ca22a1cb)
+2019-11-16T12:53:58.9703640+01:00 8000006d-0002-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/apps/head/-mEFVS8y7qx5pVzWHQTCQu5gnVM.js   (ca22a1cb)
+2019-11-16T12:53:59.2579521+01:00 8000006d-0002-f200-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-16T12:53:59.2621270+01:00 8000004a-0000-db00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-16T12:53:59.2659651+01:00 8000008a-0003-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.6-servicing-10079" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-16T12:54:02.9265460+01:00 8000004a-0000-db00-b63f-84710c7967bb [INF] Executed DbCommand ("329"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-11-16T12:54:02.9279932+01:00 8000006d-0002-f200-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-11-16T12:54:02.9553325+01:00 8000008a-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("378"ms) [Parameters=["@__get_Item_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Discriminator], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[Address], [e].[Country], [e].[CreationTime], [e].[CreatorUserId], [e].[DeletionTime], [e].[DeletionUserId], [e].[FirstName], [e].[IsActive], [e].[IsDeleted], [e].[LastName], [e].[ModificationTime], [e].[ModificationUserId], [e].[Role], [e].[State]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[Discriminator] = N'User') AND ([e].[Id] = @__get_Item_0)" (0723d8ff)
+2019-11-16T12:54:03.1913980+01:00 8000004a-0000-db00-b63f-84710c7967bb [INF] Executed DbCommand ("159"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-16T12:54:03.1951415+01:00 8000008a-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("159"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-16T12:54:03.2341684+01:00 8000006d-0002-f200-b63f-84710c7967bb [INF] Executed DbCommand ("159"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-16T12:54:03.2371470+01:00 8000004a-0000-db00-b63f-84710c7967bb [INF] Request finished in 4732.2224ms 404  (791a596a)
+2019-11-16T12:54:03.2403698+01:00 8000008a-0003-fc00-b63f-84710c7967bb [INF] Request finished in 4739.295ms 404  (791a596a)
+2019-11-16T12:54:03.2631694+01:00 8000006d-0002-f200-b63f-84710c7967bb [INF] Request finished in 4738.3642ms 404  (791a596a)
+2019-11-16T12:54:03.2840318+01:00 8000006f-0002-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/css/font-awe some.css   (ca22a1cb)
+2019-11-16T12:54:03.2998881+01:00 8000006f-0002-f200-b63f-84710c7967bb [INF] Request finished in 7.8712ms 404  (791a596a)
+2019-11-16T12:54:03.8296501+01:00 80000071-0002-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js   (ca22a1cb)
+2019-11-16T12:54:04.8580510+01:00 80000071-0002-f200-b63f-84710c7967bb [INF] Request finished in 763.514ms 404  (791a596a)
+2019-11-16T12:54:06.6442845+01:00 80000073-0002-f200-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44333/favicon.ico   (ca22a1cb)
+2019-11-16T12:54:06.6945706+01:00 80000073-0002-f200-b63f-84710c7967bb [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\Ademolanj\source\repos\NaijaStartupApp\wwwroot\favicon.ico"' (27b0a520)
+2019-11-16T12:54:06.7017238+01:00 80000073-0002-f200-b63f-84710c7967bb [INF] Request finished in 78.3908ms 200 image/x-icon (791a596a)
