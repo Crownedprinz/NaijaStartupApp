@@ -1,7 +1,12 @@
-﻿@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
+﻿@using Microsoft.AspNetCore.Http;
+@using NaijaStartupApp.Helpers;
+@inject IHttpContextAccessor hcontext
+@model NaijaStartupApp.Models.NsuVariables.TemporaryVariables
 @{
     ViewData["Title"] = "owner_details";
     Layout = "~/Views/Shared/_CompanyLayout.cshtml";
+    NaijaStartupApp.Models.NsuVariables.TemporaryVariables _temporaryVariables = hcontext.HttpContext.Session.GetObject<NaijaStartupApp.Models.NsuVariables.TemporaryVariables>("TemporaryVariables");
+
 }
 <!-- Page Content-->
 <form role="form" method="post" enctype="multipart/form-data">
@@ -245,45 +250,45 @@
 
                                                                             </div>
                                                                             <div class="required-fields field-group-html-element cell sgf-step-5-upload-file">
-                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Proof Of Identification</span>
-                                                                                    <div id="ajax-wrapper--2">
+                                                                                <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Proof Of Identification</span>
+                                                                                <div id="ajax-wrapper--2">
 
-                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
+                                                                                    <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
 
-                                                                                            <div class="sgf-choose-file-hidden">
-                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
-                                                                                                    <input multiple="multiple" required="required" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File1" size="22" class="js-form-file form-file">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Birth (If officer is an infant)</span>
-                                                                                    <div id="ajax-wrapper--2">
-
-                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
-
-                                                                                            <div class="sgf-choose-file-hidden">
-                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
-                                                                                                    <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File2" size="22" class="js-form-file form-file">
-                                                                                                </div>
+                                                                                        <div class="sgf-choose-file-hidden">
+                                                                                            <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                <input multiple="multiple" required="required" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File1" size="22" class="js-form-file form-file">
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
 
-                                                                                    <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Proficiency (not required)</span>
-                                                                                    <div id="ajax-wrapper--2">
+                                                                                </div>
+                                                                                <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Birth (If officer is an infant)</span>
+                                                                                <div id="ajax-wrapper--2">
 
-                                                                                        <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
+                                                                                    <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
 
-                                                                                            <div class="sgf-choose-file-hidden">
-                                                                                                <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
-                                                                                                    <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File3" size="22" class="js-form-file form-file">
-                                                                                                </div>
+                                                                                        <div class="sgf-choose-file-hidden">
+                                                                                            <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File2" size="22" class="js-form-file form-file">
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
+
+                                                                                <span role="button" aria-controls="edit-officers-0-content-residential-address-wrapper" aria-expanded="true" aria-pressed="true">Certificate of Proficiency (not required)</span>
+                                                                                <div id="ajax-wrapper--2">
+
+                                                                                    <div class="js-form-item form-item js-form-type-managed-file form-item-officers-0-content-residential-address-wrapper-residential-address js-form-item-officers-0-content-residential-address-wrapper-residential-address">
+
+                                                                                        <div class="sgf-choose-file-hidden">
+                                                                                            <div id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" class="js-form-managed-file form-managed-file">
+                                                                                                <input multiple="multiple" type="file" id="edit-officers-0-content-residential-address-wrapper-residential-address-upload" name="File3" size="22" class="js-form-file form-file">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
