@@ -542,6 +542,7 @@ namespace NaijaStartupApp.Services
             }
             catch (Exception ex)
             {
+                _logger.LogInformation("Email Exception");
                 _logger.LogError(ex.StackTrace);
                 emailResponse.Code = (int)HttpStatusCode.BadRequest;
                 emailResponse.Message = ex.Message;
