@@ -127,6 +127,16 @@ namespace NaijaStartupApp.Controllers
                 await _context.SaveChangesAsync();
             }
 
+            if (user.Role.ToLower().Equals("admin"))
+            {
+                var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(), temp.string_var10 + "-New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #" + Id + "for your attention</p>", "");
+
+            }
+            else
+            {
+                await _userService.sendEmailWithMessageAsync(user.Email, temp.string_var10 + "-New Reply From Naija Startup", "<p>New Reply For Ticket Number #" + Id + "</p><p>A New Reply needs your attention</p>");
+            }
             temp.string_var11 = "post_incop";
             return View(temp);
         }
@@ -243,7 +253,16 @@ namespace NaijaStartupApp.Controllers
                 await _context.SaveChangesAsync();
             }
 
+            if (user.Role.ToLower().Equals("admin"))
+            {
+                var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(), temp.string_var10 + "-New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #" + Id + "for your attention</p>", "");
 
+            }
+            else
+            {
+                await _userService.sendEmailWithMessageAsync(user.Email, temp.string_var10 + "-New Reply From Naija Startup", "<p>New Reply For Ticket Number #" + Id + "</p><p>A New Reply needs your attention</p>");
+            }
             temp.string_var11 = "statutory";
             return View("post_incop", temp);
         }
@@ -403,6 +422,17 @@ namespace NaijaStartupApp.Controllers
                     };
                 await _context.AddRangeAsync(ChatThread);
                 await _context.SaveChangesAsync();
+
+                if (user.Role.ToLower().Equals("admin"))
+                {
+                    var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                    await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(), "Office Lease-New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #" + Input.int_var0 + "for your attention</p>", "");
+
+                }
+                else
+                {
+                    await _userService.sendEmailWithMessageAsync(user.Email, "Office Lease-New Reply From Naija Startup", "<p>New Reply For Ticket Number #" + Input.int_var0 + "</p><p>A New Reply needs your attention</p>");
+                }
                 Input.string_var2 = "";
             }
             return RedirectToAction("officelease", new { Id = Input.int_var0 });
@@ -521,6 +551,17 @@ namespace NaijaStartupApp.Controllers
                     };
                 await _context.AddRangeAsync(ChatThread);
                 await _context.SaveChangesAsync();
+
+                if (user.Role.ToLower().Equals("admin"))
+                {
+                    var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                    await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(),"Cac Change-New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #" + Input.int_var0 + "for your attention</p>", "");
+
+                }
+                else
+                {
+                    await _userService.sendEmailWithMessageAsync(user.Email, "Cac Change-New Reply From Naija Startup", "<p>New Reply For Ticket Number #" + Input.int_var0 + "</p><p>A New Reply needs your attention</p>");
+                }
                 Input.string_var2 = "";
             }
             return RedirectToAction("cacchange", new { Id = Input.int_var0 });
@@ -585,6 +626,16 @@ namespace NaijaStartupApp.Controllers
                 };
                 await _context.AddAsync(cHeader);
                 await _context.SaveChangesAsync();
+                if (user.Role.ToLower().Equals("admin"))
+                {
+                    var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                    await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(), Input.string_var3+"-New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #" + Input.int_var0 + "for your attention</p>", "");
+
+                }
+                else
+                {
+                    await _userService.sendEmailWithMessageAsync(user.Email, Input.string_var3+"-New Reply From Naija Startup", "<p>New Reply For Ticket Number #" + Input.int_var0 + "</p><p>A New Reply needs your attention</p>");
+                }
             }
             return RedirectToAction(redirectUrl);
         }
@@ -855,7 +906,7 @@ namespace NaijaStartupApp.Controllers
         [HttpPost]
         public async Task<ActionResult> approve_company(string Id)
         {
-            var company = _context.Company_Registration.Where(x => x.IsDeleted == false && x.Id.ToString() == Id).FirstOrDefault();
+            var company = _context.Company_Registration.Include(x=>x.User).Where(x => x.IsDeleted == false && x.Id.ToString() == Id).FirstOrDefault();
             if (company != null)
             {
                 company.ApprovalStatus = "Confirmed";
@@ -865,6 +916,8 @@ namespace NaijaStartupApp.Controllers
 
                 _context.Update(company);
                 await _context.SaveChangesAsync();
+                await _userService.sendEmailWithMessageAsync(company.User.Email, "Naija Startup Approval - "+company.CompanyName + " " + company.CompanyType, "<p>Congratulations On your Approval</p><p>You Company Name has successfully been approved</p>");
+
             }
             return RedirectToAction("admin_companies", null, null);
         }
@@ -1470,6 +1523,7 @@ namespace NaijaStartupApp.Controllers
                     await _context.AddAsync(payment);
                 };
                 await _context.SaveChangesAsync();
+                await _userService.sendEmailWithMessageAsync(company.User.Email, "Naija Startup Payment Confirmation - " + company.CompanyName + " " + company.CompanyType, "<p>Payment Successful</p><p>Your Payment of "+company.TotalAmount+" has been successfully completed</p>");
 
                 return true;
             }
@@ -1617,7 +1671,7 @@ namespace NaijaStartupApp.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userService.get_User_By_Session();
-                var chat =await  _context.ChatHeader.FindAsync(Input.int_var0);
+                var chat = await _context.ChatHeader.Include(s=>s.User).Where(x=>x.IsDeleted==false && x.Id ==Input.int_var0).FirstOrDefaultAsync();
                 chat.IsTicket = true;
                 var ChatThread = new List<ChatThread>()
                     { new ChatThread
@@ -1632,6 +1686,16 @@ namespace NaijaStartupApp.Controllers
                     };
                 await _context.AddRangeAsync(ChatThread);
                 await _context.SaveChangesAsync();
+                if (user.Role.ToLower().Equals("admin"))
+                {
+                    var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                    await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(), "New Reply From " + user.FirstName + " " + user.LastName, "<p>A New Reply for Ticket Number #"+Input.int_var0+"for your attention</p>", "");
+
+                }
+                else
+                {
+                    await _userService.sendEmailWithMessageAsync(chat.User.Email, "New Reply From Naija Startup", "<p>New Reply For Ticket Number #"+Input.int_var0+"</p><p>A New Reply needs your attention</p>");
+                }
                 Input.string_var2 = "";
             }
             return RedirectToAction("chat", new { Id = Input.int_var0 });
@@ -1679,6 +1743,9 @@ namespace NaijaStartupApp.Controllers
                 };
                 await _context.AddAsync(cHeader);
                 await _context.SaveChangesAsync();
+                var adminList = (await _userService.GetAllAdminEmails()).Take(5);
+                await _userService.sendToManyEmailWithMessage(adminList.ToList(), new List<string>(),"New Ticket Created By " + user.FirstName + " " + user.LastName, "<p>Payment Successful</p><p>A New Ticket has been created for your attention</p>","");
+
             }
             return RedirectToAction("chat");
         }
