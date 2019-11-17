@@ -25,7 +25,8 @@ namespace NaijaStartupApp.Controllers
         private readonly ILogger _logger;
         private readonly GlobalVariables _globalVariables;
         private readonly TemporaryVariables _temporaryVariables;
-        public AccountController(IUserService userService, ApplicationDbContext context, ILogger<AccountController> logger, IHttpContextAccessor hcontext)
+        public AccountController(IUserService userService, ApplicationDbContext context, ILogger<AccountController> logger, IHttpContextAccessor hcontext
+        )
         {
             _userService = userService;
             _context = context;
@@ -51,9 +52,8 @@ namespace NaijaStartupApp.Controllers
                 var checkLogin = await _userService.AuthenticateAsync(Input);
                 if (checkLogin.IsSuccessful)
                 {
-                    var user = _userService.get_User_By_EmailOrUsername(Input.EmailOrUsername);
-                    //globalVariables = HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
-                    //temporaryVariables = HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
+                   var user = _userService.get_User_By_EmailOrUsername(Input.EmailOrUsername);
+                    await _userService.sendEmailWithMessageAsync(user.Email, "Naija Startup Sign In", "<p>Welcome to NaijaStartup</p><p>You have successfully signed in. if you did not initiate this, kindly contact administrator</p>");
                     globalVariables.userid = user.Id;
                     globalVariables.RoleId = user.Role;
                     globalVariables.userName = user.UserName;
@@ -86,6 +86,7 @@ namespace NaijaStartupApp.Controllers
             var checkLogin = await _userService.CreateUserAsync(Input);
             if (checkLogin.IsSuccessful)
             {
+               await _userService.sendEmailWithMessageAsync(EmailAddress:email, "Naija Startup SignUp", "<p>Welcome to NaijaStartup</p><p>You have successfully signed Up. Kindly login with your username: "+username+" and password</p>");
                 return Json(checkLogin);
             }
             else
@@ -144,6 +145,8 @@ namespace NaijaStartupApp.Controllers
             if (checkLogin.IsSuccessful)
             {
                 ViewBag.message = "Successfully Created";
+                await _userService.sendEmailWithMessageAsync(admin.string_var2, "Admin Creation" , "<p>Payment Successful</p><p>You have been created as an admin Role Kindly login with your credentials below</p><p>Username: "+admin.string_var4+"</p><p>Password: "+admin.string_var6+"</p>");
+
                 return View();
             }
             else

@@ -18,6 +18,7 @@ using static NaijaStartupApp.Models.NsuDtos;
 using NaijaStartupApp.Helpers;
 using System.IO;
 using Microsoft.Extensions.Logging;
+using static NaijaStartupApp.Models.EmailDTOs;
 
 namespace NaijaStartupApp
 {
@@ -81,6 +82,12 @@ namespace NaijaStartupApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICompanyService, CompanyService>();
+            //Email Configuration
+            var emailSettings = Configuration.GetSection("EmailConfiguration");
+            services.Configure<EmailConfiguration>(emailSettings);
+
+            var emailSection = emailSettings.Get<EmailConfiguration>();
+            services.AddSingleton<IEmailConfiguration>(emailSection);
             // Add our Config object so it can be injected
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
