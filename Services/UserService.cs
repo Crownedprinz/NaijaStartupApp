@@ -80,6 +80,7 @@ namespace NaijaStartupApp.Services
             _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
             _appSettings = appSettings.Value;
             _emailConfiguration = emailConfiguration;
+            _logger = logger;
 
         }
         /// <summary>
@@ -541,6 +542,7 @@ namespace NaijaStartupApp.Services
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.StackTrace);
                 emailResponse.Code = (int)HttpStatusCode.BadRequest;
                 emailResponse.Message = ex.Message;
                 return emailResponse;
