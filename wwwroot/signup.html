@@ -226,7 +226,7 @@
                     var jsonObj = JSON.parse(obj.toString());
                     if (jsonObj.isSuccessful) {
                         alert("Successfully Registered, Please click the Login Button to Sign in");
-                        return;
+                        window.location.href = "/Index.html";
                     }
                 else {
                     alert(jsonObj.error);

@@ -34,6 +34,8 @@ namespace NaijaStartupApp.Controllers
             _globalVariables = hcontext.HttpContext.Session.GetObject<GlobalVariables>("GlobalVariables");
             _temporaryVariables = hcontext.HttpContext.Session.GetObject<TemporaryVariables>("TemporaryVariables");
         }
+
+
         [HttpPost]
         public async Task<bool> Index(string username, string password, bool rememberMe)
         {

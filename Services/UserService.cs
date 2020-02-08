@@ -90,9 +90,12 @@ namespace NaijaStartupApp.Services
         /// <returns></returns>
         public async Task<GenericResponse> AuthenticateAsync(UserRequest Input)
         {
-
-            var result = await _signInManager.PasswordSignInAsync(Input.EmailOrUsername,
-                Input.Password, Input.RememberMe, lockoutOnFailure: true);
+            var user = get_User_By_EmailOrUsername(Input.EmailOrUsername);
+            if (user == null)
+                return new GenericResponse { IsSuccessful = true, Message = "Successful", Error = new List<string> { "" } };
+            var result = await _signInManager.PasswordSignInAsync(user, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+            //var result = await _signInManager.PasswordSignInAsync(Input.EmailOrUsername,
+            //    Input.Password, Input.RememberMe, lockoutOnFailure: true);
             if (result.Succeeded)
             {
                 //_logger.LogInformation("User logged in.");

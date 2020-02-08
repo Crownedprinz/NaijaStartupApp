@@ -581,7 +581,6 @@ namespace NaijaStartupApp.Controllers
             ViewBag.requests = new SelectList(companies, "c1", "c2");
             return View(Input);
         }
-
         [HttpPost]
         public async Task<ActionResult> new_requests(TemporaryVariables Input)
         {
@@ -639,22 +638,14 @@ namespace NaijaStartupApp.Controllers
             }
             return RedirectToAction(redirectUrl);
         }
-
-
-
-
-
         public ActionResult add_doctor()
         {
             return View();
         }
-
         public ActionResult add_member()
         {
             return View();
         }
-
-
         public ActionResult add_patient()
         {
             return View();
@@ -755,7 +746,6 @@ namespace NaijaStartupApp.Controllers
                                 date_var0 = x.CreationTime,
                             }).ToListAsync());
         }
-
         public async Task<ActionResult> view_incentives(int Id)
         {
             var inc = await _context.Incentives.FindAsync(Id);
@@ -766,7 +756,6 @@ namespace NaijaStartupApp.Controllers
             };
             return View("new_incentive", temp);
         }
-
         public async Task<bool> delete_incentives(int Id)
         {
             var company = await _context.Incentives.FindAsync(Id);
@@ -782,13 +771,10 @@ namespace NaijaStartupApp.Controllers
                 return false;
             return false;
         }
-
-
         public ActionResult new_incentive()
         {
             return View();
         }
-
         public async Task<ActionResult> attach_incentives(string Id)
         {
             TemporaryVariables Input = new TemporaryVariables
@@ -815,7 +801,6 @@ namespace NaijaStartupApp.Controllers
             ViewBag.list1 = new SelectList(list1, "c1", "c2");
             return View(Input);
         }
-
         [HttpPost]
         public async Task<ActionResult> attach_incentives(TemporaryVariables Input, int[] snumber2)
         {
@@ -842,7 +827,6 @@ namespace NaijaStartupApp.Controllers
             }
             return RedirectToAction("attach_incentives",new { Id = Input.string_var0 });
         }
-
         [HttpPost]
         public async Task<ActionResult> new_incentive(TemporaryVariables Input)
         {
@@ -863,7 +847,6 @@ namespace NaijaStartupApp.Controllers
             }
             return RedirectToAction("incentives");
         }
-
         public ActionResult unconfirmed_companies()
         {
             if (_globalVariables.RoleId == "Admin")
@@ -902,7 +885,6 @@ namespace NaijaStartupApp.Controllers
                    }).ToList());
             }
         }
-
         [HttpPost]
         public async Task<ActionResult> approve_company(string Id)
         {
@@ -921,7 +903,6 @@ namespace NaijaStartupApp.Controllers
             }
             return RedirectToAction("admin_companies", null, null);
         }
-
         [HttpGet]
         public async Task<ActionResult> view_company(string Id)
         {
@@ -1005,7 +986,6 @@ namespace NaijaStartupApp.Controllers
             
             return View(companyInfo);
         }
-
         [HttpGet]
         public async Task<string> GetBytes(string Id, string type)
         {
@@ -1043,7 +1023,6 @@ namespace NaijaStartupApp.Controllers
             }
             return "";
         }
-
         public ActionResult all_rooms()
         {
             return View();
@@ -1216,7 +1195,6 @@ namespace NaijaStartupApp.Controllers
             }
             return false;
         }
-
         public ActionResult packages()
         {
             return View();
@@ -1243,7 +1221,6 @@ namespace NaijaStartupApp.Controllers
             }
             return View();
         }
-
         public Package GetProductId(string product)
         {
             var productname = "";

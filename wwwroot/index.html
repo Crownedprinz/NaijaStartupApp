@@ -666,17 +666,13 @@
                 $anchor2.addClass('active');
 
                 $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top - 80
+                    scrollTop: ($($anchor.attr('href')).offset().top())-80
                 }, 1500, 'easeInOutExpo');
                 event.preventDefault();
             });
         });
     </script>
-
-
     <script>
-
-
         $(document).ready(function () {
 
             $(window).scroll(function () {
@@ -693,7 +689,6 @@
             });
 
         });
-
         function loginPost() {
             $(".se-pre-con").fadeIn("slow");
             var val3 = document.getElementById("id_rememberme").checked
